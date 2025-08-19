@@ -517,3 +517,196 @@ body {
 }
 
 
+/* --- Shipping Section --- */
+.shipping-section {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;             /* side columns match form height */
+  gap: 30px;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #e0f7fa, #f1f8ff);
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Side columns */
+.shipping-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;   /* push one card to top, one to bottom */
+  flex: 0 0 230px;                  /* nice, visible width */
+  gap: 20px;
+}
+
+/* Animated card wrapper (this moves) */
+.shipping-card {
+  width: 100%;
+  flex: 1;
+  max-height: 48%;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 119, 182, 0.25);
+  padding: 10px;
+  overflow: hidden;
+  will-change: transform;
+  animation-name: floatY;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* Slightly different speeds/delays so they don't sync */
+.float-1 { animation-duration: 5.5s; animation-delay: 0s;    }
+.float-2 { animation-duration: 6.2s; animation-delay: .4s;   }
+.float-3 { animation-duration: 5.8s; animation-delay: .2s;   }
+.float-4 { animation-duration: 6.6s; animation-delay: .6s;   }
+
+/* The image inside (this scales on hover) */
+.shipping-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;              /* no cropping */
+  display: block;
+  transition: transform .25s ease, filter .25s ease;
+}
+
+.shipping-card:hover img {
+  transform: scale(1.05);           /* hover zoom on the image, not the wrapper */
+  filter: drop-shadow(0 6px 12px rgba(0, 119, 182, 0.35));
+}
+
+/* Center form */
+.shipping-form-container {
+  flex: 1;
+  background: #fff;
+  padding: 35px;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  animation: fadeInUp 0.6s ease;
+}
+
+.shipping-form-container h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0077b6;
+  margin-bottom: 20px;
+}
+
+/* Animations */
+@keyframes floatY {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .shipping-card { animation: none; }
+  .shipping-card:hover img { transform: none; }
+}
+
+/* Responsive: stack on narrow screens */
+@media (max-width: 900px) {
+  .shipping-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .shipping-side {
+    flex-direction: row;
+    flex: 1 1 auto;
+    gap: 16px;
+  }
+  .shipping-card {
+    max-height: none;
+    height: 150px;
+  }
+}
+
+/* For tablets and smaller screens */
+@media (max-width: 900px) {
+  body {
+    font-size: 15px;
+  }
+
+  .container {
+    padding: 15px;
+  }
+}
+
+/* ===================== */
+/* ✅ Responsive Styles  */
+/* ===================== */
+
+/* For tablets (≤ 900px) */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 15px;
+  }
+
+  .form-section, .card, .content {
+    padding: 15px;
+  }
+}
+
+/* For mobiles (≤ 600px) */
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr !important;
+    gap: 10px;
+  }
+
+  body {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .form-section,
+  .card,
+  .content {
+    width: 100% !important;
+    padding: 12px;
+  }
+
+  input, select, textarea, button {
+    width: 100% !important;
+    font-size: 14px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+
+.mailbox-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.mailbox-images img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+

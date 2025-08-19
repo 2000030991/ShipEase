@@ -8,6 +8,23 @@ import Image1 from "./assets/Image1.png";
 import Image2 from "./assets/Image2.png";
 import Image3 from "./assets/Image3.png";
 
+import MailBoxTab1 from "./assets/Mail Box Tab1.png";
+import MailBoxTab2 from "./assets/Mail Box Tab2.png";
+import MailBoxTab3 from "./assets/Mail Box Tab3.png";
+import MailBoxTab4 from "./assets/Mail Box Tab4.png";
+
+import PersonalShopperTab1 from "./assets/Personal Shopper Tab1.jpg";
+import PersonalShopperTab2 from "./assets/Personal Shopper Tab2.jpg";
+import PersonalShopperTab3 from "./assets/Personal Shopper Tab3.jpg";
+import PersonalShopperTab4 from "./assets/Personal Shopper Tab4.jpg";
+
+import MailBoxExtra1 from "./assets/Mail Box Extra1.jpg";
+import PersonalShopperExtra1 from "./assets/Personal Shopper Extra1.jpg";
+import ShippingExtra1 from "./assets/ShippingExtra1.jpg";
+import ShippingExtra2 from "./assets/ShippingExtra2.jpg"; 
+import MailBoxExtra2 from "./assets/Mail Box Extra2.jpg";
+import PersonalShopperExtra2 from "./assets/Personal Shopper Extra2.jpg";
+
 // ✅ New Offer Images
 import OfferShipping from "./assets/Shipping 640Rs per Kg.png";
 import OfferMails from "./assets/3 Monthly Free Mails.png";
@@ -75,6 +92,11 @@ import BgOffers from "./assets/bg-offers.png";
 import BgServices from "./assets/bg-services.png";
 import ShipEasePoster from "./assets/ShipEase Poster.png";
 import WhyChooseUs from "./assets/Why Choose US.png"; 
+
+import ShippingImage1 from "./assets/Shipping form image1.png";
+import ShippingImage2 from "./assets/Shipping form image2.jpg"; 
+import ShippingImage3 from "./assets/Shipping form image3.png";
+import ShippingImage4 from "./assets/Shipping form image4.png"; 
 
 function MyFoods() {
   const [cart, setCart] = useState([]);
@@ -185,7 +207,11 @@ export default function App() {
     pauseOnHover: false,
   };
 
-  const slides = [{ img: Image1 }, { img: Image2 }, { img: Image3 }];
+ const slides = [
+    { main: Image1, left: MailBoxExtra2, right: PersonalShopperExtra2 },
+    { main: Image2, left: PersonalShopperExtra1, right: ShippingExtra2 }, 
+    { main: Image3, left: ShippingExtra1, right: MailBoxExtra1 } 
+  ];
 
   const prohibitedItemsLeft = ["Food and Perishables","Fruits and Vegetables","Raw Rice Flours","Liquids and Semi-liquids","Drugs and Narcotics","Electrical Product","Corpses","Indian Passport","Non-Veg Pickles","Gambling Devices","Firearms","Semi-Precious Items","IATA Restricted Items","Philately Items"];
   const prohibitedItemsRight = ["Radioactive Material","Bullion","Pornographic materials","Medication","Indian Postal Articles","USA Green Card","Lottery Tickets","Ammunition","Precious Items","Cremated Remains","Live Animals","Drugs and Narcotics","Electrical Product","Corpses"];
@@ -216,16 +242,17 @@ export default function App() {
         </nav>
       </header>
 
-      {/* HOME */}
+
+   {/* HOME */}
       {currentView === "home" && (
         <>
           {/* Carousel */}
           <section className="carousel-section">
             <Slider {...sliderSettings}>
-              {slides.map(({ img }, index) => (
+              {slides.map(({ main, left, right }, index) => (
                 <div key={index} className="slide-container">
-                  <div className="side-card left-card"><img src={SlidebarImage1} alt="Left slidebar" /></div>
-                  <div className="slide" style={{ backgroundImage: `url(${img})` }}>
+                  <div className="side-card left-card"><img src={left} alt="Left slidebar" /></div>
+                  <div className="slide" style={{ backgroundImage: `url(${main})` }}>
                     {index === 2 && (
                       <div className="slide-content">
                         <h1>Your Personal Shopper</h1>
@@ -233,7 +260,7 @@ export default function App() {
                       </div>
                     )}
                   </div>
-                  <div className="side-card right-card"><img src={SlidebarImage2} alt="Right slidebar" /></div>
+                  <div className="side-card right-card"><img src={right} alt="Right slidebar" /></div>
                 </div>
               ))}
             </Slider>
@@ -396,67 +423,145 @@ export default function App() {
         </section>
       )}
 
-      {/* SHIPPING */}
-      {currentView === "shipping" && (
-        <section style={{ maxWidth: "500px", margin: "30px auto", padding: "20px", background: "white", borderRadius: "12px", boxShadow: "0 5px 15px rgba(0,0,0,0.1)", color: "#023e8a" }}>
-          <h2 style={{ textAlign: "center", marginBottom: "20px" }}>Shipping Form</h2>
-          <form onSubmit={handleShippingSubmit}>
-            <h3>Receiver Details</h3>
-            <label>Receiver Name*</label>
-            <input type="text" required placeholder="Receiver's full name" style={inputStyle} />
-            <label>Receiver Address*</label>
-            <textarea required placeholder="Receiver's address" rows={3} style={inputStyle}></textarea>
-            <label>Receiver Contact*</label>
-            <input type="tel" required placeholder="+91 9876543210" style={inputStyle} />
-            <h3 style={{ marginTop: "20px" }}>Sender Details</h3>
-            <label>Sender Name*</label>
-            <input type="text" required placeholder="Sender's full name" style={inputStyle} />
-            <label>Sender Address*</label>
-            <textarea required placeholder="Sender's address" rows={3} style={inputStyle}></textarea>
-            <label>Sender Contact*</label>
-            <input type="tel" required placeholder="+91 9876543210" style={inputStyle} />
-            <button type="submit" style={buttonStyle}>Submit</button>
-          </form>
-        </section>
-      )}
+     {/* SHIPPING */}
+{currentView === "shipping" && (
+  <section className="shipping-section">
+    {/* Left column */}
+    <div className="shipping-side left-side">
+      <div className="shipping-card float-1">
+        <img src={ShippingImage1} alt="Shipping 1" />
+      </div>
+      <div className="shipping-card float-2">
+        <img src={ShippingImage2} alt="Shipping 2" />
+      </div>
+    </div>
 
-      {/* MAILBOX */}
-      {currentView === "mailbox" && (
-        <section style={{ maxWidth: "450px", margin: "30px auto", padding: "20px", background: "white", borderRadius: "12px", boxShadow: "0 5px 15px rgba(0,0,0,0.1)", color: "#023e8a" }}>
-          <h2 style={{ textAlign: "center", marginBottom: "20px" }}>Mail Box Form</h2>
-          <form onSubmit={handleMailboxSubmit}>
-            <label>Name*</label>
-            <input type="text" required placeholder="Your full name" style={inputStyle} />
-            <label>Email*</label>
-            <input type="email" required placeholder="you@example.com" style={inputStyle} />
-            <label>Contact Number*</label>
-            <input type="tel" required placeholder="+91 9876543210" style={inputStyle} />
-            <label>Address*</label>
-            <textarea required placeholder="Your address" rows={3} style={inputStyle}></textarea>
-            <button type="submit" style={buttonStyle}>Submit</button>
-          </form>
-        </section>
-      )}
+    {/* Center form */}
+    <div className="shipping-form-container">
+      <h2>Shipping Form</h2>
+      <form onSubmit={handleShippingSubmit}>
+        <h3>Receiver Details</h3>
+        <label>Receiver Name*</label>
+        <input type="text" required placeholder="Receiver's full name" style={inputStyle} />
+        <label>Receiver Address*</label>
+        <textarea required placeholder="Receiver's address" rows={3} style={inputStyle}></textarea>
+        <label>Receiver Contact*</label>
+        <input type="tel" required placeholder="+91 9876543210" style={inputStyle} />
 
-      {/* PERSONAL SHOPPER */}
-      {currentView === "personalShopper" && (
-        <section style={{ maxWidth: "450px", margin: "30px auto", padding: "20px", background: "white", borderRadius: "12px", boxShadow: "0 5px 15px rgba(0,0,0,0.1)", color: "#023e8a" }}>
-          <h2 style={{ textAlign: "center", marginBottom: "20px" }}>Personal Shopper Form</h2>
-          <form onSubmit={handlePersonalShopperSubmit}>
-            <label>Name*</label>
-            <input type="text" required placeholder="Your full name" style={inputStyle} />
-            <label>Email*</label>
-            <input type="email" required placeholder="you@example.com" style={inputStyle} />
-            <label>Contact Number*</label>
-            <input type="tel" required placeholder="+91 9876543210" style={inputStyle} />
-            <label>Delivery Address*</label>
-            <textarea required placeholder="Your delivery address" rows={3} style={inputStyle}></textarea>
-            <label>Items You Want to Shop*</label>
-            <textarea required placeholder="List of items" rows={4} style={inputStyle}></textarea>
-            <button type="submit" style={buttonStyle}>Submit</button>
-          </form>
-        </section>
-      )}
+        <h3 style={{ marginTop: "20px" }}>Sender Details</h3>
+        <label>Sender Name*</label>
+        <input type="text" required placeholder="Sender's full name" style={inputStyle} />
+        <label>Sender Address*</label>
+        <textarea required placeholder="Sender's address" rows={3} style={inputStyle}></textarea>
+        <label>Sender Contact*</label>
+        <input type="tel" required placeholder="+91 9876543210" style={inputStyle} />
+
+        <button type="submit" style={buttonStyle}>Submit</button>
+      </form>
+    </div>
+
+    {/* Right column */}
+    <div className="shipping-side right-side">
+      <div className="shipping-card float-3">
+        <img src={ShippingImage3} alt="Shipping 3" />
+      </div>
+      <div className="shipping-card float-4">
+        <img src={ShippingImage4} alt="Shipping 4" />
+      </div>
+    </div>
+  </section>
+)}
+
+    {/* MAILBOX */}
+{currentView === "mailbox" && (
+  <section className="shipping-section">
+    {/* Left floating images */}
+    <div className="shipping-side">
+      <div className="shipping-card float-1">
+        <img src={MailBoxTab1} alt="MailBox1" />
+      </div>
+      <div className="shipping-card float-2">
+        <img src={MailBoxTab2} alt="MailBox2" />
+      </div>
+    </div>
+
+    {/* Center form */}
+    <div className="shipping-form-container">
+      <h2>Mail Box Form</h2>
+      <form onSubmit={handleMailboxSubmit} className="form-box">
+        <input style={inputStyle} type="text" placeholder="Full Name" required />
+        <input style={inputStyle} type="email" placeholder="Email" required />
+        <input style={inputStyle} type="text" placeholder="Address" required />
+        <button type="submit" style={buttonStyle}>
+          <FaEnvelopeOpenText style={{ marginRight: "6px" }} /> Submit
+        </button>
+      </form>
+    </div>
+
+    {/* Right floating images */}
+    <div className="shipping-side">
+      <div className="shipping-card float-3">
+        <img src={MailBoxTab3} alt="MailBox3" />
+      </div>
+      <div className="shipping-card float-4">
+        <img src={MailBoxTab4} alt="MailBox4" />
+      </div>
+    </div>
+  </section>
+)}
+
+
+ {/* PERSONAL SHOPPER */}
+{currentView === "personalShopper" && (
+  <section className="shipping-section">
+    {/* Left floating images */}
+    <div className="shipping-side">
+      <div className="shipping-card float-3">
+        <img src={PersonalShopperTab3} alt="Personal Shopper 3" />
+      </div>
+      <div className="shipping-card float-1">
+        <img src={PersonalShopperTab1} alt="Personal Shopper 1" />
+      </div>
+    </div>
+
+{/* Center form */}
+<div className="shipping-form-container">
+  <h2>Personal Shopper Form</h2>
+  <form onSubmit={handlePersonalShopperSubmit} className="form-box">
+    <input style={inputStyle} type="text" placeholder="Full Name" required />
+    <input style={inputStyle} type="email" placeholder="Email" required />
+    <input style={inputStyle} type="tel" placeholder="Phone Number" required />
+    <input style={inputStyle} type="text" placeholder="Delivery Address" required />
+    
+    <textarea
+      style={{ ...inputStyle, height: "100px", resize: "vertical" }}
+      placeholder="Item Details (e.g., brand, size, color, etc.)"
+      required
+    ></textarea>
+
+    <input style={inputStyle} type="text" placeholder="Budget Range (e.g., ₹2000 - ₹5000)" />
+    <input style={inputStyle} type="text" placeholder="Preferred Store (optional)" />
+    <input style={inputStyle} type="text" placeholder="Preferred Delivery Date" />
+
+    <button type="submit" style={buttonStyle}>
+      <FaShoppingBag style={{ marginRight: "6px" }} /> Submit Request
+    </button>
+  </form>
+</div>
+
+
+    {/* Right floating images */}
+    <div className="shipping-side">
+      <div className="shipping-card float-2">
+        <img src={PersonalShopperTab2} alt="Personal Shopper 2" />
+      </div>
+      <div className="shipping-card float-4">
+        <img src={PersonalShopperTab4} alt="Personal Shopper 4" />
+      </div>
+    </div>
+  </section>
+)}
+
 
       {/* MY FOODS */}
       {currentView === "myFoods" && <MyFoods />}
@@ -483,5 +588,13 @@ const buttonStyle = {
   fontSize: "1.1rem",
   cursor: "pointer",
 };
+
+
+
+
+
+
+
+
 
 
