@@ -245,11 +245,11 @@ body {
 }
 .offer-card img,
 .offer-card .offer-img {
-  width: 200px;   /* increased size */
-  height: 200px;  /* increased size */
+  width: 300px;   /* increased size */
+  height: 300px;  /* increased size */ 
   margin-bottom: 14px;
   object-fit: contain;
-}
+} 
 .offer-card p {
   margin: 0;
   font-size: 1.1rem;
@@ -298,6 +298,7 @@ body {
   margin-bottom: 10px;
   color: #0077b6;
 }
+
 
 /* Why Choose Us Section */
 .why-choose-us img {

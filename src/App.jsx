@@ -106,54 +106,54 @@ function MyFoods() {
     { id: 3, name: "Atukula Mixture", price: 200, img: atukulaMixture },
     { id: 4, name: "Avisa Ginjala Kaaram", price: 150, img: avisaGinjalaKaaram },
     { id: 5, name: "Bellam Aavakaaya Pickle", price: 300, img: bellamAavakaayaPickle },
-    { id: 6, name: "Biyyam Vadiyaalu", price: 140, img: biyyamVadiyaalu },
-    { id: 7, name: "Boondhi Achhu", price: 400, img: boondiAchhu },
+    { id: 6, name: "Biyyam Vadiyaalu", price: 200, img: biyyamVadiyaalu },
+    { id: 7, name: "Boondhi Achhu", price: 300, img: boondiAchhu },
     { id: 8, name: "Ghee", price: 900, img: ghee },
-    { id: 9, name: "Chicken Kheema Pickle", price: 80, img: chickenKheemaPickle },
-    { id: 10, name: "Chicken Pickle(Bone)", price: 80, img: chickenPickleBone },
-    { id: 11, name: "Chicken Pickle(Boneless)", price: 80, img: chickenPickleBoneless },
-    { id: 12, name: "Coconut Biscuits", price: 80, img: coconutBiscuits },
-    { id: 13, name: "Dhaniya Powder", price: 80, img: dhaniyaPowder },
-    { id: 14, name: "Dry Fish Pickle", price: 80, img: dryFishPickle },
-    { id: 15, name: "Dry Fruit Laddu", price: 80, img: dryFruitLaddu },
-    { id: 16, name: "Dry Prawns Pickle", price: 80, img: dryPrawnsPickle },
-    { id: 17, name: "Fish Pickle Boneless", price: 80, img: fishPickleBoneless },
-    { id: 18, name: "Garam Masala Powder", price: 80, img: garamMasalaPowder },
-    { id: 19, name: "Ginger Pickle", price: 80, img: gingerPickle },
-    { id: 20, name: "Gongura Chicken Pickle(Boneless)", price: 80, img: gonguraChickenPickleBoneless },
-    { id: 21, name: "Gongura Mutton Pickle(Boneless)", price: 80, img: gonguraMuttonPickleBoneless },
-    { id: 22, name: "Gongura Pandu Mirapakai Pickle", price: 80, img: gonguraPanduMirapakaiPickle },
-    { id: 23, name: "Gongura Pickle", price: 80, img: gonguraPickle },
-    { id: 24, name: "Gongura Prawns Pickle(Boneless)", price: 80, img: gonguraPrawnsPickleBoneless },
-    { id: 25, name: "Gummadi Vadiyaalu", price: 80, img: gummadiVadiyaalu },
-    { id: 26, name: "Protein Laddu", price: 80, img: proteinLaddu },
-    { id: 27, name: "Idly Kaaram", price: 80, img: idlyKaaram },
-    { id: 28, name: "Kaakarakaaya Pickle", price: 80, img: kaakarakaayaPickle },
-    { id: 29, name: "Kandhi Kaaram", price: 80, img: kandhiKaaram },
-    { id: 30, name: "Kaaram", price: 80, img: kaaram },
-    { id: 31, name: "Kaarapoosa", price: 80, img: kaaraPoosa },
-    { id: 32, name: "Chekraalu", price: 80, img: chekraalu },
-    { id: 33, name: "Karivepaaku Kaaram", price: 80, img: karivepaakuKaaram },
-    { id: 34, name: "Kobbari Kaaram", price: 80, img: kobbariKaaram },
-    { id: 35, name: "Kura Kaaram", price: 80, img: kuraKaaram },
-    { id: 36, name: "Lemon Pickle", price: 80, img: lemonPickle },
-    { id: 37, name: "Minapa Vadiyaalu", price: 80, img: minapaVadiyaalu },
-    { id: 38, name: "Mushroom Pickle", price: 80, img: mushroomPickle },
-    { id: 39, name: "Mutton Kheema Pickle", price: 80, img: muttonKheemaPickle },
-    { id: 40, name: "Mutton Pickle(Boneless)", price: 80, img: muttonPickleBoneless },
-    { id: 41, name: "Nuvvula Kaaram", price: 80, img: nuvvulaKaaram },
-    { id: 42, name: "Pallila Kaaram", price: 80, img: pallilaKaaram },
-    { id: 43, name: "Pandu Mirapakai Pickle", price: 80, img: panduMirapakaiPickle },
-    { id: 44, name: "Pasupu", price: 80, img: pasupu },
-    { id: 45, name: "Prawns Pickle", price: 80, img: prawnsPickle },
-    { id: 46, name: "Putnaala Kaaram", price: 80, img: putnaalaKaaram },
-    { id: 47, name: "Raagi Murukulu", price: 80, img: raagiMurukulu },
-    { id: 48, name: "Rasam Podi", price: 80, img: rasamPodi },
-    { id: 49, name: "Royya Pottu Podi", price: 80, img: royyaPottuPodi },
-    { id: 50, name: "Saggu Biyyam Vadiyaalu", price: 80, img: sagguBiyyamVadiyaalu },
-    { id: 51, name: "Sambhar Podi", price: 80, img: sambharPodi },
-    { id: 52, name: "Sunnundalu", price: 80, img: sunnundalu },
-    { id: 53, name: "Vellulli Kaaram", price: 80, img: vellulliKaaram },
+    { id: 9, name: "Chicken Kheema Pickle", price: 500, img: chickenKheemaPickle },
+    { id: 10, name: "Chicken Pickle(Bone)", price: 500, img: chickenPickleBone },
+    { id: 11, name: "Chicken Pickle(Boneless)", price: 600, img: chickenPickleBoneless },
+    { id: 12, name: "Coconut Biscuits", price: 300, img: coconutBiscuits },
+    { id: 13, name: "Dhaniya Powder", price: 170, img: dhaniyaPowder },
+    { id: 14, name: "Dry Fish Pickle", price: 600, img: dryFishPickle },
+    { id: 15, name: "Dry Fruit Laddu", price: 600, img: dryFruitLaddu },
+    { id: 16, name: "Dry Prawns Pickle", price: 800, img: dryPrawnsPickle },
+    { id: 17, name: "Fish Pickle Boneless", price: 1000, img: fishPickleBoneless },
+    { id: 18, name: "Garam Masala Powder", price: 350, img: garamMasalaPowder },
+    { id: 19, name: "Ginger Pickle", price: 500, img: gingerPickle },
+    { id: 20, name: "Gongura Chicken Pickle(Boneless)", price: 900, img: gonguraChickenPickleBoneless },
+    { id: 21, name: "Gongura Mutton Pickle(Boneless)", price: 1000, img: gonguraMuttonPickleBoneless },
+    { id: 22, name: "Gongura Pandu Mirapakai Pickle", price: 450, img: gonguraPanduMirapakaiPickle },
+    { id: 23, name: "Gongura Pickle", price: 400, img: gonguraPickle },
+    { id: 24, name: "Gongura Prawns Pickle(Boneless)", price: 1000, img: gonguraPrawnsPickleBoneless },
+    { id: 25, name: "Gummadi Vadiyaalu", price: 250, img: gummadiVadiyaalu },
+    { id: 26, name: "Protein Laddu", price: 800, img: proteinLaddu },
+    { id: 27, name: "Idly Kaaram", price: 200, img: idlyKaaram },
+    { id: 28, name: "Kaakarakaaya Pickle", price: 450, img: kaakarakaayaPickle },
+    { id: 29, name: "Kandhi Kaaram", price: 250, img: kandhiKaaram },
+    { id: 30, name: "Kaaram", price: 300, img: kaaram },
+    { id: 31, name: "Kaarapoosa", price: 400, img: kaaraPoosa },
+    { id: 32, name: "Chekraalu", price: 400, img: chekraalu },
+    { id: 33, name: "Karivepaaku Kaaram", price: 200, img: karivepaakuKaaram },
+    { id: 34, name: "Kobbari Kaaram", price: 200, img: kobbariKaaram },
+    { id: 35, name: "Kura Kaaram", price: 180, img: kuraKaaram },
+    { id: 36, name: "Lemon Pickle", price: 500, img: lemonPickle },
+    { id: 37, name: "Minapa Vadiyaalu", price: 200, img: minapaVadiyaalu },
+    { id: 38, name: "Mushroom Pickle", price: 800, img: mushroomPickle },
+    { id: 39, name: "Mutton Kheema Pickle", price: 1700, img: muttonKheemaPickle },
+    { id: 40, name: "Mutton Pickle(Boneless)", price: 2000, img: muttonPickleBoneless },
+    { id: 41, name: "Nuvvula Kaaram", price: 200, img: nuvvulaKaaram },
+    { id: 42, name: "Pallila Kaaram", price: 200, img: pallilaKaaram },
+    { id: 43, name: "Pandu Mirapakai Pickle", price: 600, img: panduMirapakaiPickle },
+    { id: 44, name: "Pasupu", price: 90, img: pasupu },
+    { id: 45, name: "Prawns Pickle", price: 1200, img: prawnsPickle },
+    { id: 46, name: "Putnaala Kaaram", price: 200, img: putnaalaKaaram },
+    { id: 47, name: "Raagi Murukulu", price: 500, img: raagiMurukulu },
+    { id: 48, name: "Rasam Podi", price: 100, img: rasamPodi },
+    { id: 49, name: "Royya Pottu Podi", price: 200, img: royyaPottuPodi },
+    { id: 50, name: "Saggu Biyyam Vadiyaalu", price: 200, img: sagguBiyyamVadiyaalu },
+    { id: 51, name: "Sambhar Podi", price: 125, img: sambharPodi },
+    { id: 52, name: "Sunnundalu", price: 500, img: sunnundalu },
+    { id: 53, name: "Vellulli Kaaram", price: 180, img: vellulliKaaram },
   ];
 
   const addToCart = (item) => setCart((prev) => [...prev, item]);
@@ -208,9 +208,9 @@ export default function App() {
   };
 
  const slides = [
-    { main: Image1, left: MailBoxExtra2, right: PersonalShopperExtra2 },
-    { main: Image2, left: PersonalShopperExtra1, right: ShippingExtra2 }, 
-    { main: Image3, left: ShippingExtra1, right: MailBoxExtra1 } 
+    { main: Image1, left: Image2, right: Image3 },
+    { main: Image2, left: Image1, right: Image3 }, 
+    { main: Image3, left: Image2, right: Image1 } 
   ];
 
   const prohibitedItemsLeft = ["Food and Perishables","Fruits and Vegetables","Raw Rice Flours","Liquids and Semi-liquids","Drugs and Narcotics","Electrical Product","Corpses","Indian Passport","Non-Veg Pickles","Gambling Devices","Firearms","Semi-Precious Items","IATA Restricted Items","Philately Items"];
@@ -267,23 +267,35 @@ export default function App() {
           </section>
 
           {/* Services */}
-          <section className="services fade-in">
-            <div className="service-card">
-              <FaShippingFast className="icon" />
-              <h3>Shipping</h3>
-              <p>Fast delivery at ₹640/kg worldwide.</p>
-            </div>
-            <div className="service-card" onClick={() => setCurrentView("mailbox")} style={{ cursor: "pointer" }}>
-              <FaEnvelopeOpenText className="icon" />
-              <h3>Mail Box</h3>
-              <p>Order from e-commerce and Indian stores.</p>
-            </div>
-            <div className="service-card" onClick={() => setCurrentView("personalShopper")} style={{ cursor: "pointer" }}>
-              <FaShoppingBag className="icon" />
-              <h3>Personal Shopper</h3>
-              <p>Shop from any Indian store through your own shopper.</p>
-            </div>
-          </section>
+<section className="services fade-in">
+  <div className="service-card" onClick={() => setCurrentView("shipping")} style={{ cursor: "pointer" }}>
+    <FaShippingFast className="icon" />
+    <h3>Shipping</h3>
+    <p>Fast delivery at ₹640/kg worldwide.</p>
+    <small style={{ color: "#0077b6", fontWeight: "600" }}>
+      Affordable global shipping with real-time tracking, safe packaging & express delivery options.
+    </small>
+  </div>
+  
+  <div className="service-card" onClick={() => setCurrentView("mailbox")} style={{ cursor: "pointer" }}>
+    <FaEnvelopeOpenText className="icon" />
+    <h3>Mail Box</h3>
+    <p>Order from e-commerce and Indian stores.</p>
+    <small style={{ color: "#0077b6", fontWeight: "600" }}>
+      Get your own Indian virtual address to receive orders from Amazon, Flipkart & any local store.
+    </small>
+  </div>
+  
+  <div className="service-card" onClick={() => setCurrentView("personalShopper")} style={{ cursor: "pointer" }}>
+    <FaShoppingBag className="icon" />
+    <h3>Personal Shopper</h3>
+    <p>Shop from any Indian store through your own shopper.</p>
+    <small style={{ color: "#0077b6", fontWeight: "600" }}>
+      Can't shop yourself? Our personal shoppers will buy, pack & ship items on your behalf!
+    </small>
+  </div>
+</section>
+
 
           {/* Intro */}
           <section className="intro-section fade-in" style={{ display: "flex", alignItems: "center", padding: "40px 20px", maxWidth: "1100px", margin: "40px auto", gap: "40px", flexWrap: "wrap", background: "white", borderRadius: "12px", boxShadow: "0 5px 20px rgba(0,0,0,0.1)", color: "#023e8a" }}>
@@ -319,7 +331,7 @@ export default function App() {
     <div className="offer-card">
       <FaEnvelopeOpenText className="offer-icon" />
       <img src={OfferMails} alt="Free Mails Offer" />
-      <p>3 Monthly Free Mails</p>
+      <p>3 Monthly Free Shipping</p> 
     </div>
     <div className="offer-card">
       <FaShoppingBag className="offer-icon" />
@@ -329,15 +341,41 @@ export default function App() {
   </div>
 </section> 
 
-          {/* How it works */}
-          <section className="how-it-works zoom-in">
-            <h2>How It Works</h2>
-            <div className="steps">
-              <div><span className="step-number">1</span><p>Sign up and get your unique Indian address.</p></div>
-              <div><span className="step-number">2</span><p>Shop from any Indian store and send to your address.</p></div>
-              <div><span className="step-number">3</span><p>We ship your items to your doorstep worldwide.</p></div>
-            </div>
-          </section>
+{/* How it works */}
+<section className="how-it-works zoom-in">
+  <h2>How It Works</h2>
+  <div className="steps">
+    <div>
+      <span className="step-number">1</span>
+      <h3>Get Your Indian Address</h3>
+      <p>
+        Sign up for ShipEase and instantly get your own <strong>unique Indian mailbox address</strong>.  
+        Use this address while shopping from any Indian store or marketplace.
+      </p>
+    </div>
+
+    <div>
+      <span className="step-number">2</span>
+      <h3>Personal Shopper Assistance</h3>
+      <p>
+        Can't purchase directly from Indian websites? No worries!  
+        Our <strong>Personal Shopper</strong> helps you buy products from any Indian store  
+        and delivers them to your ShipEase Address.
+      </p>
+    </div>
+
+    <div>
+      <span className="step-number">3</span>
+      <h3>Fast & Reliable Shipping</h3>
+      <p>
+        Once your items reach your ShipEase Address, we carefully pack, consolidate,  
+        and <strong>ship them to your doorstep worldwide</strong> at the best rates.  
+        Track your package in real-time until it arrives!
+      </p>
+    </div>
+  </div>
+</section>
+
 
           {/* Why choose us */}
           <section className="why-choose-us" style={{ backgroundColor: "#cce7ff", padding: "40px 20px", textAlign: "center", display: "flex", justifyContent: "center" }}>
@@ -588,13 +626,4 @@ const buttonStyle = {
   fontSize: "1.1rem",
   cursor: "pointer",
 };
-
-
-
-
-
-
-
-
-
 
