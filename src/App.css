@@ -24,6 +24,8 @@ body {
 }
 
 /* Navbar */
+/* === UPDATED NAVBAR STYLES === */
+
 .navbar {
   background: linear-gradient(90deg, #0077b6, #00b4d8);
   color: white;
@@ -31,42 +33,82 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-  flex-wrap: wrap;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
-.navbar .logo {
-  font-weight: 700;
+
+.logo {
   font-size: 1.6rem;
+  font-weight: bold;
   user-select: none;
 }
-.navbar nav {
+
+/* Hamburger Toggle */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  color: white;
+}
+
+/* Default Navbar */
+.nav-links {
   display: flex;
-  flex-wrap: wrap;
   gap: 12px;
   align-items: center;
+  transition: all 0.3s ease;
+  overflow-x: auto;
+  scrollbar-width: none;
 }
-.navbar nav a {
+
+.nav-links::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-links button,
+.nav-links a {
+  background: transparent;
+  border: none;
   color: white;
-  text-decoration: none;
+  font-size: 1rem;
+  padding: 8px 12px;
+  cursor: pointer;
   font-weight: 500;
-  position: relative;
-  transition: color 0.3s ease;
+  text-decoration: none;
+  white-space: nowrap;
 }
-.navbar nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 0%;
-  height: 2px;
-  background: white;
-  transition: width 0.3s ease;
-}
-.navbar nav a:hover {
+
+.nav-links button:hover,
+.nav-links a:hover {
   color: #ffdd57;
 }
-.navbar nav a:hover::after {
-  width: 100%;
+
+/* Mobile Responsive Navbar */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #0077b6;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    max-height: 500px;
+    padding: 15px 0;
+  }
 }
 
 /* Carousel Section */

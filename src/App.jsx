@@ -211,12 +211,12 @@ export default function App() {
     slidesToShow: 3, // number of nav buttons visible at a time
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 4000,
     arrows: false,
     pauseOnHover: false,
   };
 
-  
+
    const sliderSettings = {
     dots: true,
     infinite: true,
