@@ -270,18 +270,21 @@ export default function App() {
 
   return (
     <>
-     <header className="navbar">
+ <header className="navbar">
   <h1 className="logo">ShipEase</h1>
 
-  {/* Hamburger for mobile */}
-  <button
-    className="menu-toggle"
-    onClick={() => setMenuOpen((prev) => !prev)}
+  {/* Hamburger Icon for Mobile */}
+  <div
+    className="hamburger"
+    onClick={() => setMenuOpen(!menuOpen)}
     aria-label="Toggle Menu"
   >
-    {menuOpen ? "✕" : "☰"}
-  </button>
+    <span className={`bar ${menuOpen ? "open" : ""}`}></span>
+    <span className={`bar ${menuOpen ? "open" : ""}`}></span>
+    <span className={`bar ${menuOpen ? "open" : ""}`}></span>
+  </div>
 
+  {/* Navigation Links */}
   <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
     <button onClick={() => setCurrentView("home")} className={`nav-button ${currentView === "home" ? "active" : ""}`} type="button">Home</button>
     <button onClick={() => setCurrentView("shipping")} className={`nav-button ${currentView === "shipping" ? "active" : ""}`} type="button">Shipping</button>
