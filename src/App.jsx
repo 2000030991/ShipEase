@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react"; 
 import Slider from "react-slick";
 import { FaShippingFast, FaEnvelopeOpenText, FaShoppingBag, FaUserCircle } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
@@ -195,8 +195,28 @@ export default function App() {
   const [currentView, setCurrentView] = useState("home");
   const [accountTab, setAccountTab] = useState("signup");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const navSliderRef = useRef(null);
 
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
+    const navSliderSettings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3, // number of nav buttons visible at a time
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: false,
+    pauseOnHover: false,
+  };
+
+  
    const sliderSettings = {
     dots: true,
     infinite: true,
