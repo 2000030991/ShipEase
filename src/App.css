@@ -767,14 +767,14 @@ body {
   color: white;
 }
 
-/* Other nav links container */
+/* Other nav links */
 .nav-links {
   display: flex;
-  flex-wrap: nowrap;      /* Keep all tabs in a single row */
+  flex-wrap: nowrap;
   gap: 15px;
   list-style: none;
-  overflow-x: auto;       /* Enable horizontal scrolling */
-  white-space: nowrap;    /* Prevent wrapping to next line */
+  overflow-x: auto;
+  white-space: nowrap;
   padding-bottom: 5px;
   margin-bottom: 15px;
 }
@@ -785,7 +785,7 @@ body {
   font-weight: bold;
 }
 
-/* E-commerce links default (desktop view) */
+/* Default e-commerce links layout for laptop/desktop */
 .ecom-links {
   display: flex;
   gap: 20px;
@@ -815,25 +815,16 @@ body {
   gap: 5px;
 }
 
-/* Mobile-specific changes */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-links {
-    width: 100%;
-    justify-content: flex-start;
-  }
-
-  /* Make Amazon → Ajio appear in 2 rows on mobile */
+/* ---------- MOBILE VIEW FIX ---------- */
+@media screen and (max-width: 768px) {
+  /* Override the flex layout on mobile */
   .ecom-links {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
+    display: grid !important; /* Force grid on mobile */
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row */
     gap: 12px 20px;
-    justify-content: center;
+    justify-items: center;
     width: 100%;
-    padding-top: 5px;
+    margin-top: 10px;
   }
 }
+
