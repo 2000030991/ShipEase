@@ -195,7 +195,7 @@ export default function App() {
   const [currentView, setCurrentView] = useState("home");
   const [accountTab, setAccountTab] = useState("signup");
 
-  const sliderSettings = {
+   const sliderSettings = {
     dots: true,
     infinite: true,
     speed: 600,
@@ -205,7 +205,31 @@ export default function App() {
     autoplaySpeed: 4000,
     arrows: false,
     pauseOnHover: false,
+    responsive: [
+      {
+        breakpoint: 1024, // Tablets
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768, // Large Mobiles
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480, // Small Mobiles
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
+
 
  const slides = [
     { main: Image1, left: Image2, right: Image3 },
