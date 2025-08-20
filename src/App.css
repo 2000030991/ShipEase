@@ -756,75 +756,71 @@ body {
 }
 
 
-
-/* Navbar container */
-.navbar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #0077ff;
+/* Mobile hamburger button */
+.mobile-menu-toggle {
+  display: none;
+  font-size: 24px;
   color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-/* Other nav links */
+/* Hide menu on mobile by default */
 .nav-links {
   display: flex;
-  flex-wrap: nowrap;
   gap: 15px;
   list-style: none;
-  overflow-x: auto;
-  white-space: nowrap;
-  padding-bottom: 5px;
-  margin-bottom: 15px;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
 }
 
-.nav-links li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* Default e-commerce links layout for laptop/desktop */
+/* E-commerce default desktop layout */
 .ecom-links {
   display: flex;
   gap: 20px;
   flex-wrap: nowrap;
-  margin-bottom: 15px;
 }
 
-.ecom-links a {
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 14px;
-  transition: color 0.2s ease;
-}
-
-.ecom-links a:hover {
-  color: #ffeb3b;
-}
-
-/* Account section */
-.account {
-  margin-top: 10px;
-  font-weight: bold;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-/* ---------- MOBILE VIEW FIX ---------- */
+/* --- Responsive Styles --- */
 @media screen and (max-width: 768px) {
-  /* Override the flex layout on mobile */
+  /* Show hamburger icon */
+  .mobile-menu-toggle {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  /* Hide nav links by default */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #0077ff;
+    padding: 15px 0;
+    text-align: center;
+  }
+
+  /* Show nav links when menu is open */
+  .nav-links.show {
+    display: flex;
+  }
+
+  /* E-commerce links in 2 rows on mobile */
   .ecom-links {
-    display: grid !important; /* Force grid on mobile */
-    grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
     gap: 12px 20px;
     justify-items: center;
+    margin-top: 12px;
     width: 100%;
-    margin-top: 10px;
+  }
+
+  .ecom-links a {
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
   }
 }
-

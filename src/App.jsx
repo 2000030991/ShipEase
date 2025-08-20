@@ -249,10 +249,10 @@ export default function App() {
 
   return (
     <>
-  <header className="navbar">
+<header className="navbar">
   <h1 className="logo">ShipEase</h1>
 
-  {/* Hamburger Button for Mobile */}
+  {/* Hamburger Icon */}
   <button
     className="mobile-menu-toggle"
     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -260,6 +260,7 @@ export default function App() {
     {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
   </button>
 
+  {/* Navigation Menu */}
   <nav className={`nav-links ${isMobileMenuOpen ? "show" : ""}`}>
     <button onClick={() => { setCurrentView("home"); setIsMobileMenuOpen(false); }}
       className={`nav-button ${currentView === "home" ? "active" : ""}`}
@@ -281,16 +282,15 @@ export default function App() {
       className={`nav-button ${currentView === "myFoods" ? "active" : ""}`}
       type="button">My Foods</button>
 
-        <div className="ecom-links">
-    <a href="#amazon">Amazon</a>
-    <a href="#flipkart">Flipkart</a>
-    <a href="#myntra">Myntra</a>
-    <a href="#meesho">Meesho</a>
-    <a href="#nykaa">Nykaa</a>
-    <a href="#ajio">Ajio</a>
-  </div> 
-
-
+    {/* E-commerce Links */}
+    <div className="ecom-links">
+      <a href="https://www.amazon.in" target="_blank" rel="noopener noreferrer">Amazon</a>
+      <a href="https://www.flipkart.com" target="_blank" rel="noopener noreferrer">Flipkart</a>
+      <a href="https://www.myntra.com" target="_blank" rel="noopener noreferrer">Myntra</a>
+      <a href="https://www.meesho.com" target="_blank" rel="noopener noreferrer">Meesho</a>
+      <a href="https://www.nykaa.com" target="_blank" rel="noopener noreferrer">Nykaa</a>
+      <a href="https://www.ajio.com" target="_blank" rel="noopener noreferrer">Ajio</a>
+    </div>
 
     <button onClick={() => { setCurrentView("account"); setIsMobileMenuOpen(false); }}
       className={`nav-button ${currentView === "account" ? "active" : ""}`}
@@ -685,4 +685,6 @@ const buttonStyle = {
   fontSize: "1.1rem",
   cursor: "pointer",
 };
+
+
 
