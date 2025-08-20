@@ -194,6 +194,8 @@ function MyFoods() {
 export default function App() {
   const [currentView, setCurrentView] = useState("home");
   const [accountTab, setAccountTab] = useState("signup");
+  const [menuOpen, setMenuOpen] = useState(false);
+
 
    const sliderSettings = {
     dots: true,
@@ -248,23 +250,36 @@ export default function App() {
 
   return (
     <>
-      <header className="navbar">
-        <h1 className="logo">ShipEase</h1>
-        <nav className="nav-links">
-          <button onClick={() => setCurrentView("home")} className={`nav-button ${currentView === "home" ? "active" : ""}`} type="button">Home</button>
-          <button onClick={() => setCurrentView("shipping")} className={`nav-button ${currentView === "shipping" ? "active" : ""}`} type="button">Shipping</button>
-          <button onClick={() => setCurrentView("mailbox")} className={`nav-button ${currentView === "mailbox" ? "active" : ""}`} type="button">Mail Box</button>
-          <button onClick={() => setCurrentView("personalShopper")} className={`nav-button ${currentView === "personalShopper" ? "active" : ""}`} type="button">Personal Shopper</button>
-          <button onClick={() => setCurrentView("myFoods")} className={`nav-button ${currentView === "myFoods" ? "active" : ""}`} type="button">My Foods</button>
-          <a href="https://www.amazon.in" target="_blank" rel="noopener noreferrer">Amazon</a>
-          <a href="https://www.flipkart.com" target="_blank" rel="noopener noreferrer">Flipkart</a>
-          <a href="https://www.myntra.com" target="_blank" rel="noopener noreferrer">Myntra</a>
-          <a href="https://www.meesho.com" target="_blank" rel="noopener noreferrer">Meesho</a>
-          <a href="https://www.nykaa.com" target="_blank" rel="noopener noreferrer">Nykaa</a>
-          <a href="https://www.ajio.com" target="_blank" rel="noopener noreferrer">Ajio</a>
-          <button onClick={() => setCurrentView("account")} className={`nav-button ${currentView === "account" ? "active" : ""}`} type="button"><FaUserCircle style={{ verticalAlign: "middle", marginRight: "6px" }} />Account</button>
-        </nav>
-      </header>
+     <header className="navbar">
+  <h1 className="logo">ShipEase</h1>
+
+  {/* Hamburger for mobile */}
+  <button
+    className="menu-toggle"
+    onClick={() => setMenuOpen((prev) => !prev)}
+    aria-label="Toggle Menu"
+  >
+    {menuOpen ? "✕" : "☰"}
+  </button>
+
+  <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
+    <button onClick={() => setCurrentView("home")} className={`nav-button ${currentView === "home" ? "active" : ""}`} type="button">Home</button>
+    <button onClick={() => setCurrentView("shipping")} className={`nav-button ${currentView === "shipping" ? "active" : ""}`} type="button">Shipping</button>
+    <button onClick={() => setCurrentView("mailbox")} className={`nav-button ${currentView === "mailbox" ? "active" : ""}`} type="button">Mail Box</button>
+    <button onClick={() => setCurrentView("personalShopper")} className={`nav-button ${currentView === "personalShopper" ? "active" : ""}`} type="button">Personal Shopper</button>
+    <button onClick={() => setCurrentView("myFoods")} className={`nav-button ${currentView === "myFoods" ? "active" : ""}`} type="button">My Foods</button>
+    <a href="https://www.amazon.in" target="_blank" rel="noopener noreferrer">Amazon</a>
+    <a href="https://www.flipkart.com" target="_blank" rel="noopener noreferrer">Flipkart</a>
+    <a href="https://www.myntra.com" target="_blank" rel="noopener noreferrer">Myntra</a>
+    <a href="https://www.meesho.com" target="_blank" rel="noopener noreferrer">Meesho</a>
+    <a href="https://www.nykaa.com" target="_blank" rel="noopener noreferrer">Nykaa</a>
+    <a href="https://www.ajio.com" target="_blank" rel="noopener noreferrer">Ajio</a>
+    <button onClick={() => setCurrentView("account")} className={`nav-button ${currentView === "account" ? "active" : ""}`} type="button">
+      <FaUserCircle style={{ verticalAlign: "middle", marginRight: "6px" }} />
+      Account
+    </button>
+  </nav>
+</header>
 
 
    {/* HOME */}
@@ -650,4 +665,6 @@ const buttonStyle = {
   fontSize: "1.1rem",
   cursor: "pointer",
 };
+
+
 

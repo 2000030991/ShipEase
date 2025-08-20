@@ -41,40 +41,32 @@ body {
 }
 .navbar nav {
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
   align-items: center;
-
-  /* keep items in one row, preserve order */
-  flex-wrap: nowrap;
-
-  /* allow sideways scroll on small screens */
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-
-  /* nicer snapping when swiping */
-  scroll-snap-type: x proximity;
 }
-
-/* each item stays its size; no shrinking */
-.navbar nav > a,
-.navbar nav > button,
-.navbar nav > div {
-  flex: 0 0 auto;
-  white-space: nowrap;
-  scroll-snap-align: center;
+.navbar nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
 }
-
-/* optional: subtle scrollbar styling */
-.navbar nav::-webkit-scrollbar {
-  height: 6px;
+.navbar nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: white;
+  transition: width 0.3s ease;
 }
-.navbar nav::-webkit-scrollbar-thumb {
-  background: rgba(255,255,255,0.35);
-  border-radius: 4px;
+.navbar nav a:hover {
+  color: #ffdd57;
 }
-.navbar nav::-webkit-scrollbar-track {
-  background: transparent;
+.navbar nav a:hover::after {
+  width: 100%;
 }
 
 /* Carousel Section */
@@ -98,7 +90,6 @@ body {
 }
 
 /* Side cards */
-/* Side cards */
 .side-card {
   flex: 0 0 18%;
   max-width: 18%;
@@ -119,7 +110,6 @@ body {
   user-select: none;
   pointer-events: none;
 }
-
 
 /* Main slide */
 .slide {
@@ -758,6 +748,7 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
+
 
 @media (max-width: 768px) {
   .side-card {
