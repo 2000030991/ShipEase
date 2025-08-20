@@ -24,8 +24,6 @@ body {
 }
 
 /* Navbar */
-/* === UPDATED NAVBAR STYLES === */
-
 .navbar {
   background: linear-gradient(90deg, #0077b6, #00b4d8);
   color: white;
@@ -33,82 +31,42 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  flex-wrap: wrap;
 }
-
-.logo {
+.navbar .logo {
+  font-weight: 700;
   font-size: 1.6rem;
-  font-weight: bold;
   user-select: none;
 }
-
-/* Hamburger Toggle */
-.menu-toggle {
-  display: none;
-  cursor: pointer;
-  color: white;
-}
-
-/* Default Navbar */
-.nav-links {
+.navbar nav {
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
   align-items: center;
-  transition: all 0.3s ease;
-  overflow-x: auto;
-  scrollbar-width: none;
 }
-
-.nav-links::-webkit-scrollbar {
-  display: none;
-}
-
-.nav-links button,
-.nav-links a {
-  background: transparent;
-  border: none;
+.navbar nav a {
   color: white;
-  font-size: 1rem;
-  padding: 8px 12px;
-  cursor: pointer;
-  font-weight: 500;
   text-decoration: none;
-  white-space: nowrap;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
 }
-
-.nav-links button:hover,
-.nav-links a:hover {
+.navbar nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: white;
+  transition: width 0.3s ease;
+}
+.navbar nav a:hover {
   color: #ffdd57;
 }
-
-/* Mobile Responsive Navbar */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background-color: #0077b6;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
-    z-index: 999;
-  }
-
-  .nav-links.active {
-    max-height: 500px;
-    padding: 15px 0;
-  }
+.navbar nav a:hover::after {
+  width: 100%;
 }
 
 /* Carousel Section */
@@ -791,80 +749,66 @@ body {
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
-
 @media (max-width: 768px) {
   .side-card {
     display: none;
   }
 }
 
-/* Responsive Navbar Fix */
-.hamburger {
+
+
+/* ============================ */
+/* ✅ Mobile Navbar Enhancements */
+/* ============================ */
+.mobile-menu-toggle {
   display: none;
-  flex-direction: column;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
   cursor: pointer;
-  gap: 5px;
+  margin-left: auto;
 }
 
-.hamburger .bar {
-  height: 3px;
-  width: 25px;
-  background: white;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-.nav-links {
-  display: flex;
-  gap: 15px;
-  transition: max-height 0.3s ease-in-out;
-}
-
-/* Mobile Styles */
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex;
+  .mobile-menu-toggle {
+    display: block;
   }
 
   .nav-links {
+    display: none;
     position: absolute;
     top: 65px;
     left: 0;
     width: 100%;
     background: #0077b6;
     flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    max-height: 0;
-    padding: 0;
     gap: 10px;
-    transition: max-height 0.3s ease-in-out;
-    z-index: 10;
+    padding: 15px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    z-index: 999;
+    max-height: 80vh;
+    overflow-y: auto; /* ✅ Scrollable if too many links */
+    text-align: center;
   }
 
-  .nav-links.open {
-    max-height: 500px;
-    padding: 10px 0;
+  .nav-links.show {
+    display: flex;
   }
 
   .nav-links a,
-  .nav-links .nav-button {
+  .nav-links button {
     padding: 12px;
     width: 100%;
     text-align: center;
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    background-color: transparent;
-    cursor: pointer;
+    border-radius: 0;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   }
 
-  .nav-links a:hover,
-  .nav-links .nav-button:hover {
-    background-color: #00b4d8;
-    color: #ffdd57;
+  .navbar {
+    flex-wrap: nowrap;
+    position: relative;
   }
 }
-
 

@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useRef } from "react"; 
+import React, { useState } from "react";
 import Slider from "react-slick";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { FaShippingFast, FaEnvelopeOpenText, FaShoppingBag, FaUserCircle } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick-theme.css"; 
 
 import Image1 from "./assets/Image1.png";
 import Image2 from "./assets/Image2.png";
@@ -194,29 +195,7 @@ function MyFoods() {
 export default function App() {
   const [currentView, setCurrentView] = useState("home");
   const [accountTab, setAccountTab] = useState("signup");
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-  const navSliderRef = useRef(null);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-    const navSliderSettings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3, // number of nav buttons visible at a time
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    arrows: false,
-    pauseOnHover: false,
-  };
-
-
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
    const sliderSettings = {
     dots: true,
     infinite: true,
@@ -270,34 +249,48 @@ export default function App() {
 
   return (
     <>
- <header className="navbar">
+  <header className="navbar">
   <h1 className="logo">ShipEase</h1>
 
-  {/* Hamburger Icon for Mobile */}
-  <div
-    className="hamburger"
-    onClick={() => setMenuOpen(!menuOpen)}
-    aria-label="Toggle Menu"
+  {/* Hamburger Button for Mobile */}
+  <button
+    className="mobile-menu-toggle"
+    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
   >
-    <span className={`bar ${menuOpen ? "open" : ""}`}></span>
-    <span className={`bar ${menuOpen ? "open" : ""}`}></span>
-    <span className={`bar ${menuOpen ? "open" : ""}`}></span>
-  </div>
+    {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+  </button>
 
-  {/* Navigation Links */}
-  <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
-    <button onClick={() => setCurrentView("home")} className={`nav-button ${currentView === "home" ? "active" : ""}`} type="button">Home</button>
-    <button onClick={() => setCurrentView("shipping")} className={`nav-button ${currentView === "shipping" ? "active" : ""}`} type="button">Shipping</button>
-    <button onClick={() => setCurrentView("mailbox")} className={`nav-button ${currentView === "mailbox" ? "active" : ""}`} type="button">Mail Box</button>
-    <button onClick={() => setCurrentView("personalShopper")} className={`nav-button ${currentView === "personalShopper" ? "active" : ""}`} type="button">Personal Shopper</button>
-    <button onClick={() => setCurrentView("myFoods")} className={`nav-button ${currentView === "myFoods" ? "active" : ""}`} type="button">My Foods</button>
+  <nav className={`nav-links ${isMobileMenuOpen ? "show" : ""}`}>
+    <button onClick={() => { setCurrentView("home"); setIsMobileMenuOpen(false); }}
+      className={`nav-button ${currentView === "home" ? "active" : ""}`}
+      type="button">Home</button>
+
+    <button onClick={() => { setCurrentView("shipping"); setIsMobileMenuOpen(false); }}
+      className={`nav-button ${currentView === "shipping" ? "active" : ""}`}
+      type="button">Shipping</button>
+
+    <button onClick={() => { setCurrentView("mailbox"); setIsMobileMenuOpen(false); }}
+      className={`nav-button ${currentView === "mailbox" ? "active" : ""}`}
+      type="button">Mail Box</button>
+
+    <button onClick={() => { setCurrentView("personalShopper"); setIsMobileMenuOpen(false); }}
+      className={`nav-button ${currentView === "personalShopper" ? "active" : ""}`}
+      type="button">Personal Shopper</button>
+
+    <button onClick={() => { setCurrentView("myFoods"); setIsMobileMenuOpen(false); }}
+      className={`nav-button ${currentView === "myFoods" ? "active" : ""}`}
+      type="button">My Foods</button>
+
     <a href="https://www.amazon.in" target="_blank" rel="noopener noreferrer">Amazon</a>
     <a href="https://www.flipkart.com" target="_blank" rel="noopener noreferrer">Flipkart</a>
     <a href="https://www.myntra.com" target="_blank" rel="noopener noreferrer">Myntra</a>
     <a href="https://www.meesho.com" target="_blank" rel="noopener noreferrer">Meesho</a>
     <a href="https://www.nykaa.com" target="_blank" rel="noopener noreferrer">Nykaa</a>
     <a href="https://www.ajio.com" target="_blank" rel="noopener noreferrer">Ajio</a>
-    <button onClick={() => setCurrentView("account")} className={`nav-button ${currentView === "account" ? "active" : ""}`} type="button">
+
+    <button onClick={() => { setCurrentView("account"); setIsMobileMenuOpen(false); }}
+      className={`nav-button ${currentView === "account" ? "active" : ""}`}
+      type="button">
       <FaUserCircle style={{ verticalAlign: "middle", marginRight: "6px" }} />
       Account
     </button>
@@ -688,6 +681,4 @@ const buttonStyle = {
   fontSize: "1.1rem",
   cursor: "pointer",
 };
-
-
 
