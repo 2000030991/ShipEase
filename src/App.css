@@ -756,65 +756,95 @@ body {
 }
 
 
-/* Mobile hamburger button */
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #0077ff;
+  color: white;
+  position: relative;
+}
+
+/* Logo */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Hamburger Button */
 .mobile-menu-toggle {
   display: none;
-  font-size: 24px;
+  font-size: 26px;
   color: white;
   background: none;
   border: none;
   cursor: pointer;
 }
 
-/* Hide menu on mobile by default */
+/* Default nav links */
 .nav-links {
   display: flex;
   gap: 15px;
-  list-style: none;
   align-items: center;
-  transition: all 0.3s ease-in-out;
 }
 
-/* E-commerce default desktop layout */
+/* E-commerce desktop layout */
 .ecom-links {
   display: flex;
-  gap: 20px;
+  gap: 15px;
   flex-wrap: nowrap;
 }
 
-/* --- Responsive Styles --- */
+.ecom-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.ecom-links a:hover {
+  color: #ffeb3b;
+}
+
+/* ---------- MOBILE VIEW ---------- */
 @media screen and (max-width: 768px) {
-  /* Show hamburger icon */
+  /* Show hamburger icon on mobile */
   .mobile-menu-toggle {
     display: block;
     position: absolute;
-    top: 20px;
     right: 20px;
+    top: 18px;
   }
 
-  /* Hide nav links by default */
+  /* Hide menu by default */
   .nav-links {
     display: none;
     flex-direction: column;
     width: 100%;
     background-color: #0077ff;
     padding: 15px 0;
-    text-align: center;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: max-height 0.3s ease-in-out;
   }
 
-  /* Show nav links when menu is open */
+  /* Show menu when open */
   .nav-links.show {
     display: flex;
   }
 
-  /* E-commerce links in 2 rows on mobile */
+  /* E-commerce grid in mobile */
   .ecom-links {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr);
     gap: 12px 20px;
     justify-items: center;
-    margin-top: 12px;
     width: 100%;
+    margin-top: 12px;
   }
 
   .ecom-links a {
@@ -824,3 +854,4 @@ body {
     font-weight: bold;
   }
 }
+
