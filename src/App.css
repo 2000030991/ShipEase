@@ -770,28 +770,24 @@ body {
 /* Nav links container */
 .nav-links {
   display: flex;
-  flex-wrap: nowrap;          /* Prevent items from going into multiple rows */
+  flex-wrap: nowrap;        /* Keep all tabs in a single row */
   gap: 15px;
   list-style: none;
-  overflow-x: auto;           /* Allow horizontal scrolling if needed */
-  scrollbar-width: none;      /* Hide scrollbar for Firefox */
-}
-
-.nav-links::-webkit-scrollbar {
-  display: none;              /* Hide scrollbar for Chrome, Safari */
+  overflow-x: auto;         /* Enable horizontal scrolling */
+  white-space: nowrap;      /* Prevent wrapping to next line */
+  padding-bottom: 5px;      /* Adds space for scrollbar */
 }
 
 .nav-links li a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  white-space: nowrap;        /* Prevent text from wrapping */
 }
 
-/* Make it mobile-friendly */
+/* Show scrollbar on mobile */
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: row; 
+    flex-direction: column;
     align-items: flex-start;
   }
 
