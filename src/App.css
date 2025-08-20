@@ -760,22 +760,23 @@ body {
 /* Navbar container */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   padding: 10px 20px;
   background-color: #0077ff;
   color: white;
 }
 
-/* Nav links container */
+/* Other nav links container */
 .nav-links {
   display: flex;
-  flex-wrap: nowrap;        /* Keep all tabs in a single row */
+  flex-wrap: nowrap;      /* Keep all tabs in a single row */
   gap: 15px;
   list-style: none;
-  overflow-x: auto;         /* Enable horizontal scrolling */
-  white-space: nowrap;      /* Prevent wrapping to next line */
-  padding-bottom: 5px;      /* Adds space for scrollbar */
+  overflow-x: auto;       /* Enable horizontal scrolling */
+  white-space: nowrap;    /* Prevent wrapping to next line */
+  padding-bottom: 5px;
+  margin-bottom: 15px;
 }
 
 .nav-links li a {
@@ -784,7 +785,37 @@ body {
   font-weight: bold;
 }
 
-/* Show scrollbar on mobile */
+/* E-commerce links default (desktop view) */
+.ecom-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: nowrap;
+  margin-bottom: 15px;
+}
+
+.ecom-links a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.ecom-links a:hover {
+  color: #ffeb3b;
+}
+
+/* Account section */
+.account {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Mobile-specific changes */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -794,5 +825,15 @@ body {
   .nav-links {
     width: 100%;
     justify-content: flex-start;
+  }
+
+  /* Make Amazon → Ajio appear in 2 rows on mobile */
+  .ecom-links {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 12px 20px;
+    justify-content: center;
+    width: 100%;
+    padding-top: 5px;
   }
 }
