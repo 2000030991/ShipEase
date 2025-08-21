@@ -837,46 +837,46 @@ body {
   border: none;
   color: white;
   cursor: pointer;
-  z-index: 120; /* Always on top */
+  z-index: 200; /* Always on top */
   position: absolute;
   top: 15px;
-  right: 20px; /* Stick to top-right corner */
+  right: 20px; /* Stick to top-right */
 }
 
 /* ✅ Mobile-specific styles */
 @media (max-width: 768px) {
   .navbar {
     display: flex !important;
-    flex-direction: row !important; /* Horizontal layout */
+    flex-direction: column !important;
     align-items: center;
-    justify-content: center; /* Center logo horizontally */
+    justify-content: center;
     padding: 15px 20px;
-    position: relative;
+    position: relative; /* Needed for absolute hamburger positioning */
   }
 
-  /* Center the ShipEase logo/title */
+  /* Keep ShipEase title/logo perfectly centered */
   .navbar .logo {
     font-size: 1.7rem;
     font-weight: 700;
     text-align: center;
-    margin: 0 auto; /* Force it to stay in center */
+    margin: 0 auto;
     position: relative;
-    z-index: 110;
+    z-index: 100; /* Ensure it's above background but below hamburger */
   }
 
-  /* Show hamburger button on mobile */
+  /* Show hamburger on mobile */
   .mobile-menu-toggle {
     display: block;
     position: absolute;
     top: 15px;
-    right: 20px; /* Move to top-right corner */
+    right: 20px; /* Move to the top-right corner */
   }
 
-  /* Dropdown navigation menu */
+  /* Dropdown nav links */
   .nav-links {
     display: none !important;
     position: absolute;
-    top: 60px; /* Below navbar */
+    top: 70px; /* Positioned below navbar */
     left: 0;
     width: 100%;
     flex-direction: column;
@@ -884,12 +884,16 @@ body {
     padding: 20px 0;
     gap: 18px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-    z-index: 100;
+    z-index: 150;
     text-align: center;
   }
 
-  /* When hamburger is clicked */
+  /* Show nav when hamburger is clicked */
   .nav-links.show {
     display: flex !important;
   }
 }
+
+
+
+
