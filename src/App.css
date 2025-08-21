@@ -828,7 +828,6 @@ body {
   }
 }
 
-/* === KEEPING YOUR ENTIRE EXISTING CSS === */
 
 /* ==================== */
 /* ✅ Hamburger & Mobile Navbar Fix */
@@ -842,32 +841,31 @@ body {
   border: none;
   color: white;
   cursor: pointer;
-  position: absolute;
+  /* Remove absolute positioning */
+  /* position: absolute;
   right: 20px;
-  top: 15px;
+  top: 15px; */
   z-index: 110;
-}
-
-/* Hide nav links by default */
-.nav-links {
-  transition: max-height 0.3s ease-in-out;
-}
-
-/* Show nav links when hamburger is clicked */
-.nav-links.show {
-  display: flex !important;
 }
 
 /* Mobile-specific styles */
 @media (max-width: 768px) {
-  /* Show hamburger button */
+  .navbar {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important; /* Logo left, hamburger right */
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+  }
+
   .mobile-menu-toggle {
     display: block;
   }
 
-  /* ✅ Hide menu by default on mobile */
+  /* Keep nav links as before */
   .nav-links {
-    display: none !important; /* <--- Important: Hide tabs */
+    display: none !important;
     position: absolute;
     top: 60px;
     left: 0;
@@ -878,32 +876,10 @@ body {
     gap: 18px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
     z-index: 100;
+    text-align: center;
   }
 
-  /* ✅ When clicked, show menu */
   .nav-links.show {
     display: flex !important;
   }
-
-  /* E-commerce links in grid on mobile */
-  .ecom-links {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px 20px;
-    justify-items: center;
-    width: 100%;
-    margin-top: 10px;
-  }
 }
-
-/* On desktop, menu stays visible */
-@media (min-width: 769px) {
-  .nav-links {
-    display: flex !important;
-    position: static;
-    background: transparent;
-    flex-direction: row;
-  }
-}
-
-
