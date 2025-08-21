@@ -844,7 +844,7 @@ body {
   z-index: 200; /* Always on top */
   position: absolute;
   top: 12px;  /* Aligns perfectly at top */
-  right: 15px; /* Stick to top-right corner */
+  right: 5px; /* Stick to top-right corner */
 }
 
 /* ✅ Mobile-specific styles */
