@@ -252,43 +252,18 @@ export default function App() {
     "Electrical Product", "Corpses"
   ];
 
-  // ===== FORM HANDLERS =====
-  const handleSignupSubmit = (e) => {
-    e.preventDefault();
-    alert("Thank you for signing up!");
-    setCurrentView("home");
-  };
-
-  const handleLoginSubmit = (e) => {
-    e.preventDefault();
-    alert("Logged in successfully!");
-    setCurrentView("home");
-  };
-
-  const handleShippingSubmit = (e) => {
-    e.preventDefault();
-    alert("Shipping details submitted successfully!");
-    setCurrentView("home");
-  };
-
-  const handleMailboxSubmit = (e) => {
-    e.preventDefault();
-    alert("Mail Box details submitted successfully!");
-    setCurrentView("home");
-  };
-
-  const handlePersonalShopperSubmit = (e) => {
-    e.preventDefault();
-    alert("Personal Shopper request submitted successfully!");
-    setCurrentView("home");
-  }; 
+  const handleSignupSubmit = (e) => { e.preventDefault(); alert("Thank you for signing up!"); setCurrentView("home"); };
+  const handleLoginSubmit = (e) => { e.preventDefault(); alert("Logged in successfully!"); setCurrentView("home"); };
+  const handleShippingSubmit = (e) => { e.preventDefault(); alert("Shipping details submitted successfully!"); setCurrentView("home"); };
+  const handleMailboxSubmit = (e) => { e.preventDefault(); alert("Mail Box details submitted successfully!"); setCurrentView("home"); };
+  const handlePersonalShopperSubmit = (e) => { e.preventDefault(); alert("Personal Shopper request submitted successfully!"); setCurrentView("home"); };
 
   return (
     <>
       <header className="navbar">
         <h1 className="logo">ShipEase</h1>
 
-        {/* Hamburger Button for Mobile */}
+        {/* Hamburger for Mobile */}
         <button
           className="mobile-menu-toggle"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -296,47 +271,22 @@ export default function App() {
           {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
         </button>
 
-        {/* Navigation Menu */}
+        {/* Menu */}
         <nav className={`nav-links ${isMobileMenuOpen ? "show" : ""}`}>
-          {/* Home */}
-          <button
-            onClick={() => { setCurrentView("home"); setIsMobileMenuOpen(false); }}
-            className={`nav-button ${currentView === "home" ? "active" : ""}`}
-          >
-            Home
-          </button>
+          <button onClick={() => { setCurrentView("home"); setIsMobileMenuOpen(false); }}
+            className={`nav-button ${currentView === "home" ? "active" : ""}`}>Home</button>
 
-          {/* Shipping */}
-          <button
-            onClick={() => { setCurrentView("shipping"); setIsMobileMenuOpen(false); }}
-            className={`nav-button ${currentView === "shipping" ? "active" : ""}`}
-          >
-            Shipping
-          </button>
+          <button onClick={() => { setCurrentView("shipping"); setIsMobileMenuOpen(false); }}
+            className={`nav-button ${currentView === "shipping" ? "active" : ""}`}>Shipping</button>
 
-          {/* Mail Box */}
-          <button
-            onClick={() => { setCurrentView("mailbox"); setIsMobileMenuOpen(false); }}
-            className={`nav-button ${currentView === "mailbox" ? "active" : ""}`}
-          >
-            Mail Box
-          </button>
+          <button onClick={() => { setCurrentView("mailbox"); setIsMobileMenuOpen(false); }}
+            className={`nav-button ${currentView === "mailbox" ? "active" : ""}`}>Mail Box</button>
 
-          {/* Personal Shopper */}
-          <button
-            onClick={() => { setCurrentView("personalShopper"); setIsMobileMenuOpen(false); }}
-            className={`nav-button ${currentView === "personalShopper" ? "active" : ""}`}
-          >
-            Personal Shopper
-          </button>
+          <button onClick={() => { setCurrentView("personalShopper"); setIsMobileMenuOpen(false); }}
+            className={`nav-button ${currentView === "personalShopper" ? "active" : ""}`}>Personal Shopper</button>
 
-          {/* My Foods */}
-          <button
-            onClick={() => { setCurrentView("myFoods"); setIsMobileMenuOpen(false); }}
-            className={`nav-button ${currentView === "myFoods" ? "active" : ""}`}
-          >
-            My Foods
-          </button>
+          <button onClick={() => { setCurrentView("myFoods"); setIsMobileMenuOpen(false); }}
+            className={`nav-button ${currentView === "myFoods" ? "active" : ""}`}>My Foods</button>
 
           {/* E-commerce Links */}
           <div className="ecom-links">
@@ -348,13 +298,9 @@ export default function App() {
             <a href="#ajio">Ajio</a>
           </div>
 
-          {/* Account */}
-          <button
-            onClick={() => { setCurrentView("account"); setIsMobileMenuOpen(false); }}
-            className={`nav-button ${currentView === "account" ? "active" : ""}`}
-          >
-            <FaUserCircle style={{ verticalAlign: "middle", marginRight: "6px" }} />
-            Account
+          <button onClick={() => { setCurrentView("account"); setIsMobileMenuOpen(false); }}
+            className={`nav-button ${currentView === "account" ? "active" : ""}`}>
+            <FaUserCircle style={{ verticalAlign: "middle", marginRight: "6px" }} /> Account
           </button>
         </nav>
       </header>
