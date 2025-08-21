@@ -839,7 +839,7 @@ body {
   cursor: pointer;
   z-index: 200; /* Keep on top */
   position: absolute;
-  top: 12px;  /* Align perfectly with navbar */
+  top: 15px;  /* Align perfectly with navbar */
   right: 20px; /* Stick to extreme right */
 }
 
