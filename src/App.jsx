@@ -238,19 +238,8 @@ export default function App() {
     { main: Image3, left: Image2, right: Image1 } 
   ];
 
-  const prohibitedItemsLeft = [
-    "Food and Perishables", "Fruits and Vegetables", "Raw Rice Flours",
-    "Liquids and Semi-liquids", "Drugs and Narcotics", "Electrical Product",
-    "Corpses", "Indian Passport", "Non-Veg Pickles", "Gambling Devices",
-    "Firearms", "Semi-Precious Items", "IATA Restricted Items", "Philately Items"
-  ];
-
-  const prohibitedItemsRight = [
-    "Radioactive Material", "Bullion", "Pornographic materials", "Medication",
-    "Indian Postal Articles", "USA Green Card", "Lottery Tickets", "Ammunition",
-    "Precious Items", "Cremated Remains", "Live Animals", "Drugs and Narcotics",
-    "Electrical Product", "Corpses"
-  ];
+  const prohibitedItemsLeft = ["Food and Perishables","Fruits and Vegetables","Raw Rice Flours","Liquids and Semi-liquids","Drugs and Narcotics","Electrical Product","Corpses","Indian Passport","Non-Veg Pickles","Gambling Devices","Firearms","Semi-Precious Items","IATA Restricted Items","Philately Items"];
+  const prohibitedItemsRight = ["Radioactive Material","Bullion","Pornographic materials","Medication","Indian Postal Articles","USA Green Card","Lottery Tickets","Ammunition","Precious Items","Cremated Remains","Live Animals","Drugs and Narcotics","Electrical Product","Corpses"];
 
   const handleSignupSubmit = (e) => { e.preventDefault(); alert("Thank you for signing up!"); setCurrentView("home"); };
   const handleLoginSubmit = (e) => { e.preventDefault(); alert("Logged in successfully!"); setCurrentView("home"); };
@@ -260,60 +249,98 @@ export default function App() {
 
   return (
     <>
-      <header className="navbar">
-        <h1 className="logo">ShipEase</h1>
+  <header className="navbar">
+  {/* Logo */}
+  <h1 className="logo">ShipEase</h1>
 
-        {/* Hamburger for Mobile */}
-        <button
-          className="mobile-menu-toggle"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
-        </button>
+  {/* Hamburger Button - Always Visible on Mobile */}
+  <button
+    className="mobile-menu-toggle"
+    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+  >
+    {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+  </button>
 
-        {/* Menu */}
-        <nav className={`nav-links ${isMobileMenuOpen ? "show" : ""}`}>
-          <button onClick={() => { setCurrentView("home"); setIsMobileMenuOpen(false); }}
-            className={`nav-button ${currentView === "home" ? "active" : ""}`}>Home</button>
+  {/* Navigation Menu */}
+  <nav className={`nav-links ${isMobileMenuOpen ? "show" : ""}`}>
+    <button
+      onClick={() => {
+        setCurrentView("home");
+        setIsMobileMenuOpen(false);
+      }}
+      className={`nav-button ${currentView === "home" ? "active" : ""}`}
+      type="button"
+    >
+      Home
+    </button>
 
-          <button onClick={() => { setCurrentView("shipping"); setIsMobileMenuOpen(false); }}
-            className={`nav-button ${currentView === "shipping" ? "active" : ""}`}>Shipping</button>
+    <button
+      onClick={() => {
+        setCurrentView("shipping");
+        setIsMobileMenuOpen(false);
+      }}
+      className={`nav-button ${currentView === "shipping" ? "active" : ""}`}
+      type="button"
+    >
+      Shipping
+    </button>
 
-          <button onClick={() => { setCurrentView("mailbox"); setIsMobileMenuOpen(false); }}
-            className={`nav-button ${currentView === "mailbox" ? "active" : ""}`}>Mail Box</button>
+    <button
+      onClick={() => {
+        setCurrentView("mailbox");
+        setIsMobileMenuOpen(false);
+      }}
+      className={`nav-button ${currentView === "mailbox" ? "active" : ""}`}
+      type="button"
+    >
+      Mail Box
+    </button>
 
-          <button onClick={() => { setCurrentView("personalShopper"); setIsMobileMenuOpen(false); }}
-            className={`nav-button ${currentView === "personalShopper" ? "active" : ""}`}>Personal Shopper</button>
+    <button
+      onClick={() => {
+        setCurrentView("personalShopper");
+        setIsMobileMenuOpen(false);
+      }}
+      className={`nav-button ${currentView === "personalShopper" ? "active" : ""}`}
+      type="button"
+    >
+      Personal Shopper
+    </button>
 
-          <button onClick={() => { setCurrentView("myFoods"); setIsMobileMenuOpen(false); }}
-            className={`nav-button ${currentView === "myFoods" ? "active" : ""}`}>My Foods</button>
+    <button
+      onClick={() => {
+        setCurrentView("myFoods");
+        setIsMobileMenuOpen(false);
+      }}
+      className={`nav-button ${currentView === "myFoods" ? "active" : ""}`}
+      type="button"
+    >
+      My Foods
+    </button>
 
-          {/* E-commerce Links */}
-          <div className="ecom-links">
-            <a href="#amazon">Amazon</a>
-            <a href="#flipkart">Flipkart</a>
-            <a href="#myntra">Myntra</a>
-            <a href="#meesho">Meesho</a>
-            <a href="#nykaa">Nykaa</a>
-            <a href="#ajio">Ajio</a>
-          </div>
+    {/* E-commerce Links */}
+    <div className="ecom-links">
+      <a href="#amazon">Amazon</a>
+      <a href="#flipkart">Flipkart</a>
+      <a href="#myntra">Myntra</a>
+      <a href="#meesho">Meesho</a>
+      <a href="#nykaa">Nykaa</a>
+      <a href="#ajio">Ajio</a>
+    </div>
 
-          <button onClick={() => { setCurrentView("account"); setIsMobileMenuOpen(false); }}
-            className={`nav-button ${currentView === "account" ? "active" : ""}`}>
-            <FaUserCircle style={{ verticalAlign: "middle", marginRight: "6px" }} /> Account
-          </button>
-        </nav>
-      </header>
-
-      {/* ===== DYNAMIC VIEW CONTENT ===== */}
-      <main className="main-content">
-        {currentView === "home" && <h2>Welcome to ShipEase</h2>}
-        {currentView === "shipping" && <h2>Shipping Page</h2>}
-        {currentView === "mailbox" && <h2>Mail Box Page</h2>}
-        {currentView === "personalShopper" && <h2>Personal Shopper Page</h2>}
-        {currentView === "myFoods" && <h2>My Foods Page</h2>}
-        {currentView === "account" && <h2>Account Settings</h2>}
-      </main>
+    <button
+      onClick={() => {
+        setCurrentView("account");
+        setIsMobileMenuOpen(false);
+      }}
+      className={`nav-button ${currentView === "account" ? "active" : ""}`}
+      type="button"
+    >
+      <FaUserCircle style={{ verticalAlign: "middle", marginRight: "6px" }} />
+      Account
+    </button>
+  </nav>
+</header>
 
 
    {/* HOME */}
@@ -699,5 +726,3 @@ const buttonStyle = {
   fontSize: "1.1rem",
   cursor: "pointer",
 };
-
-

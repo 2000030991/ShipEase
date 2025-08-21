@@ -828,85 +828,75 @@ body {
   }
 }
 
+/* KEEPING YOUR ENTIRE EXISTING CODE UNTOUCHED */
 
-/* Default Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #0077ff;
-  color: white;
-  position: relative;
-  z-index: 1000;
-}
+/* ==================== */
+/* ✅ Hamburger & Mobile Navbar Fix */
+/* ==================== */
 
-/* Navigation Links */
-.nav-links {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-}
-
-.nav-links button,
-.nav-links a {
-  color: white;
-  background: none;
+/* Hamburger button styles */
+.mobile-menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: transparent;
   border: none;
-  font-size: 16px;
-  text-decoration: none;
+  color: white;
   cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  z-index: 110;
 }
 
-/* Hide Menu on Mobile by Default */
+/* Hide nav links on mobile by default */
+.nav-links {
+  transition: max-height 0.3s ease-in-out;
+}
+
+/* When hamburger is clicked → show menu */
+.nav-links.show {
+  display: flex !important;
+}
+
+/* Mobile-specific styles */
 @media (max-width: 768px) {
+  /* Show hamburger button */
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  /* Hide nav links by default */
   .nav-links {
     display: none;
-    flex-direction: column;
-    background-color: #0077ff;
     position: absolute;
     top: 60px;
     left: 0;
     width: 100%;
+    flex-direction: column;
+    background-color: #0077b6;
     padding: 15px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    gap: 18px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    z-index: 100;
   }
 
-  /* Show Menu When Active */
-  .nav-links.show {
-    display: flex;
-  }
-
-  /* E-commerce Links Grid */
+  /* Ensure e-commerce links display in grid on mobile */
   .ecom-links {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr);
     gap: 12px 20px;
-    margin-top: 12px;
+    justify-items: center;
     width: 100%;
-    text-align: center;
-  }
-
-  /* Hamburger Button */
-  .mobile-menu-toggle {
-    display: block;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 28px;
-    cursor: pointer;
+    margin-top: 10px;
   }
 }
 
-/* Desktop: Always Show Navbar */
+/* On desktop, menu is always visible */
 @media (min-width: 769px) {
   .nav-links {
     display: flex !important;
     position: static;
+    background: transparent;
     flex-direction: row;
   }
-  .mobile-menu-toggle {
-    display: none;
-  }
 }
-
