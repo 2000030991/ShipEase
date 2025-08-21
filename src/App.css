@@ -863,8 +863,8 @@ body {
   .nav-links {
     display: none !important;
     position: absolute;
-    top: 90px; /* ⬅ moved down a bit to avoid collision with hamburger */  
-    left: 0;
+    top: 100px; /* ⬅ moved down a bit to avoid collision with hamburger */  
+    left: 0;  
     width: 100%;
     flex-direction: column;
     background-color: #0077b6;
