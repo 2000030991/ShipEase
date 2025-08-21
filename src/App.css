@@ -833,7 +833,7 @@ body {
 /* ✅ Hamburger & Mobile Navbar Fix */
 /* ==================== */
 
-/* Hamburger button styles */
+/* ✅ Hamburger button styles */
 .mobile-menu-toggle {
   display: none;
   font-size: 28px;
@@ -844,40 +844,50 @@ body {
   z-index: 110;
 }
 
-/* Mobile-specific styles */
+/* ✅ Mobile-specific styles */
 @media (max-width: 768px) {
   .navbar {
     display: flex !important;
     flex-direction: row !important;
-    justify-content: space-between !important; /* Logo left, hamburger right */
+    justify-content: space-between !important;
     align-items: center;
     padding: 10px 20px;
     position: relative;
   }
 
+  /* Show hamburger on mobile */
   .mobile-menu-toggle {
     display: block;
+    order: 1;  /* ⬅️ Move hamburger to the leftmost position */
+  }
+
+  /* ShipEase title/logo */
+  .navbar .logo {
+    order: 3;   /* ⬅️ Move ShipEase to the rightmost position */
+    font-size: 1.7rem;
+    font-weight: 700;
+    text-align: right;
+    margin-left: auto;
   }
 
   /* Nav links styling */
   .nav-links {
     display: none !important;
     position: absolute;
-    top: 100px; /* ⬅ moved down a bit to avoid collision with hamburger */  
+    top: 100px;  /* Position below navbar */
     left: 0;  
     width: 100%;
     flex-direction: column;
     background-color: #0077b6;
-    padding: 20px 0; /* ⬅ added more padding for spacing */
+    padding: 20px 0;
     gap: 18px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
     z-index: 100;
     text-align: center;
   }
 
+  /* When hamburger is clicked */
   .nav-links.show {
     display: flex !important;
   }
 }
-
-
