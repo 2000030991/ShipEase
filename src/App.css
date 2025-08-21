@@ -828,77 +828,47 @@ body {
   }
 }
 
-
-/* ======== Mobile Navigation Styles ======== */
-.mobile-menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.8rem;
-  cursor: pointer;
-  z-index: 1001;
-}
-
-/* Show hamburger icon on mobile */
+/* Mobile Default Hidden Menu */
 @media screen and (max-width: 768px) {
-  .mobile-menu-toggle {
-    display: block;
-    position: absolute;
-    right: 20px; /* ✅ Move hamburger to right */
-    top: 15px;
-  }
-
   .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #0077ff;
+    padding: 15px 0;
     position: absolute;
     top: 60px;
     left: 0;
-    width: 100%;
-    background: #0077b6;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 15px 0;
-    gap: 10px;
-    display: none;
-    z-index: 1000;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    animation: slideDown 0.3s ease-out forwards;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 999;
   }
 
+  /* Show menu when hamburger clicked */
   .nav-links.show {
     display: flex;
   }
 
-  .nav-links button,
-  .nav-links a {
-    font-size: 1.1rem;
-    padding: 10px 0;
-    width: 90%;
-    text-align: center;
-    background: none;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-
-  /* Ensure only required items appear */
+  /* E-commerce links → 2 rows on mobile */
   .ecom-links {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin-top: 10px;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px 20px;
+    justify-items: center;
+    width: 100%;
+    margin-top: 12px;
   }
 
-  @keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: translateY(-15px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  /* Hamburger */
+  .mobile-menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 26px;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    cursor: pointer;
   }
 }
 
