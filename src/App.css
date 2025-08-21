@@ -840,7 +840,7 @@ body {
   z-index: 200; /* Keep on top */
   position: absolute;
   top: 15px;  /* Align perfectly with navbar */
-  right: 20px; /* Stick to extreme right */
+  right: 5px; /* Stick to extreme right */ 
 }
 
 /* ✅ Mobile-specific styles */
