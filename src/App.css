@@ -839,8 +839,8 @@ body {
   cursor: pointer;
   z-index: 200; /* Always on top */
   position: absolute;
-  top: 12px;   /* Align perfectly with navbar */
-  right: 10px; /* Almost extreme right, but not sticking */
+  top: 12px;  /* Aligns perfectly with navbar */
+  right: 15px; /* Stick almost to the extreme right */
 }
 
 /* ✅ Mobile-specific styles */
@@ -848,9 +848,9 @@ body {
   .navbar {
     display: flex !important;
     align-items: center;
-    justify-content: center; /* Centers logo */
-    padding: 15px 20px;
-    position: relative; /* Needed for absolute hamburger positioning */
+    justify-content: center; /* Centers logo only */
+    padding: 15px 50px 15px 20px; /* Added extra right padding for logo spacing */
+    position: relative; /* Needed for absolute positioning of hamburger */
   }
 
   /* Keep ShipEase perfectly centered */
@@ -858,7 +858,7 @@ body {
     font-size: 1.7rem;
     font-weight: 700;
     text-align: center;
-    margin: 0 auto; /* Ensures perfect centering */
+    margin: 0 auto; /* Force center alignment */
     position: relative;
     z-index: 100;
   }
@@ -872,7 +872,7 @@ body {
   .nav-links {
     display: none !important;
     position: absolute;
-    top: 65px; /* Slightly closer to navbar */
+    top: 65px; /* Below navbar */
     left: 0;
     width: 100%;
     flex-direction: column;
@@ -889,7 +889,6 @@ body {
     display: flex !important;
   }
 }
-
 
 
 
