@@ -828,7 +828,7 @@ body {
   }
 }
 
-/* KEEPING YOUR ENTIRE EXISTING CODE UNTOUCHED */
+/* === KEEPING YOUR ENTIRE EXISTING CSS === */
 
 /* ==================== */
 /* ✅ Hamburger & Mobile Navbar Fix */
@@ -848,12 +848,12 @@ body {
   z-index: 110;
 }
 
-/* Hide nav links on mobile by default */
+/* Hide nav links by default */
 .nav-links {
   transition: max-height 0.3s ease-in-out;
 }
 
-/* When hamburger is clicked → show menu */
+/* Show nav links when hamburger is clicked */
 .nav-links.show {
   display: flex !important;
 }
@@ -865,9 +865,9 @@ body {
     display: block;
   }
 
-  /* Hide nav links by default */
+  /* ✅ Hide menu by default on mobile */
   .nav-links {
-    display: none;
+    display: none !important; /* <--- Important: Hide tabs */
     position: absolute;
     top: 60px;
     left: 0;
@@ -880,7 +880,12 @@ body {
     z-index: 100;
   }
 
-  /* Ensure e-commerce links display in grid on mobile */
+  /* ✅ When clicked, show menu */
+  .nav-links.show {
+    display: flex !important;
+  }
+
+  /* E-commerce links in grid on mobile */
   .ecom-links {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr);
@@ -891,7 +896,7 @@ body {
   }
 }
 
-/* On desktop, menu is always visible */
+/* On desktop, menu stays visible */
 @media (min-width: 769px) {
   .nav-links {
     display: flex !important;
@@ -900,3 +905,4 @@ body {
     flex-direction: row;
   }
 }
+
