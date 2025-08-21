@@ -851,7 +851,7 @@ body {
     flex-direction: row !important;
     justify-content: space-between !important; /* Logo left, hamburger right */
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 30px;
     position: relative;
   }
 
