@@ -829,7 +829,11 @@ body {
 }
 
 
-/* ✅ Hamburger button styles */
+/* ==================== */
+/* ✅ Hamburger & Mobile Navbar Fix */
+/* ==================== */
+
+/* Hamburger button styles */
 .mobile-menu-toggle {
   display: none;
   font-size: 28px;
@@ -837,58 +841,45 @@ body {
   border: none;
   color: white;
   cursor: pointer;
-  z-index: 200; /* Always on top */
-  position: absolute;
-  top: 12px;  /* Aligns perfectly with navbar */
-  right: 15px; /* Stick almost to the extreme right */
+  z-index: 110;
 }
 
-/* ✅ Mobile-specific styles */
+/* Mobile-specific styles */
 @media (max-width: 768px) {
   .navbar {
     display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important; /* Logo left, hamburger right */
     align-items: center;
-    justify-content: center; /* Centers logo only */
-    padding: 15px 50px 15px 20px; /* Added extra right padding for logo spacing */
-    position: relative; /* Needed for absolute positioning of hamburger */
-  }
-
-  /* Keep ShipEase perfectly centered */
-  .navbar .logo {
-    font-size: 1.7rem;
-    font-weight: 700;
-    text-align: center;
-    margin: 0 auto; /* Force center alignment */
+    padding: 10px 20px;
     position: relative;
-    z-index: 100;
   }
 
-  /* Show hamburger only on mobile */
   .mobile-menu-toggle {
     display: block;
   }
 
-  /* Dropdown navigation menu */
+  /* Nav links styling */
   .nav-links {
     display: none !important;
     position: absolute;
-    top: 65px; /* Below navbar */
-    left: 0;
+    top: 100px; /* ⬅ moved down a bit to avoid collision with hamburger */  
+    left: 0;  
     width: 100%;
     flex-direction: column;
     background-color: #0077b6;
-    padding: 20px 0;
+    padding: 20px 0; /* ⬅ added more padding for spacing */
     gap: 18px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-    z-index: 150;
+    z-index: 100;
     text-align: center;
   }
 
-  /* Show nav when hamburger is clicked */
   .nav-links.show {
     display: flex !important;
   }
 }
+
 
 
 
