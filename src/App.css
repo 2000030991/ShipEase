@@ -841,10 +841,6 @@ body {
   border: none;
   color: white;
   cursor: pointer;
-  /* Remove absolute positioning */
-  /* position: absolute;
-  right: 20px;
-  top: 15px; */
   z-index: 110;
 }
 
@@ -863,16 +859,16 @@ body {
     display: block;
   }
 
-  /* Keep nav links as before */
+  /* Nav links styling */
   .nav-links {
     display: none !important;
     position: absolute;
-    top: 60px;
+    top: 70px; /* ⬅ moved down a bit to avoid collision with hamburger */
     left: 0;
     width: 100%;
     flex-direction: column;
     background-color: #0077b6;
-    padding: 15px 0;
+    padding: 20px 0; /* ⬅ added more padding for spacing */
     gap: 18px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
     z-index: 100;
