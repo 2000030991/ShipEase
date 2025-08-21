@@ -858,12 +858,12 @@ body {
   /* Show hamburger on mobile */
   .mobile-menu-toggle {
     display: block;
-    order: 1;  /* ⬅️ Move hamburger to the leftmost position */
+    order: 3;  /* ⬅️ Move hamburger to the leftmost position */
   }
 
   /* ShipEase title/logo */
   .navbar .logo {
-    order: 3;   /* ⬅️ Move ShipEase to the rightmost position */
+    order: 2;   /* ⬅️ Move ShipEase to the rightmost position */
     font-size: 1.7rem;
     font-weight: 700;
     text-align: right;
