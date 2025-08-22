@@ -9,7 +9,7 @@ import Image1 from "./assets/Image1.png";
 import Image2 from "./assets/Image2.png";
 import Image3 from "./assets/Image3.png";
 
-import MailBoxTab1 from "./assets/Mail Box Tab1.png";
+import MailBoxTab1 from "./assets/Mail Box Tab1.png"; 
 import MailBoxTab2 from "./assets/Mail Box Tab2.png";
 import MailBoxTab3 from "./assets/Mail Box Tab3.png";
 import MailBoxTab4 from "./assets/Mail Box Tab4.png";
@@ -247,22 +247,39 @@ export default function App() {
   const handleMailboxSubmit = (e) => { e.preventDefault(); alert("Mail Box details submitted successfully!"); setCurrentView("home"); };
   const handlePersonalShopperSubmit = (e) => { e.preventDefault(); alert("Personal Shopper request submitted successfully!"); setCurrentView("home"); };
 
-  return (
-    <>
-  <header className="navbar">
-  {/* Logo */}
-  <h1 className="logo">ShipEase</h1>
+return (
+  <>
+    <header className="navbar">
+      <div className="navbar-top">
+        {/* Logo */}
+        <h1 className="logo">ShipEase</h1>
 
-  {/* Hamburger Button - Always Visible on Mobile */}
-  <button
-    className="mobile-menu-toggle"
-    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-  >
-    {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
-  </button>
+        {/* Account Button - Moved to ShipEase line */}
+        <button
+          onClick={() => {
+            setCurrentView("account");
+            setIsMobileMenuOpen(false);
+          }}
+          className={`account-btn ${currentView === "account" ? "active" : ""}`}
+          type="button"
+        >
+          <FaUserCircle style={{ verticalAlign: "middle", marginRight: "6px" }} />
+          Account
+        </button>
 
-  {/* Navigation Menu */}
-  <nav className={`nav-links ${isMobileMenuOpen ? "show" : ""}`}>
+        {/* Hamburger Button */}
+        <button
+          className="mobile-menu-toggle"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+      </div>
+
+      {/* Navigation Menu */}
+     <nav className={`nav-links ${isMobileMenuOpen ? "show" : ""}`}>
+  {/* First Row → Main Navigation */}
+  <div className="main-nav-row">
     <button
       onClick={() => {
         setCurrentView("home");
@@ -317,32 +334,19 @@ export default function App() {
     >
       My Foods
     </button>
+  </div>
 
-    {/* E-commerce Links */}
-  <div className="ecom-links">
-  <a href="https://www.amazon.in" target="_blank" rel="noopener noreferrer">Amazon</a>
-  <a href="https://www.flipkart.com" target="_blank" rel="noopener noreferrer">Flipkart</a>
-  <a href="https://www.myntra.com" target="_blank" rel="noopener noreferrer">Myntra</a>
-  <a href="https://www.meesho.com" target="_blank" rel="noopener noreferrer">Meesho</a>
-  <a href="https://www.nykaa.com" target="_blank" rel="noopener noreferrer">Nykaa</a>
-  <a href="https://www.ajio.com" target="_blank" rel="noopener noreferrer">Ajio</a>
-</div>
-
-
-    <button
-      onClick={() => {
-        setCurrentView("account");
-        setIsMobileMenuOpen(false);
-      }}
-      className={`nav-button ${currentView === "account" ? "active" : ""}`}
-      type="button"
-    >
-      <FaUserCircle style={{ verticalAlign: "middle", marginRight: "6px" }} />
-      Account
-    </button>
-  </nav>
-</header>
-
+  {/* Second Row → E-commerce Links */}
+  <div className="ecom-links-row">
+    <a href="https://www.amazon.in" target="_blank" rel="noopener noreferrer">Amazon</a>
+    <a href="https://www.flipkart.com" target="_blank" rel="noopener noreferrer">Flipkart</a>
+    <a href="https://www.myntra.com" target="_blank" rel="noopener noreferrer">Myntra</a>
+    <a href="https://www.meesho.com" target="_blank" rel="noopener noreferrer">Meesho</a>
+    <a href="https://www.nykaa.com" target="_blank" rel="noopener noreferrer">Nykaa</a>
+    <a href="https://www.ajio.com" target="_blank" rel="noopener noreferrer">Ajio</a>
+  </div>
+</nav> 
+    </header>
 
    {/* HOME */}
       {currentView === "home" && (
@@ -447,35 +451,34 @@ export default function App() {
   <h2>How It Works</h2>
   <div className="steps">
     <div>
-      <span className="step-number">1</span>
       <h3>Get Your Indian Address</h3>
-      <p>
-        Sign up for ShipEase and instantly get your own <strong>unique Indian mailbox address</strong>.  
-        Use this address while shopping from any Indian store or marketplace.
-      </p>
+      <ul>
+        <li>Sign up for <strong>ShipEase</strong> in minutes.</li>
+        <li>Instantly get your <strong>unique Indian mailbox address</strong>.</li>
+        <li>Use this address while shopping from any Indian store or marketplace.</li>
+      </ul>
     </div>
 
     <div>
-      <span className="step-number">2</span>
       <h3>Personal Shopper Assistance</h3>
-      <p>
-        Can't purchase directly from Indian websites? No worries!  
-        Our <strong>Personal Shopper</strong> helps you buy products from any Indian store  
-        and delivers them to your ShipEase Address.
-      </p>
+      <ul>
+        <li>Can't buy directly from Indian websites? We’ve got you covered.</li>
+        <li>Our <strong>Personal Shopper</strong> helps you purchase items from any Indian store.</li>
+        <li>Your products are delivered directly to your ShipEase Address.</li>
+      </ul>
     </div>
 
     <div>
-      <span className="step-number">3</span>
       <h3>Fast & Reliable Shipping</h3>
-      <p>
-        Once your items reach your ShipEase Address, we carefully pack, consolidate,  
-        and <strong>ship them to your doorstep worldwide</strong> at the best rates.  
-        Track your package in real-time until it arrives!
-      </p>
+      <ul>
+        <li>We carefully pack and consolidate your shipments.</li>
+        <li><strong>Ship them to your doorstep worldwide</strong> at the best rates.</li>
+        <li>Track your package in real-time until it arrives safely!</li>
+      </ul>
     </div>
   </div>
 </section>
+
 
 
           {/* Why choose us */}
@@ -727,9 +730,4 @@ const buttonStyle = {
   fontSize: "1.1rem",
   cursor: "pointer",
 };
-
-
-
-
-
 
