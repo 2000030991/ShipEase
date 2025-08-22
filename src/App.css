@@ -863,7 +863,7 @@ body {
   .mobile-menu-toggle {
     display: block;
     position: relative;
-    right: -30px;  /* Push it fully to the right */
+    right: -80px;  /* Push it fully to the right */
     margin-left: auto; /* Ensures it sticks to extreme right */
   }
 
