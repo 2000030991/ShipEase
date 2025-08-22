@@ -839,26 +839,26 @@ body {
   cursor: pointer;
   z-index: 300;
   position: absolute;
-  top: 18px;    /* Moves slightly down */
-  right: 15px;  /* Pushes fully to the right */
+  top: 15px;    /* Slightly down */
+  right: 15px;  /* Pushes to extreme right */
 }
 
 /* ✅ Mobile-specific styles */
 @media (max-width: 768px) {
   .navbar {
     display: flex !important;
+    justify-content: center; /* Centers ShipEase logo */
     align-items: center;
-    justify-content: center; /* Centers logo */
-    padding: 15px 50px; /* ⬅ Adds space so ShipEase doesn't collide */
-    position: relative; /* Needed for absolute positioning */
+    padding: 15px 60px 15px 20px; /* Add right padding to avoid overlap */
+    position: relative; /* Required for absolute positioning */
   }
 
-  /* ✅ Keep ShipEase logo perfectly centered */
+  /* ✅ ShipEase logo stays centered */
   .navbar .logo {
     font-size: 1.7rem;
     font-weight: 700;
     text-align: center;
-    margin: 0 auto; /* Centers naturally */
+    margin: 0 auto;
     z-index: 200;
   }
 
@@ -888,3 +888,7 @@ body {
     display: flex !important;
   }
 }
+
+
+
+
