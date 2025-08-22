@@ -958,15 +958,60 @@ body {
 /* ✅ TWO-ROW NAVBAR LAYOUT FIX   */
 /* =============================== */
 
-/* Wrap everything in two rows */
+.navbar {
+  background: linear-gradient(90deg, #0077ff, #00b4ff);
+  color: white;
+  padding: 10px 15px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+/* Navbar header */
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+  flex-grow: 1;
+}
+
+/* Account button */
+.account-btn {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  gap: 6px;
+  cursor: pointer;
+}
+
+/* Hamburger icon - extreme left */
+.mobile-menu-toggle {
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+  position: relative;
+  order: -1; /* ✅ Force to extreme left */
+}
+
+/* =============================== */
+/* Navigation Links Container */
+/* =============================== */
 .nav-links {
   display: flex;
   flex-direction: column; /* Stack rows vertically */
-  align-items: flex-start; /* Left-align both rows */
+  align-items: flex-start;
   gap: 6px;
-  font-size: 15px;  /* ✅ Set a consistent font size */
-  font-weight: 600; /* ✅ Make both rows equally bold */
+  font-size: 15px;
+  font-weight: 600;
   line-height: 1.4;
+  margin-top: 8px;
 }
 
 /* First Row - Navigation Buttons */
@@ -981,8 +1026,8 @@ body {
   background: transparent;
   border: none;
   color: white;
-  font-size: 15px;    /* ✅ Same size as ecom links */
-  font-weight: 600;   /* ✅ Same weight */
+  font-size: 15px;
+  font-weight: 600;
   padding: 8px 14px;
   border-radius: 6px;
   cursor: pointer;
@@ -998,7 +1043,7 @@ body {
 .ecom-links-row {
   display: flex;
   gap: 20px;
-  justify-content: flex-start; /* Align below "Home" */
+  justify-content: flex-start;
   flex-wrap: wrap;
   margin-top: 4px;
 }
@@ -1006,8 +1051,8 @@ body {
 .ecom-links-row a {
   text-decoration: none;
   color: white;
-  font-size: 15px;   /* ✅ Matches top row */
-  font-weight: 600;  /* ✅ Matches top row */
+  font-size: 15px;
+  font-weight: 600;
   padding: 8px 10px;
   border-radius: 6px;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -1018,26 +1063,78 @@ body {
   color: #0077b6;
 }
 
+/* =============================== */
 /* ✅ Mobile View Fix */
+/* =============================== */
 @media (max-width: 768px) {
-  .nav-links {
-    align-items: center; /* Center on mobile */
-    font-size: 14px; /* Slightly smaller on mobile */
+  .mobile-menu-toggle {
+    display: block;
   }
 
+  .nav-header {
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  /* Hide nav by default */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #0078ff;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 8px;
+    width: 100%;
+  }
+
+  /* Show nav when toggled */
+  .nav-links.show {
+    display: flex;
+  }
+
+  /* Stack main nav vertically */
   .main-nav-row {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    width: 100%;
   }
 
+  .main-nav-row .nav-button {
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+    background: #006ee6;
+    padding: 10px;
+    border-radius: 6px;
+  }
+
+  /* E-commerce links below */
   .ecom-links-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 12px 15px;
     justify-items: center;
     width: 100%;
+    margin-top: 12px;
   }
 }
 
+/* =============================== */
+/* ✅ Desktop View */
+/* =============================== */
+@media screen and (min-width: 769px) {
+  .nav-links {
+    display: flex !important;
+    flex-direction: column;
+  }
 
+  .mobile-menu-toggle {
+    display: none;
+  }
+
+  .account-btn {
+    position: static;
+    margin-left: auto;
+  }
+}
