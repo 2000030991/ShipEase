@@ -866,7 +866,7 @@ body {
     order: 3;   /* ⬅️ Move ShipEase to the rightmost position */
     font-size: 1.7rem;
     font-weight: 700;
-    text-align: right;
+    text-align: center;
     margin-left: auto;
   }
 
