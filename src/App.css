@@ -844,37 +844,34 @@ body {
 @media (max-width: 768px) {
   .navbar {
     display: flex !important;
-    flex-direction: column; /* Stack ShipEase and hamburger vertically */
+    justify-content: space-between;  /* 3 virtual sections: Left | Logo | Hamburger */
     align-items: center;
-    justify-content: center;
     padding: 12px 20px;
     position: relative;
   }
 
-  /* ✅ Top line → ShipEase (now at top) */
+  /* ✅ Center ShipEase perfectly */
   .navbar .logo {
-    order: 1;  /* Puts ShipEase on top line */
+    flex: 1;  /* Takes equal space */
+    text-align: center;
     font-size: 1.7rem;
     font-weight: 700;
-    text-align: center;
-    margin-bottom: 5px; /* Small gap below ShipEase */
     z-index: 200;
   }
 
-  /* ✅ Bottom line → Hamburger at extreme right */
+  /* ✅ Position hamburger on extreme right */
   .mobile-menu-toggle {
     display: block;
-    order: 2;  /* Puts hamburger below ShipEase */
-    align-self: flex-end; /* Pushes hamburger fully to right */
-    margin-right: 20px; /* Adjust spacing from right edge */
-    margin-top: 5px; /* Add slight gap above hamburger */
+    position: relative;
+    right: -180px;  /* Push it fully to the right */
+    margin-left: auto; /* Ensures it sticks to extreme right */
   }
 
   /* ✅ Dropdown menu styles */
   .nav-links {
     display: none !important;
     position: absolute;
-    top: 120px; /* ⬅ Adjusted because ShipEase is now above */
+    top: 70px;
     left: 0;
     width: 100%;
     flex-direction: column;
@@ -891,5 +888,7 @@ body {
     display: flex !important;
   }
 }
+
+
 
 
