@@ -829,7 +829,7 @@ body {
 }
 
 
-/* ✅ Hamburger button styles */
+/* ✅ Default hamburger styles */
 .mobile-menu-toggle {
   display: none;
   font-size: 28px;
@@ -838,36 +838,36 @@ body {
   color: white;
   cursor: pointer;
   z-index: 300;
-  position: absolute;
-  top: 15px;    /* Slightly down */
-  right: 15px;  /* Pushes to extreme right */
 }
 
 /* ✅ Mobile-specific styles */
 @media (max-width: 768px) {
   .navbar {
     display: flex !important;
-    justify-content: center; /* Centers ShipEase logo */
+    justify-content: space-between;  /* 3 virtual sections: Left | Logo | Hamburger */
     align-items: center;
-    padding: 15px 60px 15px 20px; /* Add right padding to avoid overlap */
-    position: relative; /* Required for absolute positioning */
+    padding: 12px 20px;
+    position: relative;
   }
 
-  /* ✅ ShipEase logo stays centered */
+  /* ✅ Center ShipEase perfectly */
   .navbar .logo {
+    flex: 1;  /* Takes equal space */
+    text-align: center;
     font-size: 1.7rem;
     font-weight: 700;
-    text-align: center;
-    margin: 0 auto;
     z-index: 200;
   }
 
-  /* ✅ Show hamburger only on mobile */
+  /* ✅ Position hamburger on extreme right */
   .mobile-menu-toggle {
     display: block;
+    position: relative;
+    right: 0;  /* Push it fully to the right */
+    margin-left: auto; /* Ensures it sticks to extreme right */
   }
 
-  /* ✅ Dropdown navigation menu */
+  /* ✅ Dropdown menu styles */
   .nav-links {
     display: none !important;
     position: absolute;
@@ -888,6 +888,7 @@ body {
     display: flex !important;
   }
 }
+
 
 
 
