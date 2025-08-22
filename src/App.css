@@ -907,10 +907,11 @@ body {
   border: none;
   color: white;
   position: absolute;
-  left: 0;  /* ✅ Force it to extreme left */
-  top: 50%;
+  left: 0;          /* ✅ Keep at extreme left */
+  top: 65%;         /* ⬇️ Moved slightly down */
   transform: translateY(-50%);
   padding: 6px 10px;
+  z-index: 1000;    /* ✅ Keeps it above other elements */
 }
 
   /* ✅ Dropdown menu styles */
