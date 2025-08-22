@@ -1039,3 +1039,47 @@ body {
     width: 100%;
   }
 }
+
+
+/* Base header styles */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centers the logo by default */
+  padding: 10px 15px;
+  background: linear-gradient(90deg, #0078ff, #00c6ff);
+  position: relative;
+}
+
+/* Logo styling */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Account tab */
+.account {
+  position: absolute;
+  right: 15px; /* Pushes it to the right */
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Desktop view */
+@media screen and (min-width: 769px) {
+  .header {
+    justify-content: space-between;
+    padding: 15px 25px;
+  }
+
+  .logo {
+    margin-left: 10px;
+  }
+
+  .account {
+    position: static;
+    margin-right: 10px;
+  }
+}
