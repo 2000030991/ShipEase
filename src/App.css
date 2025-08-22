@@ -837,10 +837,10 @@ body {
   border: none;
   color: white;
   cursor: pointer;
-  z-index: 200; /* Always on top */
-  position: absolute;
-  top: 12px;      /* Align vertically */
-  right: 15px;    /* Move hamburger to extreme right */
+  z-index: 300; /* On top of everything */
+  position: absolute;  /* Free from flex alignment */
+  top: 15px;
+  right: 20px; /* Stick to top-right corner */
 }
 
 /* ✅ Mobile-specific styles */
@@ -848,27 +848,29 @@ body {
   .navbar {
     display: flex !important;
     align-items: center;
-    justify-content: center; /* Keeps ShipEase logo centered */
-    padding: 12px 20px;
-    position: relative; /* Required for hamburger absolute positioning */
+    justify-content: center; /* Centers only the ShipEase logo */
+    padding: 15px 20px;
+    position: relative; /* Needed for absolute positioning of hamburger */
   }
 
-  /* ✅ Keep ShipEase logo perfectly centered */
+  /* ✅ Keep ShipEase perfectly centered */
   .navbar .logo {
     font-size: 1.7rem;
     font-weight: 700;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Force true center */
     text-align: center;
-    position: relative;
-    margin: 0 auto;  /* Force perfect center alignment */
-    z-index: 150;
+    margin: 0;
+    z-index: 200;
   }
 
-  /* ✅ Show hamburger only on mobile */
+  /* ✅ Show hamburger on mobile */
   .mobile-menu-toggle {
     display: block;
   }
 
-  /* ✅ Navigation menu styling */
+  /* ✅ Dropdown navigation menu */
   .nav-links {
     display: none !important;
     position: absolute;
@@ -889,4 +891,5 @@ body {
     display: flex !important;
   }
 }
+
 
