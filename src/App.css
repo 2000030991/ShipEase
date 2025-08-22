@@ -1140,47 +1140,50 @@ body {
     display: block;
   }
 
-  /* Hide nav by default */
+  /* Show nav by default in a single row */
   .nav-links {
-    display: none;
+    display: flex !important;
     flex-direction: column;
     background-color: #0078ff;
     padding: 8px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
-  }
-
-  /* Show menu when toggled */
-  .nav-links.show {
-    display: flex;
-  }
-
-  /* Stack main nav vertically */
-  .main-nav-row {
-    flex-direction: column;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
+  }
+
+  /* Arrange main nav horizontally */
+  .main-nav-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    width: 100%;
   }
 
   .nav-button {
-    padding: 8px;
-    width: 100%;
-    max-width: 220px;
-    text-align: center;
+    padding: 6px 10px;
+    font-size: 14px;
     border-radius: 4px;
+    background: transparent;
+    color: #fff;
+    font-weight: 600;
+    white-space: nowrap;
   }
 
-  /* Move e-commerce links under Account */
+  /* E-commerce links in one row */
   .ecom-links-row {
-    flex-direction: column;
-    align-items: flex-end; /* Right align under Account button */
-    gap: 4px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
     margin-top: 8px;
-    padding-right: 15px;
+    padding: 0 10px;
   }
 
   .ecom-links-row a {
     font-size: 14px;
     color: #fff;
+    white-space: nowrap;
   }
 }
 
@@ -1200,5 +1203,4 @@ body {
     margin-left: auto;
   }
 }
-
 
