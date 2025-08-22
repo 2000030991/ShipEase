@@ -1041,82 +1041,66 @@ body {
 }
 
 
-/* NAVBAR BASE STYLING */
+/* NAVBAR */
 .navbar {
-  background: linear-gradient(90deg, #0078ff, #00c6ff);
+  background: linear-gradient(90deg, #0077ff, #00b4ff);
+  color: white;
   padding: 10px 15px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.navbar-top {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
   position: relative;
 }
 
-/* LOGO */
-.logo {
-  font-size: 22px;
-  font-weight: bold;
-  color: #fff;
-}
-
-/* ACCOUNT BUTTON */
-.account-btn {
-  position: absolute;
-  right: 15px;
-  background: none;
-  border: none;
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff;
-  cursor: pointer;
+.nav-header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
-/* HAMBURGER MENU ICON */
-.mobile-menu-toggle {
-  position: absolute;
-  left: 15px;
-  background: none;
-  border: none;
+.logo {
   font-size: 22px;
-  color: #fff;
+  font-weight: bold;
+  margin: 0;
+}
+
+.account-btn {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  gap: 6px;
+  cursor: pointer;
+}
+
+/* Hamburger Icon */
+.mobile-menu-toggle {
+  font-size: 24px;
   cursor: pointer;
   display: none;
 }
 
-/* NAVIGATION LINKS */
+/* Navigation Links */
 .nav-links {
   display: flex;
   flex-direction: column;
   margin-top: 10px;
 }
 
-/* MAIN NAVIGATION BUTTONS */
+/* Main Navigation Buttons */
 .main-nav-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  gap: 16px;
   justify-content: center;
-  padding: 8px 0;
+  flex-wrap: wrap;
 }
 
 .nav-button {
-  background: none;
+  background: transparent;
   border: none;
   color: #fff;
-  font-weight: bold;
-  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
   padding: 6px 12px;
-  transition: background-color 0.3s ease;
-}
-
-.nav-button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 6px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 /* E-COMMERCE LINKS */
@@ -1134,60 +1118,60 @@ body {
   font-weight: 500;
 }
 
-/* MOBILE VIEW */
+/* ======= MOBILE VIEW ======= */
 @media screen and (max-width: 768px) {
   .mobile-menu-toggle {
     display: block;
   }
 
-  /* Show nav by default in a single row */
+  /* Hide nav by default */
   .nav-links {
-    display: flex !important;
+    display: none;
     flex-direction: column;
     background-color: #0078ff;
-    padding: 8px 0;
+    padding: 10px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
-    align-items: center;
-    gap: 6px;
+    margin-top: 8px;
   }
 
-  /* Arrange main nav horizontally */
-  .main-nav-row {
+  /* Show nav when toggled */
+  .nav-links.show {
     display: flex;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    width: 100%;
+  }
+
+  /* Stack main nav vertically */
+  .main-nav-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
   }
 
   .nav-button {
-    padding: 6px 10px;
-    font-size: 14px;
-    border-radius: 4px;
-    background: transparent;
-    color: #fff;
-    font-weight: 600;
-    white-space: nowrap;
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+    background: #006ee6;
+    border-radius: 6px;
+    padding: 10px;
   }
 
-  /* E-commerce links in one row */
+  /* E-commerce links below */
   .ecom-links-row {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 8px;
+    gap: 10px;
+    margin-top: 10px;
     padding: 0 10px;
   }
 
   .ecom-links-row a {
     font-size: 14px;
     color: #fff;
-    white-space: nowrap;
   }
 }
 
-/* DESKTOP VIEW */
+/* ======= DESKTOP VIEW ======= */
 @media screen and (min-width: 769px) {
   .nav-links {
     display: flex !important;
@@ -1203,4 +1187,3 @@ body {
     margin-left: auto;
   }
 }
-
