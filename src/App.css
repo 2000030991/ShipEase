@@ -1164,7 +1164,7 @@ body {
     display: none;
     flex-direction: column;
     background-color: #0078ff;
-    padding: 10px 0;
+    padding: 8px 0; /* Reduced padding */
     border-top: 1px solid rgba(255, 255, 255, 0.2);
   }
 
@@ -1177,13 +1177,33 @@ body {
   .main-nav-row {
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 4px; /* Reduced gap */
+    margin-bottom: 6px; /* Less bottom space */
   }
 
+  .nav-button {
+    padding: 6px 0; /* Reduced button padding */
+    width: 100%;
+    max-width: 220px;
+    text-align: center;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+  }
+
+  .nav-button:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+
+  /* E-commerce links in mobile */
   .ecom-links-row {
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 4px; /* Reduced gap here too */
+    padding-top: 4px;
+  }
+
+  .ecom-links-row a {
+    padding: 4px 0;
   }
 }
 
