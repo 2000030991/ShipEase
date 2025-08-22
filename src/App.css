@@ -897,13 +897,21 @@ body {
     z-index: 200;
   }
 
-  /* ✅ Position hamburger on extreme right */
-  .mobile-menu-toggle {
-    display: block;
-    position: relative;
-    right: -180px;  /* Push it fully to the right */
-    margin-left: auto; /* Ensures it sticks to extreme right */
-  }
+
+/* Hamburger Icon */
+.mobile-menu-toggle {
+  font-size: 26px;
+  cursor: pointer;
+  display: none;
+  background: transparent;
+  border: none;
+  color: white;
+  position: absolute;
+  left: 0;  /* ✅ Force it to extreme left */
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 6px 10px;
+}
 
   /* ✅ Dropdown menu styles */
   .nav-links {
@@ -1118,7 +1126,7 @@ body {
     width: 100%;
     margin-top: 12px;
   }
-}
+} 
 
 /* =============================== */
 /* ✅ Desktop View */
