@@ -898,31 +898,46 @@ body {
 }
 
 /* ✅ E-commerce links section */
+/* ✅ E-commerce links section FIXED */
 .ecom-links-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* ✅ Always 3 per row */
-  gap: 18px 20px;
-  justify-items: center; /* ✅ Center each item */
-  justify-content: center; /* ✅ Center last row */
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* ✅ Always 3 equal columns */
+  gap: 18px 20px; /* ✅ Row gap & column gap */
+  justify-items: center; /* ✅ Centers items in each column */
   margin-top: 10px;
   width: 100%;
-  max-width: 600px; /* ✅ Keeps layout neat */
+  max-width: 650px; /* ✅ Slightly increased width for balance */
+  margin-left: auto;
+  margin-right: auto; /* ✅ Perfectly centered block */
 }
 
 .ecom-links-row a {
   text-decoration: none;
   color: white;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
-  padding: 6px 10px;
-  border-radius: 6px;
-  transition: color 0.3s ease;
+  padding: 10px 16px;
+  background-color: rgba(255, 255, 255, 0.1); /* ✅ Better button look */
+  border-radius: 8px;
+  min-width: 90px; /* ✅ Prevents collapsing */
   text-align: center;
+  transition: all 0.3s ease;
 }
 
 .ecom-links-row a:hover {
   color: #ffdd57;
+  background-color: rgba(255, 255, 255, 0.2);
 }
+
+/* ✅ Mobile view fix */
+@media (max-width: 768px) {
+  .ecom-links-row {
+    grid-template-columns: repeat(3, 1fr); /* ✅ Still force 3 per row */
+    gap: 14px 12px;
+    max-width: 500px;
+  }
+}
+
 
 /* ---------- MOBILE VIEW FIX ---------- */
 @media (max-width: 768px) {
