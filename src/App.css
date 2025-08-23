@@ -869,14 +869,16 @@ body {
 
 /* ✅ Default hamburger styles */
 .mobile-menu-toggle {
-  display: none;
+  display: none;          /* Hidden by default, shown only on mobile */
   font-size: 28px;
   background: transparent;
   border: none;
   color: white;
   cursor: pointer;
   z-index: 300;
-}
+  margin-right: 10px;     /* Space between hamburger and ShipEase */
+  position: relative;     /* Keep it aligned inside navbar */
+} 
 
 /* ✅ Mobile-specific styles */
 @media (max-width: 768px) {
