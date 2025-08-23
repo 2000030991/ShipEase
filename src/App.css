@@ -876,69 +876,30 @@ body {
   color: white;
   cursor: pointer;
   z-index: 300;
-  margin-right: 10px;     /* Space between hamburger and ShipEase */
-  position: relative;     /* Keep it aligned inside navbar */
-} 
-
-/* ✅ Mobile-specific styles */
-@media (max-width: 768px) {
-  .navbar {
-    display: flex !important;
-    justify-content: space-between;  /* 3 virtual sections: Left | Logo | Hamburger */
-    align-items: center;
-    padding: 12px 20px;
-    position: relative;
-  }
-
-  /* ✅ Center ShipEase perfectly */
-  .navbar .logo {
-    flex: 1;  /* Takes equal space */
-    text-align: center;
-    font-size: 1.7rem;
-    font-weight: 700;
-    z-index: 200;
-  }
-
-  /* ✅ Position hamburger on extreme right */
-  .mobile-menu-toggle {
-    display: block;
-    position: relative;
-    right: -180px;  /* Push it fully to the right */
-    margin-left: auto; /* Ensures it sticks to extreme right */
-  }
-
-  /* ✅ Dropdown menu styles */
-  .nav-links {
-    display: none !important;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    flex-direction: column;
-    background-color: #0077b6;
-    padding: 20px 0;
-    gap: 18px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-    z-index: 150;
-    text-align: center;
-  }
-
-  /* ✅ Show nav when hamburger is clicked */
-  .nav-links.show {
-    display: flex !important;
-  }
+  margin-right: 10px;     /* Space between hamburger & ShipEase */
+  position: relative;     /* Keep aligned inside navbar */
 }
 
-
-/* Top Row: ShipEase + Account + Hamburger */
+/* ✅ Navbar top row: Hamburger + ShipEase + Account */
 .navbar-top {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
+  padding: 12px 20px;
+  position: relative;
 }
 
-/* Account Button Styling */
+/* ✅ Logo Centering */
+.navbar .logo {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  flex-grow: 1; /* ✅ Allows ShipEase to stay centered */
+}
+
+/* ✅ Account Button Styling */
 .account-btn {
   background-color: transparent;
   border: none;
@@ -947,7 +908,7 @@ body {
   font-weight: 600;
   cursor: pointer;
   padding: 8px 12px;
-  margin-left: auto; /* Pushes it to the right */
+  margin-left: auto;
   transition: color 0.3s ease;
 }
 
@@ -955,19 +916,35 @@ body {
   color: #ffdd57;
 }
 
+/* ✅ Dropdown menu styles */
+.nav-links {
+  display: none !important;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  flex-direction: column;
+  background-color: #0077b6;
+  padding: 20px 0;
+  gap: 18px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  z-index: 150;
+  text-align: center;
+}
 
-/* =============================== */
-/* ✅ TWO-ROW NAVBAR LAYOUT FIX   */
-/* =============================== */
+/* ✅ Show nav when hamburger is clicked */
+.nav-links.show {
+  display: flex !important;
+}
 
-/* Wrap everything in two rows */
+/* ✅ Two-row navbar layout fix */
 .nav-links {
   display: flex;
-  flex-direction: column; /* Stack rows vertically */
-  align-items: flex-start; /* Left-align both rows */
+  flex-direction: column;
+  align-items: flex-start;
   gap: 6px;
-  font-size: 15px;  /* ✅ Set a consistent font size */
-  font-weight: 600; /* ✅ Make both rows equally bold */
+  font-size: 15px;
+  font-weight: 600;
   line-height: 1.4;
 }
 
@@ -983,8 +960,8 @@ body {
   background: transparent;
   border: none;
   color: white;
-  font-size: 15px;    /* ✅ Same size as ecom links */
-  font-weight: 600;   /* ✅ Same weight */
+  font-size: 15px;
+  font-weight: 600;
   padding: 8px 14px;
   border-radius: 6px;
   cursor: pointer;
@@ -1000,7 +977,7 @@ body {
 .ecom-links-row {
   display: flex;
   gap: 20px;
-  justify-content: flex-start; /* Align below "Home" */
+  justify-content: flex-start;
   flex-wrap: wrap;
   margin-top: 4px;
 }
@@ -1008,8 +985,8 @@ body {
 .ecom-links-row a {
   text-decoration: none;
   color: white;
-  font-size: 15px;   /* ✅ Matches top row */
-  font-weight: 600;  /* ✅ Matches top row */
+  font-size: 15px;
+  font-weight: 600;
   padding: 8px 10px;
   border-radius: 6px;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -1022,9 +999,26 @@ body {
 
 /* ✅ Mobile View Fix */
 @media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: block;      /* ✅ Show hamburger on mobile */
+    order: 1;            /* ✅ Ensure it stays on extreme left */
+    margin-right: 10px;
+  }
+
+  .navbar .logo {
+    order: 2;            /* ✅ Logo stays in the middle */
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  .account-btn {
+    order: 3;            /* ✅ Account button stays on extreme right */
+    margin-left: 0;
+  }
+
   .nav-links {
-    align-items: center; /* Center on mobile */
-    font-size: 14px; /* Slightly smaller on mobile */
+    align-items: center;
+    font-size: 14px;
   }
 
   .main-nav-row {
@@ -1041,6 +1035,4 @@ body {
     width: 100%;
   }
 }
-
-
 
