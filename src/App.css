@@ -805,15 +805,20 @@ body {
   position: relative;
 }
 
-/* ✅ Default hamburger styles */
+/* ✅ Hamburger Icon */
 .mobile-menu-toggle {
-  display: none;          
-  font-size: 28px;
+  font-size: 26px;
+  cursor: pointer;
+  display: none;
   background: transparent;
   border: none;
   color: white;
-  cursor: pointer;
-  z-index: 300;
+  position: absolute;
+  left: -10px;  /* ✅ Pushes icon slightly more to the left */
+  top: 55%;     /* ✅ Adjusted position to center better */
+  transform: translateY(-50%);
+  padding: 6px 10px;
+  z-index: 300; /* ✅ Keeps icon above everything */
 }
 
 /* ✅ Navbar top row: Hamburger + Logo + Account */
@@ -935,15 +940,14 @@ body {
 }
 
 /* ✅ Mobile View Fix */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .mobile-menu-toggle {
-    display: block;         /* ✅ Show hamburger on mobile */
-    position: absolute;     /* ✅ Fix hamburger positioning */
-    left: 10px;            /* 🔹 Stick to extreme left */
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1000;
+    display: block;
   }
+.navbar h1 {
+  margin-left: 40px; /* ✅ Push logo slightly right so it doesn’t overlap */
+  font-size: 22px;
+}
 
   .navbar .logo {
     position: absolute;
