@@ -867,11 +867,42 @@ body {
   justify-self: end;
   margin-right: 0;
   position: relative;
-  z-index: 1005; /* ✅ Keeps it above mobile menu overlay */
+  z-index: 2001; /* ✅ Keep above mobile menu overlay */
 }
 
 .account-btn:hover {
   color: #ffdd57;
+}
+
+/* ================= ACCOUNT DROPDOWN ================= */
+.account-dropdown {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: white;
+  color: black;
+  min-width: 150px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  display: none;
+  flex-direction: column;
+  z-index: 3000; /* ✅ Highest priority for clicks */
+}
+
+.account-dropdown.show {
+  display: flex;
+}
+
+.account-dropdown a {
+  padding: 10px 15px;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  transition: background 0.2s ease-in-out;
+}
+
+.account-dropdown a:hover {
+  background-color: #f0f0f0;
 }
 
 /* ================= HAMBURGER STYLES ================= */
@@ -881,7 +912,7 @@ body {
   border: none;
   color: white;
   cursor: pointer;
-  z-index: 1006; /* ✅ Always above the menu */
+  z-index: 3001; /* ✅ Always on top */
   transition: transform 0.3s ease-in-out;
   justify-self: start;
 }
@@ -954,7 +985,7 @@ body {
     padding: 60px 20px;
     gap: 30px;
     text-align: center;
-    z-index: 1000; /* ✅ Below account + hamburger */
+    z-index: 1500; /* ✅ Below Account Dropdown */
     opacity: 0;
     transform: translateY(-20px);
     transition: all 0.3s ease-in-out;
@@ -980,7 +1011,7 @@ body {
   /* Show E-commerce Grid for Mobile */
   .ecom-links.mobile-only {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* ✅ 3 per row */
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px 25px;
     text-align: center;
     width: 100%;
@@ -1000,4 +1031,5 @@ body {
     color: #ffeb3b;
   }
 }
+
 
