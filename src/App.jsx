@@ -195,7 +195,18 @@ function MyFoods() {
 export default function App() {
   const [currentView, setCurrentView] = useState("home");
   const [accountTab, setAccountTab] = useState("signup");
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); 
+    const handleMenuClick = (view) => {
+    setCurrentView(view);
+    setIsMobileMenuOpen(false);
+    document.body.classList.remove("no-scroll"); // Enable scrolling again
+  };
+
+  const toggleMobileMenu = () => {
+    const newState = !isMobileMenuOpen;
+    setIsMobileMenuOpen(newState);
+    document.body.classList.toggle("no-scroll", newState); // Disable/enable scrolling
+  }; 
    const sliderSettings = {
     dots: true,
     infinite: true,
@@ -252,10 +263,10 @@ export default function App() {
       {/* ================= NAVBAR ================= */}
       <header className="navbar">
         <div className="navbar-top">
-          {/* Hamburger Menu for Mobile */}
+          {/* Hamburger Menu */}
           <button
             className="mobile-menu-toggle"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            onClick={toggleMobileMenu}
           >
             {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
@@ -265,10 +276,7 @@ export default function App() {
 
           {/* Account Button */}
           <button
-            onClick={() => {
-              setCurrentView("account");
-              setIsMobileMenuOpen(false);
-            }}
+            onClick={() => handleMenuClick("account")}
             className={`account-btn ${currentView === "account" ? "active" : ""}`}
             type="button"
           >
@@ -280,66 +288,11 @@ export default function App() {
         {/* Navigation Menu */}
         <nav className={`nav-links ${isMobileMenuOpen ? "show" : ""}`}>
           <ul className="navbar-links">
-            <li>
-              <a
-                href="#"
-                onClick={() => {
-                  setCurrentView("home");
-                  setIsMobileMenuOpen(false);
-                }}
-                className={currentView === "home" ? "active" : ""}
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                onClick={() => {
-                  setCurrentView("shipping");
-                  setIsMobileMenuOpen(false);
-                }}
-                className={currentView === "shipping" ? "active" : ""}
-              >
-                Shipping
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                onClick={() => {
-                  setCurrentView("mailbox");
-                  setIsMobileMenuOpen(false);
-                }}
-                className={currentView === "mailbox" ? "active" : ""}
-              >
-                Mail Box
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                onClick={() => {
-                  setCurrentView("personalShopper");
-                  setIsMobileMenuOpen(false);
-                }}
-                className={currentView === "personalShopper" ? "active" : ""}
-              >
-                Personal Shopper
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                onClick={() => {
-                  setCurrentView("myFoods");
-                  setIsMobileMenuOpen(false);
-                }}
-                className={currentView === "myFoods" ? "active" : ""}
-              >
-                My Foods
-              </a>
-            </li>
+            <li><a onClick={() => handleMenuClick("home")}>Home</a></li>
+            <li><a onClick={() => handleMenuClick("shipping")}>Shipping</a></li>
+            <li><a onClick={() => handleMenuClick("mailbox")}>Mail Box</a></li>
+            <li><a onClick={() => handleMenuClick("personalShopper")}>Personal Shopper</a></li>
+            <li><a onClick={() => handleMenuClick("myFoods")}>My Foods</a></li>
             <li><a href="https://www.amazon.in" target="_blank" rel="noreferrer">Amazon</a></li>
             <li><a href="https://www.flipkart.com" target="_blank" rel="noreferrer">Flipkart</a></li>
             <li><a href="https://www.myntra.com" target="_blank" rel="noreferrer">Myntra</a></li>
@@ -348,7 +301,7 @@ export default function App() {
             <li><a href="https://www.ajio.com" target="_blank" rel="noreferrer">Ajio</a></li>
           </ul>
         </nav>
-      </header> 
+      </header>  
    {/* HOME */}
       {currentView === "home" && (
         <>
