@@ -1003,7 +1003,7 @@ body {
     display: block;       /* ✅ Show hamburger on mobile */
     order: 1;             /* ✅ Ensure it stays on extreme left */
     margin-right: 4px;    /* 🔹 Reduce right margin */
-    margin-left: -6px;    /* 🔹 Move slightly more to the left */
+    margin-left: -20px;    /* 🔹 Move slightly more to the left */
   }
 
   .navbar .logo {
