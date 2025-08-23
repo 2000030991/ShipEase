@@ -814,29 +814,29 @@ body {
   color: white;
   cursor: pointer;
   z-index: 300;
-  position: absolute;
-  top: 15px;
-  left: 15px; /* ✅ Extreme left */
+  margin-right: 10px;
 }
 
 /* ✅ Navbar top row: Hamburger + Logo + Account */
 .navbar-top {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between; /* ✅ Ensures proper spacing */
   width: 100%;
   padding: 12px 20px;
   position: relative;
 }
 
+/* ✅ Logo (ShipEase) */
 .navbar .logo {
   font-size: 1.7rem;
   font-weight: 700;
   color: white;
   text-align: center;
-  flex-grow: 1;
+  flex: 1;
 }
 
+/* ✅ Account button */
 .account-btn {
   background-color: transparent;
   border: none;
@@ -845,7 +845,6 @@ body {
   font-weight: 600;
   cursor: pointer;
   padding: 8px 12px;
-  margin-left: auto;
   transition: color 0.3s ease;
 }
 
@@ -925,16 +924,24 @@ body {
 @media (max-width: 768px) {
   .mobile-menu-toggle {
     display: block; /* ✅ Show hamburger on mobile */
+    margin-right: 10px;
+  }
+
+  .navbar-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* ✅ Perfect row alignment */
+    width: 100%;
+    padding: 10px 15px;
   }
 
   .navbar .logo {
-    order: 2;
-    flex-grow: 1;
+    flex: 1;
     text-align: center;
+    font-size: 1.5rem;
   }
 
   .account-btn {
-    order: 3;
     margin-left: auto;
   }
 
