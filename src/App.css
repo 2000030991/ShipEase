@@ -1000,20 +1000,31 @@ body {
 /* ✅ Mobile View Fix */
 @media (max-width: 768px) {
   .mobile-menu-toggle {
-    display: block;       /* ✅ Show hamburger on mobile */
-    order: 1;             /* ✅ Ensure it stays on extreme left */
-    margin-right: 4px;    /* 🔹 Reduce right margin */
-    margin-left: -20px;    /* 🔹 Move slightly more to the left */
+    display: block;          /* ✅ Show hamburger on mobile */
+    position: absolute;      /* ✅ Force it to top-left corner */
+    left: 10px;              /* ✅ Adjust distance from left edge */
+    top: 50%;                /* ✅ Vertically center */
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+    z-index: 1000;           /* ✅ Ensure it's above everything */
+  }
+
+  .navbar {
+    position: relative;      /* ✅ Required for absolute positioning */
   }
 
   .navbar .logo {
-    order: 2;            /* ✅ Logo stays in the middle */
+    order: 2;                /* ✅ Logo stays in the middle */
     flex-grow: 1;
     text-align: center;
   }
 
   .account-btn {
-    order: 3;            /* ✅ Account button stays on extreme right */
+    order: 3;                /* ✅ Account button stays on extreme right */
     margin-left: 0;
   }
 
@@ -1036,5 +1047,4 @@ body {
     width: 100%;
   }
 }
-
 
