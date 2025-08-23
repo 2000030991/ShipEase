@@ -806,11 +806,19 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* ================= NAVBAR TOP ================= */
+.navbar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
 /* ================= UNIFIED NAV LINKS ================= */
 .navbar-links {
   display: flex;
-  flex-wrap: nowrap;          /* Keep everything in one line */
-  gap: 30px;                  /* Equal spacing between all links */
+  flex-wrap: nowrap;
+  gap: 30px;
   list-style: none;
   overflow-x: auto;
   white-space: nowrap;
@@ -820,13 +828,12 @@ body {
   width: 100%;
 }
 
-/* ✅ Make all links look exactly the same */
 .navbar-links li a {
   color: white;
   text-decoration: none;
-  font-weight: 700;           /* Uniform boldness */
-  font-size: 16px;            /* Uniform size */
-  letter-spacing: 0.5px;      /* Makes them visually balanced */
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.5px;
   transition: color 0.2s ease-in-out;
 }
 
@@ -834,14 +841,20 @@ body {
   color: #ffeb3b;
 }
 
-/* ================= ACCOUNT SECTION ================= */
-.account {
-  margin-top: 10px;
-  font-weight: bold;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
+/* ================= ACCOUNT BUTTON ================= */
+.account-btn {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 12px;
+  transition: color 0.3s ease;
+}
+
+.account-btn:hover {
+  color: #ffdd57;
 }
 
 /* ================= HAMBURGER STYLES ================= */
@@ -853,6 +866,7 @@ body {
   color: white;
   cursor: pointer;
   z-index: 300;
+  transition: transform 0.3s ease-in-out;
 }
 
 /* ================= DESKTOP LAYOUT ================= */
@@ -866,7 +880,6 @@ body {
 
 /* ================= MOBILE VIEW ================= */
 @media screen and (max-width: 768px) {
-  /* Navbar adjusts */
   .navbar {
     display: flex !important;
     justify-content: space-between;
@@ -875,7 +888,6 @@ body {
     position: relative;
   }
 
-  /* Logo center */
   .navbar .logo {
     flex: 1;
     text-align: center;
@@ -884,7 +896,6 @@ body {
     z-index: 200;
   }
 
-  /* Hamburger extreme right */
   .mobile-menu-toggle {
     display: block;
     position: absolute;
@@ -894,51 +905,62 @@ body {
     margin-left: auto;
   }
 
-  /* Dropdown menu */
+  /* ================= FULL-SCREEN MENU ================= */
   .navbar-links {
-    display: none !important;
-    position: absolute;
-    top: 70px;
+    display: none;
+    position: fixed;
+    top: 0;
     left: 0;
+    height: 100vh;
     width: 100%;
+    background-color: #0077ff;
     flex-direction: column;
-    background-color: #0077b6;
-    padding: 20px 0;
-    gap: 18px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-    z-index: 150;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    font-size: 22px;
+    font-weight: bold;
     text-align: center;
+    z-index: 500;
+    transition: all 0.3s ease-in-out;
   }
 
-  /* ✅ Show when hamburger clicked */
   .navbar-links.show {
     display: flex !important;
   }
+
+  .navbar-links li {
+    list-style: none;
+  }
+
+  .navbar-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .navbar-links li a:hover {
+    color: #ffeb3b;
+  }
+
+  .account-btn {
+    background-color: white;
+    color: #0077ff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 10px;
+  }
 }
 
-/* ================= NAVBAR TOP SECTION ================= */
-.navbar-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
+/* ================= DISABLE BACKGROUND SCROLL ================= */
+body.no-scroll {
+  overflow: hidden;
+} 
 
-/* ================= ACCOUNT BUTTON ================= */
-.account-btn {
-  background-color: transparent;
-  border: none;
-  color: white;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  padding: 8px 12px;
-  margin-left: auto;
-  transition: color 0.3s ease;
-}
-
-.account-btn:hover {
-  color: #ffdd57;
-}
 
 

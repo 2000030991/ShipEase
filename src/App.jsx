@@ -247,108 +247,135 @@ export default function App() {
   const handleMailboxSubmit = (e) => { e.preventDefault(); alert("Mail Box details submitted successfully!"); setCurrentView("home"); };
   const handlePersonalShopperSubmit = (e) => { e.preventDefault(); alert("Personal Shopper request submitted successfully!"); setCurrentView("home"); };
 
-return (
-  <>
-    <header className="navbar">
-      <div className="navbar-top">
-        {/* Hamburger Menu for Mobile */}
-        <button
-          className="mobile-menu-toggle"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
-        </button>
+ return (
+    <>
+      {/* ================= NAVBAR ================= */}
+      <header className="navbar">
+        <div className="navbar-top">
+          {/* Hamburger Menu for Mobile */}
+          <button
+            className="mobile-menu-toggle"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+          </button>
 
-        {/* Logo in Center */}
-        <h1 className="logo">ShipEase</h1>
+          {/* Logo */}
+          <h1 className="logo">ShipEase</h1>
 
-        {/* Account Button */}
-        <button
-          onClick={() => {
-            setCurrentView("account");
-            setIsMobileMenuOpen(false);
-          }}
-          className={`account-btn ${currentView === "account" ? "active" : ""}`}
-          type="button"
-        >
-          <FaUserCircle style={{ verticalAlign: "middle", marginRight: "6px" }} />
-          Account
-        </button>
-      </div>
+          {/* Desktop Account Button */}
+          <button
+            onClick={() => {
+              setCurrentView("account");
+              setIsMobileMenuOpen(false);
+            }}
+            className={`account-btn ${currentView === "account" ? "active" : ""}`}
+            type="button"
+          >
+            <FaUserCircle
+              style={{ verticalAlign: "middle", marginRight: "6px" }}
+            />
+            Account
+          </button>
+        </div>
 
-      {/* Navigation Menu */}
-      <nav className={`nav-links ${isMobileMenuOpen ? "show" : ""}`}>
-        <ul className="navbar-links">
-          <li>
-            <a
-              href="#"
-              onClick={() => {
-                setCurrentView("home");
-                setIsMobileMenuOpen(false);
-              }}
-              className={currentView === "home" ? "active" : ""}
-            >
-              Home
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              onClick={() => {
-                setCurrentView("shipping");
-                setIsMobileMenuOpen(false);
-              }}
-              className={currentView === "shipping" ? "active" : ""}
-            >
-              Shipping
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              onClick={() => {
-                setCurrentView("mailbox");
-                setIsMobileMenuOpen(false);
-              }}
-              className={currentView === "mailbox" ? "active" : ""}
-            >
-              Mail Box
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              onClick={() => {
-                setCurrentView("personalShopper");
-                setIsMobileMenuOpen(false);
-              }}
-              className={currentView === "personalShopper" ? "active" : ""}
-            >
-              Personal Shopper
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              onClick={() => {
-                setCurrentView("myFoods");
-                setIsMobileMenuOpen(false);
-              }}
-              className={currentView === "myFoods" ? "active" : ""}
-            >
-              My Foods
-            </a>
-          </li>
-          <li><a href="https://www.amazon.in" target="_blank" rel="noopener noreferrer">Amazon</a></li>
-          <li><a href="https://www.flipkart.com" target="_blank" rel="noopener noreferrer">Flipkart</a></li>
-          <li><a href="https://www.myntra.com" target="_blank" rel="noopener noreferrer">Myntra</a></li>
-          <li><a href="https://www.meesho.com" target="_blank" rel="noopener noreferrer">Meesho</a></li>
-          <li><a href="https://www.nykaa.com" target="_blank" rel="noopener noreferrer">Nykaa</a></li>
-          <li><a href="https://www.ajio.com" target="_blank" rel="noopener noreferrer">Ajio</a></li>
-        </ul>
-      </nav>
-    </header> 
-    
+        {/* Navigation Menu */}
+        <nav className={`nav-links ${isMobileMenuOpen ? "show" : ""}`}>
+          <ul className="navbar-links">
+            <li>
+              <a
+                href="#"
+                onClick={() => {
+                  setCurrentView("home");
+                  setIsMobileMenuOpen(false);
+                }}
+                className={currentView === "home" ? "active" : ""}
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                onClick={() => {
+                  setCurrentView("shipping");
+                  setIsMobileMenuOpen(false);
+                }}
+                className={currentView === "shipping" ? "active" : ""}
+              >
+                Shipping
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                onClick={() => {
+                  setCurrentView("mailbox");
+                  setIsMobileMenuOpen(false);
+                }}
+                className={currentView === "mailbox" ? "active" : ""}
+              >
+                Mail Box
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                onClick={() => {
+                  setCurrentView("personalShopper");
+                  setIsMobileMenuOpen(false);
+                }}
+                className={currentView === "personalShopper" ? "active" : ""}
+              >
+                Personal Shopper
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                onClick={() => {
+                  setCurrentView("myFoods");
+                  setIsMobileMenuOpen(false);
+                }}
+                className={currentView === "myFoods" ? "active" : ""}
+              >
+                My Foods
+              </a>
+            </li>
+            <li>
+              <a href="https://www.amazon.in" target="_blank" rel="noreferrer">
+                Amazon
+              </a>
+            </li>
+            <li>
+              <a href="https://www.flipkart.com" target="_blank" rel="noreferrer">
+                Flipkart
+              </a>
+            </li>
+            <li>
+              <a href="https://www.myntra.com" target="_blank" rel="noreferrer">
+                Myntra
+              </a>
+            </li>
+            <li>
+              <a href="https://www.meesho.com" target="_blank" rel="noreferrer">
+                Meesho
+              </a>
+            </li>
+            <li>
+              <a href="https://www.nykaa.com" target="_blank" rel="noreferrer">
+                Nykaa
+              </a>
+            </li>
+            <li>
+              <a href="https://www.ajio.com" target="_blank" rel="noreferrer">
+                Ajio
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header> 
+
    {/* HOME */}
       {currentView === "home" && (
         <>
@@ -526,44 +553,133 @@ return (
         </>
       )}
 
-      {/* ACCOUNT */}
+  {/* ================= ACCOUNT SECTION ================= */}
       {currentView === "account" && (
-        <section style={{ maxWidth: "460px", margin: "30px auto", padding: "20px", background: "white", borderRadius: "12px", boxShadow: "0 5px 15px rgba(0,0,0,0.1)", color: "#023e8a" }}>
+        <section
+          style={{
+            maxWidth: "460px",
+            margin: "30px auto",
+            padding: "20px",
+            background: "white",
+            borderRadius: "12px",
+            boxShadow: "0 5px 15px rgba(0,0,0,0.1)",
+            color: "#023e8a",
+          }}
+        >
           <div style={{ display: "flex", gap: "10px", marginBottom: "18px" }}>
-            <button type="button" onClick={() => setAccountTab("signup")} style={{ flex: 1, padding: "10px", borderRadius: "8px", border: accountTab === "signup" ? "2px solid #0077b6" : "1px solid #ddd", background: accountTab === "signup" ? "#e6f7ff" : "white", cursor: "pointer" }}>Sign Up</button>
-            <button type="button" onClick={() => setAccountTab("login")} style={{ flex: 1, padding: "10px", borderRadius: "8px", border: accountTab === "login" ? "2px solid #0077b6" : "1px solid #ddd", background: accountTab === "login" ? "#e6f7ff" : "white", cursor: "pointer" }}>Login</button>
+            <button
+              type="button"
+              onClick={() => setAccountTab("signup")}
+              style={{
+                flex: 1,
+                padding: "10px",
+                borderRadius: "8px",
+                border:
+                  accountTab === "signup"
+                    ? "2px solid #0077b6"
+                    : "1px solid #ddd",
+                background:
+                  accountTab === "signup" ? "#e6f7ff" : "white",
+                cursor: "pointer",
+              }}
+            >
+              Sign Up
+            </button>
+            <button
+              type="button"
+              onClick={() => setAccountTab("login")}
+              style={{
+                flex: 1,
+                padding: "10px",
+                borderRadius: "8px",
+                border:
+                  accountTab === "login"
+                    ? "2px solid #0077b6"
+                    : "1px solid #ddd",
+                background:
+                  accountTab === "login" ? "#e6f7ff" : "white",
+                cursor: "pointer",
+              }}
+            >
+              Login
+            </button>
           </div>
+
           {accountTab === "signup" && (
             <>
-              <h2 style={{ textAlign: "center", marginBottom: "10px" }}>Create Account</h2>
+              <h2 style={{ textAlign: "center", marginBottom: "10px" }}>
+                Create Account
+              </h2>
               <form onSubmit={handleSignupSubmit}>
                 <label>Name*</label>
-                <input type="text" required placeholder="Your full name" style={inputStyle} />
+                <input
+                  type="text"
+                  required
+                  placeholder="Your full name"
+                  style={inputStyle}
+                />
                 <label>Email*</label>
-                <input type="email" required placeholder="you@example.com" style={inputStyle} />
+                <input
+                  type="email"
+                  required
+                  placeholder="you@example.com"
+                  style={inputStyle}
+                />
                 <label>Password*</label>
-                <input type="password" required placeholder="Enter a secure password" style={inputStyle} />
+                <input
+                  type="password"
+                  required
+                  placeholder="Enter a secure password"
+                  style={inputStyle}
+                />
                 <label>Contact Number*</label>
-                <input type="tel" required placeholder="+91 9876543210" style={inputStyle} />
+                <input
+                  type="tel"
+                  required
+                  placeholder="+91 9876543210"
+                  style={inputStyle}
+                />
                 <label>Address*</label>
-                <textarea required placeholder="Your shipping address" rows={3} style={inputStyle}></textarea>
-                <button type="submit" style={buttonStyle}>Submit</button>
+                <textarea
+                  required
+                  placeholder="Your shipping address"
+                  rows={3}
+                  style={inputStyle}
+                ></textarea>
+                <button type="submit" style={buttonStyle}>
+                  Submit
+                </button>
               </form>
             </>
           )}
+
           {accountTab === "login" && (
             <>
-              <h2 style={{ textAlign: "center", marginBottom: "10px" }}>Login</h2>
+              <h2 style={{ textAlign: "center", marginBottom: "10px" }}>
+                Login
+              </h2>
               <form onSubmit={handleLoginSubmit}>
                 <label>Email*</label>
-                <input type="email" required placeholder="you@example.com" style={inputStyle} />
-                <label>Password*</label>
-                <input type="password" required placeholder="Your password" style={inputStyle} />
-                <button type="submit" style={buttonStyle}>Login</button>
+                <input
+                  type="email"
+                  required
+                  placeholder="you@example.com"
+                  style={inputStyle}
+                />
+                <label>Password*</label> 
+                <input
+                  type="password"
+                  required
+                  placeholder="Your password"
+                  style={inputStyle}
+                />
+                <button type="submit" style={buttonStyle}>
+                  Login
+                </button>
               </form>
             </>
-          )}
-        </section>
+          )} 
+        </section>  
       )}
 
      {/* SHIPPING */}
