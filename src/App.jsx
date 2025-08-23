@@ -247,7 +247,7 @@ export default function App() {
   const handleMailboxSubmit = (e) => { e.preventDefault(); alert("Mail Box details submitted successfully!"); setCurrentView("home"); };
   const handlePersonalShopperSubmit = (e) => { e.preventDefault(); alert("Personal Shopper request submitted successfully!"); setCurrentView("home"); };
 
- return (
+  return (
     <>
       {/* ================= NAVBAR ================= */}
       <header className="navbar">
@@ -263,13 +263,15 @@ export default function App() {
           {/* Logo */}
           <h1 className="logo">ShipEase</h1>
 
-          {/* Desktop Account Button */}
+          {/* Account Button */}
           <button
             onClick={() => {
               setCurrentView("account");
               setIsMobileMenuOpen(false);
             }}
-            className={`account-btn ${currentView === "account" ? "active" : ""}`}
+            className={`account-btn ${
+              currentView === "account" ? "active" : ""
+            }`}
             type="button"
           >
             <FaUserCircle
@@ -281,6 +283,7 @@ export default function App() {
 
         {/* Navigation Menu */}
         <nav className={`nav-links ${isMobileMenuOpen ? "show" : ""}`}>
+          {/* ================= MAIN NAVIGATION LINKS ================= */}
           <ul className="navbar-links">
             <li>
               <a
@@ -342,37 +345,61 @@ export default function App() {
                 My Foods
               </a>
             </li>
-            <li>
+
+            {/* ✅ E-commerce Links (Always part of navbar links for desktop) */}
+            <li className="desktop-only">
               <a href="https://www.amazon.in" target="_blank" rel="noreferrer">
                 Amazon
               </a>
             </li>
-            <li>
+            <li className="desktop-only">
               <a href="https://www.flipkart.com" target="_blank" rel="noreferrer">
                 Flipkart
               </a>
             </li>
-            <li>
+            <li className="desktop-only">
               <a href="https://www.myntra.com" target="_blank" rel="noreferrer">
                 Myntra
               </a>
             </li>
-            <li>
+            <li className="desktop-only">
               <a href="https://www.meesho.com" target="_blank" rel="noreferrer">
                 Meesho
               </a>
             </li>
-            <li>
+            <li className="desktop-only">
               <a href="https://www.nykaa.com" target="_blank" rel="noreferrer">
                 Nykaa
               </a>
             </li>
-            <li>
+            <li className="desktop-only">
               <a href="https://www.ajio.com" target="_blank" rel="noreferrer">
                 Ajio
               </a>
             </li>
           </ul>
+
+          {/* ================= E-COMMERCE GRID FOR MOBILE ================= */}
+          <div className="ecom-links mobile-only">
+            <a href="https://www.amazon.in" target="_blank" rel="noreferrer">
+              Amazon
+            </a>
+            <a href="https://www.flipkart.com" target="_blank" rel="noreferrer">
+              Flipkart
+            </a>
+            <a href="https://www.myntra.com" target="_blank" rel="noreferrer">
+              Myntra
+            </a>
+            <a href="https://www.meesho.com" target="_blank" rel="noreferrer">
+              Meesho
+            </a>
+            <a href="https://www.nykaa.com" target="_blank" rel="noreferrer">
+              Nykaa
+            </a>
+            <a href="https://www.ajio.com" target="_blank" rel="noreferrer">
+              Ajio
+            </a>
+          </div>
         </nav>
       </header> 
 
