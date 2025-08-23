@@ -803,6 +803,8 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   width: 100%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 1000;
 }
 
 /* ================= NAVBAR TOP ================= */
@@ -820,6 +822,7 @@ body {
   font-weight: bold;
   text-align: center;
   color: white;
+  z-index: 1002;
 }
 
 /* ================= NAVBAR LINKS ================= */
@@ -835,7 +838,6 @@ body {
   white-space: nowrap;
 }
 
-/* Navbar Link Styles */
 .navbar-links li a {
   color: white;
   text-decoration: none;
@@ -864,6 +866,8 @@ body {
   transition: color 0.3s ease;
   justify-self: end;
   margin-right: 0;
+  position: relative;
+  z-index: 1005; /* ✅ Keeps it above mobile menu overlay */
 }
 
 .account-btn:hover {
@@ -877,7 +881,7 @@ body {
   border: none;
   color: white;
   cursor: pointer;
-  z-index: 600; /* ✅ Keep it above mobile menu */
+  z-index: 1006; /* ✅ Always above the menu */
   transition: transform 0.3s ease-in-out;
   justify-self: start;
 }
@@ -889,14 +893,13 @@ body {
 /* ================= DESKTOP LAYOUT ================= */
 @media screen and (min-width: 769px) {
   .mobile-menu-toggle {
-    display: none; /* Hide hamburger on desktop */
+    display: none;
   }
 
   .navbar-top {
     grid-template-columns: 1fr auto 120px;
   }
 
-  /* Desktop links stay in a single line */
   .navbar-links {
     overflow-x: visible;
     justify-content: center;
@@ -907,7 +910,6 @@ body {
     display: inline-block;
   }
 
-  /* Hide mobile-only e-commerce grid */
   .ecom-links.mobile-only {
     display: none !important;
   }
@@ -933,7 +935,7 @@ body {
 
   /* ✅ Move Account Button Slightly Left */
   .account-btn {
-    margin-right: 5px;
+    margin-right: 12px;
     font-size: 0.95rem;
   }
 
@@ -952,13 +954,12 @@ body {
     padding: 60px 20px;
     gap: 30px;
     text-align: center;
-    z-index: 500;
+    z-index: 1000; /* ✅ Below account + hamburger */
     opacity: 0;
     transform: translateY(-20px);
     transition: all 0.3s ease-in-out;
   }
 
-  /* ✅ Smooth transition for open/close */
   .nav-links.show {
     display: flex !important;
     opacity: 1;
