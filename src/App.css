@@ -794,16 +794,16 @@ body {
 }
 
 
-
 /* ================= NAVBAR CONTAINER ================= */
 .navbar {
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding: 10px 20px;
-  background-color: #0077ff;
+  background: linear-gradient(90deg, #0077ff, #00bfff);
   color: white;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* ================= NAVBAR TOP ================= */
@@ -812,6 +812,15 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+}
+
+/* ================= LOGO ================= */
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  flex: 1;
+  color: white;
 }
 
 /* ================= UNIFIED NAV LINKS ================= */
@@ -850,7 +859,11 @@ body {
   font-weight: 600;
   cursor: pointer;
   padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
   transition: color 0.3s ease;
+  margin-right: 20px; /* Slightly moves left on desktop */
 }
 
 .account-btn:hover {
@@ -859,7 +872,6 @@ body {
 
 /* ================= HAMBURGER STYLES ================= */
 .mobile-menu-toggle {
-  display: none;
   font-size: 28px;
   background: transparent;
   border: none;
@@ -876,33 +888,44 @@ body {
     justify-content: center;
     gap: 30px;
   }
+
+  /* HIDE HAMBURGER ICON ON DESKTOP */
+  .mobile-menu-toggle {
+    display: none;
+  }
+
+  /* Adjust account button position on desktop */
+  .account-btn {
+    margin-right: 40px; /* Move slightly left */
+  }
 }
 
 /* ================= MOBILE VIEW ================= */
 @media screen and (max-width: 768px) {
   .navbar {
-    display: flex !important;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
     padding: 12px 20px;
-    position: relative;
   }
 
-  .navbar .logo {
-    flex: 1;
+  .navbar-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .logo {
     text-align: center;
+    flex-grow: 1;
     font-size: 1.7rem;
-    font-weight: 700;
-    z-index: 200;
   }
 
   .mobile-menu-toggle {
-    display: block;
     position: absolute;
-    right: 15px;
+    left: 15px;
     top: 50%;
     transform: translateY(-50%);
-    margin-left: auto;
+    display: block;
   }
 
   /* ================= FULL-SCREEN MENU ================= */
@@ -946,29 +969,8 @@ body {
     color: #ffeb3b;
   }
 
-.account-btn {
-    background-color: transparent; /* Remove white background */
-    color: white; /* Make text white */
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 18px;
-    margin-top: 10px;
-    border: none; /* Remove border */
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: color 0.3s ease;
-}
-.account-btn:hover {
-    color: #ffdd00; /* Optional: Highlight on hover */
+  body.no-scroll {
+    overflow: hidden;
+  }
 }
 
-
-/* ================= DISABLE BACKGROUND SCROLL ================= */
-body.no-scroll {
-  overflow: hidden;
-} 
-
-} 
