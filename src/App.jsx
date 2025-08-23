@@ -250,160 +250,157 @@ export default function App() {
   return (
     <>
       {/* ================= NAVBAR ================= */}
-      <header className="navbar">
-        <div className="navbar-top">
-          {/* Hamburger Menu for Mobile */}
-          <button
-            className="mobile-menu-toggle"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
-          </button>
+     <header className="navbar">
+  <div className="navbar-top">
+    {/* Hamburger Menu for Mobile */}
+    <button
+      className="mobile-menu-toggle"
+      onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+    >
+      {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+    </button>
 
-          {/* Logo */}
-          <h1 className="logo">ShipEase</h1>
+    {/* Logo */}
+    <h1 className="logo">ShipEase</h1>
 
-      {/* Account Button */}
-<button
-  onClick={() => {
-    setCurrentView("account");
-    setIsMobileMenuOpen(false);  // ✅ Force close mobile menu
-  }}
-  className={`account-btn ${currentView === "account" ? "active" : ""}`}
-  type="button"
->
-  <FaUserCircle style={{ verticalAlign: "middle", marginRight: "6px" }} />
-  Account
-</button>
- </div>   
+    {/* Account Button */}
+    <button
+      onClick={() => {
+        setCurrentView("account");
+        setIsMobileMenuOpen(false); // ✅ Force close menu on Account click
+      }}
+      className={`account-btn ${currentView === "account" ? "active" : ""}`}
+      type="button"
+    >
+      <FaUserCircle style={{ verticalAlign: "middle", marginRight: "6px" }} />
+      Account
+    </button>
+  </div>
 
-        {/* Navigation Menu */}
- <nav
-  className={`nav-links ${
-    isMobileMenuOpen && currentView !== "account" ? "show" : ""
-  }`}
-  style={{ zIndex: currentView === "account" ? "0" : "1000" }}>  
- 
- 
-          {/* ================= MAIN NAVIGATION LINKS ================= */}
-          <ul className="navbar-links">
-            <li>
-              <a
-                href="#"
-                onClick={() => {
-                  setCurrentView("home");
-                  setIsMobileMenuOpen(false);
-                }}
-                className={currentView === "home" ? "active" : ""}
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                onClick={() => {
-                  setCurrentView("shipping");
-                  setIsMobileMenuOpen(false);
-                }}
-                className={currentView === "shipping" ? "active" : ""}
-              >
-                Shipping
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                onClick={() => {
-                  setCurrentView("mailbox");
-                  setIsMobileMenuOpen(false);
-                }}
-                className={currentView === "mailbox" ? "active" : ""}
-              >
-                Mail Box
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                onClick={() => {
-                  setCurrentView("personalShopper");
-                  setIsMobileMenuOpen(false);
-                }}
-                className={currentView === "personalShopper" ? "active" : ""}
-              >
-                Personal Shopper
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                onClick={() => {
-                  setCurrentView("myFoods");
-                  setIsMobileMenuOpen(false);
-                }}
-                className={currentView === "myFoods" ? "active" : ""}
-              >
-                My Foods
-              </a>
-            </li>
+  {/* Navigation Menu */}
+  <nav
+    className={`nav-links ${
+      isMobileMenuOpen && currentView !== "account" ? "show" : ""
+    }`}
+  >
+    <ul className="navbar-links">
+      <li>
+        <a
+          href="#"
+          onClick={() => {
+            setCurrentView("home");
+            setIsMobileMenuOpen(false);
+          }}
+          className={currentView === "home" ? "active" : ""}
+        >
+          Home
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          onClick={() => {
+            setCurrentView("shipping");
+            setIsMobileMenuOpen(false); // ✅ Close menu on click
+          }}
+          className={currentView === "shipping" ? "active" : ""}
+        >
+          Shipping
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          onClick={() => {
+            setCurrentView("mailbox");
+            setIsMobileMenuOpen(false);
+          }}
+          className={currentView === "mailbox" ? "active" : ""}
+        >
+          Mail Box
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          onClick={() => {
+            setCurrentView("personalShopper");
+            setIsMobileMenuOpen(false);
+          }}
+          className={currentView === "personalShopper" ? "active" : ""}
+        >
+          Personal Shopper
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          onClick={() => {
+            setCurrentView("myFoods");
+            setIsMobileMenuOpen(false);
+          }}
+          className={currentView === "myFoods" ? "active" : ""}
+        >
+          My Foods
+        </a>
+      </li>
 
-            {/* ✅ E-commerce Links (Always part of navbar links for desktop) */}
-            <li className="desktop-only">
-              <a href="https://www.amazon.in" target="_blank" rel="noreferrer">
-                Amazon
-              </a>
-            </li>
-            <li className="desktop-only">
-              <a href="https://www.flipkart.com" target="_blank" rel="noreferrer">
-                Flipkart
-              </a>
-            </li>
-            <li className="desktop-only">
-              <a href="https://www.myntra.com" target="_blank" rel="noreferrer">
-                Myntra
-              </a>
-            </li>
-            <li className="desktop-only">
-              <a href="https://www.meesho.com" target="_blank" rel="noreferrer">
-                Meesho
-              </a>
-            </li>
-            <li className="desktop-only">
-              <a href="https://www.nykaa.com" target="_blank" rel="noreferrer">
-                Nykaa
-              </a>
-            </li>
-            <li className="desktop-only">
-              <a href="https://www.ajio.com" target="_blank" rel="noreferrer">
-                Ajio
-              </a>
-            </li>
-          </ul>
+      {/* Desktop E-commerce Links */}
+      <li className="desktop-only">
+        <a href="https://www.amazon.in" target="_blank" rel="noreferrer">
+          Amazon
+        </a>
+      </li>
+      <li className="desktop-only">
+        <a href="https://www.flipkart.com" target="_blank" rel="noreferrer">
+          Flipkart
+        </a>
+      </li>
+      <li className="desktop-only">
+        <a href="https://www.myntra.com" target="_blank" rel="noreferrer">
+          Myntra
+        </a>
+      </li>
+      <li className="desktop-only">
+        <a href="https://www.meesho.com" target="_blank" rel="noreferrer">
+          Meesho
+        </a>
+      </li>
+      <li className="desktop-only">
+        <a href="https://www.nykaa.com" target="_blank" rel="noreferrer">
+          Nykaa
+        </a>
+      </li>
+      <li className="desktop-only">
+        <a href="https://www.ajio.com" target="_blank" rel="noreferrer">
+          Ajio
+        </a>
+      </li>
+    </ul>
 
-          {/* ================= E-COMMERCE GRID FOR MOBILE ================= */}
-          <div className="ecom-links mobile-only">
-            <a href="https://www.amazon.in" target="_blank" rel="noreferrer">
-              Amazon
-            </a>
-            <a href="https://www.flipkart.com" target="_blank" rel="noreferrer">
-              Flipkart
-            </a>
-            <a href="https://www.myntra.com" target="_blank" rel="noreferrer">
-              Myntra
-            </a>
-            <a href="https://www.meesho.com" target="_blank" rel="noreferrer">
-              Meesho
-            </a>
-            <a href="https://www.nykaa.com" target="_blank" rel="noreferrer">
-              Nykaa
-            </a>
-            <a href="https://www.ajio.com" target="_blank" rel="noreferrer">
-              Ajio
-            </a>
-          </div>
-        </nav>
-      </header> 
+    {/* Mobile E-commerce Grid */}
+    <div className="ecom-links mobile-only">
+      <a href="https://www.amazon.in" target="_blank" rel="noreferrer">
+        Amazon
+      </a>
+      <a href="https://www.flipkart.com" target="_blank" rel="noreferrer">
+        Flipkart
+      </a>
+      <a href="https://www.myntra.com" target="_blank" rel="noreferrer">
+        Myntra
+      </a>
+      <a href="https://www.meesho.com" target="_blank" rel="noreferrer">
+        Meesho
+      </a>
+      <a href="https://www.nykaa.com" target="_blank" rel="noreferrer">
+        Nykaa
+      </a>
+      <a href="https://www.ajio.com" target="_blank" rel="noreferrer">
+        Ajio
+      </a>
+    </div>
+  </nav>
+</header>
 
    {/* HOME */}
       {currentView === "home" && (
