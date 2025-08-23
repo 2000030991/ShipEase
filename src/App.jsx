@@ -248,106 +248,107 @@ export default function App() {
   const handlePersonalShopperSubmit = (e) => { e.preventDefault(); alert("Personal Shopper request submitted successfully!"); setCurrentView("home"); };
 
 return (
-    <>
-      <header className="navbar">
-        <div className="navbar-top">
-          {/* Hamburger Menu for Mobile */}
-          <button
-            className="mobile-menu-toggle"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
-          </button>
+  <>
+    <header className="navbar">
+      <div className="navbar-top">
+        {/* Hamburger Menu for Mobile */}
+        <button
+          className="mobile-menu-toggle"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
 
-          {/* Logo in Center */}
-          <h1 className="logo">ShipEase</h1>
+        {/* Logo in Center */}
+        <h1 className="logo">ShipEase</h1>
 
-          {/* Account Button */}
-          <button
-            onClick={() => {
-              setCurrentView("account");
-              setIsMobileMenuOpen(false);
-            }}
-            className={`account-btn ${currentView === "account" ? "active" : ""}`}
-            type="button"
-          >
-            <FaUserCircle style={{ verticalAlign: "middle", marginRight: "6px" }} />
-            Account
-          </button>
-        </div>
+        {/* Account Button */}
+        <button
+          onClick={() => {
+            setCurrentView("account");
+            setIsMobileMenuOpen(false);
+          }}
+          className={`account-btn ${currentView === "account" ? "active" : ""}`}
+          type="button"
+        >
+          <FaUserCircle style={{ verticalAlign: "middle", marginRight: "6px" }} />
+          Account
+        </button>
+      </div>
 
-        {/* Navigation Menu */}
-        <nav className={`nav-links ${isMobileMenuOpen ? "show" : ""}`}>
-          {/* First Row → Main Navigation */}
-          <div className="main-nav-row">
-            <button
+      {/* Navigation Menu */}
+      <nav className={`nav-links ${isMobileMenuOpen ? "show" : ""}`}>
+        <ul className="navbar-links">
+          <li>
+            <a
+              href="#"
               onClick={() => {
                 setCurrentView("home");
                 setIsMobileMenuOpen(false);
               }}
-              className={`nav-button ${currentView === "home" ? "active" : ""}`}
-              type="button"
+              className={currentView === "home" ? "active" : ""}
             >
               Home
-            </button>
-
-            <button
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
               onClick={() => {
                 setCurrentView("shipping");
                 setIsMobileMenuOpen(false);
               }}
-              className={`nav-button ${currentView === "shipping" ? "active" : ""}`}
-              type="button"
+              className={currentView === "shipping" ? "active" : ""}
             >
               Shipping
-            </button>
-
-            <button
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
               onClick={() => {
                 setCurrentView("mailbox");
                 setIsMobileMenuOpen(false);
               }}
-              className={`nav-button ${currentView === "mailbox" ? "active" : ""}`}
-              type="button"
+              className={currentView === "mailbox" ? "active" : ""}
             >
               Mail Box
-            </button>
-
-            <button
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
               onClick={() => {
                 setCurrentView("personalShopper");
                 setIsMobileMenuOpen(false);
               }}
-              className={`nav-button ${currentView === "personalShopper" ? "active" : ""}`}
-              type="button"
+              className={currentView === "personalShopper" ? "active" : ""}
             >
               Personal Shopper
-            </button>
-
-            <button
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
               onClick={() => {
                 setCurrentView("myFoods");
                 setIsMobileMenuOpen(false);
               }}
-              className={`nav-button ${currentView === "myFoods" ? "active" : ""}`}
-              type="button"
+              className={currentView === "myFoods" ? "active" : ""}
             >
               My Foods
-            </button>
-          </div>
-
-          {/* E-commerce Links → Moved under Account Column in Mobile */}
-          <div className="ecom-links-row">
-            <a href="https://www.amazon.in" target="_blank" rel="noopener noreferrer">Amazon</a>
-            <a href="https://www.flipkart.com" target="_blank" rel="noopener noreferrer">Flipkart</a>
-            <a href="https://www.myntra.com" target="_blank" rel="noopener noreferrer">Myntra</a>
-            <a href="https://www.meesho.com" target="_blank" rel="noopener noreferrer">Meesho</a>
-            <a href="https://www.nykaa.com" target="_blank" rel="noopener noreferrer">Nykaa</a>
-            <a href="https://www.ajio.com" target="_blank" rel="noopener noreferrer">Ajio</a>
-          </div>
-        </nav>
-      </header>  
-
+            </a>
+          </li>
+          <li><a href="https://www.amazon.in" target="_blank" rel="noopener noreferrer">Amazon</a></li>
+          <li><a href="https://www.flipkart.com" target="_blank" rel="noopener noreferrer">Flipkart</a></li>
+          <li><a href="https://www.myntra.com" target="_blank" rel="noopener noreferrer">Myntra</a></li>
+          <li><a href="https://www.meesho.com" target="_blank" rel="noopener noreferrer">Meesho</a></li>
+          <li><a href="https://www.nykaa.com" target="_blank" rel="noopener noreferrer">Nykaa</a></li>
+          <li><a href="https://www.ajio.com" target="_blank" rel="noopener noreferrer">Ajio</a></li>
+        </ul>
+      </nav>
+    </header> 
+    
    {/* HOME */}
       {currentView === "home" && (
         <>

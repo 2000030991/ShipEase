@@ -794,7 +794,8 @@ body {
 }
 
 
-/* Navbar container */
+
+/* ================= NAVBAR CONTAINER ================= */
 .navbar {
   display: flex;
   flex-direction: column;
@@ -802,41 +803,128 @@ body {
   padding: 10px 20px;
   background-color: #0077ff;
   color: white;
-  position: relative;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* ✅ Default hamburger styles */
+/* ================= UNIFIED NAV LINKS ================= */
+.navbar-links {
+  display: flex;
+  flex-wrap: nowrap;          /* Keep everything in one line */
+  gap: 30px;                  /* Equal spacing between all links */
+  list-style: none;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 0;
+  margin: 10px 0 15px;
+  justify-content: center;
+  width: 100%;
+}
+
+/* ✅ Make all links look exactly the same */
+.navbar-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;           /* Uniform boldness */
+  font-size: 16px;            /* Uniform size */
+  letter-spacing: 0.5px;      /* Makes them visually balanced */
+  transition: color 0.2s ease-in-out;
+}
+
+.navbar-links li a:hover {
+  color: #ffeb3b;
+}
+
+/* ================= ACCOUNT SECTION ================= */
+.account {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* ================= HAMBURGER STYLES ================= */
 .mobile-menu-toggle {
-  display: none;          
+  display: none;
   font-size: 28px;
   background: transparent;
   border: none;
   color: white;
   cursor: pointer;
   z-index: 300;
-  margin-right: 10px;
 }
 
-/* ✅ Navbar top row: Hamburger + Logo + Account */
+/* ================= DESKTOP LAYOUT ================= */
+@media screen and (min-width: 769px) {
+  .navbar-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+}
+
+/* ================= MOBILE VIEW ================= */
+@media screen and (max-width: 768px) {
+  /* Navbar adjusts */
+  .navbar {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    position: relative;
+  }
+
+  /* Logo center */
+  .navbar .logo {
+    flex: 1;
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 700;
+    z-index: 200;
+  }
+
+  /* Hamburger extreme right */
+  .mobile-menu-toggle {
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: auto;
+  }
+
+  /* Dropdown menu */
+  .navbar-links {
+    display: none !important;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: #0077b6;
+    padding: 20px 0;
+    gap: 18px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    z-index: 150;
+    text-align: center;
+  }
+
+  /* ✅ Show when hamburger clicked */
+  .navbar-links.show {
+    display: flex !important;
+  }
+}
+
+/* ================= NAVBAR TOP SECTION ================= */
 .navbar-top {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: space-between; /* ✅ Ensures proper spacing */
   width: 100%;
-  padding: 12px 20px;
-  position: relative;
 }
 
-/* ✅ Logo (ShipEase) */
-.navbar .logo {
-  font-size: 1.7rem;
-  font-weight: 700;
-  color: white;
-  text-align: center;
-  flex: 1;
-}
-
-/* ✅ Account button */
+/* ================= ACCOUNT BUTTON ================= */
 .account-btn {
   background-color: transparent;
   border: none;
@@ -845,146 +933,12 @@ body {
   font-weight: 600;
   cursor: pointer;
   padding: 8px 12px;
+  margin-left: auto;
   transition: color 0.3s ease;
 }
 
 .account-btn:hover {
   color: #ffdd57;
 }
-
-/* ✅ Dropdown menu styles */
-.nav-links {
-  display: none !important;
-  flex-direction: column;
-  align-items: center;
-  background-color: #0077ff;
-  width: 100%;
-  padding: 20px 0;
-  gap: 18px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-  z-index: 150;
-  text-align: center;
-}
-
-/* ✅ Show nav when hamburger is clicked */
-.nav-links.show {
-  display: flex !important;
-}
-
-/* ✅ Service links section (Shipping, Mail Box, Personal Shopper, My Foods) */
-.main-nav-row {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.main-nav-row .nav-button {
-  background: transparent;
-  border: none;
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 8px 14px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.main-nav-row .nav-button:hover {
-  color: #ffdd57;
-}
-
-/* ✅ E-commerce links section */
-/* ✅ E-commerce links section FIXED */
-.ecom-links-row {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr)); /* ✅ Always 3 equal columns */
-  gap: 18px 20px; /* ✅ Row gap & column gap */
-  justify-items: center; /* ✅ Centers items in each column */
-  margin-top: 10px;
-  width: 100%;
-  max-width: 650px; /* ✅ Slightly increased width for balance */
-  margin-left: auto;
-  margin-right: auto; /* ✅ Perfectly centered block */
-}
-
-.ecom-links-row a {
-  text-decoration: none;
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 10px 16px;
-  background-color: rgba(255, 255, 255, 0.1); /* ✅ Better button look */
-  border-radius: 8px;
-  min-width: 90px; /* ✅ Prevents collapsing */
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-.ecom-links-row a:hover {
-  color: #ffdd57;
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* ✅ Mobile view fix */
-@media (max-width: 768px) {
-  .ecom-links-row {
-    grid-template-columns: repeat(3, 1fr); /* ✅ Still force 3 per row */
-    gap: 14px 12px;
-    max-width: 500px;
-  }
-}
-
-
-/* ---------- MOBILE VIEW FIX ---------- */
-@media (max-width: 768px) {
-  .mobile-menu-toggle {
-    display: block; /* ✅ Show hamburger on mobile */
-    margin-right: 10px;
-  }
-
-  .navbar-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* ✅ Perfect row alignment */
-    width: 100%;
-    padding: 10px 15px;
-  }
-
-  .navbar .logo {
-    flex: 1;
-    text-align: center;
-    font-size: 1.5rem;
-  }
-
-  .account-btn {
-    margin-left: auto;
-  }
-
-  /* Service links stacked vertically */
-  .main-nav-row {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    width: 100%;
-  }
-
-  /* ✅ Force 3 per row on mobile too */
-  .ecom-links-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px 10px;
-    justify-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 500px;
-  }
-}
-
-
-
 
 
