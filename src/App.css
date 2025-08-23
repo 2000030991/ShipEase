@@ -809,9 +809,10 @@ body {
 /* ================= NAVBAR TOP ================= */
 .navbar-top {
   display: grid;
-  grid-template-columns: 40px 1fr 120px;
+  grid-template-columns: 40px 1fr 120px; /* Hamburger | Logo | Account */
   align-items: center;
   width: 100%;
+  position: relative;
 }
 
 /* ================= LOGO ================= */
@@ -825,12 +826,15 @@ body {
 /* ================= NAVBAR LINKS ================= */
 .navbar-links {
   display: flex;
+  flex-wrap: nowrap;
   gap: 30px;
   list-style: none;
-  justify-content: center;
-  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
   padding: 0;
   margin: 10px 0 15px;
+  justify-content: center;
+  width: 100%;
 }
 
 .navbar-links li a {
@@ -860,33 +864,57 @@ body {
   gap: 6px;
   transition: color 0.3s ease;
   justify-self: end;
-  margin-right: 0;
+  margin-right: 0; /* Default for desktop */
 }
 
 .account-btn:hover {
   color: #ffdd57;
 }
 
-/* ================= HAMBURGER ICON ================= */
+/* ================= HAMBURGER STYLES ================= */
 .mobile-menu-toggle {
   font-size: 28px;
   background: transparent;
   border: none;
   color: white;
   cursor: pointer;
+  z-index: 300;
   transition: transform 0.3s ease-in-out;
   justify-self: start;
 }
 
-/* ================= DESKTOP VIEW ================= */
+/* ================= DESKTOP LAYOUT ================= */
 @media screen and (min-width: 769px) {
   .mobile-menu-toggle {
+    display: none; /* Hide hamburger on desktop */
+  }
+
+  .navbar-top {
+    grid-template-columns: 1fr auto 120px;
+  }
+
+  /* Desktop shows all links in one single line */
+  .desktop-only {
+    display: inline-block;
+  }
+
+  /* Hide mobile-only e-commerce grid */
+  .ecom-links.mobile-only {
+    display: none !important;
+  }
+
+  .mobile-only {
     display: none;
   }
 }
 
 /* ================= MOBILE VIEW ================= */
 @media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 12px 20px;
+  }
+
   .navbar-top {
     display: flex;
     justify-content: space-between;
@@ -894,12 +922,13 @@ body {
     padding-right: 15px;
   }
 
+  /* ✅ Move Account Button Slightly Left */
   .account-btn {
     margin-right: 15px;
   }
 
-  /* Full-screen mobile menu */
-  .navbar-links {
+  /* Full-Screen Mobile Menu */
+  .nav-links {
     display: none;
     position: fixed;
     top: 0;
@@ -908,78 +937,51 @@ body {
     width: 100%;
     background-color: #0077ff;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    padding: 60px 20px;
     gap: 30px;
-    padding: 20px;
-    font-size: 22px;
-    font-weight: bold;
     text-align: center;
     z-index: 500;
     transition: all 0.3s ease-in-out;
   }
 
-  .navbar-links.show {
-    display: flex;
+  .nav-links.show {
+    display: flex !important;
   }
 
-  body.no-scroll {
-    overflow: hidden;
-  }
-}
-
-
-/* ================= MOBILE MENU ================= */
-@media screen and (max-width: 768px) {
+  /* Stacked Main Links */
   .navbar-links {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-    background-color: #0077ff;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 35px;
-    padding: 0;
-    z-index: 1000;
-    font-size: 22px;
-    font-weight: bold;
+    gap: 20px;
+  }
+
+  /* Hide Desktop E-commerce Links */
+  .desktop-only {
+    display: none;
+  }
+
+  /* Show E-commerce Grid for Mobile */
+  .ecom-links.mobile-only {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* ✅ 3 per row */
+    gap: 20px 25px;
     text-align: center;
-    transition: all 0.3s ease-in-out;
+    width: 100%;
+    max-width: 350px;
+    margin-top: 25px;
   }
 
-  /* Show menu when active */
-  .navbar-links.show {
-    display: flex;
-  }
-
-  .navbar-links li {
-    list-style: none;
-  }
-
-  .navbar-links li a {
+  .ecom-links.mobile-only a {
     color: white;
     text-decoration: none;
+    font-size: 18px;
     font-weight: 600;
-    font-size: 20px;
     transition: color 0.2s ease-in-out;
   }
 
-  .navbar-links li a:hover {
+  .ecom-links.mobile-only a:hover {
     color: #ffeb3b;
   }
-
-  /* Disable body scroll when menu is open */
-  body.no-scroll {
-    overflow: hidden;
-  }
-
-  /* Adjust account button position */
-  .account-btn {
-    margin-right: 15px;
-  }
 }
- 
+

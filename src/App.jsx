@@ -263,10 +263,10 @@ export default function App() {
       {/* ================= NAVBAR ================= */}
       <header className="navbar">
         <div className="navbar-top">
-          {/* Hamburger Menu */}
+          {/* Hamburger Menu for Mobile */}
           <button
             className="mobile-menu-toggle"
-            onClick={toggleMobileMenu}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
@@ -274,9 +274,12 @@ export default function App() {
           {/* Logo */}
           <h1 className="logo">ShipEase</h1>
 
-          {/* Account Button */}
+          {/* Desktop Account Button */}
           <button
-            onClick={() => handleMenuClick("account")}
+            onClick={() => {
+              setCurrentView("account");
+              setIsMobileMenuOpen(false);
+            }}
             className={`account-btn ${currentView === "account" ? "active" : ""}`}
             type="button"
           >
@@ -288,22 +291,101 @@ export default function App() {
         {/* Navigation Menu */}
         <nav className={`nav-links ${isMobileMenuOpen ? "show" : ""}`}>
           <ul className="navbar-links">
-            <li><a onClick={() => handleMenuClick("home")}>Home</a></li>
-            <li><a onClick={() => handleMenuClick("shipping")}>Shipping</a></li>
-            <li><a onClick={() => handleMenuClick("mailbox")}>Mail Box</a></li>
-            <li><a onClick={() => handleMenuClick("personalShopper")}>Personal Shopper</a></li>
-            <li><a onClick={() => handleMenuClick("myFoods")}>My Foods</a></li>
-            <li><a href="https://www.amazon.in" target="_blank" rel="noreferrer">Amazon</a></li>
-            <li><a href="https://www.flipkart.com" target="_blank" rel="noreferrer">Flipkart</a></li>
-            <li><a href="https://www.myntra.com" target="_blank" rel="noreferrer">Myntra</a></li>
-            <li><a href="https://www.meesho.com" target="_blank" rel="noreferrer">Meesho</a></li>
-            <li><a href="https://www.nykaa.com" target="_blank" rel="noreferrer">Nykaa</a></li>
-            <li><a href="https://www.ajio.com" target="_blank" rel="noreferrer">Ajio</a></li>
+            <li>
+              <a
+                href="#"
+                onClick={() => {
+                  setCurrentView("home");
+                  setIsMobileMenuOpen(false);
+                }}
+                className={currentView === "home" ? "active" : ""}
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                onClick={() => {
+                  setCurrentView("shipping");
+                  setIsMobileMenuOpen(false);
+                }}
+                className={currentView === "shipping" ? "active" : ""}
+              >
+                Shipping
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                onClick={() => {
+                  setCurrentView("mailbox");
+                  setIsMobileMenuOpen(false);
+                }}
+                className={currentView === "mailbox" ? "active" : ""}
+              >
+                Mail Box
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                onClick={() => {
+                  setCurrentView("personalShopper");
+                  setIsMobileMenuOpen(false);
+                }}
+                className={currentView === "personalShopper" ? "active" : ""}
+              >
+                Personal Shopper
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                onClick={() => {
+                  setCurrentView("myFoods");
+                  setIsMobileMenuOpen(false);
+                }}
+                className={currentView === "myFoods" ? "active" : ""}
+              >
+                My Foods
+              </a>
+            </li>
+
+            {/* ================= E-COMMERCE LINKS ================= */}
+            <li className="desktop-only">
+              <a href="https://www.amazon.in" target="_blank" rel="noreferrer">Amazon</a>
+            </li>
+            <li className="desktop-only">
+              <a href="https://www.flipkart.com" target="_blank" rel="noreferrer">Flipkart</a>
+            </li>
+            <li className="desktop-only">
+              <a href="https://www.myntra.com" target="_blank" rel="noreferrer">Myntra</a>
+            </li>
+            <li className="desktop-only">
+              <a href="https://www.meesho.com" target="_blank" rel="noreferrer">Meesho</a>
+            </li>
+            <li className="desktop-only">
+              <a href="https://www.nykaa.com" target="_blank" rel="noreferrer">Nykaa</a>
+            </li>
+            <li className="desktop-only">
+              <a href="https://www.ajio.com" target="_blank" rel="noreferrer">Ajio</a>
+            </li>
           </ul>
+
+          {/* Mobile-specific E-commerce Grid */}
+          <div className="ecom-links mobile-only">
+            <a href="https://www.amazon.in" target="_blank" rel="noreferrer">Amazon</a>
+            <a href="https://www.flipkart.com" target="_blank" rel="noreferrer">Flipkart</a>
+            <a href="https://www.myntra.com" target="_blank" rel="noreferrer">Myntra</a>
+            <a href="https://www.meesho.com" target="_blank" rel="noreferrer">Meesho</a>
+            <a href="https://www.nykaa.com" target="_blank" rel="noreferrer">Nykaa</a>
+            <a href="https://www.ajio.com" target="_blank" rel="noreferrer">Ajio</a>
+          </div>
         </nav>
-      </header>  
-   {/* HOME */}
-      {currentView === "home" && (
+      </header>   
+   {/* HOME */} 
+      {currentView === "home" && ( 
         <>
           {/* Carousel */}
           <section className="carousel-section">
