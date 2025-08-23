@@ -282,7 +282,11 @@ export default function App() {
         </div>
 
         {/* Navigation Menu */}
-        <nav className={`nav-links ${isMobileMenuOpen ? "show" : ""}`}>
+      <nav
+  className={`nav-links ${
+    isMobileMenuOpen && currentView !== "account" ? "show" : ""
+  }`}>  
+ 
           {/* ================= MAIN NAVIGATION LINKS ================= */}
           <ul className="navbar-links">
             <li>
