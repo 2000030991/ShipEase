@@ -864,14 +864,17 @@ body {
   gap: 6px;
   transition: color 0.3s ease;
   justify-self: end;
+  margin-right: 0; /* Default for desktop */
 }
 
-/* Move Account Button Slightly Left in Mobile */
+/* ================= MOBILE VIEW ================= */
 @media screen and (max-width: 768px) {
   .account-btn {
-    margin-right: -10px; /* Adjust as needed, try 8px-15px */
+    position: relative;
+    right: 10px; /* Move slightly left */
   }
 }
+ 
 
 
 .account-btn:hover {
