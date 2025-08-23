@@ -873,39 +873,49 @@ body {
   display: flex !important;
 }
 
-/* ✅ Service links section (Shipping, Mail Box, Personal Shopper, My Foods) */
-.main-nav-row {
+/* ✅ Two-row navbar layout fix */
+.nav-links {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 18px;
-  width: 100%;
-  margin-bottom: 20px;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* First Row - Navigation Buttons */
+.main-nav-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .main-nav-row .nav-button {
   background: transparent;
   border: none;
   color: white;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   padding: 8px 14px;
   border-radius: 6px;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .main-nav-row .nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
   color: #ffdd57;
 }
 
-/* ✅ E-commerce links section */
+/* Second Row - E-commerce Links */
 .ecom-links-row {
   display: flex;
   gap: 20px;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  margin-top: 10px;
+  margin-top: 4px;
 }
 
 .ecom-links-row a {
@@ -913,53 +923,59 @@ body {
   color: white;
   font-size: 15px;
   font-weight: 600;
-  padding: 6px 10px;
+  padding: 8px 10px;
   border-radius: 6px;
-  transition: color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .ecom-links-row a:hover {
-  color: #ffdd57;
+  background-color: white;
+  color: #0077b6;
 }
 
-/* ---------- MOBILE VIEW FIX ---------- */
+/* ✅ Mobile View Fix */
 @media (max-width: 768px) {
   .mobile-menu-toggle {
-    display: block; /* ✅ Show hamburger on mobile */
-    position: relative;
-    left: 0; /* ✅ Sticks to extreme left */
+    display: block;        /* ✅ Show hamburger on mobile */
+    order: 1;              /* ✅ Ensure it stays on extreme left */
+    position: absolute;    /* ✅ Allow positioning */
+    left: -30px;           /* 🔹 Move further left */
+    top: 50%;              /* ✅ Vertically center */
+    transform: translateY(-50%);
+    padding: 6px 10px;
+    z-index: 999;          /* ✅ Keep it on top */
   }
 
-  /* Center logo perfectly on mobile */
   .navbar .logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    order: 2;             /* ✅ Logo stays in the middle */
+    flex-grow: 1;
+    text-align: center;
   }
 
-  /* Keep account button on extreme right */
   .account-btn {
-    margin-left: auto;
+    order: 3;             /* ✅ Account button stays on extreme right */
+    margin-left: 0;
   }
 
-  /* Service links stacked vertically */
+  .nav-links {
+    align-items: center;
+    font-size: 14px;
+  }
+
   .main-nav-row {
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-    width: 100%;
+    gap: 10px;
   }
 
-  /* E-commerce links in two rows, 3 per row */
   .ecom-links-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 18px 15px;
+    gap: 12px 15px;
     justify-items: center;
     width: 100%;
   }
 }
-
 
 
 
