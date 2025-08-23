@@ -814,29 +814,31 @@ body {
   color: white;
   cursor: pointer;
   z-index: 300;
-  position: absolute;
-  top: 15px;
-  left: 15px; /* ✅ Extreme left */
+  position: relative;
 }
 
 /* ✅ Navbar top row: Hamburger + Logo + Account */
 .navbar-top {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between; /* ✅ Push hamburger to left & account to right */
   width: 100%;
   padding: 12px 20px;
   position: relative;
 }
 
+/* ✅ Logo - stays perfectly centered */
 .navbar .logo {
   font-size: 1.7rem;
   font-weight: 700;
   color: white;
+  position: absolute; /* ✅ Absolutely center logo */
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
-  flex-grow: 1;
 }
 
+/* ✅ Account Button Styling */
 .account-btn {
   background-color: transparent;
   border: none;
@@ -845,7 +847,6 @@ body {
   font-weight: 600;
   cursor: pointer;
   padding: 8px 12px;
-  margin-left: auto;
   transition: color 0.3s ease;
 }
 
@@ -925,16 +926,19 @@ body {
 @media (max-width: 768px) {
   .mobile-menu-toggle {
     display: block; /* ✅ Show hamburger on mobile */
+    position: relative;
+    left: 0; /* ✅ Sticks to extreme left */
   }
 
+  /* Center logo perfectly on mobile */
   .navbar .logo {
-    order: 2;
-    flex-grow: 1;
-    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
+  /* Keep account button on extreme right */
   .account-btn {
-    order: 3;
     margin-left: auto;
   }
 
@@ -955,4 +959,7 @@ body {
     width: 100%;
   }
 }
+
+
+
 
