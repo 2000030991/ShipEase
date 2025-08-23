@@ -809,10 +809,9 @@ body {
 /* ================= NAVBAR TOP ================= */
 .navbar-top {
   display: grid;
-  grid-template-columns: 40px 1fr 120px; /* Hamburger | Logo | Account */
+  grid-template-columns: 40px 1fr 120px;
   align-items: center;
   width: 100%;
-  position: relative;
 }
 
 /* ================= LOGO ================= */
@@ -823,18 +822,15 @@ body {
   color: white;
 }
 
-/* ================= UNIFIED NAV LINKS ================= */
+/* ================= NAVBAR LINKS ================= */
 .navbar-links {
   display: flex;
-  flex-wrap: nowrap;
   gap: 30px;
   list-style: none;
-  overflow-x: auto;
-  white-space: nowrap;
-  padding: 0;
-  margin: 10px 0 15px;
   justify-content: center;
   width: 100%;
+  padding: 0;
+  margin: 10px 0 15px;
 }
 
 .navbar-links li a {
@@ -864,74 +860,45 @@ body {
   gap: 6px;
   transition: color 0.3s ease;
   justify-self: end;
-  margin-right: 0; /* Default for desktop */
+  margin-right: 0;
 }
-
-/* ================= MOBILE VIEW ================= */
-@media screen and (max-width: 768px) {
-  .navbar-top {
-    display: flex;
-    justify-content: space-between; /* Spread hamburger & account properly */
-    align-items: center;
-    padding-right: 15px; /* Give some breathing room on right */
-  }
-
-  .account-btn {
-    margin-right: 15px;  /* ✅ Shift it slightly left */
-  }
-}
-
-
 
 .account-btn:hover {
   color: #ffdd57;
 }
 
-/* ================= HAMBURGER STYLES ================= */
+/* ================= HAMBURGER ICON ================= */
 .mobile-menu-toggle {
   font-size: 28px;
   background: transparent;
   border: none;
   color: white;
   cursor: pointer;
-  z-index: 300;
   transition: transform 0.3s ease-in-out;
   justify-self: start;
 }
 
-/* ================= DESKTOP LAYOUT ================= */
+/* ================= DESKTOP VIEW ================= */
 @media screen and (min-width: 769px) {
-  /* Hide hamburger on desktop */
   .mobile-menu-toggle {
     display: none;
-  }
-
-  .navbar-top {
-    grid-template-columns: 1fr auto 120px; /* Empty left | Logo | Account */
   }
 }
 
 /* ================= MOBILE VIEW ================= */
 @media screen and (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    padding: 12px 20px;
-  }
-
   .navbar-top {
-    grid-template-columns: 40px 1fr 80px; /* Hamburger | Logo | Account */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 15px;
   }
 
-  .logo {
-    text-align: center;
-    font-size: 1.7rem;
+  .account-btn {
+    margin-right: 15px;
   }
 
-  .mobile-menu-toggle {
-    display: block;
-  }
-
-  /* ================= FULL-SCREEN MENU ================= */
+  /* Full-screen mobile menu */
   .navbar-links {
     display: none;
     position: fixed;
@@ -953,30 +920,12 @@ body {
   }
 
   .navbar-links.show {
-    display: flex !important;
-  }
-
-  .navbar-links li {
-    list-style: none;
-  }
-
-  .navbar-links li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 20px;
-    transition: color 0.2s ease-in-out;
-  }
-
-  .navbar-links li a:hover {
-    color: #ffeb3b;
+    display: flex;
   }
 
   body.no-scroll {
     overflow: hidden;
   }
 }
-
-
 
 
