@@ -258,7 +258,7 @@ export default function App() {
   const handleMailboxSubmit = (e) => { e.preventDefault(); alert("Mail Box details submitted successfully!"); setCurrentView("home"); };
   const handlePersonalShopperSubmit = (e) => { e.preventDefault(); alert("Personal Shopper request submitted successfully!"); setCurrentView("home"); };
 
- return (
+return (
     <>
       {/* ================= NAVBAR ================= */}
       <header className="navbar">
@@ -288,7 +288,7 @@ export default function App() {
           </button>
         </div>
 
-        {/* Navigation Menu */}
+        {/* ================= NAVIGATION MENU ================= */}
         <nav className={`nav-links ${isMobileMenuOpen ? "show" : ""}`}>
           <ul className="navbar-links">
             <li>
@@ -352,35 +352,59 @@ export default function App() {
               </a>
             </li>
 
-            {/* ================= E-COMMERCE LINKS ================= */}
+            {/* ================= E-COMMERCE LINKS (Desktop) ================= */}
             <li className="desktop-only">
-              <a href="https://www.amazon.in" target="_blank" rel="noreferrer">Amazon</a>
+              <a href="https://www.amazon.in" target="_blank" rel="noreferrer">
+                Amazon
+              </a>
             </li>
             <li className="desktop-only">
-              <a href="https://www.flipkart.com" target="_blank" rel="noreferrer">Flipkart</a>
+              <a href="https://www.flipkart.com" target="_blank" rel="noreferrer">
+                Flipkart
+              </a>
             </li>
             <li className="desktop-only">
-              <a href="https://www.myntra.com" target="_blank" rel="noreferrer">Myntra</a>
+              <a href="https://www.myntra.com" target="_blank" rel="noreferrer">
+                Myntra
+              </a>
             </li>
             <li className="desktop-only">
-              <a href="https://www.meesho.com" target="_blank" rel="noreferrer">Meesho</a>
+              <a href="https://www.meesho.com" target="_blank" rel="noreferrer">
+                Meesho
+              </a>
             </li>
             <li className="desktop-only">
-              <a href="https://www.nykaa.com" target="_blank" rel="noreferrer">Nykaa</a>
+              <a href="https://www.nykaa.com" target="_blank" rel="noreferrer">
+                Nykaa
+              </a>
             </li>
             <li className="desktop-only">
-              <a href="https://www.ajio.com" target="_blank" rel="noreferrer">Ajio</a>
+              <a href="https://www.ajio.com" target="_blank" rel="noreferrer">
+                Ajio
+              </a>
             </li>
           </ul>
 
-          {/* Mobile-specific E-commerce Grid */}
+          {/* ================= E-COMMERCE GRID (Mobile) ================= */}
           <div className="ecom-links mobile-only">
-            <a href="https://www.amazon.in" target="_blank" rel="noreferrer">Amazon</a>
-            <a href="https://www.flipkart.com" target="_blank" rel="noreferrer">Flipkart</a>
-            <a href="https://www.myntra.com" target="_blank" rel="noreferrer">Myntra</a>
-            <a href="https://www.meesho.com" target="_blank" rel="noreferrer">Meesho</a>
-            <a href="https://www.nykaa.com" target="_blank" rel="noreferrer">Nykaa</a>
-            <a href="https://www.ajio.com" target="_blank" rel="noreferrer">Ajio</a>
+            <a href="https://www.amazon.in" target="_blank" rel="noreferrer">
+              Amazon
+            </a>
+            <a href="https://www.flipkart.com" target="_blank" rel="noreferrer">
+              Flipkart
+            </a>
+            <a href="https://www.myntra.com" target="_blank" rel="noreferrer">
+              Myntra
+            </a>
+            <a href="https://www.meesho.com" target="_blank" rel="noreferrer">
+              Meesho
+            </a>
+            <a href="https://www.nykaa.com" target="_blank" rel="noreferrer">
+              Nykaa
+            </a>
+            <a href="https://www.ajio.com" target="_blank" rel="noreferrer">
+              Ajio
+            </a>
           </div>
         </nav>
       </header>   
