@@ -407,7 +407,7 @@ return (
             </a>
           </div>
         </nav>
-      </header>   
+      </header>    
    {/* HOME */} 
       {currentView === "home" && ( 
         <>
