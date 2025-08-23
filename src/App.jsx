@@ -195,18 +195,7 @@ function MyFoods() {
 export default function App() {
   const [currentView, setCurrentView] = useState("home");
   const [accountTab, setAccountTab] = useState("signup");
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); 
-    const handleMenuClick = (view) => {
-    setCurrentView(view);
-    setIsMobileMenuOpen(false);
-    document.body.classList.remove("no-scroll"); // Enable scrolling again
-  };
-
-  const toggleMobileMenu = () => {
-    const newState = !isMobileMenuOpen;
-    setIsMobileMenuOpen(newState);
-    document.body.classList.toggle("no-scroll", newState); // Disable/enable scrolling
-  }; 
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
    const sliderSettings = {
     dots: true,
     infinite: true,
@@ -258,7 +247,7 @@ export default function App() {
   const handleMailboxSubmit = (e) => { e.preventDefault(); alert("Mail Box details submitted successfully!"); setCurrentView("home"); };
   const handlePersonalShopperSubmit = (e) => { e.preventDefault(); alert("Personal Shopper request submitted successfully!"); setCurrentView("home"); };
 
-return (
+ return (
     <>
       {/* ================= NAVBAR ================= */}
       <header className="navbar">
@@ -283,12 +272,14 @@ return (
             className={`account-btn ${currentView === "account" ? "active" : ""}`}
             type="button"
           >
-            <FaUserCircle style={{ verticalAlign: "middle", marginRight: "6px" }} />
+            <FaUserCircle
+              style={{ verticalAlign: "middle", marginRight: "6px" }}
+            />
             Account
           </button>
         </div>
 
-        {/* ================= NAVIGATION MENU ================= */}
+        {/* Navigation Menu */}
         <nav className={`nav-links ${isMobileMenuOpen ? "show" : ""}`}>
           <ul className="navbar-links">
             <li>
@@ -351,65 +342,42 @@ return (
                 My Foods
               </a>
             </li>
-
-            {/* ================= E-COMMERCE LINKS (Desktop) ================= */}
-            <li className="desktop-only">
+            <li>
               <a href="https://www.amazon.in" target="_blank" rel="noreferrer">
                 Amazon
               </a>
             </li>
-            <li className="desktop-only">
+            <li>
               <a href="https://www.flipkart.com" target="_blank" rel="noreferrer">
                 Flipkart
               </a>
             </li>
-            <li className="desktop-only">
+            <li>
               <a href="https://www.myntra.com" target="_blank" rel="noreferrer">
                 Myntra
               </a>
             </li>
-            <li className="desktop-only">
+            <li>
               <a href="https://www.meesho.com" target="_blank" rel="noreferrer">
                 Meesho
               </a>
             </li>
-            <li className="desktop-only">
+            <li>
               <a href="https://www.nykaa.com" target="_blank" rel="noreferrer">
                 Nykaa
               </a>
             </li>
-            <li className="desktop-only">
+            <li>
               <a href="https://www.ajio.com" target="_blank" rel="noreferrer">
                 Ajio
               </a>
             </li>
           </ul>
-
-          {/* ================= E-COMMERCE GRID (Mobile) ================= */}
-          <div className="ecom-links mobile-only">
-            <a href="https://www.amazon.in" target="_blank" rel="noreferrer">
-              Amazon
-            </a>
-            <a href="https://www.flipkart.com" target="_blank" rel="noreferrer">
-              Flipkart
-            </a>
-            <a href="https://www.myntra.com" target="_blank" rel="noreferrer">
-              Myntra
-            </a>
-            <a href="https://www.meesho.com" target="_blank" rel="noreferrer">
-              Meesho
-            </a>
-            <a href="https://www.nykaa.com" target="_blank" rel="noreferrer">
-              Nykaa
-            </a>
-            <a href="https://www.ajio.com" target="_blank" rel="noreferrer">
-              Ajio
-            </a>
-          </div>
         </nav>
-      </header>    
-   {/* HOME */} 
-      {currentView === "home" && ( 
+      </header> 
+
+   {/* HOME */}
+      {currentView === "home" && (
         <>
           {/* Carousel */}
           <section className="carousel-section">
