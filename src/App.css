@@ -1000,9 +1000,10 @@ body {
 /* ✅ Mobile View Fix */
 @media (max-width: 768px) {
   .mobile-menu-toggle {
-    display: block;      /* ✅ Show hamburger on mobile */
-    order: 1;            /* ✅ Ensure it stays on extreme left */
-    margin-right: 10px;
+    display: block;       /* ✅ Show hamburger on mobile */
+    order: 1;             /* ✅ Ensure it stays on extreme left */
+    margin-right: 4px;    /* 🔹 Reduce right margin */
+    margin-left: -6px;    /* 🔹 Move slightly more to the left */
   }
 
   .navbar .logo {
@@ -1035,4 +1036,5 @@ body {
     width: 100%;
   }
 }
+
 
