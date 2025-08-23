@@ -282,10 +282,12 @@ export default function App() {
         </div>
 
         {/* Navigation Menu */}
-      <nav
+ <nav
   className={`nav-links ${
     isMobileMenuOpen && currentView !== "account" ? "show" : ""
-  }`}>  
+  }`}
+  style={{ zIndex: currentView === "account" ? "0" : "1000" }}>  
+ 
  
           {/* ================= MAIN NAVIGATION LINKS ================= */}
           <ul className="navbar-links">
