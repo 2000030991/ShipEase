@@ -899,11 +899,14 @@ body {
 
 /* ✅ E-commerce links section */
 .ecom-links-row {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* ✅ Always 3 per row */
+  gap: 18px 20px;
+  justify-items: center; /* ✅ Center each item */
+  justify-content: center; /* ✅ Center last row */
   margin-top: 10px;
+  width: 100%;
+  max-width: 600px; /* ✅ Keeps layout neat */
 }
 
 .ecom-links-row a {
@@ -914,6 +917,7 @@ body {
   padding: 6px 10px;
   border-radius: 6px;
   transition: color 0.3s ease;
+  text-align: center;
 }
 
 .ecom-links-row a:hover {
@@ -953,13 +957,19 @@ body {
     width: 100%;
   }
 
-  /* E-commerce links in two rows, 3 per row */
+  /* ✅ Force 3 per row on mobile too */
   .ecom-links-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 18px 15px;
+    gap: 16px 10px;
     justify-items: center;
+    justify-content: center;
     width: 100%;
+    max-width: 500px;
   }
 }
+
+
+
+
 
