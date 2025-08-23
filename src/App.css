@@ -866,6 +866,14 @@ body {
   justify-self: end;
 }
 
+/* Move Account Button Slightly Left in Mobile */
+@media screen and (max-width: 768px) {
+  .account-btn {
+    margin-right: 10px; /* Adjust as needed, try 8px-15px */
+  }
+}
+
+
 .account-btn:hover {
   color: #ffdd57;
 }
@@ -959,4 +967,7 @@ body {
     overflow: hidden;
   }
 }
+
+
+
 
