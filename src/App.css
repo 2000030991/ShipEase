@@ -869,12 +869,18 @@ body {
 
 /* ================= MOBILE VIEW ================= */
 @media screen and (max-width: 768px) {
+  .navbar-top {
+    display: flex;
+    justify-content: space-between; /* Spread hamburger & account properly */
+    align-items: center;
+    padding-right: 15px; /* Give some breathing room on right */
+  }
+
   .account-btn {
-    position: relative;
-    right: 10px; /* Move slightly left */
+    margin-right: 15px;  /* ✅ Shift it slightly left */
   }
 }
- 
+
 
 
 .account-btn:hover {
