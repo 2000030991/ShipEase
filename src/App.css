@@ -946,21 +946,29 @@ body {
     color: #ffeb3b;
   }
 
-  .account-btn {
-    background-color: white;
-    color: #0077ff;
+.account-btn {
+    background-color: transparent; /* Remove white background */
+    color: white; /* Make text white */
     padding: 10px 15px;
     border-radius: 8px;
     font-weight: bold;
     font-size: 18px;
     margin-top: 10px;
-  }
+    border: none; /* Remove border */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.3s ease;
 }
+.account-btn:hover {
+    color: #ffdd00; /* Optional: Highlight on hover */
+}
+
 
 /* ================= DISABLE BACKGROUND SCROLL ================= */
 body.no-scroll {
   overflow: hidden;
 } 
 
-
-
+} 
