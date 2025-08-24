@@ -279,9 +279,17 @@ export default function App() {
 
   {/* Navigation Menu */}
 <nav
-  className={`nav-links ${
-    isMobileMenuOpen && currentView !== "account" ? "show" : ""
-  }`}>
+  className={`nav-links ${isMobileMenuOpen ? "show" : ""}`}
+  style={{
+    display:
+      currentView === "account"
+        ? "none"
+        : isMobileMenuOpen
+        ? "flex"
+        : "", // Ensures nav hides properly on mobile when switching to account
+  }}
+>
+
 
 
     <ul className="navbar-links">
