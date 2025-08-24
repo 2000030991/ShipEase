@@ -263,26 +263,27 @@ export default function App() {
     {/* Logo */}
     <h1 className="logo">ShipEase</h1>
 
-    {/* Account Button */}
-    <button
-      onClick={() => {
-        setCurrentView("account");
-        setIsMobileMenuOpen(false); // ✅ Force close menu on Account click
-      }}
-      className={`account-btn ${currentView === "account" ? "active" : ""}`}
-      type="button"
-    >
-      <FaUserCircle style={{ verticalAlign: "middle", marginRight: "6px" }} />
-      Account
-    </button>
+{/* Account Button */}
+<button
+  onClick={() => {
+    setCurrentView("account");
+    setIsMobileMenuOpen(false); // ✅ Force close mobile menu immediately
+  }}
+  className={`account-btn ${currentView === "account" ? "active" : ""}`}
+  type="button"
+>
+  <FaUserCircle style={{ verticalAlign: "middle", marginRight: "6px" }} />
+  Account
+</button> 
   </div>
 
   {/* Navigation Menu */}
-  <nav
-    className={`nav-links ${
-      isMobileMenuOpen && currentView !== "account" ? "show" : ""
-    }`}
-  >
+<nav
+  className={`nav-links ${
+    isMobileMenuOpen && currentView !== "account" ? "show" : ""
+  }`}>
+
+
     <ul className="navbar-links">
       <li>
         <a
