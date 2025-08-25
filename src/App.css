@@ -25,7 +25,7 @@ body {
 
 /* Navbar */
 .navbar {
-  background: linear-gradient(90deg, #0077b6, #00b4d8);
+  background-color: #0b1d3c !important; /* changed from gradient */
   color: white;
   padding: 15px 20px;
   display: flex;
@@ -69,12 +69,13 @@ body {
   width: 100%;
 }
 
+
 /* Carousel Section */
 .carousel-section {
   position: relative;
   width: 100%;
   height: 70vh;
-  background-color: #003049;
+  background-color: #0b1d3c !important; /* ✅ Fixed */
   margin-bottom: 40px;
 }
 
@@ -348,7 +349,7 @@ body {
   font-weight: 600;
   color: #03045e;
   cursor: default;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
@@ -799,14 +800,15 @@ body {
   display: flex;
   flex-direction: column;
   padding: 10px 20px;
-  background: linear-gradient(90deg, #0077ff, #00bfff);
+  background-color: #0b1d3c !important; /* ✅ Force Shoppre dark navy blue */
   color: white;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   width: 100%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   position: relative;
   z-index: 1000;
 }
+
 
 /* ================= NAVBAR TOP ================= */
 .navbar-top {
@@ -944,11 +946,11 @@ body {
   .nav-links {
     display: none;
     position: fixed;
-    top: 0;
+    top: 0; 
     left: 0;
     height: 100vh;
     width: 100%;
-    background-color: #0077ff;
+    background-color: #0b1d3c !important; /* ✅ Force Shoppre dark navy blue */ 
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -1008,12 +1010,4 @@ body {
     color: #ffeb3b;
   }
 }
-
-
-
-
-
-
-
-
 
