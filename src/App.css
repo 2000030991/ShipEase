@@ -1012,13 +1012,22 @@ body {
 }
 
 
-/* Basic Navbar */
+/* 🌟 App Background */
+.app-container {
+  background-color: #001f54; /* Dark Blue Background */
+  min-height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* 🌟 Navbar Styling */
 .navbar {
-  background-color: #fff;
+  background-color: #001f54; /* Dark Blue */
   padding: 12px 20px;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #003377;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-top {
@@ -1027,16 +1036,18 @@ body {
   align-items: center;
 }
 
+/* Logo Styling */
 .logo {
   font-size: 22px;
   font-weight: bold;
-  color: #007bff;
+  color: #fff;
 }
 
+/* Account Button */
 .account-btn {
   background-color: transparent;
   border: none;
-  color: #333;
+  color: #fff;
   font-weight: 600;
   cursor: pointer;
   display: flex;
@@ -1044,7 +1055,7 @@ body {
 }
 
 .account-btn.active {
-  color: #007bff;
+  color: #00cfff;
 }
 
 /* Nav Links */
@@ -1066,30 +1077,37 @@ body {
 
 .navbar-links li a {
   text-decoration: none;
-  color: #333;
+  color: #fff;
   font-weight: 600;
+  transition: color 0.3s;
 }
 
 .navbar-links li a:hover {
-  color: #007bff;
+  color: #00cfff;
 }
 
-/* Dropdown Styling */
+/* 🌟 Dropdown Styling */
 .dropdown {
   position: relative;
+}
+
+.dropdown-toggle {
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
 }
 
 .dropdown-menu {
   position: absolute;
   top: 30px;
   left: 0;
-  background: #ffffff;
-  border: 1px solid #ddd;
+  background: #001f54; /* ✅ Dark Blue Background for Desktop & Mobile */
+  border: 1px solid #003377;
   border-radius: 6px;
   list-style: none;
   padding: 10px 0;
   min-width: 180px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   z-index: 999;
 }
 
@@ -1099,22 +1117,24 @@ body {
 
 .dropdown-menu li a {
   text-decoration: none;
-  color: #333;
+  color: #fff; /* ✅ White Text for Contrast */
   font-weight: 500;
   display: block;
+  transition: background 0.3s, color 0.3s;
 }
 
 .dropdown-menu li a:hover {
-  color: #007bff;
-  background: #001f54;
+  color: #00cfff;
+  background: #002b7f; /* ✅ Slightly Lighter Blue on Hover */
 }
 
-/* Mobile Menu Toggle */
+/* 🌟 Mobile Menu Toggle */
 .mobile-menu-toggle {
   background: none;
   border: none;
   font-size: 22px;
   cursor: pointer;
+  color: #fff;
 }
 
 
