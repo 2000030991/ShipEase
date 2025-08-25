@@ -1188,3 +1188,138 @@ body {
 }
 
 
+/* =================== DARK BLUE CARD-STYLE SERVICES DROPDOWN =================== */
+.navbar-links .services-dropdown {
+  position: relative;
+}
+
+/* Dropdown container styled like a card */
+.navbar-links .services-dropdown-menu {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  display: flex;
+  gap: 25px;
+  background: #0b1d3c !important; /* Dark blue card background */
+  padding: 25px 30px;
+  border-radius: 16px; /* Rounded card edges */
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4); /* Smooth elevated shadow */
+  z-index: 3000 !important;
+  min-width: 1000px;
+  justify-content: space-between;
+  animation: fadeIn 0.3s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.08); /* Subtle border for depth */
+}
+
+/* Card-style columns */
+.navbar-links .services-column {
+  flex: 1;
+  padding: 15px;
+  min-width: 220px;
+  color: #ffffff !important;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.02); /* Light transparent column background */
+  border-radius: 10px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+/* Subtle hover animation for cards */
+.navbar-links .services-column:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-2px);
+}
+
+/* Column headings */
+.navbar-links .services-column h4 {
+  color: #ffdd57 !important;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 17px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 5px;
+}
+
+/* Paragraph text */
+.navbar-links .services-column p {
+  margin: 6px 0;
+  color: #e0e0e0 !important;
+  line-height: 1.5;
+}
+
+/* Highlight boxes inside services card */
+.navbar-links .highlight-box {
+  background: rgba(255, 244, 230, 0.08) !important;
+  border-left: 4px solid #f79c42;
+  padding: 12px;
+  margin: 14px 0;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+/* Highlight hover effect */
+.navbar-links .highlight-box:hover {
+  background: rgba(255, 244, 230, 0.15) !important;
+  transform: scale(1.02);
+}
+
+/* Blue highlight box */
+.navbar-links .highlight-box.blue {
+  background: rgba(230, 243, 255, 0.08) !important;
+  border-left: 4px solid #00cfff;
+}
+
+/* Highlight box titles */
+.navbar-links .highlight-box h5 {
+  font-size: 15px;
+  margin-bottom: 5px;
+  color: #ffdd57 !important;
+}
+
+/* Links & buttons */
+.navbar-links .highlight-box a,
+.navbar-links .services-column .link-btn {
+  display: inline-block;
+  margin-top: 5px;
+  color: #00cfff !important;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Hover link effects */
+.navbar-links .highlight-box a:hover,
+.navbar-links .services-column .link-btn:hover {
+  color: #ffdd57 !important;
+  transform: translateX(3px);
+}
+
+/* Responsive card design */
+@media (max-width: 768px) {
+  .navbar-links .services-dropdown-menu {
+    flex-direction: column;
+    min-width: 100%;
+    padding: 20px;
+    box-shadow: none;
+    border-radius: 12px;
+  }
+
+  .navbar-links .services-column {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 12px;
+  }
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -196,7 +196,7 @@ export default function App() {
   const [currentView, setCurrentView] = useState("home");
   const [accountTab, setAccountTab] = useState("signup");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false); 
+  const [activeDropdown, setActiveDropdown] = useState(null); 
    const sliderSettings = {
     dots: true,
     infinite: true,
@@ -303,6 +303,78 @@ export default function App() {
                 Home
               </a>
             </li>
+            <li
+  className="services-dropdown"
+  onMouseEnter={() => setActiveDropdown("services")}
+  onMouseLeave={() => setActiveDropdown(null)}
+>
+  <a href="#" onClick={(e) => e.preventDefault()}>
+    Services ▾
+  </a>
+
+  {activeDropdown === "services" && (
+    <div className="services-dropdown-menu">
+      {/* Shop & Ship */}
+      <div className="services-column">
+        <h4>Shop & Ship</h4>
+        <p>
+          Shop from any Indian online store; we offer worldwide shipping services along with:
+        </p>
+
+        <div className="highlight-box">
+          <h5>A FREE Local, Virtual Address</h5>
+          <p>
+            We’ll receive your package at our facility, store it till your packages arrive, and ship worldwide.
+          </p>
+          <a href="#">Know More →</a>
+        </div>
+
+        <div className="highlight-box blue">
+          <h5>Personal Shopper</h5>
+          <p>Having trouble at Checkout? We'll shop for you!</p>
+          <ol style={{ margin: 0, paddingLeft: "16px" }}>
+            <li>Pick a store & shop</li>
+            <li>Provide purchase details</li>
+            <li>We’ll do the shopping for you!</li>
+          </ol>
+          <a href="#">Know More →</a>
+        </div>
+      </div>
+
+      {/* Courier Service */}
+      <div className="services-column">
+        <h4>Courier Service</h4>
+        <p>We’ll come to you, pick up the courier and ship it anywhere in the world.</p>
+        <a href="#" className="link-btn">Schedule a Pickup →</a>
+      </div>
+
+      {/* Indian Stores */}
+      <div className="services-column">
+        <h4>Indian Stores</h4>
+        <p>
+          Shop from Amazon, Flipkart, Myntra, AJIO & more. We'll deliver it worldwide.
+        </p>
+        <a href="#" className="link-btn">Browse Stores →</a>
+
+        <div className="highlight-box">
+          <p>
+            Are you a store owner? Enlist your store with us & let our customers shop from you!
+          </p>
+          <a href="#">Enlist Your Store →</a>
+        </div>
+      </div>
+
+      {/* Partner With Us */}
+      <div className="services-column">
+        <h4>Partner With Us</h4>
+        <p>Seller from outside India looking for Indian goods?</p>
+        <p>Join our Partnership Program & get a better deal in shipping!</p>
+        <a href="#" className="link-btn">Know More →</a>
+      </div>
+    </div>
+  )}
+</li>
+
             <li>
               <a
                 href="#"
@@ -355,8 +427,8 @@ export default function App() {
             {/* ✅ Online Shopping Dropdown */}
             <li
               className="dropdown"
-              onMouseEnter={() => setIsDropdownOpen(true)}
-              onMouseLeave={() => setIsDropdownOpen(false)}
+              onMouseEnter={() => setActiveDropdown("shopping")}
+              onMouseLeave={() => setActiveDropdown(null)} 
             >
               <a
                 href="#"
@@ -365,9 +437,9 @@ export default function App() {
               >
                 Online Shopping ▾
               </a>
-              {isDropdownOpen && (
-                <ul className="dropdown-menu">
-                  <li>
+              {activeDropdown === "shopping" && (
+              <ul className="dropdown-menu">
+                  <li> 
                     <a href="https://www.amazon.in" target="_blank" rel="noreferrer">
                       Amazon
                     </a>
@@ -914,12 +986,4 @@ const buttonStyle = {
   fontSize: "1.1rem",
   cursor: "pointer",
 };
-
-
-
-
-
-
-
-
 
