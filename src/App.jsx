@@ -267,7 +267,7 @@ export default function App() {
 <button
   onClick={() => {
     setCurrentView("account");
-    setIsMobileMenuOpen(false); // ✅ Force close mobile menu immediately
+    setIsMobileMenuOpen(false); // ✅ Force close mobile menu immediately 
   }}
   className={`account-btn ${currentView === "account" ? "active" : ""}`}
   type="button"
@@ -288,9 +288,7 @@ export default function App() {
         ? "flex"
         : "", // Ensures nav hides properly on mobile when switching to account
   }}
->
-
-
+> 
 
     <ul className="navbar-links">
       <li>
@@ -882,4 +880,10 @@ const buttonStyle = {
   fontSize: "1.1rem",
   cursor: "pointer",
 };
+
+
+
+
+
+
 
