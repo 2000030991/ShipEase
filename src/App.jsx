@@ -458,27 +458,66 @@ export default function App() {
 </section>
 
 
-          {/* Intro */}
-          <section className="intro-section fade-in" style={{ display: "flex", alignItems: "center", padding: "40px 20px", maxWidth: "1100px", margin: "40px auto", gap: "40px", flexWrap: "wrap", background: "white", borderRadius: "12px", boxShadow: "0 5px 20px rgba(0,0,0,0.1)", color: "#023e8a" }}>
-            <div style={{ flex: "1 1 450px", minWidth: "300px" }}>
-              <h2 style={{ color: "#0077b6", marginBottom: "20px" }}>Shopping in India is Made EASY for the World</h2>
-              <p>Welcome to ShipEase, where the vibrant spirit of India meets the world through seamless global shopping. Ship more, Save more!.</p>
-              <p>Get your own virtual Indian address by just signing in!</p>
-              <p>Minimal shipping cost as compared to all other websites.</p>
-              <p>Explore a diverse selection of Indian products.</p>
-              <p>ShipEase, where all the services you want are available in one place.</p>
-              <p>Benefit from personal shopper services at Hyderabad.</p>
-              <p>Enjoy convenient pickup from Hyderabad and deliver worldwide options.</p>
-              <p>Ensure secure and trustworthy online transactions.</p>
-              <p>Track your purchases in real-time for added peace of mind.</p>
-              <p>Access competitive pricing for affordable Indian shopping.</p>
-              <p>Experience a customer-centric approach to satisfaction.</p>
-              <p>Break down international shopping barriers with ShipEase.</p>
-            </div>
-            <div style={{ flex: "1 1 400px", minWidth: "280px", textAlign: "center" }}>
-              <img src={ShipEasePoster} alt="Shopping in India Made Easy" style={{ width: "100%", height: "auto", borderRadius: "12px", boxShadow: "0 5px 20px rgba(0,0,0,0.1)" }} />
-            </div>
-          </section>
+{/* Intro */}
+<section
+  className="intro-section fade-in"
+  style={{
+    display: "flex",
+    alignItems: "center",
+    padding: "40px 20px",
+    maxWidth: "1100px",
+    margin: "40px auto",
+    gap: "40px",
+    flexWrap: "wrap",
+    background: "white",
+    borderRadius: "12px",
+    boxShadow: "0 5px 20px rgba(0,0,0,0.1)",
+    color: "#023e8a",
+  }}
+>
+  <div style={{ flex: "1 1 450px", minWidth: "300px" }}>
+    <h2 style={{ color: "#0077b6", marginBottom: "20px" }}>
+      Shopping in India is Made EASY for the World
+    </h2>
+    <p>
+      Welcome to <strong>ShipEase</strong>, where the vibrant spirit of India meets the
+      world through seamless global shopping. <strong>Ship more, Save more!</strong>
+    </p>
+    <ul style={{ paddingLeft: "20px", lineHeight: "1.8", marginTop: "15px" }}>
+      <li>Get your own virtual Indian address by just signing in.</li>
+      <li>Minimal shipping cost compared to all other websites.</li>
+      <li>Explore a diverse selection of Indian products.</li>
+      <li>All the services you want are available in one place.</li>
+      <li>Benefit from personal shopper services at Hyderabad.</li>
+      <li>Enjoy convenient pickup from Hyderabad and worldwide delivery options.</li>
+      <li>Ensure secure and trustworthy online transactions.</li>
+      <li>Track your purchases in real-time for added peace of mind.</li>
+      <li>Access competitive pricing for affordable Indian shopping.</li>
+      <li>Experience a customer-centric approach to satisfaction.</li>
+      <li>Break down international shopping barriers with ShipEase.</li>
+    </ul>
+  </div>
+
+  <div
+    style={{
+      flex: "1 1 400px",
+      minWidth: "280px",
+      textAlign: "center",
+    }}
+  >
+    <img
+      src={ShipEasePoster}
+      alt="Shopping in India Made Easy"
+      style={{
+        width: "100%",
+        height: "auto",
+        borderRadius: "12px",
+        boxShadow: "0 5px 20px rgba(0,0,0,0.1)",
+      }}
+    />
+  </div>
+</section>
+ 
 
           {/* Offers */}
           <section className="offers slide-up">
@@ -875,6 +914,11 @@ const buttonStyle = {
   fontSize: "1.1rem",
   cursor: "pointer",
 };
+
+
+
+
+
 
 
 

@@ -1052,11 +1052,26 @@ body {
   cursor: pointer;
   display: flex;
   align-items: center;
+  margin-right: 30px; /* ✅ Move Account Button Slightly Left */
 }
 
 .account-btn.active {
   color: #00cfff;
 }
+
+/* Adjust spacing only for desktop screens */
+@media (max-width: 1024px) {
+  .account-btn {
+    margin-right: 15px; /* ✅ Smaller margin for tablets/laptops */
+  }
+}
+
+@media (max-width: 768px) {
+  .account-btn {
+    margin-right: 0; /* ✅ No extra spacing for mobile */
+  }
+}
+
 
 /* Nav Links */
 .nav-links {
