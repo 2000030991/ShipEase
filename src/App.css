@@ -1106,11 +1106,12 @@ body {
   border-radius: 6px;
   list-style: none;
   padding: 10px 0;
-  min-width: 180px;
+  min-width: 220px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   z-index: 999;
 }
 
+/* Dropdown items */
 .dropdown-menu li {
   padding: 8px 15px;
 }
@@ -1126,6 +1127,40 @@ body {
 .dropdown-menu li a:hover {
   color: #00cfff;
   background: #002b7f; /* ✅ Slightly Lighter Blue on Hover */
+}
+
+/* 🌟 Mobile Responsive Dropdown for Online Shopping */
+@media (max-width: 768px) {
+  .dropdown-menu {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* ✅ Two items per row */
+    gap: 8px;
+    padding: 12px;
+    min-width: 100%;
+  }
+
+  .dropdown-menu li {
+    padding: 0;
+    text-align: center;
+    background-color: #001f54;
+    border-radius: 6px;
+  }
+
+  .dropdown-menu li a {
+    display: block;
+    padding: 10px 0;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #001f54;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  .dropdown-menu li a:hover {
+    background-color: #002b7f; /* ✅ Hover Effect on Mobile */
+    color: #00cfff;
+  }
 }
 
 /* 🌟 Mobile Menu Toggle */
