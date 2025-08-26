@@ -343,16 +343,18 @@ return (
             </a>
           </li>
 
-      {/* ✅ E-commerce Links */}
-          <li><a href="https://www.amazon.in" target="_blank" rel="noreferrer">Amazon</a></li>
-          <li><a href="https://www.flipkart.com" target="_blank" rel="noreferrer">Flipkart</a></li>
-          <li><a href="https://www.myntra.com" target="_blank" rel="noreferrer">Myntra</a></li>
-          <li><a href="https://www.meesho.com" target="_blank" rel="noreferrer">Meesho</a></li>
-          <li><a href="https://www.nykaa.com" target="_blank" rel="noreferrer">Nykaa</a></li>
-          <li><a href="https://www.ajio.com" target="_blank" rel="noreferrer">Ajio</a></li>
+          {/* ✅ E-commerce Links (Wrapped in a separate container) */}
+          <div className="ecommerce-links">
+            <li><a href="https://www.amazon.in" target="_blank" rel="noreferrer">Amazon</a></li>
+            <li><a href="https://www.flipkart.com" target="_blank" rel="noreferrer">Flipkart</a></li>
+            <li><a href="https://www.myntra.com" target="_blank" rel="noreferrer">Myntra</a></li>
+            <li><a href="https://www.meesho.com" target="_blank" rel="noreferrer">Meesho</a></li>
+            <li><a href="https://www.nykaa.com" target="_blank" rel="noreferrer">Nykaa</a></li>
+            <li><a href="https://www.ajio.com" target="_blank" rel="noreferrer">Ajio</a></li>
+          </div>
         </ul>
       </nav>
-    </header> 
+    </header>
 
    {/* HOME */}
       {currentView === "home" && (
