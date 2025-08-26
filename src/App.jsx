@@ -343,7 +343,7 @@ return (
             </a>
           </li>
 
-          {/* ✅ E-commerce Links */}
+      {/* ✅ E-commerce Links */}
           <li><a href="https://www.amazon.in" target="_blank" rel="noreferrer">Amazon</a></li>
           <li><a href="https://www.flipkart.com" target="_blank" rel="noreferrer">Flipkart</a></li>
           <li><a href="https://www.myntra.com" target="_blank" rel="noreferrer">Myntra</a></li>

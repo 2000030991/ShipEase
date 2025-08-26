@@ -1424,6 +1424,50 @@ section {
   width: 100%;
 }
 
+/* NAVBAR LINKS */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 10px 0 0;
+  padding: 0;
+}
+
+/* NAV LINKS STYLE */
+.navbar-links li {
+  display: inline-block;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: #333;
+  transition: all 0.3s ease-in-out;
+  display: block;
+}
+
+.navbar-links a:hover {
+  background-color: #0077ff;
+  color: #fff;
+}
+
+/* ACTIVE LINK */
+.navbar-links a.active {
+  background-color: #0077ff;
+  color: #fff;
+}
+
+/* NAV LINKS CONTAINER */
+.nav-links {
+  width: 100%;
+}
+
 .navbar-links {
   list-style: none;
   display: flex;
@@ -1487,6 +1531,9 @@ section {
   .navbar-links {
     gap: 8px;
     margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   /* Normal links remain full width */
@@ -1495,36 +1542,40 @@ section {
     text-align: center;
   }
 
-  /* Last 6 links → 3 per row grid */
+  /* ✅ Last 6 E-commerce links → Show 3 per row */
   .navbar-links li:nth-last-child(-n+6) {
-    flex: 0 0 calc(33.33% - 6px); /* 3 per row perfectly */
+    flex: 0 0 calc(33.33% - 8px); /* 3 per row */
     text-align: center;
-    margin: 4px 0;
+    margin: 5px 0;
     list-style: none;
   }
 
-  /* Style for e-commerce links */
+  /* ✅ Style for E-commerce links */
   .navbar-links li:nth-last-child(-n+6) a {
     display: block;
     background-color: #f8f8f8;
     border: 1px solid #e5e5e5;
     border-radius: 6px;
-    padding: 8px 0;
-    font-size: 12px;
+    padding: 10px 0;
+    font-size: 13px;
+    font-weight: 600;
     width: 100%;
     box-sizing: border-box;
     transition: all 0.3s ease;
   }
 
+  /* Hover effect for E-commerce links */
   .navbar-links li:nth-last-child(-n+6) a:hover {
     background-color: #0077ff;
     color: white;
   }
 
+  /* Show hamburger menu */
   .mobile-menu-toggle {
     display: block;
   }
 }
+
 
 
 
