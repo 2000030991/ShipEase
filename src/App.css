@@ -1474,132 +1474,55 @@ section {
 }
 
 /* ========================= */
-/* E-COMMERCE LINKS FIX */
+/* MOBILE VIEW FIX */
 /* ========================= */
 @media (max-width: 768px) {
+  /* Reduce menu font size */
+  .navbar-links a {
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+
+  /* Reduce space between menu items */
+  .navbar-links {
+    gap: 8px;
+    margin-top: 8px;
+  }
+
   /* Normal links remain full width */
   .navbar-links li:not(:nth-last-child(-n+6)) {
     width: 100%;
     text-align: center;
   }
 
-  /* Last 6 links (e-commerce) displayed in a perfect 3x2 grid */
+  /* Last 6 links → 3 per row grid */
   .navbar-links li:nth-last-child(-n+6) {
-    flex: 0 0 calc(33.33% - 10px);
+    flex: 0 0 calc(33.33% - 6px); /* 3 per row perfectly */
     text-align: center;
-    margin: 5px 0;
+    margin: 4px 0;
     list-style: none;
   }
 
-  .navbar-links a {
+  /* Style for e-commerce links */
+  .navbar-links li:nth-last-child(-n+6) a {
     display: block;
     background-color: #f8f8f8;
     border: 1px solid #e5e5e5;
-    border-radius: 8px;
-    padding: 10px 0;
-    font-size: 14px;
+    border-radius: 6px;
+    padding: 8px 0;
+    font-size: 12px;
     width: 100%;
-    text-align: center;
     box-sizing: border-box;
     transition: all 0.3s ease;
   }
 
-  .navbar-links a:hover {
+  .navbar-links li:nth-last-child(-n+6) a:hover {
     background-color: #0077ff;
     color: white;
   }
 
   .mobile-menu-toggle {
     display: block;
-  }
-}
-
-/* ====== UNIVERSAL CARD CONTAINER ====== */
-.cards-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  padding: 20px;
-}
-
-/* ====== SAME HEIGHT FOR ABOUT & DELIVERY CARDS ====== */
-.about-card,
-.delivery-card {
-  background-color: #ffffff;
-  width: 90%;
-  max-width: 800px;
-  min-height: 280px;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.about-card:hover,
-.delivery-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-}
-
-.about-card h2,
-.delivery-card h2 {
-  color: #0077cc;
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.about-card p,
-.delivery-card p {
-  color: #333;
-  font-size: 16px;
-  line-height: 1.5;
-  max-width: 90%;
-}
-
-.delivery-card button {
-  background-color: #0077cc;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  margin-top: 15px;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.delivery-card button:hover {
-  background-color: #005fa3;
-}
-
-/* ====== MOBILE RESPONSIVE ====== */
-@media (max-width: 768px) {
-  .about-card,
-  .delivery-card {
-    width: 95%;
-    min-height: auto;
-    padding: 20px;
-  }
-
-  .about-card h2,
-  .delivery-card h2 {
-    font-size: 20px;
-  }
-
-  .about-card p,
-  .delivery-card p {
-    font-size: 14px;
-  }
-
-  .delivery-card button {
-    font-size: 14px;
-    padding: 8px 16px;
   }
 }
 
