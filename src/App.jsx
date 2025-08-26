@@ -281,6 +281,7 @@ return (
         }}
       >
         <ul className="navbar-links">
+          {/* Normal Links */}
           <li>
             <a
               href="#"
@@ -293,7 +294,6 @@ return (
               Home
             </a>
           </li>
-
           <li>
             <a
               href="#"
@@ -343,7 +343,7 @@ return (
             </a>
           </li>
 
-          {/* ✅ Direct Shopping Links */}
+          {/* ✅ E-commerce Links */}
           <li><a href="https://www.amazon.in" target="_blank" rel="noreferrer">Amazon</a></li>
           <li><a href="https://www.flipkart.com" target="_blank" rel="noreferrer">Flipkart</a></li>
           <li><a href="https://www.myntra.com" target="_blank" rel="noreferrer">Myntra</a></li>

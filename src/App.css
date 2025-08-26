@@ -1394,5 +1394,247 @@ section {
   }
 }
 
+/* E-commerce Links Grid */
+.ecom-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* ✅ 3 per row */
+  gap: 10px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Style for each link */
+.ecom-links a {
+  background-color: #f8f8f8;
+  color: #333;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  display: block;
+}
+
+/* Hover effect */
+.ecom-links a:hover {
+  background-color: #0077ff;
+  color: white;
+}
+
+/* ✅ Mobile Specific Fix */
+@media (max-width: 768px) {
+  .ecom-links {
+    grid-template-columns: repeat(3, 1fr); /* Always 3 per row */
+    gap: 12px;
+  }
+}
+
+/* NAVBAR BASE */
+.navbar {
+  background-color: #fff;
+  padding: 10px 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* NAVBAR TOP */
+.navbar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LOGO */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #0077ff;
+  letter-spacing: 0.5px;
+}
+
+/* NAV LINKS */
+.nav-links {
+  width: 100%;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 10px 0 0;
+  padding: 0;
+}
+
+/* NAV LINKS STYLE */
+.navbar-links li {
+  display: inline-block;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-links a:hover {
+  background-color: #0077ff;
+  color: #fff;
+}
+
+/* ACTIVE LINK */
+.navbar-links a.active {
+  background-color: #0077ff;
+  color: #fff;
+}
+
+/* MOBILE MENU */
+.mobile-menu-toggle {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #0077ff;
+  display: none;
+}
+
+/* ✅ MOBILE VIEW */
+@media (max-width: 768px) {
+  .navbar-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  /* E-commerce links grid only in mobile */
+  .navbar-links li:nth-last-child(-n+6) {
+    width: 30%;
+    text-align: center;
+  }
+
+  .navbar-links a {
+    display: block;
+    background-color: #f8f8f8;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 10px 0;
+    font-size: 14px;
+    width: 100%;
+    transition: all 0.3s ease;
+  }
+
+  .navbar-links a:hover {
+    background-color: #0077ff;
+    color: white;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+}
+
+
+/* ====== UNIVERSAL CARD CONTAINER ====== */
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+/* ====== SAME HEIGHT FOR ABOUT & DELIVERY CARDS ====== */
+.about-card,
+.delivery-card {
+  background-color: #ffffff;
+  width: 90%;
+  max-width: 800px;
+  min-height: 280px;  /* ✅ Ensures equal height */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.about-card:hover,
+.delivery-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Titles */
+.about-card h2,
+.delivery-card h2 {
+  color: #0077cc;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Paragraphs */
+.about-card p,
+.delivery-card p {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 90%;
+}
+
+/* Button styling (delivery section only) */
+.delivery-card button {
+  background-color: #0077cc;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.delivery-card button:hover {
+  background-color: #005fa3;
+}
+
+/* ====== MOBILE RESPONSIVE ====== */
+@media (max-width: 768px) {
+  .about-card,
+  .delivery-card {
+    width: 95%;
+    min-height: auto;  /* ✅ Allows flexibility on small screens */
+    padding: 20px;
+  }
+
+  .about-card h2,
+  .delivery-card h2 {
+    font-size: 20px;
+  }
+
+  .about-card p,
+  .delivery-card p {
+    font-size: 14px;
+  }
+
+  .delivery-card button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
 
 
