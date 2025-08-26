@@ -665,8 +665,8 @@ return (
     }}
     onMouseOver={(e) => (e.target.style.backgroundColor = "#005f8e")}
     onMouseOut={(e) => (e.target.style.backgroundColor = "#0077b6")}
-  >
-    Explore Our Services
+  > 
+  Explore Our Services 
   </a>
 </section>
 

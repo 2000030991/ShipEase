@@ -1401,17 +1401,88 @@ section {
   background-color: #fff;
   padding: 10px 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  position: sticky;
+  position: sticky;  /* Default for mobile */
   top: 0;
   z-index: 999;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
 }
 
+/* ✅ MAIN NAVBAR CONTAINER */
 .navbar-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
+/* LOGO */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;  /* Changed from #0077ff */
+  letter-spacing: 0.5px;
+}
+
+/* NAV LINKS */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-links li {
+  display: inline-block;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: #333;
+  transition: all 0.3s ease-in-out;
+  display: block;
+}
+
+.navbar-links a:hover {
+  background-color: #e0e0e0; /* subtle hover instead of blue */
+  color: #333;
+}
+
+/* ACTIVE LINK */
+.navbar-links a.active {
+  background-color: #e0e0e0; /* subtle active instead of blue */
+  color: #333;
+}
+
+/* ========================= */
+/* NAVBAR STYLING */
+/* ========================= */
+.navbar {
+  background-color: #fff;
+  padding: 10px 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+/* ✅ MAIN NAVBAR CONTAINER */
+.navbar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* LOGO */
 .logo {
   font-size: 22px;
   font-weight: bold;
@@ -1419,24 +1490,18 @@ section {
   letter-spacing: 0.5px;
 }
 
-/* NAV LINKS CONTAINER */
-.nav-links {
-  width: 100%;
-}
-
-/* NAVBAR LINKS */
+/* ========================= */
+/* NAV LINKS */
+/* ========================= */
 .navbar-links {
-  list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
-  gap: 15px;
-  margin: 10px 0 0;
+  gap: 16px; /* ✅ Unified spacing */
+  list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-/* NAV LINKS STYLE */
 .navbar-links li {
   display: inline-block;
 }
@@ -1463,16 +1528,17 @@ section {
   color: #fff;
 }
 
-/* ✅ E-COMMERCE LINKS FIXED */
+/* ========================= */
+/* ✅ E-COMMERCE LINKS */
+/* ========================= */
 .ecommerce-links {
   display: flex;
-  justify-content: center;       /* ✅ Centers all links */
   align-items: center;
-  gap: 10px;                     /* ✅ Equal spacing */
-  flex-wrap: wrap;               /* ✅ Wraps properly on small screens */
-  margin-top: 12px;
-  padding: 0;
+  justify-content: center;
+  gap: 16px; /* ✅ Matches navbar links */
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .ecommerce-links li {
@@ -1481,14 +1547,14 @@ section {
 
 .ecommerce-links li a {
   display: inline-block;
-  padding: 8px 14px;
+  padding: 8px 16px;
   background-color: #f8f8f8;
   border-radius: 6px;
   text-decoration: none;
   color: #333;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
-  min-width: 90px;               /* ✅ Ensures equal size */
+  min-width: 100px;
   text-align: center;
   transition: background 0.3s, transform 0.2s ease-in-out;
 }
@@ -1499,19 +1565,59 @@ section {
   transform: scale(1.05);
 }
 
-/* ✅ Desktop View - Perfectly in One Line */
+/* ========================= */
+/* ✅ DESKTOP VIEW FIX + FIXED NAVBAR */
+/* ========================= */
 @media screen and (min-width: 768px) {
-  .ecommerce-links {
-    justify-content: center;
-    gap: 16px;
+  .navbar {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  /* ✅ Prevent content from hiding behind navbar */
+  body {
+    padding-top: 70px;
+  }
+
+  .navbar-top {
     flex-wrap: nowrap;
-    margin-top: 0;
+  }
+
+  /* Keep both links aligned consistently */
+  .navbar-links,
+  .ecommerce-links {
+    gap: 20px; /* ✅ Same spacing for large screens */
   }
 
   .ecommerce-links li a {
     font-size: 15px;
-    padding: 8px 16px;
-    min-width: 100px;
+    padding: 8px 18px;
+    min-width: 110px;
   }
 }
 
+/* Common card styling for white sections */
+.section-card {
+  background-color: #fff;       /* White card background */
+  width: 80%;                  /* Adjust width as per your design */
+  max-width: 800px;            /* Limit max width */
+  min-height: 300px;           /* Ensures equal card heights */
+  margin: 20px auto;           /* Center cards */
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Ensures both section cards are always the same height */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
