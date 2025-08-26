@@ -1507,18 +1507,19 @@ section {
   display: none;
 }
 
-/* ✅ MOBILE VIEW */
+/* E-commerce links grid only in mobile */
 @media (max-width: 768px) {
   .navbar-links {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
+    display: flex;
+    flex-wrap: wrap; /* ✅ Allows wrapping into rows */
+    justify-content: space-between; /* ✅ Even spacing */
+    gap: 10px; /* ✅ Adds spacing between items */
   }
 
-  /* E-commerce links grid only in mobile */
   .navbar-links li:nth-last-child(-n+6) {
-    width: 30%;
+    width: calc(33.33% - 10px); /* ✅ Exactly 3 per row */
     text-align: center;
+    list-style: none;
   }
 
   .navbar-links a {
@@ -1529,6 +1530,7 @@ section {
     padding: 10px 0;
     font-size: 14px;
     width: 100%;
+    box-sizing: border-box;
     transition: all 0.3s ease;
   }
 
