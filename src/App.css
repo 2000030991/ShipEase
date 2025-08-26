@@ -316,7 +316,6 @@ body {
   }
 }
 
-
 /* How It Works Section */
 .how-it-works {
   max-width: 1100px; /* Increased width to fit 3 cards in a row */
@@ -326,10 +325,11 @@ body {
 }
 
 .how-it-works h2 {
-  font-size: 2.4rem;
-  font-weight: 700;
-  margin-bottom: 30px;
+  font-size: 3rem; /* ⬆️ Increased main heading size */
+  font-weight: 800;
+  margin-bottom: 35px;
   color: #0077b6;
+  letter-spacing: 1px;
 }
 
 /* ✅ Force 3 cards in a single row */
@@ -344,13 +344,21 @@ body {
 /* Individual step card */
 .how-it-works .steps > div {
   background: #caf0f8;
-  padding: 20px 25px;
+  padding: 25px 30px;
   border-radius: 12px;
   font-weight: 600;
   color: #03045e;
   cursor: default;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   transition: background 0.3s ease, transform 0.3s ease;
+
+  /* ✅ Ensures consistent text alignment */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start; /* Align all text from the same line */
+  text-align: left; /* Ensures all text starts from same line */
+  min-height: 250px; /* Keeps cards uniform in height */
 }
 
 .how-it-works .steps > div:hover {
@@ -361,30 +369,66 @@ body {
 
 /* Step number styling */
 .step-number {
-  font-size: 2.2rem;
-  font-weight: 700;
+  font-size: 2.4rem; /* ⬆️ Increased number size */
+  font-weight: 800;
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   color: #0077b6;
+}
+
+/* Subheadings inside cards (optional improvement) */
+.how-it-works .steps > div h3 {
+  font-size: 1.3rem; /* ⬆️ Increased heading size inside cards */
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #023e8a;
 }
 
 /* ✅ Mobile Responsive */
 @media (max-width: 768px) {
+  .how-it-works h2 {
+    font-size: 2.4rem; /* Reduce slightly on smaller screens */
+  }
+
   .how-it-works .steps {
     grid-template-columns: 1fr; /* Stack cards vertically */
     gap: 20px;
   }
+
+  .how-it-works .steps > div {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .step-number {
+    font-size: 2rem; /* Adjust step number size for mobile */
+  }
+
+  .how-it-works .steps > div h3 {
+    font-size: 1.3rem; /* Adjust card heading size for mobile */
+  }
 }
 
-
 /* Why Choose Us Section */
+.why-choose-us {
+  background-color: #001f3f; /* 🔹 Dark Blue Background */
+  padding: 40px 20px; /* Add spacing around content */
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Image Styling */
 .why-choose-us img {
   max-width: 1000px;
   width: 100%;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  display: block;
+  margin: 0 auto; /* Centers the image */
 }
+
 
 /* About Section */
 .about {

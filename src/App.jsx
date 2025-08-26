@@ -646,18 +646,169 @@ export default function App() {
   </div>
 </section>
 
+{/* Why choose us */}
+<section
+  className="why-choose-us"
+  style={{
+    backgroundColor: "#87CEEB", // 🔹 Sky Blue Background
+    padding: "40px 20px",
+    textAlign: "center",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: "12px",
+    boxShadow: "0 5px 25px rgba(0, 0, 0, 0.2)", // Softer shadow for a bright background
+  }}
+>
+  <img
+    src={WhyChooseUs}
+    alt="Why Choose Us"
+    style={{
+      maxWidth: "1000px",
+      width: "100%",
+      height: "auto",
+      borderRadius: "12px",
+      boxShadow: "0 5px 15px rgba(0,0,0,0.2)", // Matches sky-blue theme
+      display: "block",
+    }}
+  />
+</section>
 
-
-          {/* Why choose us */}
-          <section className="why-choose-us" style={{ backgroundColor: "#cce7ff", padding: "40px 20px", textAlign: "center", display: "flex", justifyContent: "center" }}>
-            <img src={WhyChooseUs} alt="Why Choose US" style={{ maxWidth: "1000px", width: "100%", height: "auto", borderRadius: "12px", boxShadow: "0 5px 20px rgba(0,0,0,0.3)" }} />
-          </section>
 
           {/* About */}
           <section className="about fade-in">
             <h2>About Us</h2>
             <p>ShipEase helps you shop from India and get your products delivered worldwide. From shipping to personal shopping, we’ve got you covered.</p>
           </section>
+
+          {/* ================= SHIPEASE INTRO SECTION ================= */}
+<section
+  className="shipease-intro"
+  style={{
+    backgroundColor: "#87CEEB", // Sky Blue Background
+    padding: "40px 20px",
+    textAlign: "center",
+    margin: "40px auto",
+    borderRadius: "12px",
+    boxShadow: "0 5px 25px rgba(0, 0, 0, 0.2)",
+    maxWidth: "1100px",
+  }}
+>
+  <h2 style={{ color: "#003366", fontSize: "2rem", marginBottom: "15px" }}>
+    Shop from India without second thoughts — <strong>ShipEase</strong> delivers worldwide! 🌎
+  </h2>
+
+  <p
+    style={{
+      color: "#222",
+      fontSize: "1.1rem",
+      maxWidth: "850px",
+      margin: "0 auto 25px auto",
+      lineHeight: "1.6",
+    }}
+  >
+    At <strong>ShipEase</strong>, we make shopping from your favorite Indian stores completely hassle-free!
+    Now, you can shop online from India and ship your packages directly to the
+    <strong> USA, UK, Dubai, Australia, Canada, and Qatar </strong> — with fast delivery,
+    affordable rates, and a smooth experience you’ll love.
+  </p>
+
+  <div
+    style={{
+      display: "flex",
+      flexWrap: "wrap",
+      justifyContent: "center",
+      gap: "20px",
+      marginTop: "30px",
+    }}
+  >
+    {/* Card 1 */}
+    <div
+      style={{
+        background: "#fff",
+        padding: "20px",
+        borderRadius: "12px",
+        boxShadow: "0 5px 15px rgba(0, 0, 0, 0.15)",
+        flex: "1 1 300px",
+        maxWidth: "350px",
+        textAlign: "left",
+      }}
+    >
+      <h3 style={{ color: "#0077b6", marginBottom: "10px" }}>
+        Shop anywhere, ShipEase gets it there! 🛍️✈️
+      </h3>
+      <p style={{ color: "#333" }}>
+        Our <strong>Shop & Ship</strong> service enables seamless international shipping from India to your doorstep.
+        Browse any Indian online store, add your favorite products to the cart, and leave the rest to us — 
+        we’ll handle the entire shipping process with speed and care.
+      </p>
+    </div>
+
+    {/* Card 2 */}
+    <div
+      style={{
+        background: "#fff",
+        padding: "20px",
+        borderRadius: "12px",
+        boxShadow: "0 5px 15px rgba(0, 0, 0, 0.15)",
+        flex: "1 1 300px",
+        maxWidth: "350px",
+        textAlign: "left",
+      }}
+    >
+      <h3 style={{ color: "#0077b6", marginBottom: "10px" }}>
+        Schedule a Pickup from ANYWHERE in India 🚚
+      </h3>
+      <p style={{ color: "#333" }}>
+        No matter where you are in India, <strong>ShipEase</strong> comes to your door! Just schedule a pickup,
+        and our delivery partners will collect your packages and prepare them for
+        safe and fast international shipping.
+      </p>
+    </div>
+
+    {/* Card 3 */}
+    <div
+      style={{
+        background: "#fff",
+        padding: "20px",
+        borderRadius: "12px",
+        boxShadow: "0 5px 15px rgba(0, 0, 0, 0.15)",
+        flex: "1 1 300px",
+        maxWidth: "350px",
+        textAlign: "left",
+      }}
+    >
+      <h3 style={{ color: "#0077b6", marginBottom: "10px" }}>
+        Save Up to 80% on Shipping Costs 🏷️
+      </h3>
+      <p style={{ color: "#333" }}>
+        Get a <strong>FREE personal locker</strong> with ShipEase! Store your purchases from multiple Indian stores,
+        we consolidate them into one, and ship your parcel off — saving you <strong>up to 80%</strong> on shipping costs.
+      </p>
+    </div>
+  </div>
+
+  <a
+    href="#services"
+    style={{
+      display: "inline-block",
+      marginTop: "30px",
+      padding: "12px 25px",
+      backgroundColor: "#0077b6",
+      color: "#fff",
+      fontSize: "1.1rem",
+      fontWeight: "600",
+      borderRadius: "8px",
+      textDecoration: "none",
+      boxShadow: "0 5px 15px rgba(0, 0, 0, 0.2)",
+      transition: "background 0.3s ease",
+    }}
+    onMouseOver={(e) => (e.target.style.backgroundColor = "#005f8e")}
+    onMouseOut={(e) => (e.target.style.backgroundColor = "#0077b6")}
+  >
+    Explore Our Services
+  </a>
+</section>
 
           {/* Prohibited */}
           <section className="prohibited fade-in" style={{ backgroundColor: "#ffe6e6", padding: "40px 20px", marginTop: "20px", borderRadius: "12px", maxWidth: "900px", marginLeft: "auto", marginRight: "auto", boxShadow: "0 5px 15px rgba(255, 0, 0, 0.15)" }}>
@@ -966,7 +1117,7 @@ export default function App() {
     </>
   );
 }
-
+ 
 const inputStyle = {
   width: "100%",
   padding: "8px 10px",
