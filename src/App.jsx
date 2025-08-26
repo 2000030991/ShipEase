@@ -499,31 +499,43 @@ export default function App() {
             </Slider>
           </section>
 
-          {/* Services */}
+         {/* Services Section */}
 <section className="services fade-in">
-  <div className="service-card" onClick={() => setCurrentView("shipping")} style={{ cursor: "pointer" }}>
+  <div
+    className="service-card"
+    onClick={() => setCurrentView("shipping")}
+    style={{ cursor: "pointer" }}
+  >
     <FaShippingFast className="icon" />
     <h3>Shipping</h3>
     <p>Fast delivery at ₹640/kg worldwide.</p>
-    <small style={{ color: "#0077b6", fontWeight: "600" }}>
+    <small>
       Affordable global shipping with real-time tracking, safe packaging & express delivery options.
     </small>
   </div>
-  
-  <div className="service-card" onClick={() => setCurrentView("mailbox")} style={{ cursor: "pointer" }}>
+
+  <div
+    className="service-card"
+    onClick={() => setCurrentView("mailbox")}
+    style={{ cursor: "pointer" }}
+  >
     <FaEnvelopeOpenText className="icon" />
     <h3>Mail Box</h3>
     <p>Order from e-commerce and Indian stores.</p>
-    <small style={{ color: "#0077b6", fontWeight: "600" }}>
+    <small>
       Get your own Indian virtual address to receive orders from Amazon, Flipkart & any local store.
     </small>
   </div>
-  
-  <div className="service-card" onClick={() => setCurrentView("personalShopper")} style={{ cursor: "pointer" }}>
+
+  <div
+    className="service-card"
+    onClick={() => setCurrentView("personalShopper")}
+    style={{ cursor: "pointer" }}
+  >
     <FaShoppingBag className="icon" />
     <h3>Personal Shopper</h3>
     <p>Shop from any Indian store through your own shopper.</p>
-    <small style={{ color: "#0077b6", fontWeight: "600" }}>
+    <small>
       Can't shop yourself? Our personal shoppers will buy, pack & ship items on your behalf!
     </small>
   </div>
@@ -681,16 +693,16 @@ export default function App() {
             <p>ShipEase helps you shop from India and get your products delivered worldwide. From shipping to personal shopping, we’ve got you covered.</p>
           </section>
 
-          {/* ================= SHIPEASE INTRO SECTION ================= */}
+{/* ================= SHIPEASE INTRO SECTION ================= */}
 <section
   className="shipease-intro"
   style={{
-    backgroundColor: "#87CEEB", // Sky Blue Background
+    backgroundColor: "#ffffff", // ✅ Changed to White Background
     padding: "40px 20px",
     textAlign: "center",
     margin: "40px auto",
     borderRadius: "12px",
-    boxShadow: "0 5px 25px rgba(0, 0, 0, 0.2)",
+    boxShadow: "0 5px 25px rgba(0, 0, 0, 0.15)", // Slightly darker for better contrast on white
     maxWidth: "1100px",
   }}
 >

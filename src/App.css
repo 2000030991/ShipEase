@@ -218,31 +218,112 @@ body {
   display: flex;
   justify-content: center;
   gap: 35px;
-  margin: 50px 20px;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 50px auto;
+  max-width: 1100px; /* ⬆️ Increased width to fit 3 cards in a row */
+  flex-wrap: nowrap; /* ✅ Prevents wrapping on larger screens */
 }
+
+/* Individual Service Cards */
 .service-card {
-  background: #caf0f8;
+  background: #ffffff; /* ⬜ White background */
   padding: 25px 20px;
   border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
   width: 300px;
   text-align: center;
   font-weight: 600;
   color: #03045e;
-  transition: transform 0.3s ease;
-  cursor: default;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  border: 1px solid #eaeaea; /* Light border for better contrast */
 }
+
+/* Hover Effect */
 .service-card:hover {
   transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  background: #0077b6; /* Blue background on hover */
+  color: #ffffff;
 }
+
+/* Service Card Icons */
 .service-card .icon {
   font-size: 3rem;
   margin-bottom: 10px;
   color: #0077b6;
+  transition: color 0.3s ease;
 }
+
+/* Icon color changes on hover */
+.service-card:hover .icon {
+  color: #ffffff;
+}
+
+/* Service Card Titles */
+.service-card h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #023e8a;
+  transition: color 0.3s ease;
+}
+
+.service-card:hover h3 {
+  color: #ffffff;
+}
+
+/* Description Paragraph */
+.service-card p {
+  font-size: 1rem;
+  color: #555555;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.service-card:hover p {
+  color: #f1f1f1;
+}
+
+/* Small Text Styling */
+.service-card small {
+  font-size: 0.9rem;
+  color: #0077b6;
+  font-weight: 600;
+  display: block;
+  margin-top: 6px;
+  transition: color 0.3s ease;
+}
+
+.service-card:hover small {
+  color: #e0f7ff;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 1024px) {
+  .services {
+    max-width: 100%;
+    gap: 25px;
+    flex-wrap: wrap; /* ✅ Allow wrapping only on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .services {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .service-card {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .service-card .icon {
+    font-size: 2.5rem;
+  }
+}
+
 
 /* Offer Section */
 /* ================= OFFERS ================= */
@@ -271,26 +352,38 @@ body {
 
 /* ✅ Offer card styling */
 .offer-card {
-  background: #90e0ef;
+  background: #ffffff; /* ⬜ Changed from light blue to white */
   padding: 25px 20px;
   border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12); /* Better depth */
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  border: 1px solid #eaeaea; /* Light border for clean separation */
 }
 
+/* ✅ Hover effect */
 .offer-card:hover {
   transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+  background: #0077b6; /* Blue background on hover */
+  color: #ffffff; /* Text turns white */
 }
 
+/* Offer Icon */
 .offer-icon {
   font-size: 2rem;
   color: #0077b6;
   margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+/* Change icon color on hover */
+.offer-card:hover .offer-icon {
+  color: #ffffff;
 }
 
 /* ✅ Ensures images are consistent in size */
@@ -299,13 +392,26 @@ body {
   height: 150px;
   object-fit: contain;
   margin-bottom: 12px;
+  transition: transform 0.3s ease;
 }
 
+/* Slight zoom effect on hover */
+.offer-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Offer text styling */
 .offer-card p {
   font-size: 1.1rem;
   font-weight: 600;
   color: #023e8a;
   margin: 0;
+  transition: color 0.3s ease;
+}
+
+/* Change text color on hover */
+.offer-card:hover p {
+  color: #ffffff;
 }
 
 /* ✅ Mobile Responsive - stack cards */
@@ -313,6 +419,16 @@ body {
   .offers-cards {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+
+  .offer-card {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .offer-card img {
+    width: 130px;
+    height: 130px;
   }
 }
 
@@ -343,14 +459,14 @@ body {
 
 /* Individual step card */
 .how-it-works .steps > div {
-  background: #caf0f8;
+  background: #ffffff; /* ⬜ White cards */
   padding: 25px 30px;
   border-radius: 12px;
   font-weight: 600;
   color: #03045e;
   cursor: default;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Stronger shadow for contrast */
+  transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
 
   /* ✅ Ensures consistent text alignment */
   display: flex;
@@ -361,9 +477,10 @@ body {
   min-height: 250px; /* Keeps cards uniform in height */
 }
 
+/* Hover effect */
 .how-it-works .steps > div:hover {
-  background: #0077b6;
-  color: white;
+  background: #0077b6; /* Blue background on hover */
+  color: #ffffff; /* White text on hover */
   transform: translateY(-5px);
 }
 
@@ -374,14 +491,26 @@ body {
   display: block;
   margin-bottom: 12px;
   color: #0077b6;
+  transition: color 0.3s ease;
 }
 
-/* Subheadings inside cards (optional improvement) */
+/* Change step number color when card is hovered */
+.how-it-works .steps > div:hover .step-number {
+  color: #ffffff;
+}
+
+/* Subheadings inside cards */
 .how-it-works .steps > div h3 {
   font-size: 1.3rem; /* ⬆️ Increased heading size inside cards */
   font-weight: 700;
   margin-bottom: 10px;
   color: #023e8a;
+  transition: color 0.3s ease;
+}
+
+/* Change subheading color on hover */
+.how-it-works .steps > div:hover h3 {
+  color: #ffffff;
 }
 
 /* ✅ Mobile Responsive */
@@ -429,28 +558,34 @@ body {
   margin: 0 auto; /* Centers the image */
 }
 
-
 /* About Section */
 .about {
   max-width: 900px;
   margin: 40px auto;
   padding: 20px;
-  background: white;
+  background-color: #ffffff !important; /* ✅ Force White Background */
   border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
   color: #023e8a;
   text-align: center;
+  position: relative;
+  z-index: 2;
 }
+
 .about h2 {
   font-weight: 700;
   font-size: 2rem;
   margin-bottom: 20px;
+  color: #003366;
 }
+
 .about p {
   font-weight: 600;
   font-size: 1.1rem;
   line-height: 1.6;
+  color: #002244;
 }
+
 
 /* Prohibited Items Section */
 .prohibited-lists ul {
@@ -1367,3 +1502,60 @@ body {
     transform: translateY(0);
   }
 }
+
+/* 🌤️ Set Sky Blue Background for Entire Website */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #87CEEB; /* Sky Blue Background */
+  color: #023e8a;
+}
+
+/* Keep Navbar Background Untouched */
+.navbar {
+  background-color: #fff; /* Or your existing navbar color */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 10;
+}
+
+/* Keep Carousel/Slider Background Untouched */
+.carousel-section {
+  background-color: #fff; /* Keep slider clean and separate */
+  padding: 0;
+  margin: 0;
+}
+
+/* Ensure Cards & Sections Look Good on Sky Blue Background */
+section {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+/* About Section Will Still Follow Its Own Styles */
+.about {
+  background-color: #87CEEB; /* Sky Blue */
+}
+
+/* Why Choose Us */
+.why-choose-us { 
+  background-color: #87CEEB; /* Sky Blue */
+}
+
+/* How It Works */
+.how-it-works {
+  background-color: #fff; /* White cards for clarity */
+  border-radius: 12px;
+}
+
+/* Services & Offers */
+.services,
+.offers {
+  background-color: #fff;
+  border-radius: 12px;
+}
+
