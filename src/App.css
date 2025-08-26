@@ -1511,15 +1511,19 @@ section {
 @media (max-width: 768px) {
   .navbar-links {
     display: flex;
-    flex-wrap: wrap; /* ✅ Allows wrapping into rows */
-    justify-content: space-between; /* ✅ Even spacing */
-    gap: 10px; /* ✅ Adds spacing between items */
+    flex-wrap: wrap; /* ✅ Allows items to wrap */
+    justify-content: flex-start; /* ✅ Keeps items aligned */
+    gap: 10px; /* ✅ Proper spacing */
+    padding: 0;
+    margin: 0;
   }
 
+  /* ✅ Targets last 6 e-commerce links and arranges 3 per row */
   .navbar-links li:nth-last-child(-n+6) {
-    width: calc(33.33% - 10px); /* ✅ Exactly 3 per row */
+    width: calc(33.33% - 7px); /* ✅ Ensures 3 per row perfectly */
     text-align: center;
     list-style: none;
+    box-sizing: border-box;
   }
 
   .navbar-links a {
@@ -1530,8 +1534,9 @@ section {
     padding: 10px 0;
     font-size: 14px;
     width: 100%;
-    box-sizing: border-box;
+    text-align: center;
     transition: all 0.3s ease;
+    box-sizing: border-box;
   }
 
   .navbar-links a:hover {
