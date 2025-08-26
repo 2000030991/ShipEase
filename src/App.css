@@ -213,117 +213,6 @@ body {
   line-height: 1.5;
 }
 
-/* Services Section */
-.services {
-  display: flex;
-  justify-content: center;
-  gap: 35px;
-  margin: 50px auto;
-  max-width: 1100px; /* ⬆️ Increased width to fit 3 cards in a row */
-  flex-wrap: nowrap; /* ✅ Prevents wrapping on larger screens */
-}
-
-/* Individual Service Cards */
-.service-card {
-  background: #ffffff; /* ⬜ White background */
-  padding: 25px 20px;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-  width: 300px;
-  text-align: center;
-  font-weight: 600;
-  color: #03045e;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-  border: 1px solid #eaeaea; /* Light border for better contrast */
-}
-
-/* Hover Effect */
-.service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  background: #0077b6; /* Blue background on hover */
-  color: #ffffff;
-}
-
-/* Service Card Icons */
-.service-card .icon {
-  font-size: 3rem;
-  margin-bottom: 10px;
-  color: #0077b6;
-  transition: color 0.3s ease;
-}
-
-/* Icon color changes on hover */
-.service-card:hover .icon {
-  color: #ffffff;
-}
-
-/* Service Card Titles */
-.service-card h3 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: #023e8a;
-  transition: color 0.3s ease;
-}
-
-.service-card:hover h3 {
-  color: #ffffff;
-}
-
-/* Description Paragraph */
-.service-card p {
-  font-size: 1rem;
-  color: #555555;
-  margin-bottom: 8px;
-  transition: color 0.3s ease;
-}
-
-.service-card:hover p {
-  color: #f1f1f1;
-}
-
-/* Small Text Styling */
-.service-card small {
-  font-size: 0.9rem;
-  color: #0077b6;
-  font-weight: 600;
-  display: block;
-  margin-top: 6px;
-  transition: color 0.3s ease;
-}
-
-.service-card:hover small {
-  color: #e0f7ff;
-}
-
-/* ✅ Responsive Design */
-@media (max-width: 1024px) {
-  .services {
-    max-width: 100%;
-    gap: 25px;
-    flex-wrap: wrap; /* ✅ Allow wrapping only on tablets */
-  }
-}
-
-@media (max-width: 768px) {
-  .services {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .service-card {
-    width: 90%;
-    padding: 20px;
-  }
-
-  .service-card .icon {
-    font-size: 2.5rem;
-  }
-}
-
 
 /* Offer Section */
 /* ================= OFFERS ================= */
@@ -1367,142 +1256,6 @@ body {
 }
 
 
-/* =================== DARK BLUE CARD-STYLE SERVICES DROPDOWN =================== */
-.navbar-links .services-dropdown {
-  position: relative;
-}
-
-/* Dropdown container styled like a card */
-.navbar-links .services-dropdown-menu {
-  position: absolute;
-  top: 48px;
-  left: 0;
-  display: flex;
-  gap: 25px;
-  background: #0b1d3c !important; /* Dark blue card background */
-  padding: 25px 30px;
-  border-radius: 16px; /* Rounded card edges */
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4); /* Smooth elevated shadow */
-  z-index: 3000 !important;
-  min-width: 1000px;
-  justify-content: space-between;
-  animation: fadeIn 0.3s ease-in-out;
-  border: 1px solid rgba(255, 255, 255, 0.08); /* Subtle border for depth */
-}
-
-/* Card-style columns */
-.navbar-links .services-column {
-  flex: 1;
-  padding: 15px;
-  min-width: 220px;
-  color: #ffffff !important;
-  font-size: 14px;
-  background: rgba(255, 255, 255, 0.02); /* Light transparent column background */
-  border-radius: 10px;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-/* Subtle hover animation for cards */
-.navbar-links .services-column:hover {
-  background: rgba(255, 255, 255, 0.06);
-  transform: translateY(-2px);
-}
-
-/* Column headings */
-.navbar-links .services-column h4 {
-  color: #ffdd57 !important;
-  margin-bottom: 10px;
-  font-weight: 700;
-  font-size: 17px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  padding-bottom: 5px;
-}
-
-/* Paragraph text */
-.navbar-links .services-column p {
-  margin: 6px 0;
-  color: #e0e0e0 !important;
-  line-height: 1.5;
-}
-
-/* Highlight boxes inside services card */
-.navbar-links .highlight-box {
-  background: rgba(255, 244, 230, 0.08) !important;
-  border-left: 4px solid #f79c42;
-  padding: 12px;
-  margin: 14px 0;
-  border-radius: 8px;
-  font-size: 13px;
-  color: #fff;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-/* Highlight hover effect */
-.navbar-links .highlight-box:hover {
-  background: rgba(255, 244, 230, 0.15) !important;
-  transform: scale(1.02);
-}
-
-/* Blue highlight box */
-.navbar-links .highlight-box.blue {
-  background: rgba(230, 243, 255, 0.08) !important;
-  border-left: 4px solid #00cfff;
-}
-
-/* Highlight box titles */
-.navbar-links .highlight-box h5 {
-  font-size: 15px;
-  margin-bottom: 5px;
-  color: #ffdd57 !important;
-}
-
-/* Links & buttons */
-.navbar-links .highlight-box a,
-.navbar-links .services-column .link-btn {
-  display: inline-block;
-  margin-top: 5px;
-  color: #00cfff !important;
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.2s ease, transform 0.2s ease;
-}
-
-/* Hover link effects */
-.navbar-links .highlight-box a:hover,
-.navbar-links .services-column .link-btn:hover {
-  color: #ffdd57 !important;
-  transform: translateX(3px);
-}
-
-/* Responsive card design */
-@media (max-width: 768px) {
-  .navbar-links .services-dropdown-menu {
-    flex-direction: column;
-    min-width: 100%;
-    padding: 20px;
-    box-shadow: none;
-    border-radius: 12px;
-  }
-
-  .navbar-links .services-column {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    padding-bottom: 12px;
-  }
-}
-
-/* Smooth fade-in animation */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* 🌤️ Set Sky Blue Background for Entire Website */
 body {
   margin: 0;
@@ -1558,4 +1311,88 @@ section {
   background-color: #fff;
   border-radius: 12px;
 }
+
+/* ===== New Promotional Section ===== */
+.promo-section {
+  text-align: center;
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: 50px auto;
+  background: #ffffff; /* ✅ White background */
+  color: #023e8a; /* ✅ Dark text for readability */
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  animation: fadeInUp 0.8s ease-in-out;
+  border: 1px solid #e0e0e0; /* ✅ Subtle border for better visibility */
+}
+
+.promo-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #0077b6; /* ✅ Highlighted heading */
+}
+
+.promo-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 25px;
+  color: #333; /* ✅ Darker gray for better readability */
+}
+
+/* Promo Button */
+.promo-btn {
+  padding: 12px 28px;
+  background-color: #0077b6; /* ✅ Blue button for contrast */
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 119, 182, 0.3);
+}
+
+.promo-btn:hover {
+  background-color: #005f91;
+  transform: scale(1.05);
+}
+
+/* ===== Animation ===== */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .promo-section {
+    padding: 40px 15px;
+    margin: 30px 15px;
+  }
+
+  .promo-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .promo-section p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .promo-btn {
+    padding: 10px 24px;
+    font-size: 0.95rem;
+  }
+}
+
+
 

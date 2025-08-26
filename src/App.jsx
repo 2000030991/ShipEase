@@ -19,13 +19,6 @@ import PersonalShopperTab2 from "./assets/Personal Shopper Tab2.jpg";
 import PersonalShopperTab3 from "./assets/Personal Shopper Tab3.jpg";
 import PersonalShopperTab4 from "./assets/Personal Shopper Tab4.jpg";
 
-import MailBoxExtra1 from "./assets/Mail Box Extra1.jpg";
-import PersonalShopperExtra1 from "./assets/Personal Shopper Extra1.jpg";
-import ShippingExtra1 from "./assets/ShippingExtra1.jpg";
-import ShippingExtra2 from "./assets/ShippingExtra2.jpg"; 
-import MailBoxExtra2 from "./assets/Mail Box Extra2.jpg";
-import PersonalShopperExtra2 from "./assets/Personal Shopper Extra2.jpg";
-
 // ✅ New Offer Images
 import OfferShipping from "./assets/Shipping 640Rs per Kg.png";
 import OfferMails from "./assets/3 Monthly Free Mails.png";
@@ -41,7 +34,7 @@ import chekraalu from "./assets/Chekraalu.jpg";
 import chickenKheemaPickle from "./assets/Chicken Kheema Pickle.jpg";
 import chickenPickleBone from "./assets/Chicken Pickle(Bone).jpg";
 import chickenPickleBoneless from "./assets/Chicken Pickle(Boneless).jpg";
-import coconutBiscuits from "./assets/Coconut Biscuits.jpg";
+import coconutBiscuits from "./assets/Coconut Biscuits.jpg"; 
 import dhaniyaPowder from "./assets/Dhaniya Powder.jpg";
 import dryFishPickle from "./assets/Dry Fish Pickle.jpg";
 import dryFruitLaddu from "./assets/Dry Fruit Laddu.jpg";
@@ -84,9 +77,6 @@ import sagguBiyyamVadiyaalu from "./assets/Saggu Biyyam Vadiyaalu.jpg";
 import sambharPodi from "./assets/Sambhar Podi.jpg";
 import sunnundalu from "./assets/Sunnundalu.jpg";
 import vellulliKaaram from "./assets/Vellulli Kaaram.jpg";
-
-import SlidebarImage1 from "./assets/slidebar image1.jpg";
-import SlidebarImage2 from "./assets/slidebar image2.jpg";
 
 import BgAbout from "./assets/bg-about.png";
 import BgOffers from "./assets/bg-offers.png";
@@ -248,233 +238,121 @@ export default function App() {
   const handleMailboxSubmit = (e) => { e.preventDefault(); alert("Mail Box details submitted successfully!"); setCurrentView("home"); };
   const handlePersonalShopperSubmit = (e) => { e.preventDefault(); alert("Personal Shopper request submitted successfully!"); setCurrentView("home"); };
 
-    return (
-    <>
-      {/* ================= NAVBAR ================= */}
-      <header className="navbar">
-        <div className="navbar-top">
-          {/* Hamburger Menu for Mobile */}
-          <button
-            className="mobile-menu-toggle"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
-          </button>
-
-          {/* Logo */}
-          <h1 className="logo">ShipEase</h1>
-
-          {/* Account Button */}
-          <button
-            onClick={() => {
-              setCurrentView("account");
-              setIsMobileMenuOpen(false);
-            }}
-            className={`account-btn ${currentView === "account" ? "active" : ""}`}
-            type="button"
-          >
-            <FaUserCircle style={{ verticalAlign: "middle", marginRight: "6px" }} />
-            Account
-          </button>
-        </div>
-
-        {/* Navigation Menu */}
-        <nav
-          className={`nav-links ${isMobileMenuOpen ? "show" : ""}`}
-          style={{
-            display:
-              currentView === "account"
-                ? "none"
-                : isMobileMenuOpen
-                ? "flex"
-                : "",
-          }}
+return (
+  <>
+    {/* ================= NAVBAR ================= */}
+    <header className="navbar">
+      <div className="navbar-top">
+        {/* Hamburger Menu for Mobile */}
+        <button
+          className="mobile-menu-toggle"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          <ul className="navbar-links">
-            <li>
-              <a
-                href="#"
-                onClick={() => {
-                  setCurrentView("home");
-                  setIsMobileMenuOpen(false);
-                }}
-                className={currentView === "home" ? "active" : ""}
-              >
-                Home
-              </a>
-            </li>
-            <li
-  className="services-dropdown"
-  onMouseEnter={() => setActiveDropdown("services")}
-  onMouseLeave={() => setActiveDropdown(null)}
->
-  <a href="#" onClick={(e) => e.preventDefault()}>
-    Services ▾
-  </a>
+          {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
 
-  {activeDropdown === "services" && (
-    <div className="services-dropdown-menu">
-      {/* Shop & Ship */}
-      <div className="services-column">
-        <h4>Shop & Ship</h4>
-        <p>
-          Shop from any Indian online store; we offer worldwide shipping services along with:
-        </p>
+        {/* Logo */}
+        <h1 className="logo">ShipEase</h1>
 
-        <div className="highlight-box">
-          <h5>A FREE Local, Virtual Address</h5>
-          <p>
-            We’ll receive your package at our facility, store it till your packages arrive, and ship worldwide.
-          </p>
-          <a href="#">Know More →</a>
-        </div>
-
-        <div className="highlight-box blue">
-          <h5>Personal Shopper</h5>
-          <p>Having trouble at Checkout? We'll shop for you!</p>
-          <ol style={{ margin: 0, paddingLeft: "16px" }}>
-            <li>Pick a store & shop</li>
-            <li>Provide purchase details</li>
-            <li>We’ll do the shopping for you!</li>
-          </ol>
-          <a href="#">Know More →</a>
-        </div>
+        {/* Account Button */}
+        <button
+          onClick={() => {
+            setCurrentView("account");
+            setIsMobileMenuOpen(false);
+          }}
+          className={`account-btn ${currentView === "account" ? "active" : ""}`}
+          type="button"
+        >
+          <FaUserCircle style={{ verticalAlign: "middle", marginRight: "6px" }} />
+          Account
+        </button>
       </div>
 
-      {/* Courier Service */}
-      <div className="services-column">
-        <h4>Courier Service</h4>
-        <p>We’ll come to you, pick up the courier and ship it anywhere in the world.</p>
-        <a href="#" className="link-btn">Schedule a Pickup →</a>
-      </div>
-
-      {/* Indian Stores */}
-      <div className="services-column">
-        <h4>Indian Stores</h4>
-        <p>
-          Shop from Amazon, Flipkart, Myntra, AJIO & more. We'll deliver it worldwide.
-        </p>
-        <a href="#" className="link-btn">Browse Stores →</a>
-
-        <div className="highlight-box">
-          <p>
-            Are you a store owner? Enlist your store with us & let our customers shop from you!
-          </p>
-          <a href="#">Enlist Your Store →</a>
-        </div>
-      </div>
-
-      {/* Partner With Us */}
-      <div className="services-column">
-        <h4>Partner With Us</h4>
-        <p>Seller from outside India looking for Indian goods?</p>
-        <p>Join our Partnership Program & get a better deal in shipping!</p>
-        <a href="#" className="link-btn">Know More →</a>
-      </div>
-    </div>
-  )}
-</li>
-
-            <li>
-              <a
-                href="#"
-                onClick={() => {
-                  setCurrentView("shipping");
-                  setIsMobileMenuOpen(false);
-                }}
-                className={currentView === "shipping" ? "active" : ""}
-              >
-                Shipping
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                onClick={() => {
-                  setCurrentView("mailbox");
-                  setIsMobileMenuOpen(false);
-                }}
-                className={currentView === "mailbox" ? "active" : ""}
-              >
-                Mail Box
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                onClick={() => {
-                  setCurrentView("personalShopper");
-                  setIsMobileMenuOpen(false);
-                }}
-                className={currentView === "personalShopper" ? "active" : ""}
-              >
-                Personal Shopper
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                onClick={() => {
-                  setCurrentView("myFoods");
-                  setIsMobileMenuOpen(false);
-                }}
-                className={currentView === "myFoods" ? "active" : ""}
-              >
-                My Foods
-              </a>
-            </li>
-
-            {/* ✅ Online Shopping Dropdown */}
-            <li
-              className="dropdown"
-              onMouseEnter={() => setActiveDropdown("shopping")}
-              onMouseLeave={() => setActiveDropdown(null)} 
+      {/* Navigation Menu */}
+      <nav
+        className={`nav-links ${isMobileMenuOpen ? "show" : ""}`}
+        style={{
+          display:
+            currentView === "account"
+              ? "none"
+              : isMobileMenuOpen
+              ? "flex"
+              : "",
+        }}
+      >
+        <ul className="navbar-links">
+          <li>
+            <a
+              href="#"
+              onClick={() => {
+                setCurrentView("home");
+                setIsMobileMenuOpen(false);
+              }}
+              className={currentView === "home" ? "active" : ""}
             >
-              <a
-                href="#"
-                onClick={(e) => e.preventDefault()}
-                className="dropdown-toggle"
-              >
-                Online Shopping ▾
-              </a>
-              {activeDropdown === "shopping" && (
-              <ul className="dropdown-menu">
-                  <li> 
-                    <a href="https://www.amazon.in" target="_blank" rel="noreferrer">
-                      Amazon
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.flipkart.com" target="_blank" rel="noreferrer">
-                      Flipkart
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.myntra.com" target="_blank" rel="noreferrer">
-                      Myntra
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.meesho.com" target="_blank" rel="noreferrer">
-                      Meesho
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.nykaa.com" target="_blank" rel="noreferrer">
-                      Nykaa
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.ajio.com" target="_blank" rel="noreferrer">
-                      Ajio
-                    </a>
-                  </li>
-                </ul>
-              )}
-            </li>
-          </ul>
-        </nav>
-      </header>
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#"
+              onClick={() => {
+                setCurrentView("shipping");
+                setIsMobileMenuOpen(false);
+              }}
+              className={currentView === "shipping" ? "active" : ""}
+            >
+              Shipping
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              onClick={() => {
+                setCurrentView("mailbox");
+                setIsMobileMenuOpen(false);
+              }}
+              className={currentView === "mailbox" ? "active" : ""}
+            >
+              Mail Box
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              onClick={() => {
+                setCurrentView("personalShopper");
+                setIsMobileMenuOpen(false);
+              }}
+              className={currentView === "personalShopper" ? "active" : ""}
+            >
+              Personal Shopper
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              onClick={() => {
+                setCurrentView("myFoods");
+                setIsMobileMenuOpen(false);
+              }}
+              className={currentView === "myFoods" ? "active" : ""}
+            >
+              My Foods
+            </a>
+          </li>
+
+          {/* ✅ Direct Shopping Links */}
+          <li><a href="https://www.amazon.in" target="_blank" rel="noreferrer">Amazon</a></li>
+          <li><a href="https://www.flipkart.com" target="_blank" rel="noreferrer">Flipkart</a></li>
+          <li><a href="https://www.myntra.com" target="_blank" rel="noreferrer">Myntra</a></li>
+          <li><a href="https://www.meesho.com" target="_blank" rel="noreferrer">Meesho</a></li>
+          <li><a href="https://www.nykaa.com" target="_blank" rel="noreferrer">Nykaa</a></li>
+          <li><a href="https://www.ajio.com" target="_blank" rel="noreferrer">Ajio</a></li>
+        </ul>
+      </nav>
+    </header> 
 
    {/* HOME */}
       {currentView === "home" && (
@@ -499,49 +377,6 @@ export default function App() {
             </Slider>
           </section>
 
-         {/* Services Section */}
-<section className="services fade-in">
-  <div
-    className="service-card"
-    onClick={() => setCurrentView("shipping")}
-    style={{ cursor: "pointer" }}
-  >
-    <FaShippingFast className="icon" />
-    <h3>Shipping</h3>
-    <p>Fast delivery at ₹640/kg worldwide.</p>
-    <small>
-      Affordable global shipping with real-time tracking, safe packaging & express delivery options.
-    </small>
-  </div>
-
-  <div
-    className="service-card"
-    onClick={() => setCurrentView("mailbox")}
-    style={{ cursor: "pointer" }}
-  >
-    <FaEnvelopeOpenText className="icon" />
-    <h3>Mail Box</h3>
-    <p>Order from e-commerce and Indian stores.</p>
-    <small>
-      Get your own Indian virtual address to receive orders from Amazon, Flipkart & any local store.
-    </small>
-  </div>
-
-  <div
-    className="service-card"
-    onClick={() => setCurrentView("personalShopper")}
-    style={{ cursor: "pointer" }}
-  >
-    <FaShoppingBag className="icon" />
-    <h3>Personal Shopper</h3>
-    <p>Shop from any Indian store through your own shopper.</p>
-    <small>
-      Can't shop yourself? Our personal shoppers will buy, pack & ship items on your behalf!
-    </small>
-  </div>
-</section>
-
-
 {/* Intro */}
 <section
   className="intro-section fade-in"
@@ -558,7 +393,7 @@ export default function App() {
     boxShadow: "0 5px 20px rgba(0,0,0,0.1)",
     color: "#023e8a",
   }}
->
+> 
   <div style={{ flex: "1 1 450px", minWidth: "300px" }}>
     <h2 style={{ color: "#0077b6", marginBottom: "20px" }}>
       Shopping in India is Made EASY for the World
@@ -693,16 +528,26 @@ export default function App() {
             <p>ShipEase helps you shop from India and get your products delivered worldwide. From shipping to personal shopping, we’ve got you covered.</p>
           </section>
 
+{/* ===== New Promotional Section ===== */}
+      <section className="promo-section">
+        <h2>Delivering joy to your doorstep</h2>
+        <p>
+          Sign-up and start shipping from India to your doorstep across the globe.
+          Sign-up now for free and earn benefits.
+        </p>
+        <button className="promo-btn">Sign up for free</button>
+      </section> 
+
 {/* ================= SHIPEASE INTRO SECTION ================= */}
 <section
   className="shipease-intro"
   style={{
-    backgroundColor: "#ffffff", // ✅ Changed to White Background
+    backgroundColor: "#ffffff",
     padding: "40px 20px",
     textAlign: "center",
     margin: "40px auto",
     borderRadius: "12px",
-    boxShadow: "0 5px 25px rgba(0, 0, 0, 0.15)", // Slightly darker for better contrast on white
+    boxShadow: "0 5px 25px rgba(0, 0, 0, 0.15)",
     maxWidth: "1100px",
   }}
 >
@@ -734,69 +579,70 @@ export default function App() {
       marginTop: "30px",
     }}
   >
-    {/* Card 1 */}
+    {/* Shipping Card */}
     <div
       style={{
         background: "#fff",
-        padding: "20px",
+        padding: "30px 20px",
         borderRadius: "12px",
-        boxShadow: "0 5px 15px rgba(0, 0, 0, 0.15)",
+        boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
         flex: "1 1 300px",
-        maxWidth: "350px",
-        textAlign: "left",
+        maxWidth: "320px",
+        textAlign: "center",
       }}
     >
-      <h3 style={{ color: "#0077b6", marginBottom: "10px" }}>
-        Shop anywhere, ShipEase gets it there! 🛍️✈️
-      </h3>
-      <p style={{ color: "#333" }}>
-        Our <strong>Shop & Ship</strong> service enables seamless international shipping from India to your doorstep.
-        Browse any Indian online store, add your favorite products to the cart, and leave the rest to us — 
-        we’ll handle the entire shipping process with speed and care.
+      <FaShippingFast style={{ fontSize: "36px", color: "#0077b6", marginBottom: "15px" }} />
+      <h3 style={{ color: "#0077b6", fontSize: "1.3rem", marginBottom: "10px" }}>Shipping</h3>
+      <p style={{ color: "#222", fontSize: "1rem", marginBottom: "8px" }}>
+        Fast delivery at ₹640/kg worldwide.
       </p>
+      <small style={{ color: "#0077b6", fontSize: "0.95rem" }}>
+        Affordable global shipping with real-time tracking, safe packaging & express delivery options.
+      </small>
     </div>
 
-    {/* Card 2 */}
+    {/* Mail Box Card */}
     <div
       style={{
         background: "#fff",
-        padding: "20px",
+        padding: "30px 20px",
         borderRadius: "12px",
-        boxShadow: "0 5px 15px rgba(0, 0, 0, 0.15)",
+        boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
         flex: "1 1 300px",
-        maxWidth: "350px",
-        textAlign: "left",
+        maxWidth: "320px",
+        textAlign: "center",
       }}
     >
-      <h3 style={{ color: "#0077b6", marginBottom: "10px" }}>
-        Schedule a Pickup from ANYWHERE in India 🚚
-      </h3>
-      <p style={{ color: "#333" }}>
-        No matter where you are in India, <strong>ShipEase</strong> comes to your door! Just schedule a pickup,
-        and our delivery partners will collect your packages and prepare them for
-        safe and fast international shipping.
+      <FaEnvelopeOpenText style={{ fontSize: "36px", color: "#0077b6", marginBottom: "15px" }} />
+      <h3 style={{ color: "#0077b6", fontSize: "1.3rem", marginBottom: "10px" }}>Mail Box</h3>
+      <p style={{ color: "#222", fontSize: "1rem", marginBottom: "8px" }}>
+        Order from e-commerce and Indian stores.
       </p>
+      <small style={{ color: "#0077b6", fontSize: "0.95rem" }}>
+        Get your own Indian virtual address to receive orders from Amazon, Flipkart & any local store.
+      </small>
     </div>
 
-    {/* Card 3 */}
+    {/* Personal Shopper Card */}
     <div
       style={{
         background: "#fff",
-        padding: "20px",
+        padding: "30px 20px",
         borderRadius: "12px",
-        boxShadow: "0 5px 15px rgba(0, 0, 0, 0.15)",
+        boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
         flex: "1 1 300px",
-        maxWidth: "350px",
-        textAlign: "left",
+        maxWidth: "320px",
+        textAlign: "center",
       }}
     >
-      <h3 style={{ color: "#0077b6", marginBottom: "10px" }}>
-        Save Up to 80% on Shipping Costs 🏷️
-      </h3>
-      <p style={{ color: "#333" }}>
-        Get a <strong>FREE personal locker</strong> with ShipEase! Store your purchases from multiple Indian stores,
-        we consolidate them into one, and ship your parcel off — saving you <strong>up to 80%</strong> on shipping costs.
+      <FaShoppingBag style={{ fontSize: "36px", color: "#0077b6", marginBottom: "15px" }} />
+      <h3 style={{ color: "#0077b6", fontSize: "1.3rem", marginBottom: "10px" }}>Personal Shopper</h3>
+      <p style={{ color: "#222", fontSize: "1rem", marginBottom: "8px" }}>
+        Shop from any Indian store through your own shopper.
       </p>
+      <small style={{ color: "#0077b6", fontSize: "0.95rem" }}>
+        Can't shop yourself? Our personal shoppers will buy, pack & ship items on your behalf!
+      </small>
     </div>
   </div>
 
@@ -1149,4 +995,5 @@ const buttonStyle = {
   fontSize: "1.1rem",
   cursor: "pointer",
 };
+
 
