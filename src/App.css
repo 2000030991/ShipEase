@@ -1521,53 +1521,57 @@ section {
 /* MOBILE VIEW FIX */
 /* ========================= */
 @media (max-width: 768px) {
-  /* Reduce menu font size */
-  .navbar-links a {
-    font-size: 13px;
-    padding: 6px 8px;
-  }
-
-  /* Reduce space between menu items */
+  /* Compact mobile layout */
   .navbar-links {
-    gap: 8px;
-    margin-top: 8px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 10px;
+    margin-top: 8px;
+    padding: 0 10px;
   }
 
-  /* Normal links remain full width */
+  /* Top nav links - full width, stacked vertically */
   .navbar-links li:not(:nth-last-child(-n+6)) {
     width: 100%;
     text-align: center;
   }
 
-  /* ✅ Last 6 E-commerce links → Show 3 per row */
+  .navbar-links li:not(:nth-last-child(-n+6)) a {
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    color: #fff;
+    font-size: 15px;
+    padding: 10px 0;
+  }
+
+  /* ✅ E-commerce links → 3 per row */
   .navbar-links li:nth-last-child(-n+6) {
-    flex: 0 0 calc(33.33% - 8px); /* 3 per row */
+    flex: 0 0 calc(33.33% - 10px); /* 3 links per row */
     text-align: center;
-    margin: 5px 0;
     list-style: none;
   }
 
-  /* ✅ Style for E-commerce links */
+  /* ✅ E-commerce buttons styling */
   .navbar-links li:nth-last-child(-n+6) a {
     display: block;
     background-color: #f8f8f8;
     border: 1px solid #e5e5e5;
-    border-radius: 6px;
-    padding: 10px 0;
+    border-radius: 8px;
+    padding: 12px 0;
     font-size: 13px;
     font-weight: 600;
+    color: #333;
     width: 100%;
     box-sizing: border-box;
     transition: all 0.3s ease;
   }
 
-  /* Hover effect for E-commerce links */
+  /* Hover effect for e-commerce links */
   .navbar-links li:nth-last-child(-n+6) a:hover {
     background-color: #0077ff;
-    color: white;
+    color: #fff;
   }
 
   /* Show hamburger menu */
@@ -1575,6 +1579,7 @@ section {
     display: block;
   }
 }
+
 
 
 
