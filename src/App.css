@@ -1318,19 +1318,19 @@ section {
   padding: 60px 20px;
   max-width: 800px;
   margin: 50px auto;
-  background: #ffffff; /* ✅ White background */
-  color: #023e8a; /* ✅ Dark text for readability */
+  background: #ffffff;
+  color: #023e8a;
   border-radius: 14px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   animation: fadeInUp 0.8s ease-in-out;
-  border: 1px solid #e0e0e0; /* ✅ Subtle border for better visibility */
+  border: 1px solid #e0e0e0;
 }
 
 .promo-section h2 {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 12px;
-  color: #0077b6; /* ✅ Highlighted heading */
+  color: #0077b6;
 }
 
 .promo-section p {
@@ -1338,13 +1338,13 @@ section {
   line-height: 1.6;
   max-width: 600px;
   margin: 0 auto 25px;
-  color: #333; /* ✅ Darker gray for better readability */
+  color: #333;
 }
 
 /* Promo Button */
 .promo-btn {
   padding: 12px 28px;
-  background-color: #0077b6; /* ✅ Blue button for contrast */
+  background-color: #0077b6;
   color: #fff;
   font-size: 1rem;
   font-weight: bold;
@@ -1394,43 +1394,9 @@ section {
   }
 }
 
-/* E-commerce Links Grid */
-.ecom-links {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* ✅ 3 per row */
-  gap: 10px;
-  margin-top: 10px;
-  text-align: center;
-}
-
-/* Style for each link */
-.ecom-links a {
-  background-color: #f8f8f8;
-  color: #333;
-  padding: 8px 10px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: background 0.3s ease;
-  display: block;
-}
-
-/* Hover effect */
-.ecom-links a:hover {
-  background-color: #0077ff;
-  color: white;
-}
-
-/* ✅ Mobile Specific Fix */
-@media (max-width: 768px) {
-  .ecom-links {
-    grid-template-columns: repeat(3, 1fr); /* Always 3 per row */
-    gap: 12px;
-  }
-}
-
-/* NAVBAR BASE */
+/* ========================= */
+/* NAVBAR STYLING */
+/* ========================= */
 .navbar {
   background-color: #fff;
   padding: 10px 20px;
@@ -1440,14 +1406,12 @@ section {
   z-index: 999;
 }
 
-/* NAVBAR TOP */
 .navbar-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* LOGO */
 .logo {
   font-size: 22px;
   font-weight: bold;
@@ -1455,7 +1419,7 @@ section {
   letter-spacing: 0.5px;
 }
 
-/* NAV LINKS */
+/* NAV LINKS CONTAINER */
 .nav-links {
   width: 100%;
 }
@@ -1497,7 +1461,9 @@ section {
   color: #fff;
 }
 
-/* MOBILE MENU */
+/* ========================= */
+/* MOBILE MENU TOGGLE */
+/* ========================= */
 .mobile-menu-toggle {
   background: none;
   border: none;
@@ -1507,23 +1473,22 @@ section {
   display: none;
 }
 
-/* E-commerce links grid only in mobile */
+/* ========================= */
+/* E-COMMERCE LINKS FIX */
+/* ========================= */
 @media (max-width: 768px) {
-  .navbar-links {
-    display: flex;
-    flex-wrap: wrap; /* ✅ Allows items to wrap */
-    justify-content: flex-start; /* ✅ Keeps items aligned */
-    gap: 10px; /* ✅ Proper spacing */
-    padding: 0;
-    margin: 0;
+  /* Normal links remain full width */
+  .navbar-links li:not(:nth-last-child(-n+6)) {
+    width: 100%;
+    text-align: center;
   }
 
-  /* ✅ Targets last 6 e-commerce links and arranges 3 per row */
+  /* Last 6 links (e-commerce) displayed in a perfect 3x2 grid */
   .navbar-links li:nth-last-child(-n+6) {
-    width: calc(33.33% - 7px); /* ✅ Ensures 3 per row perfectly */
+    flex: 0 0 calc(33.33% - 10px);
     text-align: center;
+    margin: 5px 0;
     list-style: none;
-    box-sizing: border-box;
   }
 
   .navbar-links a {
@@ -1535,8 +1500,8 @@ section {
     font-size: 14px;
     width: 100%;
     text-align: center;
-    transition: all 0.3s ease;
     box-sizing: border-box;
+    transition: all 0.3s ease;
   }
 
   .navbar-links a:hover {
@@ -1548,7 +1513,6 @@ section {
     display: block;
   }
 }
-
 
 /* ====== UNIVERSAL CARD CONTAINER ====== */
 .cards-container {
@@ -1565,7 +1529,7 @@ section {
   background-color: #ffffff;
   width: 90%;
   max-width: 800px;
-  min-height: 280px;  /* ✅ Ensures equal height */
+  min-height: 280px;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
@@ -1577,14 +1541,12 @@ section {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover effect */
 .about-card:hover,
 .delivery-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Titles */
 .about-card h2,
 .delivery-card h2 {
   color: #0077cc;
@@ -1592,7 +1554,6 @@ section {
   margin-bottom: 10px;
 }
 
-/* Paragraphs */
 .about-card p,
 .delivery-card p {
   color: #333;
@@ -1601,7 +1562,6 @@ section {
   max-width: 90%;
 }
 
-/* Button styling (delivery section only) */
 .delivery-card button {
   background-color: #0077cc;
   color: #fff;
@@ -1623,7 +1583,7 @@ section {
   .about-card,
   .delivery-card {
     width: 95%;
-    min-height: auto;  /* ✅ Allows flexibility on small screens */
+    min-height: auto;
     padding: 20px;
   }
 
