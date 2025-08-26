@@ -1482,15 +1482,20 @@ section {
 /* NAV LINKS STYLE */
 .navbar-links li {
   display: inline-block;
+  margin: 0; /* ✅ Prevent uneven gaps */
+  padding: 0;
 }
 
 .navbar-links a {
   text-decoration: none;
   font-size: 15px;
   font-weight: 600;
-  padding: 8px 12px;
+  padding: 8px 14px;
   border-radius: 6px;
   color: #333;
+  display: inline-block; /* ✅ Ensures same height for all links */
+  min-width: 90px; /* ✅ Keep width uniform for desktop links */
+  text-align: center;
   transition: all 0.3s ease-in-out;
 }
 
@@ -1546,9 +1551,9 @@ section {
     padding: 10px 0;
   }
 
-  /* ✅ E-commerce links → 3 per row */
+  /* ✅ E-commerce links → uniform size, 3 per row */
   .navbar-links li:nth-last-child(-n+6) {
-    flex: 0 0 calc(33.33% - 10px); /* 3 links per row */
+    flex: 0 0 calc(33.33% - 10px);
     text-align: center;
     list-style: none;
   }
@@ -1564,7 +1569,11 @@ section {
     font-weight: 600;
     color: #333;
     width: 100%;
+    min-height: 42px; /* ✅ Ensures equal height */
     box-sizing: border-box;
+    white-space: nowrap; /* ✅ Prevents text wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis;
     transition: all 0.3s ease;
   }
 
@@ -1579,8 +1588,5 @@ section {
     display: block;
   }
 }
-
-
-
 
 
