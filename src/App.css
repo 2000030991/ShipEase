@@ -1463,47 +1463,55 @@ section {
   color: #fff;
 }
 
-/* ✅ Make only e-commerce links display in grid on mobile */
+/* ✅ E-COMMERCE LINKS FIXED */
 .ecommerce-links {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  margin-top: 10px;
+  display: flex;
+  justify-content: center;       /* ✅ Centers all links */
+  align-items: center;
+  gap: 10px;                     /* ✅ Equal spacing */
+  flex-wrap: wrap;               /* ✅ Wraps properly on small screens */
+  margin-top: 12px;
+  padding: 0;
+  list-style: none;
 }
 
 .ecommerce-links li {
-  list-style: none;
   text-align: center;
 }
 
 .ecommerce-links li a {
-  display: block;
-  padding: 6px 8px;
+  display: inline-block;
+  padding: 8px 14px;
   background-color: #f8f8f8;
   border-radius: 6px;
   text-decoration: none;
   color: #333;
   font-size: 14px;
   font-weight: 500;
-  transition: background 0.3s;
+  min-width: 90px;               /* ✅ Ensures equal size */
+  text-align: center;
+  transition: background 0.3s, transform 0.2s ease-in-out;
 }
 
 .ecommerce-links li a:hover {
-  background-color: #e0e0e0;
+  background-color: #0077ff;
+  color: #fff;
+  transform: scale(1.05);
 }
 
-/* ✅ Adjust for larger screens */
+/* ✅ Desktop View - Perfectly in One Line */
 @media screen and (min-width: 768px) {
   .ecommerce-links {
-    display: flex;
+    justify-content: center;
     gap: 16px;
+    flex-wrap: nowrap;
     margin-top: 0;
   }
 
   .ecommerce-links li a {
     font-size: 15px;
-    padding: 8px 12px;
+    padding: 8px 16px;
+    min-width: 100px;
   }
 }
-
 
