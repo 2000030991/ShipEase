@@ -1411,14 +1411,14 @@ section {
 /* NAVBAR TOP */
 .navbar-top {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* ✅ Keeps logo centered */
   align-items: center;
   position: relative;
   width: 100%;
   padding: 10px 15px;
 }
 
-/* HAMBURGER */
+/* HAMBURGER ICON */
 .mobile-menu-toggle {
   background: none;
   border: none;
@@ -1427,7 +1427,7 @@ section {
   cursor: pointer;
   z-index: 1100;
   position: absolute;
-  right: -30px; /* ✅ SHIFTED MORE RIGHT */
+  left: 10px; /* ✅ Extreme left on mobile */
   top: 50%;
   transform: translateY(-50%);
 }
@@ -1449,7 +1449,7 @@ section {
 .account-btn {
   background: transparent;
   border: none;
-  color: #333;
+  color: #0077ff;
   font-size: 15px;
   font-weight: 600;
   display: flex;
@@ -1458,7 +1458,7 @@ section {
   cursor: pointer;
   transition: color 0.3s ease-in-out;
   position: absolute;
-  right: 20px;
+  right: 15px; /* ✅ Extreme right */
   top: 50%;
   transform: translateY(-50%);
 }
@@ -1558,7 +1558,19 @@ section {
   }
 
   .mobile-menu-toggle {
-    display: none;
+    display: none; /* ✅ Hide hamburger on desktop */
+  }
+
+  .logo {
+    position: relative;
+    left: 0;
+    transform: none;
+  }
+
+  .account-btn {
+    position: relative;
+    right: 0;
+    transform: none;
   }
 }
 
@@ -1573,7 +1585,7 @@ section {
 
   .mobile-menu-toggle {
     display: block;
-    right: -30px;
+    left: 10px; /* ✅ Extreme left */
     color: #0077ff;
   }
 
@@ -1582,8 +1594,8 @@ section {
   }
 
   .account-btn {
-    color: #0077ff; 
-    right: 15px;
+    color: #0077ff;
+    right: 10px; /* ✅ Extreme right */
     top: 50%;
     transform: translateY(-50%);
     font-size: 16px;
