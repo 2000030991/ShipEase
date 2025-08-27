@@ -1401,72 +1401,6 @@ section {
   background-color: #fff;
   padding: 10px 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  position: sticky;  /* Default for mobile */
-  top: 0;
-  z-index: 999;
-  width: 100%;
-  transition: all 0.3s ease-in-out;
-}
-
-/* ✅ MAIN NAVBAR CONTAINER */
-.navbar-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-/* LOGO */
-.logo {
-  font-size: 22px;
-  font-weight: bold;
-  color: #333;  /* Changed from #0077ff */
-  letter-spacing: 0.5px;
-}
-
-/* NAV LINKS */
-.navbar-links {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.navbar-links li {
-  display: inline-block;
-}
-
-.navbar-links a {
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 600;
-  padding: 8px 12px;
-  border-radius: 6px;
-  color: #333;
-  transition: all 0.3s ease-in-out;
-  display: block;
-}
-
-.navbar-links a:hover {
-  background-color: #e0e0e0; /* subtle hover instead of blue */
-  color: #333;
-}
-
-/* ACTIVE LINK */
-.navbar-links a.active {
-  background-color: #e0e0e0; /* subtle active instead of blue */
-  color: #333;
-}
-
-/* ========================= */
-/* NAVBAR STYLING */
-/* ========================= */
-.navbar {
-  background-color: #fff;
-  padding: 10px 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   position: sticky;
   top: 0;
   z-index: 999;
@@ -1479,24 +1413,66 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  position: relative;
 }
 
-/* LOGO */
+/* ✅ HAMBURGER ICON (Mobile Toggle) */
+.mobile-menu-toggle {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #333;
+  cursor: pointer;
+  position: absolute;
+  left: 10px; /* Extreme left */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1100;
+}
+
+/* ✅ CENTERED LOGO */
 .logo {
   font-size: 22px;
   font-weight: bold;
   color: #0077ff;
   letter-spacing: 0.5px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+/* ✅ ACCOUNT BUTTON - EXTREME RIGHT */
+.account-btn {
+  position: absolute;
+  right: 10px; /* Extreme right */
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #333;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.account-btn:hover {
+  color: #0077ff;
 }
 
 /* ========================= */
-/* NAV LINKS */
+/* DESKTOP NAV LINKS */
 /* ========================= */
 .navbar-links {
   display: flex;
   align-items: center;
-  gap: 16px; /* ✅ Unified spacing */
+  gap: 16px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -1522,7 +1498,6 @@ section {
   color: #fff;
 }
 
-/* ACTIVE LINK */
 .navbar-links a.active {
   background-color: #0077ff;
   color: #fff;
@@ -1535,7 +1510,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px; /* ✅ Matches navbar links */
+  gap: 16px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -1566,7 +1541,7 @@ section {
 }
 
 /* ========================= */
-/* ✅ DESKTOP VIEW FIX + FIXED NAVBAR */
+/* DESKTOP VIEW FIX */
 /* ========================= */
 @media screen and (min-width: 768px) {
   .navbar {
@@ -1576,7 +1551,6 @@ section {
     width: 100%;
   }
 
-  /* ✅ Prevent content from hiding behind navbar */
   body {
     padding-top: 70px;
   }
@@ -1585,10 +1559,9 @@ section {
     flex-wrap: nowrap;
   }
 
-  /* Keep both links aligned consistently */
   .navbar-links,
   .ecommerce-links {
-    gap: 15px; /* ✅ Same spacing for large screens */
+    gap: 15px;
   }
 
   .ecommerce-links li a {
@@ -1598,33 +1571,16 @@ section {
   }
 }
 
-/* Common card styling for white sections */
-.section-card {
-  background-color: #fff;       /* White card background */
-  width: 80%;                  /* Adjust width as per your design */
-  max-width: 800px;            /* Limit max width */
-  min-height: 300px;           /* Ensures equal card heights */
-  margin: 20px auto;           /* Center cards */
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-
-/* Ensures both section cards are always the same height */
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-/* ================= MOBILE NAVBAR FIX ================= */
+/* ========================= */
+/* ✅ MOBILE NAVBAR FIX */
+/* ========================= */
 @media screen and (max-width: 768px) {
-  /* ✅ Full-screen overlay for mobile menu */
+  /* ✅ Hide normal navbar links */
+  .navbar-links.desktop-only {
+    display: none !important;
+  }
+
+  /* ✅ Full-screen mobile menu */
   .nav-links {
     display: none;
     position: fixed;
@@ -1632,7 +1588,7 @@ section {
     left: 0;
     height: 100vh;
     width: 100%;
-    background-color: #0b1d3c; /* ✅ Dark navy blue like screenshot */
+    background-color: #0b1d3c;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -1645,70 +1601,18 @@ section {
     transition: all 0.3s ease-in-out;
   }
 
-  /* ✅ Show when active */
   .nav-links.show {
     display: flex !important;
     opacity: 1;
     transform: translateY(0);
   }
 
-  /* ✅ Top header inside mobile menu */
-  .nav-header {
-    position: absolute;
-    top: 15px;
-    left: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  /* ✅ Logo styling */
-  .nav-header .logo {
-    font-size: 22px;
-    font-weight: 800;
-    color: #007bff; /* Bright blue for logo */
-  }
-
-  /* ✅ Account button - top-right */
-  .account-btn {
-    position: absolute;
-    top: 20px;
-    right: -20px;
-    background: transparent;
-    border: none;
-    color: #fff;
-    font-size: 15px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    cursor: pointer;
-    transition: color 0.3s ease-in-out;
-  }
-
-  .account-btn:hover {
-    color: #ffeb3b;
-  }
-
-  /* ✅ Close button */
-  .mobile-menu-toggle {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 28px;
-    color: #fff;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-
-  /* ✅ Stack main nav links vertically */
+  /* ✅ Mobile nav links stacked */
   .navbar-links {
     display: flex;
     flex-direction: column;
     gap: 22px;
-    margin-top: 50px;
+    margin-top: 40px;
     list-style: none;
     padding: 0;
     align-items: center;
@@ -1730,7 +1634,7 @@ section {
   /* ✅ E-commerce links in a 3-column grid */
   .ecom-links.mobile-only {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* ✅ 3 per row */
+    grid-template-columns: repeat(3, 1fr);
     gap: 18px 25px;
     text-align: center;
     width: 100%;
@@ -1749,11 +1653,5 @@ section {
   .ecom-links.mobile-only a:hover {
     color: #ffeb3b;
   }
-
-  /* ✅ Hide desktop-only links */
-  .desktop-only {
-    display: none !important;
-  }
 }
-
 
