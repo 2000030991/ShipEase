@@ -1411,7 +1411,7 @@ section {
 /* ✅ MAIN NAVBAR CONTAINER */
 .navbar-top {
   display: flex;
-  justify-content: center; /* Ensures logo stays centered */
+  justify-content: space-between; /* Adjust spacing between left, center, right */
   align-items: center;
   position: relative;
 }
@@ -1423,30 +1423,24 @@ section {
   font-size: 28px;
   color: #333;
   cursor: pointer;
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
   z-index: 1100;
   transition: color 0.3s ease-in-out;
 }
 
 /* ✅ CENTERED LOGO */
 .logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 22px;
   font-weight: bold;
-  color: #0077ff; /* Keep logo blue */
+  color: #0077ff;
   letter-spacing: 0.5px;
   cursor: pointer;
-  position: relative;
 }
 
 /* ✅ ACCOUNT BUTTON - EXTREME RIGHT */
 .account-btn {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
   background: transparent;
   border: none;
   color: #333;
@@ -1567,6 +1561,11 @@ section {
     padding: 8px 18px;
     min-width: 110px;
   }
+
+  /* ✅ Desktop hamburger hidden */
+  .mobile-menu-toggle {
+    display: none;
+  }
 }
 
 /* ========================= */
@@ -1586,6 +1585,7 @@ section {
 
   /* ✅ Hamburger / Close icon → Blue */
   .mobile-menu-toggle {
+    display: block;
     color: #0077ff;
   }
 
@@ -1673,5 +1673,7 @@ section {
     color: #ffeb3b;
   }
 }
+
+
 
 
