@@ -1408,10 +1408,10 @@ section {
   transition: all 0.3s ease-in-out;
 }
 
-/* NAVBAR TOP */
+/* NAVBAR TOP CONTAINER */
 .navbar-top {
   display: flex;
-  justify-content: center; /* ✅ Keeps logo centered */
+  justify-content: space-between; /* ✅ Makes left, center, right possible */
   align-items: center;
   position: relative;
   width: 100%;
@@ -1426,26 +1426,21 @@ section {
   color: #0077ff;
   cursor: pointer;
   z-index: 1100;
-  position: absolute;
-  left: 10px; /* ✅ Extreme left on mobile */
-  top: 50%;
-  transform: translateY(-50%);
+  order: 1; /* ✅ Always left on mobile */
 }
 
 /* LOGO */
 .logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   font-size: 22px;
   font-weight: bold;
   color: #0077ff;
   letter-spacing: 0.5px;
   cursor: pointer;
-  z-index: 1000;
+  text-align: center;
+  flex: 1; /* ✅ Forces center alignment */
 }
 
-/* ACCOUNT BUTTON - EXTREME RIGHT */
+/* ACCOUNT BUTTON */
 .account-btn {
   background: transparent;
   border: none;
@@ -1457,10 +1452,7 @@ section {
   gap: 6px;
   cursor: pointer;
   transition: color 0.3s ease-in-out;
-  position: absolute;
-  right: 15px; /* ✅ Extreme right */
-  top: 50%;
-  transform: translateY(-50%);
+  order: 3; /* ✅ Always right */
 }
 
 .account-btn:hover {
@@ -1505,7 +1497,7 @@ section {
   color: #fff;
 }
 
-/* ✅ E-COMMERCE LINKS */
+/* E-COMMERCE LINKS */
 .ecommerce-links {
   display: flex;
   flex-wrap: wrap;
@@ -1537,6 +1529,10 @@ section {
 /* DESKTOP VIEW */
 /* ========================= */
 @media screen and (min-width: 768px) {
+  .navbar-top {
+    justify-content: space-between;
+  }
+
   .navbar-links {
     flex-direction: row;
     flex-wrap: nowrap;
@@ -1558,19 +1554,11 @@ section {
   }
 
   .mobile-menu-toggle {
-    display: none; /* ✅ Hide hamburger on desktop */
+    display: none;
   }
 
   .logo {
-    position: relative;
-    left: 0;
-    transform: none;
-  }
-
-  .account-btn {
-    position: relative;
-    right: 0;
-    transform: none;
+    flex: unset;
   }
 }
 
@@ -1585,7 +1573,6 @@ section {
 
   .mobile-menu-toggle {
     display: block;
-    left: 10px; /* ✅ Extreme left */
     color: #0077ff;
   }
 
@@ -1595,9 +1582,6 @@ section {
 
   .account-btn {
     color: #0077ff;
-    right: 10px; /* ✅ Extreme right */
-    top: 50%;
-    transform: translateY(-50%);
     font-size: 16px;
     font-weight: 600;
   }
@@ -1626,4 +1610,5 @@ section {
     background-color: #005ecc;
   }
 }
+
 
