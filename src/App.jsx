@@ -647,27 +647,6 @@ return (
       </small>
     </div>
   </div>
-
-  <a
-    href="#services"
-    style={{
-      display: "inline-block",
-      marginTop: "30px",
-      padding: "12px 25px",
-      backgroundColor: "#0077b6",
-      color: "#fff",
-      fontSize: "1.1rem",
-      fontWeight: "600",
-      borderRadius: "8px",
-      textDecoration: "none",
-      boxShadow: "0 5px 15px rgba(0, 0, 0, 0.2)",
-      transition: "background 0.3s ease",
-    }}
-    onMouseOver={(e) => (e.target.style.backgroundColor = "#005f8e")}
-    onMouseOut={(e) => (e.target.style.backgroundColor = "#0077b6")}
-  > 
-  Explore Our Services 
-  </a>
 </section>
 
           {/* Prohibited */}
