@@ -1411,7 +1411,7 @@ section {
 /* NAVBAR TOP CONTAINER */
 .navbar-top {
   display: flex;
-  justify-content: space-between; /* ✅ Makes left, center, right possible */
+  justify-content: space-between; /* ✅ Left | Center | Right */
   align-items: center;
   position: relative;
   width: 100%;
@@ -1426,7 +1426,8 @@ section {
   color: #0077ff;
   cursor: pointer;
   z-index: 1100;
-  order: 1; /* ✅ Always left on mobile */
+  flex: 0 0 auto; /* ✅ Prevents resizing */
+  order: 1; /* ✅ Always left */
 }
 
 /* LOGO */
@@ -1437,7 +1438,11 @@ section {
   letter-spacing: 0.5px;
   cursor: pointer;
   text-align: center;
-  flex: 1; /* ✅ Forces center alignment */
+  position: absolute; /* ✅ Forces true center */
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  margin: 0 auto;
 }
 
 /* ACCOUNT BUTTON */
@@ -1452,6 +1457,7 @@ section {
   gap: 6px;
   cursor: pointer;
   transition: color 0.3s ease-in-out;
+  flex: 0 0 auto; /* ✅ Prevents stretching */
   order: 3; /* ✅ Always right */
 }
 
@@ -1531,6 +1537,14 @@ section {
 @media screen and (min-width: 768px) {
   .navbar-top {
     justify-content: space-between;
+    position: relative;
+  }
+
+  .logo {
+    position: relative;
+    left: unset;
+    transform: unset;
+    margin: 0;
   }
 
   .navbar-links {
@@ -1555,10 +1569,6 @@ section {
 
   .mobile-menu-toggle {
     display: none;
-  }
-
-  .logo {
-    flex: unset;
   }
 }
 
@@ -1610,5 +1620,6 @@ section {
     background-color: #005ecc;
   }
 }
+
 
 
