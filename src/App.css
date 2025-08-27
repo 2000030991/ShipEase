@@ -1416,7 +1416,7 @@ section {
   position: relative;
 }
 
-/* ✅ HAMBURGER ICON (Mobile Toggle) */
+/* ✅ HAMBURGER / CLOSE ICON */
 .mobile-menu-toggle {
   background: none;
   border: none;
@@ -1424,17 +1424,18 @@ section {
   color: #333;
   cursor: pointer;
   position: absolute;
-  left: 10px; /* Extreme left */
+  left: 10px;
   top: 50%;
   transform: translateY(-50%);
   z-index: 1100;
+  transition: color 0.3s ease-in-out;
 }
 
 /* ✅ CENTERED LOGO */
 .logo {
   font-size: 22px;
   font-weight: bold;
-  color: #0077ff;
+  color: #0077ff; /* Keep logo blue */
   letter-spacing: 0.5px;
   cursor: pointer;
   position: relative;
@@ -1443,7 +1444,7 @@ section {
 /* ✅ ACCOUNT BUTTON - EXTREME RIGHT */
 .account-btn {
   position: absolute;
-  right: 10px; /* Extreme right */
+  right: 10px;
   top: 50%;
   transform: translateY(-50%);
   background: transparent;
@@ -1572,9 +1573,30 @@ section {
 /* ✅ MOBILE NAVBAR FIX */
 /* ========================= */
 @media screen and (max-width: 768px) {
+  /* ✅ Change navbar background on mobile */
+  .navbar {
+    background-color: #0b1d3c;
+    box-shadow: none;
+  }
+
   /* ✅ Hide desktop navbar links */
   .navbar-links.desktop-only {
     display: none !important;
+  }
+
+  /* ✅ Hamburger / Close icon → Blue */
+  .mobile-menu-toggle {
+    color: #0077ff;
+  }
+
+  /* ✅ Logo stays blue on mobile */
+  .logo {
+    color: #0077ff;
+  }
+
+  /* ✅ Account button text + icon → White */
+  .account-btn {
+    color: #fff;
   }
 
   /* ✅ Full-screen mobile menu */
