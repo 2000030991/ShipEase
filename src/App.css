@@ -1408,7 +1408,7 @@ section {
   transition: all 0.3s ease-in-out;
 }
 
-/* ✅ NAVBAR TOP CONTAINER */
+/* NAVBAR TOP */
 .navbar-top {
   display: flex;
   justify-content: space-between;
@@ -1418,7 +1418,7 @@ section {
   padding: 10px 15px;
 }
 
-/* ✅ HAMBURGER ICON */
+/* HAMBURGER */
 .mobile-menu-toggle {
   background: none;
   border: none;
@@ -1428,7 +1428,7 @@ section {
   z-index: 1100;
 }
 
-/* ✅ CENTERED LOGO */
+/* LOGO */
 .logo {
   position: absolute;
   left: 50%;
@@ -1440,7 +1440,7 @@ section {
   cursor: pointer;
 }
 
-/* ✅ ACCOUNT BUTTON (EXTREME RIGHT) */
+/* ACCOUNT BUTTON - EXTREME RIGHT */
 .account-btn {
   background: transparent;
   border: none;
@@ -1453,7 +1453,7 @@ section {
   cursor: pointer;
   transition: color 0.3s ease-in-out;
   position: absolute;
-  right: 10px;
+  right: 15px;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -1463,10 +1463,12 @@ section {
 }
 
 /* ========================= */
-/* ✅ NAVBAR LINKS & ECOMMERCE LINKS */
+/* NAVBAR LINKS */
 /* ========================= */
 .navbar-links {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   gap: 16px;
   list-style: none;
@@ -1501,16 +1503,9 @@ section {
 /* ✅ E-COMMERCE LINKS */
 .ecommerce-links {
   display: flex;
-  align-items: center;
-  gap: 16px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
   flex-wrap: wrap;
-}
-
-.ecommerce-links li {
-  text-align: center;
+  gap: 16px;
+  margin-left: 16px;
 }
 
 .ecommerce-links li a {
@@ -1534,17 +1529,21 @@ section {
 }
 
 /* ========================= */
-/* ✅ DESKTOP VIEW FIX */
+/* DESKTOP VIEW */
 /* ========================= */
 @media screen and (min-width: 768px) {
-  .navbar-top {
+  .navbar-links {
+    flex-direction: row;
     flex-wrap: nowrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
   }
 
-  .navbar-links,
   .ecommerce-links {
     flex-direction: row;
-    gap: 15px;
+    flex-wrap: nowrap;
+    gap: 20px;
   }
 
   .ecommerce-links li a {
@@ -1553,24 +1552,18 @@ section {
     min-width: 110px;
   }
 
-  /* Hide hamburger menu on desktop */
   .mobile-menu-toggle {
     display: none;
   }
 }
 
 /* ========================= */
-/* ✅ MOBILE VIEW FIX */
+/* MOBILE VIEW */
 /* ========================= */
 @media screen and (max-width: 768px) {
   .navbar {
     background-color: #0b1d3c;
     box-shadow: none;
-  }
-
-  /* Hide desktop navbar links on mobile */
-  .navbar-links.desktop-only {
-    display: none !important;
   }
 
   .mobile-menu-toggle {
@@ -1585,11 +1578,9 @@ section {
   .account-btn {
     color: #fff;
     right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
   }
 
-  /* ✅ 3-COLUMN ECOMMERCE LINKS ON MOBILE */
+  /* ✅ 3-COLUMN GRID FOR E-COMMERCE LINKS */
   .ecommerce-links {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1597,7 +1588,6 @@ section {
     text-align: center;
     width: 100%;
     margin-top: 20px;
-    padding: 0;
   }
 
   .ecommerce-links li a {
@@ -1608,13 +1598,10 @@ section {
     border-radius: 6px;
     padding: 10px 12px;
     display: block;
-    transition: background 0.3s ease-in-out;
   }
 
   .ecommerce-links li a:hover {
     background-color: #005ecc;
   }
 }
-
-
 
