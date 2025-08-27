@@ -1439,7 +1439,7 @@ section {
   cursor: pointer;
 }
 
-/* ✅ ACCOUNT BUTTON - EXTREME RIGHT */
+/* ✅ ACCOUNT BUTTON - EXTREME RIGHT WITH EXTRA SPACE */
 .account-btn {
   background: transparent;
   border: none;
@@ -1451,11 +1451,21 @@ section {
   gap: 6px;
   cursor: pointer;
   transition: color 0.3s ease-in-out;
+  margin-right: 15px; /* 🔹 Extra space from the right edge */
 }
 
 .account-btn:hover {
   color: #0077ff;
 }
+
+/* ✅ MOBILE FIX → Keep proper alignment on small screens */
+@media screen and (max-width: 768px) {
+  .account-btn {
+    color: #fff;  /* White on mobile */
+    margin-right: 12px; /* 🔹 Keep consistent spacing */
+  }
+}
+
 
 /* ========================= */
 /* DESKTOP NAV LINKS */
