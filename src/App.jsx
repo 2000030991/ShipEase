@@ -238,7 +238,7 @@ export default function App() {
   const handleMailboxSubmit = (e) => { e.preventDefault(); alert("Mail Box details submitted successfully!"); setCurrentView("home"); };
   const handlePersonalShopperSubmit = (e) => { e.preventDefault(); alert("Personal Shopper request submitted successfully!"); setCurrentView("home"); };
 
- return (
+  return (
     <>
       {/* ================= NAVBAR ================= */}
       <header className="navbar">
@@ -354,7 +354,8 @@ export default function App() {
             </div>
           </ul>
         </nav>
-      </header> 
+      </header>
+
 
    {/* HOME */}
       {currentView === "home" && (

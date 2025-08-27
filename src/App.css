@@ -1426,6 +1426,10 @@ section {
   color: #0077ff;
   cursor: pointer;
   z-index: 1100;
+  position: absolute;
+  right: -30px; /* ✅ SHIFTED MORE RIGHT */
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /* LOGO */
@@ -1438,6 +1442,7 @@ section {
   color: #0077ff;
   letter-spacing: 0.5px;
   cursor: pointer;
+  z-index: 1000;
 }
 
 /* ACCOUNT BUTTON - EXTREME RIGHT */
@@ -1453,7 +1458,7 @@ section {
   cursor: pointer;
   transition: color 0.3s ease-in-out;
   position: absolute;
-  right: 15px;
+  right: 20px;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -1568,6 +1573,7 @@ section {
 
   .mobile-menu-toggle {
     display: block;
+    right: -30px;
     color: #0077ff;
   }
 
@@ -1576,8 +1582,12 @@ section {
   }
 
   .account-btn {
-    color: #fff;
+    color: #0077ff; 
     right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    font-weight: 600;
   }
 
   /* ✅ 3-COLUMN GRID FOR E-COMMERCE LINKS */
