@@ -341,17 +341,15 @@ export default function App() {
               >
                 My Foods
               </a>
-            </li>
+            </li> 
 
             {/* ✅ E-commerce Links */}
-            <div className="ecommerce-links">
-              <li><a href="https://www.amazon.in" target="_blank" rel="noreferrer">Amazon</a></li>
-              <li><a href="https://www.flipkart.com" target="_blank" rel="noreferrer">Flipkart</a></li>
-              <li><a href="https://www.myntra.com" target="_blank" rel="noreferrer">Myntra</a></li>
-              <li><a href="https://www.meesho.com" target="_blank" rel="noreferrer">Meesho</a></li>
-              <li><a href="https://www.nykaa.com" target="_blank" rel="noreferrer">Nykaa</a></li>
-              <li><a href="https://www.ajio.com" target="_blank" rel="noreferrer">Ajio</a></li>
-            </div>
+            <li><a href="https://www.amazon.in" target="_blank" rel="noreferrer">Amazon</a></li>
+            <li><a href="https://www.flipkart.com" target="_blank" rel="noreferrer">Flipkart</a></li>
+            <li><a href="https://www.myntra.com" target="_blank" rel="noreferrer">Myntra</a></li>
+            <li><a href="https://www.meesho.com" target="_blank" rel="noreferrer">Meesho</a></li>
+            <li><a href="https://www.nykaa.com" target="_blank" rel="noreferrer">Nykaa</a></li>
+            <li><a href="https://www.ajio.com" target="_blank" rel="noreferrer">Ajio</a></li>
           </ul>
         </nav>
       </header>
@@ -537,8 +535,7 @@ export default function App() {
         <p>
           Sign-up and start shipping from India to your doorstep across the globe.
           Sign-up now for free and earn benefits.
-        </p>
-        <button className="promo-btn">Sign up for free</button>
+        </p> 
       </section> 
 
 {/* ================= SHIPEASE INTRO SECTION ================= */}
@@ -977,6 +974,10 @@ const buttonStyle = {
   fontSize: "1.1rem",
   cursor: "pointer",
 };
+
+
+
+
 
 
 

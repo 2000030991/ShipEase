@@ -1394,7 +1394,6 @@ section {
   }
 }
 
-
 /* ========================= */
 /* NAVBAR STYLING */
 /* ========================= */
@@ -1409,7 +1408,7 @@ section {
   transition: all 0.3s ease-in-out;
 }
 
-/* NAVBAR TOP CONTAINER */
+/* NAVBAR TOP */
 .navbar-top {
   display: flex;
   justify-content: space-between;
@@ -1419,7 +1418,7 @@ section {
   padding: 10px 15px;
 }
 
-/* HAMBURGER ICON */
+/* HAMBURGER */
 .mobile-menu-toggle {
   background: none;
   border: none;
@@ -1427,23 +1426,26 @@ section {
   color: #0077ff;
   cursor: pointer;
   z-index: 1100;
-  flex-shrink: 0;
+  position: absolute;
+  right: -30px; /* ✅ SHIFTED MORE RIGHT */
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /* LOGO */
 .logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 22px;
   font-weight: bold;
   color: #0077ff;
   letter-spacing: 0.5px;
   cursor: pointer;
-  text-align: center;
-  flex-grow: 1; /* ✅ Forces logo to take center space */
-  display: flex;
-  justify-content: center;
+  z-index: 1000;
 }
 
-/* ACCOUNT BUTTON */
+/* ACCOUNT BUTTON - EXTREME RIGHT */
 .account-btn {
   background: transparent;
   border: none;
@@ -1455,8 +1457,10 @@ section {
   gap: 6px;
   cursor: pointer;
   transition: color 0.3s ease-in-out;
-  flex-shrink: 0;
-  z-index: 1100;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .account-btn:hover {
@@ -1471,7 +1475,7 @@ section {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 16px;
+  gap: 20px; /* ✅ Same gap for all links */
   list-style: none;
   padding: 0;
   margin: 0;
@@ -1485,15 +1489,19 @@ section {
   text-decoration: none;
   font-size: 15px;
   font-weight: 600;
-  padding: 8px 12px;
+  padding: 8px 14px;
   border-radius: 6px;
   color: #333;
+  background-color: #f8f8f8; /* ✅ Uniform background */
   transition: all 0.3s ease-in-out;
+  min-width: 110px; /* ✅ Same width for all links */
+  text-align: center;
 }
 
 .navbar-links a:hover {
   background-color: #0077ff;
   color: #fff;
+  transform: scale(1.05);
 }
 
 .navbar-links a.active {
@@ -1502,69 +1510,15 @@ section {
 }
 
 /* ========================= */
-/* E-COMMERCE LINKS */
-/* ========================= */
-.ecommerce-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-left: 16px;
-}
-
-.ecommerce-links li a {
-  display: inline-block;
-  padding: 8px 16px;
-  background-color: #f8f8f8;
-  border-radius: 6px;
-  text-decoration: none;
-  color: #333;
-  font-size: 15px;
-  font-weight: 500;
-  min-width: 100px;
-  text-align: center;
-  transition: background 0.3s, transform 0.2s ease-in-out;
-}
-
-.ecommerce-links li a:hover {
-  background-color: #0077ff;
-  color: #fff;
-  transform: scale(1.05);
-}
-
-/* ========================= */
 /* DESKTOP VIEW */
 /* ========================= */
 @media screen and (min-width: 768px) {
-  .navbar-top {
-    justify-content: space-between;
-  }
-
-  .logo {
-    flex-grow: 0;
-    position: relative;
-    left: unset;
-    transform: unset;
-    margin: 0;
-  }
-
   .navbar-links {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
-    gap: 20px;
+    gap: 24px; /* ✅ Increased slightly for better spacing */
     width: 100%;
-  }
-
-  .ecommerce-links {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 20px;
-  }
-
-  .ecommerce-links li a {
-    font-size: 15px;
-    padding: 8px 18px;
-    min-width: 110px;
   }
 
   .mobile-menu-toggle {
@@ -1583,44 +1537,39 @@ section {
 
   .mobile-menu-toggle {
     display: block;
+    right: -30px;
     color: #0077ff;
   }
 
   .logo {
     color: #0077ff;
-    font-size: 20px;
   }
 
   .account-btn {
     color: #0077ff;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
     font-size: 16px;
     font-weight: 600;
   }
 
-  /* ✅ 3-COLUMN GRID FOR E-COMMERCE LINKS */
-  .ecommerce-links {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px 20px;
-    text-align: center;
+  /* ✅ 3-COLUMN GRID FOR E-COMMERCE LINKS IN MOBILE */
+  .navbar-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .navbar-links li a {
     width: 100%;
-    margin-top: 20px;
-  }
-
-  .ecommerce-links li a {
-    font-size: 16px;
-    font-weight: 600;
-    color: #fff;
     background-color: #0077ff;
+    color: #fff;
     border-radius: 6px;
     padding: 10px 12px;
-    display: block;
+    text-align: center;
   }
 
-  .ecommerce-links li a:hover {
+  .navbar-links li a:hover {
     background-color: #005ecc;
   }
 }
-
-
-
