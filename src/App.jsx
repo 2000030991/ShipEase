@@ -153,7 +153,7 @@ function MyFoods() {
   return (
     <section className="my-foods-section">
       <h2 className="my-foods-section-title">My Foods</h2>
-      <div className="my-foods-grid">
+      <div className="my-foods-grid full-width-grid">
         {foods.map((item) => (
           <div key={item.id} className="my-foods-card">
             <img src={item.img} alt={item.name} />
@@ -178,7 +178,7 @@ function MyFoods() {
         )}
         <h3>Total Bill: ₹{totalPrice}</h3>
       </div>
-    </section>
+    </section> 
   );
 }
 
@@ -563,7 +563,7 @@ export default function App() {
       margin: "0 auto 25px auto",
       lineHeight: "1.6",
     }}
-  >
+  > 
     At <strong>ShipEase</strong>, we make shopping from your favorite Indian stores completely hassle-free!
     Now, you can shop online from India and ship your packages directly to the
     <strong> USA, UK, Dubai, Australia, Canada, and Qatar </strong> — with fast delivery,

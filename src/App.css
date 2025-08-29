@@ -534,26 +534,34 @@ body {
 
 /* --- My Foods Section --- */
 .my-foods-section {
-  max-width: 700px;
-  margin: 30px auto;
+  max-width: 100%;
+  margin: 0;
   padding: 20px;
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: 0;
+  box-shadow: none;
   color: #023e8a;
 }
-.my-foods-section h2 {
+
+.my-foods-section-title {
   text-align: center;
   margin-bottom: 20px;
   font-weight: 700;
   font-size: 2rem;
   color: #0077b6;
 }
-.my-foods-grid {
+
+/* Full width grid fix */
+.my-foods-grid.full-width-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
+
 .my-foods-card {
   border: 1px solid #ddd;
   border-radius: 12px;
@@ -563,29 +571,35 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: #fff;
 }
+
 .my-foods-card:hover {
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
+
 .my-foods-card img {
   width: 100%;
-  height: 140px;
+  height: 180px;
   object-fit: cover;
   border-radius: 10px;
   user-select: none;
   margin-bottom: 10px;
 }
+
 .my-foods-card h4 {
   margin: 0 0 5px;
   font-weight: 600;
   color: #03045e;
 }
+
 .my-foods-card p {
   margin: 5px 0;
   font-weight: 700;
   color: #0077b6;
   font-size: 1.1rem;
 }
+
 .my-foods-card button {
   background-color: #0077b6;
   color: white;
@@ -600,6 +614,7 @@ body {
   width: 100%;
   max-width: 140px;
 }
+
 .my-foods-card button:hover {
   background-color: #005f86;
 }
@@ -614,14 +629,17 @@ body {
   font-weight: 600;
   color: #00796b;
 }
+
 .my-foods-cart-summary h3 {
   margin-top: 0;
 }
+
 .my-foods-cart-summary ul {
   list-style: none;
   padding-left: 0;
   margin-bottom: 10px;
 }
+
 .my-foods-cart-summary li {
   margin-bottom: 6px;
 }
