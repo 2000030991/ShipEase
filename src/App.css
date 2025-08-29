@@ -541,7 +541,9 @@ body {
   border-radius: 0;
   box-shadow: none;
   color: #023e8a;
-  position: relative; /* Required for z-index layering */
+  position: relative;
+  z-index: 999; /* ✅ Ensures food section is above other forms or navbars */
+  overflow: visible;
 }
 
 .my-foods-section-title {
@@ -574,7 +576,8 @@ body {
   justify-content: space-between;
   background-color: #fff;
   position: relative;
-  z-index: 2; /* Keep cards above nav links */
+  z-index: 1000; /* ✅ Keeps card clickable above shipping form */
+  cursor: default;
 }
 
 .my-foods-card:hover {
@@ -587,6 +590,7 @@ body {
   object-fit: cover;
   border-radius: 10px;
   user-select: none;
+  pointer-events: none;
   margin-bottom: 10px;
 }
 
@@ -603,7 +607,7 @@ body {
   font-size: 1.1rem;
 }
 
-/* ✅ Important Fix for Mobile Clicks */
+/* ✅ Button Fix for Mobile */
 .add-to-cart-btn {
   background-color: #0077b6;
   color: white;
@@ -617,8 +621,9 @@ body {
   align-self: center;
   width: 100%;
   max-width: 140px;
-  z-index: 9999; /* Highest priority */
-  position: relative; /* Ensures button is above nav links */
+  z-index: 99999; /* ✅ Highest priority for click */
+  position: relative;
+  pointer-events: auto; /* Ensures the button always gets the tap */
 }
 
 .add-to-cart-btn:hover {
@@ -634,6 +639,8 @@ body {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   font-weight: 600;
   color: #00796b;
+  position: relative;
+  z-index: 999;
 }
 
 .my-foods-cart-summary h3 {
@@ -648,6 +655,19 @@ body {
 
 .my-foods-cart-summary li {
   margin-bottom: 6px;
+}
+
+/* ✅ Mobile-Specific Fix */
+@media (max-width: 768px) {
+  .add-to-cart-btn {
+    padding: 10px;
+    font-size: 1.05rem;
+  }
+
+  /* Ensure cards remain above any hidden forms or nav overlays */
+  .my-foods-card {
+    z-index: 9999;
+  }
 }
 
 

@@ -147,8 +147,7 @@ function MyFoods() {
     { id: 53, name: "Vellulli Kaaram", price: 180, img: vellulliKaaram },
   ];
 
- const addToCart = (event, item) => {
-    // Stops clicks from propagating to parent <a> tags or nav links
+const addToCart = (event, item) => {
     if (event) {
       event.preventDefault();
       event.stopPropagation();
@@ -159,17 +158,24 @@ function MyFoods() {
   const totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
 
   return (
-    <section className="my-foods-section" onClick={(e) => e.stopPropagation()}>
+    <section
+      className="my-foods-section"
+      onClick={(e) => e.stopPropagation()} // ✅ Block clicks leaking to parent containers
+    >
       <h2 className="my-foods-section-title">My Foods</h2>
+
       <div className="my-foods-grid full-width-grid">
         {foods.map((item) => (
-          <div key={item.id} className="my-foods-card" onClick={(e) => e.stopPropagation()}>
-            <img src={item.img} alt={item.name} />
+          <div
+            key={item.id}
+            className="my-foods-card"
+            onClick={(e) => e.stopPropagation()} // ✅ Prevent accidental form openings
+          >
+            <img src={item.img} alt={item.name} draggable="false" />
             <div>
               <h4>{item.name}</h4>
               <p>₹{item.price}</p>
             </div>
-            {/* ✅ Explicitly stop event bubbling for buttons */}
             <button
               type="button"
               className="add-to-cart-btn"
