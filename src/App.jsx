@@ -147,7 +147,12 @@ function MyFoods() {
     { id: 53, name: "Vellulli Kaaram", price: 180, img: vellulliKaaram },
   ];
 
-  const addToCart = (item) => setCart((prev) => [...prev, item]);
+  const addToCart = (event, item) => {
+    event.preventDefault();   // Prevent accidental navigation
+    event.stopPropagation();  // Stop bubbling to parent elements
+    setCart((prev) => [...prev, item]);
+  };
+
   const totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
 
   return (
@@ -161,10 +166,14 @@ function MyFoods() {
               <h4>{item.name}</h4>
               <p>₹{item.price}</p>
             </div>
-            <button type="button" onClick={() => addToCart(item)}>Add to Cart</button>
+            {/* Pass event as first argument */}
+            <button type="button" onClick={(e) => addToCart(e, item)}>
+              Add to Cart
+            </button>
           </div>
         ))}
       </div>
+
       <div className="my-foods-cart-summary">
         <h3>Items Added</h3>
         {cart.length === 0 ? (
@@ -172,7 +181,9 @@ function MyFoods() {
         ) : (
           <ul>
             {cart.map((item, idx) => (
-              <li key={idx}>{item.name} - ₹{item.price}</li>
+              <li key={idx}>
+                {item.name} - ₹{item.price}
+              </li>
             ))}
           </ul>
         )}
@@ -180,7 +191,7 @@ function MyFoods() {
       </div>
     </section> 
   );
-}
+} 
 
 export default function App() {
   const [currentView, setCurrentView] = useState("home");
