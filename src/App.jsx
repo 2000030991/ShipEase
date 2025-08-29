@@ -522,7 +522,7 @@ export default function App() {
 <section
   className="why-choose-us"
   style={{
-    backgroundColor: "#87CEEB", // 🔹 Sky Blue Background
+    backgroundColor: "#ffffff", // 🔹 White Background
     padding: "40px 20px",
     textAlign: "center",
     display: "flex",
@@ -544,8 +544,7 @@ export default function App() {
       display: "block",
     }}
   />
-</section>
-
+</section> 
 
           {/* About */}
           <section className="about fade-in">
@@ -560,7 +559,7 @@ export default function App() {
           Sign-up and start shipping from India to your doorstep across the globe.
           Sign-up now for free and earn benefits.
         </p> 
-      </section> 
+      </section>  
 
 {/* ================= SHIPEASE INTRO SECTION ================= */}
 <section
@@ -671,31 +670,85 @@ export default function App() {
   </div>
 </section>
 
-          {/* Prohibited */}
-          <section className="prohibited fade-in" style={{ backgroundColor: "#ffe6e6", padding: "40px 20px", marginTop: "20px", borderRadius: "12px", maxWidth: "900px", marginLeft: "auto", marginRight: "auto", boxShadow: "0 5px 15px rgba(255, 0, 0, 0.15)" }}>
-            <h2 style={{ color: "#d00000", marginBottom: "15px" }}>🚫 Prohibited Items for Shipping</h2>
-            <p>The following items cannot be shipped through our service:</p>
-            <div className="prohibited-lists" style={{ display: "flex", gap: "40px", marginTop: "15px", justifyContent: "center" }}>
-              <ul style={{ textAlign: "left", color: "#660000", fontWeight: "600", lineHeight: "1.6", flex: 1 }}>
-                {prohibitedItemsLeft.map((item, index) => (<li key={index}>{item}</li>))}
-              </ul>
-              <ul style={{ textAlign: "left", color: "#660000", fontWeight: "600", lineHeight: "1.6", flex: 1 }}>
-                {prohibitedItemsRight.map((item, index) => (<li key={index}>{item}</li>))}
-              </ul>
-            </div>
-          </section>
+{/* Prohibited */}
+<section
+  className="prohibited fade-in"
+  style={{
+    backgroundColor: "#ffffff", // ✅ White background to match About Us
+    padding: "30px",
+    marginTop: "30px",
+    borderRadius: "16px", // ✅ Same rounded corners as About Us
+    maxWidth: "1050px", // ✅ Matches About Us width
+    marginLeft: "auto",
+    marginRight: "auto",
+    boxShadow: "0 6px 25px rgba(0, 0, 0, 0.18)", // ✅ Same shadow as About Us
+    textAlign: "center",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+  }}
+>
+  <h2
+    style={{
+      color: "#d00000", // ✅ Red heading for warning
+      marginBottom: "15px",
+      fontSize: "2.2rem",
+      fontWeight: "700",
+    }}
+  >
+    🚫 Prohibited Items for Shipping
+  </h2>
 
-          {/* Highlights */}
-          <section className="image-gallery fade-in">
-            <h2>Our Highlights</h2>
-            <div className="image-card-grid">
-              {[BgAbout, BgOffers, BgServices, Image1, Image2, Image3].map((img, index) => (
-                <div className="image-card" key={index}>
-                  <img src={img} alt={`Gallery ${index + 1}`} />
-                </div>
-              ))}
-            </div>
-          </section>
+  <p
+    style={{
+      fontSize: "1rem",
+      color: "#023e8a",
+      fontWeight: "600",
+      marginBottom: "20px",
+      maxWidth: "850px",
+    }}
+  >
+    The following items cannot be shipped through our service:
+  </p>
+
+  {/* Prohibited Lists */}
+  <div
+    className="prohibited-lists"
+    style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(2, 1fr)", // ✅ Two-column layout
+      gap: "20px 40px",
+      width: "100%",
+      maxWidth: "900px",
+      textAlign: "left",
+    }}
+  >
+    <ul style={{ color: "#333", fontWeight: "600", lineHeight: "1.6", paddingLeft: "20px" }}>
+      {prohibitedItemsLeft.map((item, index) => (
+        <li key={index} style={{ marginBottom: "8px" }}>{item}</li>
+      ))}
+    </ul>
+
+    <ul style={{ color: "#333", fontWeight: "600", lineHeight: "1.6", paddingLeft: "20px" }}>
+      {prohibitedItemsRight.map((item, index) => (
+        <li key={index} style={{ marginBottom: "8px" }}>{item}</li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+{/* Highlights */}
+<section className="image-gallery fade-in">
+  <h2>Our Highlights</h2>
+  <div className="image-card-grid">
+    {[BgAbout, BgOffers, BgServices, Image1, Image2, Image3].map((img, index) => (
+      <div className="image-card" key={index}>
+        <img src={img} alt={`Gallery ${index + 1}`} />
+      </div>
+    ))}
+  </div>
+</section>
 
           {/* Footer */}
           <footer className="footer">

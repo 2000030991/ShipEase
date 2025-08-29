@@ -323,59 +323,54 @@ body {
 
 /* How It Works Section */
 .how-it-works {
-  max-width: 1100px; /* Increased width to fit 3 cards in a row */
+  max-width: 1100px;
   margin: 60px auto;
   padding: 20px;
   text-align: center;
 }
 
 .how-it-works h2 {
-  font-size: 3rem; /* ⬆️ Increased main heading size */
+  font-size: 3rem;
   font-weight: 800;
   margin-bottom: 35px;
   color: #0077b6;
   letter-spacing: 1px;
 }
 
-/* ✅ Force 3 cards in a single row */
 .how-it-works .steps {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Always 3 equal columns */
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   justify-content: center;
   align-items: stretch;
 }
 
-/* Individual step card */
 .how-it-works .steps > div {
-  background: #ffffff; /* ⬜ White cards */
+  background: #ffffff;
   padding: 25px 30px;
   border-radius: 12px;
   font-weight: 600;
   color: #03045e;
   cursor: default;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Stronger shadow for contrast */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
   transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
 
-  /* ✅ Ensures consistent text alignment */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start; /* Align all text from the same line */
-  text-align: left; /* Ensures all text starts from same line */
-  min-height: 250px; /* Keeps cards uniform in height */
+  align-items: flex-start;
+  text-align: left;
+  min-height: 250px;
 }
 
-/* Hover effect */
 .how-it-works .steps > div:hover {
-  background: #0077b6; /* Blue background on hover */
-  color: #ffffff; /* White text on hover */
+  background: #0077b6;
+  color: #ffffff;
   transform: translateY(-5px);
 }
 
-/* Step number styling */
 .step-number {
-  font-size: 2.4rem; /* ⬆️ Increased number size */
+  font-size: 2.4rem;
   font-weight: 800;
   display: block;
   margin-bottom: 12px;
@@ -383,132 +378,298 @@ body {
   transition: color 0.3s ease;
 }
 
-/* Change step number color when card is hovered */
 .how-it-works .steps > div:hover .step-number {
   color: #ffffff;
 }
 
-/* Subheadings inside cards */
 .how-it-works .steps > div h3 {
-  font-size: 1.3rem; /* ⬆️ Increased heading size inside cards */
+  font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 10px;
   color: #023e8a;
   transition: color 0.3s ease;
 }
 
-/* Change subheading color on hover */
 .how-it-works .steps > div:hover h3 {
   color: #ffffff;
 }
 
+/* ✅ Why Choose Us Section */
+.why-choose-us {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #ffffff;  
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.why-choose-us h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 35px;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.why-choose-us .reasons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.why-choose-us .reasons > div {
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  font-weight: 600;
+  color: #03045e;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.9); /* Pure white shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  min-height: 250px;
+}
+
+.why-choose-us .reasons > div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 1);
+}
+
+.why-choose-us .reasons > div h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #0077b6;
+  transition: color 0.3s ease;
+}
+
+.why-choose-us .reasons > div:hover h3 {
+  color: #0077b6;
+}
+
 /* ✅ Mobile Responsive */
 @media (max-width: 768px) {
-  .how-it-works h2 {
-    font-size: 2.4rem; /* Reduce slightly on smaller screens */
+  .how-it-works h2,
+  .why-choose-us h2 {
+    font-size: 2.4rem;
   }
 
-  .how-it-works .steps {
-    grid-template-columns: 1fr; /* Stack cards vertically */
+  .how-it-works .steps,
+  .why-choose-us .reasons {
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 
-  .how-it-works .steps > div {
+  .how-it-works .steps > div,
+  .why-choose-us .reasons > div {
     align-items: flex-start;
     text-align: left;
-  }
-
-  .step-number {
-    font-size: 2rem; /* Adjust step number size for mobile */
-  }
-
-  .how-it-works .steps > div h3 {
-    font-size: 1.3rem; /* Adjust card heading size for mobile */
+    min-height: auto;
   }
 }
 
-/* Why Choose Us Section */
-.why-choose-us {
-  background-color: #001f3f; /* 🔹 Dark Blue Background */
-  padding: 40px 20px; /* Add spacing around content */
-  text-align: center;
-  border-radius: 12px;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
-}
 
-/* Image Styling */
-.why-choose-us img {
-  max-width: 1000px;
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-  display: block;
-  margin: 0 auto; /* Centers the image */
-}
-
-/* About Section */
+/* ✅ About Us Section - Matches Why Choose Us but Slightly Wider */
 .about {
-  max-width: 900px;
+  max-width: 1050px; /* ⬅️ Increased width slightly */
+  width: 100%;
   margin: 40px auto;
-  padding: 20px;
-  background-color: #ffffff !important; /* ✅ Force White Background */
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+  background-color: #ffffff !important; /* ✅ White background */
+  border-radius: 16px; /* ✅ Same rounded edges */
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.18); /* ✅ Similar to Why Choose Us */
   color: #023e8a;
   text-align: center;
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+/* ✅ Heading Styling */
 .about h2 {
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 20px;
   color: #003366;
 }
 
+/* ✅ Paragraph Styling */
 .about p {
   font-weight: 600;
   font-size: 1.1rem;
   line-height: 1.6;
   color: #002244;
+  max-width: 850px;
+  margin: 0 auto;
 }
 
+/* ✅ Responsive Styling */
+@media (max-width: 768px) {
+  .about {
+    max-width: 95%;
+    padding: 20px;
+  }
 
-/* Prohibited Items Section */
+  .about h2 {
+    font-size: 1.7rem;
+  }
+
+  .about p {
+    font-size: 1rem;
+  }
+}
+
+/* ===== Prohibited Items Section - Matches About Us Styling ===== */
+.prohibited-section {
+  max-width: 1050px; /* ✅ Same width as About Us */
+  width: 100%; /* ✅ Ensure full available width */
+  margin: 40px auto; /* ✅ Center the card */
+  padding: 30px;
+  background-color: #ffffff !important; /* ✅ White background like About Us */
+  border-radius: 16px; /* ✅ Same rounded corners */
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.18); /* ✅ Same shadow as About Us */
+  color: #023e8a;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ✅ Heading Styling */
+.prohibited-section h2 {
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: #d00000; /* ✅ Red title for warning */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ✅ Subheading / Info Text */
+.prohibited-section p {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #023e8a;
+  max-width: 850px;
+  margin: 0 auto 20px;
+}
+
+/* ✅ Two-Column List Layout */
+.prohibited-lists {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 40px;
+  width: 100%;
+  max-width: 900px; /* ✅ Keep content aligned */
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* ✅ List Styling */
 .prohibited-lists ul {
   list-style-type: disc;
   padding-left: 20px;
+  margin: 0;
 }
 
-/* Image Gallery Section */
-.image-gallery {
-  max-width: 1000px;
-  margin: 60px auto;
-  padding: 20px;
-  text-align: center;
+.prohibited-lists li {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
 }
+
+/* ✅ Responsive Styling */
+@media (max-width: 768px) {
+  .prohibited-section {
+    max-width: 95%;
+    padding: 20px;
+  }
+
+  .prohibited-section h2 {
+    font-size: 1.7rem;
+    text-align: center;
+  }
+
+  .prohibited-section p {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .prohibited-lists {
+    grid-template-columns: 1fr; /* ✅ Stack lists on smaller screens */
+  }
+
+  .prohibited-lists li {
+    font-size: 0.95rem;
+  }
+}
+ 
+/* ✅ Our Highlights Section (Updated to Match About Us) */
+.image-gallery {
+  max-width: 1050px; /* Increased width to match About Us */
+  width: 100%;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff !important; /* White background like About Us */
+  border-radius: 16px; /* Rounded corners to match */
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.18); /* Same shadow as About Us */
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ✅ Heading Styling */
 .image-gallery h2 {
   font-weight: 700;
-  font-size: 2.4rem;
-  margin-bottom: 30px;
-  color: #0077b6;
+  font-size: 2.2rem; /* Matches About Us */
+  margin-bottom: 20px;
+  color: #003366; /* Consistent color */
 }
+
+/* ✅ Image Card Grid */
 .image-card-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
+  width: 100%;
+  margin-top: 15px;
 }
+
+/* ✅ Individual Image Cards */
 .image-card {
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   cursor: pointer;
   transition: transform 0.3s ease;
   aspect-ratio: 4 / 3;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
 }
+
 .image-card img {
   width: 100%;
   height: 100%;
@@ -517,9 +678,35 @@ body {
   user-select: none;
   pointer-events: none;
 }
+
+/* ✅ Hover Effect */
 .image-card:hover {
   transform: scale(1.05);
 }
+
+/* ✅ Responsive Styling */
+@media (max-width: 768px) {
+  .image-gallery {
+    max-width: 95%;
+    padding: 20px;
+  }
+
+  .image-gallery h2 {
+    font-size: 1.8rem;
+  }
+
+  .image-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* Footer */
 .footer {
@@ -1127,7 +1314,7 @@ body {
 
 /* 🌟 App Background */
 .app-container {
-  background-color: #001f54; /* Dark Blue Background */
+  background-color: #e0f7ff; /* Dark Blue Background */  
   min-height: 100vh;
   margin: 0;
   font-family: Arial, sans-serif;
@@ -1341,7 +1528,8 @@ section {
 
 /* Why Choose Us */
 .why-choose-us { 
-  background-color: #87CEEB; /* Sky Blue */
+  background-color: #ffffff; /* White */
+
 }
 
 /* How It Works */
@@ -1357,53 +1545,59 @@ section {
   border-radius: 12px;
 }
 
-/* ===== New Promotional Section ===== */
+/* ===== New Promotional Section ===== */ 
 .promo-section {
+  max-width: 1050px; /* ✅ Same width as About Us */
+  width: 100%;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff; /* ✅ Same white background */
+  border-radius: 16px; /* ✅ Same rounded corners */
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.18); /* ✅ Same shadow as About Us */
+  color: #023e8a; /* ✅ Text color matches About Us */
   text-align: center;
-  padding: 60px 20px;
-  max-width: 800px;
-  margin: 50px auto;
-  background: #ffffff;
-  color: #023e8a;
-  border-radius: 14px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  animation: fadeInUp 0.8s ease-in-out;
-  border: 1px solid #e0e0e0;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+/* ✅ Heading Styling */
 .promo-section h2 {
-  font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 12px;
-  color: #0077b6;
+  font-size: 2.2rem; /* ✅ Matches About Us title */
+  margin-bottom: 15px;
+  color: #003366; /* ✅ Same dark blue as About Us */
 }
 
+/* ✅ Paragraph Styling */
 .promo-section p {
+  font-weight: 600;
   font-size: 1.1rem;
   line-height: 1.6;
-  max-width: 600px;
-  margin: 0 auto 25px;
-  color: #333;
+  color: #002244; /* ✅ Same About Us text color */
+  max-width: 850px;
+  margin: 0 auto;
 }
 
-/* Promo Button */
-.promo-btn {
-  padding: 12px 28px;
-  background-color: #0077b6;
-  color: #fff;
-  font-size: 1rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 119, 182, 0.3);
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+  .promo-section {
+    max-width: 95%;
+    padding: 20px;
+  }
+
+  .promo-section h2 {
+    font-size: 1.7rem;
+  }
+
+  .promo-section p {
+    font-size: 1rem;
+  }
 }
 
-.promo-btn:hover {
-  background-color: #005f91;
-  transform: scale(1.05);
-}
 
 /* ===== Animation ===== */
 @keyframes fadeInUp {
@@ -1618,3 +1812,6 @@ section {
     background-color: #005ecc;
   }
 }
+
+
+
