@@ -147,27 +147,34 @@ function MyFoods() {
     { id: 53, name: "Vellulli Kaaram", price: 180, img: vellulliKaaram },
   ];
 
-  const addToCart = (event, item) => {
-    event.preventDefault();   // Prevent accidental navigation
-    event.stopPropagation();  // Stop bubbling to parent elements
+ const addToCart = (event, item) => {
+    // Stops clicks from propagating to parent <a> tags or nav links
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
     setCart((prev) => [...prev, item]);
   };
 
   const totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
 
   return (
-    <section className="my-foods-section">
+    <section className="my-foods-section" onClick={(e) => e.stopPropagation()}>
       <h2 className="my-foods-section-title">My Foods</h2>
       <div className="my-foods-grid full-width-grid">
         {foods.map((item) => (
-          <div key={item.id} className="my-foods-card">
+          <div key={item.id} className="my-foods-card" onClick={(e) => e.stopPropagation()}>
             <img src={item.img} alt={item.name} />
             <div>
               <h4>{item.name}</h4>
               <p>₹{item.price}</p>
             </div>
-            {/* Pass event as first argument */}
-            <button type="button" onClick={(e) => addToCart(e, item)}>
+            {/* ✅ Explicitly stop event bubbling for buttons */}
+            <button
+              type="button"
+              className="add-to-cart-btn"
+              onClick={(e) => addToCart(e, item)}
+            >
               Add to Cart
             </button>
           </div>

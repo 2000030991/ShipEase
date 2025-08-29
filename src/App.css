@@ -541,6 +541,7 @@ body {
   border-radius: 0;
   box-shadow: none;
   color: #023e8a;
+  position: relative; /* Required for z-index layering */
 }
 
 .my-foods-section-title {
@@ -572,10 +573,12 @@ body {
   flex-direction: column;
   justify-content: space-between;
   background-color: #fff;
+  position: relative;
+  z-index: 2; /* Keep cards above nav links */
 }
 
 .my-foods-card:hover {
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .my-foods-card img {
@@ -600,7 +603,8 @@ body {
   font-size: 1.1rem;
 }
 
-.my-foods-card button {
+/* ✅ Important Fix for Mobile Clicks */
+.add-to-cart-btn {
   background-color: #0077b6;
   color: white;
   border: none;
@@ -613,9 +617,11 @@ body {
   align-self: center;
   width: 100%;
   max-width: 140px;
+  z-index: 9999; /* Highest priority */
+  position: relative; /* Ensures button is above nav links */
 }
 
-.my-foods-card button:hover {
+.add-to-cart-btn:hover {
   background-color: #005f86;
 }
 
@@ -625,7 +631,7 @@ body {
   background-color: #e0f7fa;
   padding: 15px;
   border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   font-weight: 600;
   color: #00796b;
 }
@@ -643,6 +649,7 @@ body {
 .my-foods-cart-summary li {
   margin-bottom: 6px;
 }
+
 
 /* --- Navbar White Box Fix --- */
 .navbar nav a,
