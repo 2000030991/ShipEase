@@ -283,7 +283,7 @@ export default function App() {
       }}
       className={`account-btn ${currentView === "account" ? "active" : ""}`}
       type="button"
-    >
+    > 
       <FaUserCircle />
       Account
     </button>
