@@ -351,18 +351,22 @@ export default function App() {
                 Personal Shopper
               </a>
             </li>
-            <li>
-              <a
-                href="#"
-                onClick={() => {
-                  setCurrentView("myFoods");
-                  setIsMobileMenuOpen(false);
-                }}
-                className={currentView === "myFoods" ? "active" : ""}
-              >
-                My Foods
-              </a>
-            </li> 
+       <li>
+  <a
+    href="#"
+    onClick={() => {
+      if (currentView === "myFoods") {
+        setIsMobileMenuOpen(false);
+      } else {
+        setCurrentView("myFoods");
+        setIsMobileMenuOpen(false);
+      }
+    }}
+    className={currentView === "myFoods" ? "active" : ""}
+  >
+    My Foods
+  </a>
+</li> 
 
             {/* ✅ E-commerce Links */}
             <li><a href="https://www.amazon.in" target="_blank" rel="noreferrer">Amazon</a></li>
@@ -1048,6 +1052,10 @@ const buttonStyle = {
   fontSize: "1.1rem",
   cursor: "pointer",
 };
+
+
+
+
 
 
 
