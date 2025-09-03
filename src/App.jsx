@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";  // ✅ Add useEffect
 import Slider from "react-slick";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { FaShippingFast, FaEnvelopeOpenText, FaShoppingBag, FaUserCircle } from "react-icons/fa";
@@ -210,7 +210,8 @@ export default function App() {
   const [currentView, setCurrentView] = useState("home");
   const [accountTab, setAccountTab] = useState("signup");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null); 
+  const [activeDropdown, setActiveDropdown] = useState(null);  
+
    const sliderSettings = {
     dots: true,
     infinite: true,
@@ -261,33 +262,70 @@ export default function App() {
   const handleShippingSubmit = (e) => { e.preventDefault(); alert("Shipping details submitted successfully!"); setCurrentView("home"); };
   const handleMailboxSubmit = (e) => { e.preventDefault(); alert("Mail Box details submitted successfully!"); setCurrentView("home"); };
   const handlePersonalShopperSubmit = (e) => { e.preventDefault(); alert("Personal Shopper request submitted successfully!"); setCurrentView("home"); };
+const [showWelcomePopup, setShowWelcomePopup] = useState(false);
+const couponCode = "HELLO200";
+
+useEffect(() => {
+  const popupShown = localStorage.getItem("welcomePopupShown");
+  if (!popupShown) {
+    setTimeout(() => setShowWelcomePopup(true), 1500); // ⏳ Small delay for smooth UX
+    localStorage.setItem("welcomePopupShown", "true");
+  }
+}, []);
+
+const copyToClipboard = () => {
+  navigator.clipboard.writeText(couponCode);
+  alert("Coupon Code Copied!");
+};
+
 
   return (
     <>
-      {/* ================= NAVBAR ================= */}
-<header className="navbar">
-  <div className="navbar-top">
-    <button
-      className="mobile-menu-toggle"
-      onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-    >
-      {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
-    </button>
-
-    <h1 className="logo">ShipEase</h1>
-
-    <button
-      onClick={() => {
-        setCurrentView("account");
-        setIsMobileMenuOpen(false);
-      }}
-      className={`account-btn ${currentView === "account" ? "active" : ""}`}
-      type="button"
-    > 
-      <FaUserCircle />
-      Account
-    </button>
+ {/* ================= WELCOME OFFER POPUP ================= */}
+{showWelcomePopup && (
+  <div className="welcome-floating-banner">
+    <button className="close-btn" onClick={() => setShowWelcomePopup(false)}>×</button>
+    <div className="banner-content">
+      <h3>🎉 Welcome Newbie!</h3>
+      <p>Get <span>₹200 OFF</span> on your first order</p>
+      <div className="coupon-box">
+        <span className="coupon-code">{couponCode}</span>
+        <button className="copy-btn" onClick={copyToClipboard}>Copy</button>
+      </div>
+      <button className="shop-now-btn" onClick={() => setShowWelcomePopup(false)}>
+        Start Shopping
+      </button>
+    </div>
   </div>
+)}
+
+      {/* ================= NAVBAR ================= */}
+      <header className="navbar">
+        <div className="navbar-top">
+          {/* Hamburger Menu for Mobile */}
+          <button
+            className="mobile-menu-toggle"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+          </button>
+
+          {/* Logo */}
+          <h1 className="logo">ShipEase</h1>
+
+          {/* Account Button */}
+          <button
+            onClick={() => {
+              setCurrentView("account");
+              setIsMobileMenuOpen(false);
+            }}
+            className={`account-btn ${currentView === "account" ? "active" : ""}`}
+            type="button"
+          >
+            <FaUserCircle style={{ verticalAlign: "middle", marginRight: "6px" }} />
+            Account
+          </button>
+        </div>
 
         {/* Navigation Menu */}
         <nav
@@ -351,22 +389,18 @@ export default function App() {
                 Personal Shopper
               </a>
             </li>
-       <li>
-  <a
-    href="#"
-    onClick={() => {
-      if (currentView === "myFoods") {
-        setIsMobileMenuOpen(false);
-      } else {
-        setCurrentView("myFoods");
-        setIsMobileMenuOpen(false);
-      }
-    }}
-    className={currentView === "myFoods" ? "active" : ""}
-  >
-    My Foods
-  </a>
-</li> 
+            <li>
+              <a
+                href="#"
+                onClick={() => {
+                  setCurrentView("myFoods");
+                  setIsMobileMenuOpen(false);
+                }}
+                className={currentView === "myFoods" ? "active" : ""}
+              >
+                My Foods
+              </a>
+            </li> 
 
             {/* ✅ E-commerce Links */}
             <li><a href="https://www.amazon.in" target="_blank" rel="noreferrer">Amazon</a></li>
@@ -1052,10 +1086,6 @@ const buttonStyle = {
   fontSize: "1.1rem",
   cursor: "pointer",
 };
-
-
-
-
 
 
 
