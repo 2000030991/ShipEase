@@ -1815,3 +1815,134 @@ section {
 
 
 
+
+
+/* Navbar container */
+.navbar {
+  background-color: #0b1d3c;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 9999;
+}
+
+/* Top section with logo + account button */
+.navbar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Account button fix */
+.account-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background-color: transparent;
+  color: #1e90ff;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.account-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #1e90ff;
+}
+
+/* Mobile menu toggle */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* Navigation links */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-links.show {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #0b1d3c;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  padding: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Links inside navbar */
+.navbar-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.navbar-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-links li a:hover {
+  color: #ffdd57;
+}
+
+/* Active link */
+.navbar-links li a.active {
+  color: #1e90ff;
+  font-weight: 700;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #0b1d3c;
+    padding: 10px 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .account-btn {
+    margin-left: auto;
+  }
+}
+
+

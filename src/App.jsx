@@ -265,32 +265,29 @@ export default function App() {
   return (
     <>
       {/* ================= NAVBAR ================= */}
-      <header className="navbar">
-        <div className="navbar-top">
-          {/* Hamburger Menu for Mobile */}
-          <button
-            className="mobile-menu-toggle"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
-          </button>
+<header className="navbar">
+  <div className="navbar-top">
+    <button
+      className="mobile-menu-toggle"
+      onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+    >
+      {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+    </button>
 
-          {/* Logo */}
-          <h1 className="logo">ShipEase</h1>
+    <h1 className="logo">ShipEase</h1>
 
-          {/* Account Button */}
-          <button
-            onClick={() => {
-              setCurrentView("account");
-              setIsMobileMenuOpen(false);
-            }}
-            className={`account-btn ${currentView === "account" ? "active" : ""}`}
-            type="button"
-          >
-            <FaUserCircle style={{ verticalAlign: "middle", marginRight: "6px" }} />
-            Account
-          </button>
-        </div>
+    <button
+      onClick={() => {
+        setCurrentView("account");
+        setIsMobileMenuOpen(false);
+      }}
+      className={`account-btn ${currentView === "account" ? "active" : ""}`}
+      type="button"
+    >
+      <FaUserCircle />
+      Account
+    </button>
+  </div>
 
         {/* Navigation Menu */}
         <nav
@@ -1051,10 +1048,6 @@ const buttonStyle = {
   fontSize: "1.1rem",
   cursor: "pointer",
 };
-
-
-
-
 
 
 
