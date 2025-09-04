@@ -266,12 +266,14 @@ const [showWelcomePopup, setShowWelcomePopup] = useState(false);
 const couponCode = "HELLO200";
 
 useEffect(() => {
-  const popupShown = localStorage.getItem("welcomePopupShown");
-  if (!popupShown) {
-    setTimeout(() => setShowWelcomePopup(true), 1500); // ⏳ Small delay for smooth UX
-    localStorage.setItem("welcomePopupShown", "true");
-  }
+  // Show popup every time user visits / reloads
+  const timer = setTimeout(() => {
+    setShowWelcomePopup(true);
+  }, 1500); // Optional delay for smooth UX
+
+  return () => clearTimeout(timer); // Cleanup timer on unmount
 }, []);
+
 
 const copyToClipboard = () => {
   navigator.clipboard.writeText(couponCode);
@@ -297,7 +299,7 @@ const copyToClipboard = () => {
       </button>
     </div> 
   </div> 
-)}
+)} 
 
       {/* ================= NAVBAR ================= */}
       <header className="navbar">
