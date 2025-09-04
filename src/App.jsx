@@ -157,13 +157,20 @@ const addToCart = (event, item) => {
 
   const totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
 
-  return (
+return (
     <section
       className="my-foods-section"
-      onClick={(e) => e.stopPropagation()} // ✅ Block clicks leaking to parent containers
+      onClick={(e) => {
+        e.stopPropagation();
+        // ✅ When user clicks anywhere inside MyFoods, close mobile menu if open
+        if (window.innerWidth <= 768) {
+          setIsMenuOpen(false);
+        }
+      }}
     >
       <h2 className="my-foods-section-title">My Foods</h2>
 
+      {/* ✅ Foods Grid */}
       <div className="my-foods-grid full-width-grid">
         {foods.map((item) => (
           <div
@@ -187,6 +194,7 @@ const addToCart = (event, item) => {
         ))}
       </div>
 
+      {/* ✅ Cart Summary */}
       <div className="my-foods-cart-summary">
         <h3>Items Added</h3>
         {cart.length === 0 ? (
@@ -202,15 +210,16 @@ const addToCart = (event, item) => {
         )}
         <h3>Total Bill: ₹{totalPrice}</h3>
       </div>
-    </section> 
+    </section>
   );
-} 
+}  
 
 export default function App() {
   const [currentView, setCurrentView] = useState("home");
   const [accountTab, setAccountTab] = useState("signup");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);  
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
    const sliderSettings = {
     dots: true,
@@ -281,27 +290,42 @@ const copyToClipboard = () => {
 };
 
 
-  return (
+    return (
     <>
- {/* ================= WELCOME OFFER POPUP ================= */}
-{showWelcomePopup && (
-  <div className="welcome-floating-banner" style={{ border: "2px solid red" }}>
-    <button className="close-btn" onClick={() => setShowWelcomePopup(false)}>×</button>
-    <div className="banner-content">
-      <h3>🎉 Welcome Newbie!</h3>
-      <p>Get <span>₹200 OFF</span> on your first order</p>
-      <div className="coupon-box">
-        <span className="coupon-code">{couponCode}</span>
-        <button className="copy-btn" onClick={copyToClipboard}>Copy</button>
-      </div>
-      <button className="shop-now-btn" onClick={() => setShowWelcomePopup(false)}>
-        Start Shopping
-      </button>
-    </div> 
-  </div> 
-)} 
+      {/* ================= WELCOME OFFER POPUP ================= */}
+      {showWelcomePopup && (
+        <div
+          className="welcome-floating-banner"
+          style={{ border: "2px solid red" }}
+        >
+          <button
+            className="close-btn"
+            onClick={() => setShowWelcomePopup(false)}
+          >
+            ×
+          </button>
+          <div className="banner-content">
+            <h3>🎉 Welcome Newbie!</h3>
+            <p>
+              Get <span>₹200 OFF</span> on your first order
+            </p>
+            <div className="coupon-box">
+              <span className="coupon-code">{couponCode}</span>
+              <button className="copy-btn" onClick={copyToClipboard}>
+                Copy
+              </button>
+            </div>
+            <button
+              className="shop-now-btn"
+              onClick={() => setShowWelcomePopup(false)}
+            >
+              Start Shopping
+            </button>
+          </div>
+        </div>
+      )}
 
-      {/* ================= NAVBAR ================= */}
+  {/* ================= NAVBAR ================= */}
       <header className="navbar">
         <div className="navbar-top">
           {/* Hamburger Menu for Mobile */}
@@ -1088,7 +1112,6 @@ const buttonStyle = {
   fontSize: "1.1rem",
   cursor: "pointer",
 };
-
 
 
 
