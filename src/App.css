@@ -1834,22 +1834,23 @@ section {
 
 /* ==================== WELCOME OFFER FLOATING BANNER ==================== */
 .welcome-floating-banner {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+  position: fixed !important;
+  bottom: 15px !important;
+  right: 15px !important;
   background: #ffffff;
   padding: 15px 20px;
   width: 300px;
+  max-width: 90%;
   border-radius: 14px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-  z-index: 9999;
-  animation: slideUp 0.4s ease-in-out;
-  display: flex;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+  z-index: 999999 !important; /* ✅ Always on top */
+  display: flex !important;
   flex-direction: column;
   align-items: center;
+  animation: slideUp 0.4s ease-in-out;
   font-family: 'Segoe UI', sans-serif;
-  transition: transform 0.3s ease, opacity 0.3s ease;
 }
+
 
 .welcome-floating-banner:hover {
   transform: scale(1.03);
@@ -1954,153 +1955,14 @@ section {
   }
 }
 
-/* Mobile Responsive */
-@media (max-width: 600px) {
-  .welcome-floating-banner {
-    width: 85%;
-    bottom: 15px;
-    right: 15px;
-    padding: 12px;
-  }
-}
-
-
-
-
-/* ==================== WELCOME OFFER FLOATING BANNER ==================== */
-.welcome-floating-banner {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #ffffff;
-  padding: 15px 20px;
-  width: 300px;
-  border-radius: 14px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-  z-index: 99999; /* ✅ Ensures it's always on top */
-  animation: slideUp 0.4s ease-in-out;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: 'Segoe UI', sans-serif;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-/* Hover Effect */
-.welcome-floating-banner:hover {
-  transform: scale(1.03);
-}
-
-/* Close Button */
-.welcome-floating-banner .close-btn {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  background: transparent;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  color: #444;
-}
-
-/* Title */
-.welcome-floating-banner h3 {
-  color: #e63946;
-  margin-bottom: 5px;
-  font-size: 1.2rem;
-  font-weight: 700;
-  text-align: center;
-}
-
-/* Description */
-.welcome-floating-banner p {
-  font-size: 1rem;
-  color: #222;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.welcome-floating-banner span {
-  color: #e63946;
-  font-weight: bold;
-}
-
-/* Coupon Box */
-.welcome-floating-banner .coupon-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #f9f9f9;
-  padding: 8px;
-  border-radius: 8px;
-  border: 2px dashed #e63946;
-  gap: 8px;
-  margin-bottom: 12px;
-}
-
-.welcome-floating-banner .coupon-code {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #e63946;
-}
-
-/* Copy Button */
-.welcome-floating-banner .copy-btn {
-  background: #e63946;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.85rem;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-
-.welcome-floating-banner .copy-btn:hover {
-  background: #c92d3e;
-}
-
-/* Shop Now Button */
-.welcome-floating-banner .shop-now-btn {
-  background: #0077b6;
-  color: white;
-  border: none;
-  padding: 8px 15px;
-  font-size: 0.95rem;
-  font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s;
-  width: 100%;
-}
-
-.welcome-floating-banner .shop-now-btn:hover {
-  background: #005f86;
-}
-
-/* Entrance Animation */
-@keyframes slideUp {
-  from {
-    transform: translateY(60px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-/* ==================== MOBILE RESPONSIVE FIX ==================== */
 @media (max-width: 768px) {
   .welcome-floating-banner {
-    bottom: 15px;
-    right: 50%;
-    transform: translateX(50%);
-    width: 90%; /* ✅ Better fit on mobile */
-    max-width: 360px;
-    padding: 15px;
-    border-radius: 12px;
+    bottom: 10px !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important; /* ✅ Center on mobile */
+    width: 92% !important;
+    max-width: 380px;
   }
 
   .welcome-floating-banner h3 {
@@ -2114,14 +1976,11 @@ section {
   .welcome-floating-banner .coupon-box {
     flex-direction: column;
     gap: 6px;
-  }
-
-  .welcome-floating-banner .copy-btn {
     width: 100%;
   }
 
+  .welcome-floating-banner .copy-btn,
   .welcome-floating-banner .shop-now-btn {
-    margin-top: 8px;
     width: 100%;
   }
 }

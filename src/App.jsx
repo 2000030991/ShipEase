@@ -283,7 +283,7 @@ const copyToClipboard = () => {
     <>
  {/* ================= WELCOME OFFER POPUP ================= */}
 {showWelcomePopup && (
-  <div className="welcome-floating-banner">
+  <div className="welcome-floating-banner" style={{ border: "2px solid red" }}>
     <button className="close-btn" onClick={() => setShowWelcomePopup(false)}>×</button>
     <div className="banner-content">
       <h3>🎉 Welcome Newbie!</h3>
@@ -295,8 +295,8 @@ const copyToClipboard = () => {
       <button className="shop-now-btn" onClick={() => setShowWelcomePopup(false)}>
         Start Shopping
       </button>
-    </div>
-  </div>
+    </div> 
+  </div> 
 )}
 
       {/* ================= NAVBAR ================= */}
@@ -1065,7 +1065,7 @@ const copyToClipboard = () => {
       {currentView === "myFoods" && <MyFoods />}
     </>
   );
-}
+} 
 
 const inputStyle = {
   width: "100%",
