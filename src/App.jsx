@@ -1066,7 +1066,7 @@ const copyToClipboard = () => {
     </>
   );
 }
- 
+
 const inputStyle = {
   width: "100%",
   padding: "8px 10px",
