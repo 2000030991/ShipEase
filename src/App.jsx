@@ -424,7 +424,7 @@ const copyToClipboard = () => {
                   setIsMobileMenuOpen(false);
                 }}
                 className={currentView === "myFoods" ? "active" : ""}
-              >
+              > 
                 My Foods
               </a>
             </li> 

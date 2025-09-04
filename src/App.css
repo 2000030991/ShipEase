@@ -745,7 +745,7 @@ body {
   box-shadow: none;
   color: #023e8a;
   position: relative;
-  z-index: 999; /* ✅ Ensures food section is above other forms or navbars */
+  z-index: 1; /* ✅ Ensures food section is above other forms or navbars */
   overflow: visible;
 }
 
@@ -779,7 +779,7 @@ body {
   justify-content: space-between;
   background-color: #fff;
   position: relative;
-  z-index: 1000; /* ✅ Keeps card clickable above shipping form */
+  z-index: auto; /* ✅ Keeps card clickable above shipping form */
   cursor: default;
 }
 
