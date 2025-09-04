@@ -158,16 +158,17 @@ const addToCart = (event, item) => {
   const totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
 
 return (
-    <section
-      className="my-foods-section"
-      onClick={(e) => {
-        e.stopPropagation();
-        // ✅ When user clicks anywhere inside MyFoods, close mobile menu if open
-        if (window.innerWidth <= 768) {
-          setIsMenuOpen(false);
-        }
-      }}
-    >
+   <section
+  className="my-foods-section"
+  onClick={(e) => {
+    if (window.innerWidth <= 768) {
+      // Allow hamburger clicks on mobile
+      return;
+    }
+    e.stopPropagation();
+  }}
+>  
+
       <h2 className="my-foods-section-title">My Foods</h2>
 
       {/* ✅ Foods Grid */}
