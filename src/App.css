@@ -1986,4 +1986,74 @@ section {
 }
 
 
+/* === FIX: Uniform Home Page Cards Without Extra Gaps === */
+.offers-cards,
+.how-it-works .steps,
+.why-choose-us .reasons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  justify-content: center;
+  align-items: stretch; /* Ensures equal height */
+}
+
+/* === Offer Cards === */
+.offer-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* ✅ No unnecessary gaps */
+  align-items: center;
+  min-height: 320px; /* ✅ Consistent size */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Offer Images */
+.offer-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+/* === How It Works & Why Choose Us Cards === */
+.how-it-works .steps > div,
+.why-choose-us .reasons > div {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* ✅ Align text properly */
+  justify-content: flex-start; /* ✅ No unnecessary space */
+  min-height: auto; /* ✅ Removes forced tall cards */
+  height: 100%; /* ✅ All cards match tallest card */
+  text-align: left;
+}
+
+/* === Headings in How It Works === */
+.how-it-works .steps > div h3 {
+  color: #0077b6;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+/* === Text inside How It Works === */
+.how-it-works .steps > div ul {
+  padding-left: 20px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Remove extra blue space below carousel */
+.carousel-section {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+
 
