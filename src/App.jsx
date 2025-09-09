@@ -89,15 +89,6 @@ import ShippingImage2 from "./assets/Shipping form image2.jpg";
 import ShippingImage3 from "./assets/Shipping form image3.png";
 import ShippingImage4 from "./assets/Shipping form image4.png"; 
 
-// ✅ New Floating Images
-import PersonalShopperExtra1 from "./assets/Personal Shopper Extra1.jpg";
-import MailBoxExtra1 from "./assets/Mail Box Extra1.jpg";
-import ShippingExtra1 from "./assets/ShippingExtra1.jpg";
-import PersonalShopperExtra2 from "./assets/Personal Shopper Extra2.jpg";
-import ShippingExtra2 from "./assets/ShippingExtra2.jpg";
-import MailBoxExtra2 from "./assets/Mail Box Extra2.jpg";
-
-
 function MyFoods() {
   const [cart, setCart] = useState([]);
   const foods = [
@@ -267,7 +258,7 @@ export default function App() {
   };
 
 
-  const slides = [
+ const slides = [
     { main: Image1, left: Image2, right: Image3 },
     { main: Image2, left: Image1, right: Image3 }, 
     { main: Image3, left: Image2, right: Image1 } 
@@ -471,7 +462,7 @@ const copyToClipboard = () => {
                 </div>
               ))}
             </Slider>
-          </section> 
+          </section>
 
 {/* Intro */}
 <section
@@ -479,7 +470,6 @@ const copyToClipboard = () => {
   style={{
     display: "flex",
     alignItems: "center",
-    justifyContent: "space-between",
     padding: "40px 20px",
     maxWidth: "1100px",
     margin: "40px auto",
@@ -489,36 +479,8 @@ const copyToClipboard = () => {
     borderRadius: "12px",
     boxShadow: "0 5px 20px rgba(0,0,0,0.1)",
     color: "#023e8a",
-    position: "relative", // Required for absolute positioning
   }}
->
-  {/* ✅ Floating Image on Left Center */}
-  <img
-    src={PersonalShopperExtra1}
-    alt="Shopping India Left Image"
-    className="section-float-img left"
-    style={{
-      position: "absolute",
-      left: "-260px",     // Keeps image to left outside section
-      top: "50%",         // Centers vertically
-      transform: "translateY(-50%)", // Perfect vertical centering
-      width: "220px",
-      height: "auto",
-      borderRadius: "16px",
-      boxShadow: "0 8px 30px rgba(0, 0, 0, 0.35)",
-      transition: "transform 0.3s ease, box-shadow 0.3s ease",
-    }}
-    onMouseOver={(e) => {
-      e.target.style.transform = "translateY(-50%) scale(1.1)";
-      e.target.style.boxShadow = "0 14px 40px rgba(0, 0, 0, 0.5)";
-    }}
-    onMouseOut={(e) => {
-      e.target.style.transform = "translateY(-50%) scale(1)";
-      e.target.style.boxShadow = "0 8px 30px rgba(0, 0, 0, 0.35)";
-    }}
-  />
-
-  {/* ✅ Text Content */}
+> 
   <div style={{ flex: "1 1 450px", minWidth: "300px" }}>
     <h2 style={{ color: "#0077b6", marginBottom: "20px" }}>
       Shopping in India is Made EASY for the World
@@ -542,7 +504,6 @@ const copyToClipboard = () => {
     </ul>
   </div>
 
-  {/* ✅ Poster Image */}
   <div
     style={{
       flex: "1 1 400px",
@@ -562,47 +523,11 @@ const copyToClipboard = () => {
     />
   </div>
 </section>
+ 
 
-
-{/* Offers */}
-<section
-  className="offers slide-up"
-  style={{
-    position: "relative", // Needed for absolute floating image
-    overflow: "visible",   // Allow image to float outside
-  }}
->
-  {/* ✅ Floating Image on Right, Outside Section */}
-  <img
-    src={ShippingExtra2}
-    alt="Offers Right Image"
-    className="section-float-img right"
-    style={{
-      position: "absolute",
-      right: "-260px",   // Outside the section
-      top: "50%",        // Vertically center
-      transform: "translateY(-50%)",
-      width: "220px",
-      height: "auto",
-      borderRadius: "16px",
-      boxShadow: "0 8px 30px rgba(0, 0, 0, 0.35)",
-      transition: "transform 0.3s ease, box-shadow 0.3s ease",
-      zIndex: 2,
-    }}
-    onMouseOver={(e) => {
-      e.target.style.transform = "translateY(-50%) scale(1.1)";
-      e.target.style.boxShadow = "0 14px 40px rgba(0, 0, 0, 0.5)";
-    }}
-    onMouseOut={(e) => {
-      e.target.style.transform = "translateY(-50%) scale(1)";
-      e.target.style.boxShadow = "0 8px 30px rgba(0, 0, 0, 0.35)";
-    }}
-  />
-
-  {/* ✅ Section Heading */}
+          {/* Offers */}
+          <section className="offers slide-up">
   <h2>Offers & Deals</h2>
-
-  {/* ✅ Original Offer Cards */}
   <div className="offers-cards">
     <div className="offer-card">
       <FaShippingFast className="offer-icon" />
@@ -612,7 +537,7 @@ const copyToClipboard = () => {
     <div className="offer-card">
       <FaEnvelopeOpenText className="offer-icon" />
       <img src={OfferMails} alt="Free Mails Offer" />
-      <p>3 Monthly Free Shipping</p>
+      <p>3 Monthly Free Shipping</p> 
     </div>
     <div className="offer-card">
       <FaShoppingBag className="offer-icon" />
@@ -620,45 +545,11 @@ const copyToClipboard = () => {
       <p>₹200/order Personal Shopper</p>
     </div>
   </div>
-</section>
-
+</section> 
 
 {/* How it works */}
-<section
-  className="how-it-works zoom-in"
-  style={{
-    position: "relative", // ✅ Required for absolute image positioning
-  }}
->
-  {/* ✅ Floating Image on Left */}
-  <img
-    src={MailBoxExtra1}
-    alt="How It Works Left Image"
-    className="section-float-img left"
-    style={{
-      position: "absolute",
-      left: "-260px", // Moves the image slightly outside the left boundary
-      top: "40px",
-      width: "220px",
-      height: "auto",
-      borderRadius: "16px",
-      boxShadow: "0 8px 30px rgba(0, 0, 0, 0.35)",
-      transition: "transform 0.3s ease, box-shadow 0.3s ease",
-    }}
-    onMouseOver={(e) => {
-      e.target.style.transform = "scale(1.1)";
-      e.target.style.boxShadow = "0 14px 40px rgba(0, 0, 0, 0.5)";
-    }}
-    onMouseOut={(e) => {
-      e.target.style.transform = "scale(1)";
-      e.target.style.boxShadow = "0 8px 30px rgba(0, 0, 0, 0.35)";
-    }}
-  />
-
-  {/* ✅ Section Heading */}
+<section className="how-it-works zoom-in">
   <h2>How It Works</h2>
-
-  {/* ✅ Steps Content */}
   <div className="steps">
     <div>
       <h3>Get Your Indian Address</h3>
@@ -689,51 +580,20 @@ const copyToClipboard = () => {
   </div>
 </section>
 
-
 {/* Why choose us */}
 <section
   className="why-choose-us"
   style={{
-    backgroundColor: "#ffffff", // White Background
+    backgroundColor: "#ffffff", // 🔹 White Background
     padding: "40px 20px",
     textAlign: "center",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     borderRadius: "12px",
-    boxShadow: "0 5px 25px rgba(0, 0, 0, 0.2)", // Softer shadow
-    position: "relative", // Required for floating image positioning
-    overflow: "visible",   // Allow image to float outside
+    boxShadow: "0 5px 25px rgba(0, 0, 0, 0.2)", // Softer shadow for a bright background
   }}
 >
-  {/* ✅ Floating Image on Right, Vertically Centered */}
-  <img
-    src={PersonalShopperExtra2}
-    alt="Why Choose Us Right Image"
-    className="section-float-img right"
-    style={{
-      position: "absolute",
-      right: "-260px",   // Outside the section
-      top: "50%",        // Vertically center
-      transform: "translateY(-50%)",
-      width: "220px",
-      height: "auto",
-      borderRadius: "16px",
-      boxShadow: "0 8px 30px rgba(0, 0, 0, 0.35)",
-      transition: "transform 0.3s ease, box-shadow 0.3s ease",
-      zIndex: 2,
-    }}
-    onMouseOver={(e) => {
-      e.target.style.transform = "translateY(-50%) scale(1.1)";
-      e.target.style.boxShadow = "0 14px 40px rgba(0, 0, 0, 0.5)";
-    }}
-    onMouseOut={(e) => {
-      e.target.style.transform = "translateY(-50%) scale(1)";
-      e.target.style.boxShadow = "0 8px 30px rgba(0, 0, 0, 0.35)";
-    }}
-  />
-
-  {/* ✅ Main Image */}
   <img
     src={WhyChooseUs}
     alt="Why Choose Us"
@@ -742,12 +602,11 @@ const copyToClipboard = () => {
       width: "100%",
       height: "auto",
       borderRadius: "12px",
-      boxShadow: "0 5px 15px rgba(0,0,0,0.2)", // Matches theme
+      boxShadow: "0 5px 15px rgba(0,0,0,0.2)", // Matches sky-blue theme
       display: "block",
     }}
   />
-</section>
-
+</section> 
 
           {/* About */}
           <section className="about fade-in">
@@ -756,76 +615,13 @@ const copyToClipboard = () => {
           </section>
 
 {/* ===== New Promotional Section ===== */}
-<section
-  className="promo-section"
-  style={{
-    position: "relative",   // ✅ Allows floating image positioning
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#ffffff",
-    padding: "40px 20px",
-    marginTop: "40px",
-    borderRadius: "16px",
-    boxShadow: "0 6px 25px rgba(0, 0, 0, 0.15)",
-    maxWidth: "1100px",
-    marginLeft: "auto",
-    marginRight: "auto",
-    textAlign: "center",
-  }}
->
-  {/* ✅ Floating Image on Left Side */}
-  <img
-    src={ShippingExtra1}
-    alt="Shipping Extra"
-    style={{
-      position: "absolute",
-      left: "-320px",  // ⬅️ Increased gap → moved image more left 
-      top: "50%",
-      transform: "translateY(-50%)", // ✅ Vertically center it
-      width: "260px",
-      height: "auto",
-      borderRadius: "16px",
-      boxShadow: "0 8px 25px rgba(0, 0, 0, 0.25)",
-      transition: "transform 0.3s ease, box-shadow 0.3s ease",
-      cursor: "pointer",
-      zIndex: "2",
-    }} 
-    onMouseOver={(e) => {
-      e.target.style.transform = "translateY(-50%) scale(1.08)";
-      e.target.style.boxShadow = "0 14px 40px rgba(0, 0, 0, 0.35)";
-    }}
-    onMouseOut={(e) => {
-      e.target.style.transform = "translateY(-50%) scale(1)";
-      e.target.style.boxShadow = "0 8px 25px rgba(0, 0, 0, 0.25)";
-    }}
-  />
-
-  {/* ✅ Section Content */}
-  <h2
-    style={{
-      color: "#0077b6",
-      fontSize: "2rem",
-      marginBottom: "15px",
-    }}
-  >
-    Delivering joy to your doorstep
-  </h2>
-  <p
-    style={{
-      fontSize: "1.1rem",
-      color: "#333",
-      lineHeight: "1.8",
-      maxWidth: "700px",
-    }}
-  >
-    Sign-up and start shipping from India to your doorstep across the globe.
-    Sign-up now for free and earn benefits.
-  </p>
-</section>
-
-
+      <section className="promo-section">
+        <h2>Delivering joy to your doorstep</h2>
+        <p>
+          Sign-up and start shipping from India to your doorstep across the globe.
+          Sign-up now for free and earn benefits.
+        </p> 
+      </section>  
 
 {/* ================= SHIPEASE INTRO SECTION ================= */}
 <section
@@ -940,54 +736,24 @@ const copyToClipboard = () => {
 <section
   className="prohibited fade-in"
   style={{
-    backgroundColor: "#ffffff", // ✅ White background
+    backgroundColor: "#ffffff", // ✅ White background to match About Us
     padding: "30px",
     marginTop: "30px",
-    borderRadius: "16px",
-    maxWidth: "1050px",
+    borderRadius: "16px", // ✅ Same rounded corners as About Us
+    maxWidth: "1050px", // ✅ Matches About Us width
     marginLeft: "auto",
     marginRight: "auto",
-    boxShadow: "0 6px 25px rgba(0, 0, 0, 0.18)",
+    boxShadow: "0 6px 25px rgba(0, 0, 0, 0.18)", // ✅ Same shadow as About Us
     textAlign: "center",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    position: "relative", // ✅ Needed for absolute positioning
-    overflow: "visible",   // Allows image to float outside
   }}
 >
-  {/* ✅ Floating Image on Right, Vertically Centered, Bigger */}
-  <img
-    src={MailBoxExtra2}
-    alt="Prohibited Right Image"
-    className="section-float-img right"
-    style={{
-      position: "absolute",
-      right: "-320px",  // Slightly further outside the section
-      top: "50%",
-      transform: "translateY(-50%)", // ✅ Center vertically
-      width: "260px",   // Bigger than before
-      height: "auto",
-      borderRadius: "16px",
-      boxShadow: "0 10px 35px rgba(0, 0, 0, 0.35)",
-      transition: "transform 0.3s ease, box-shadow 0.3s ease",
-      zIndex: 10,
-    }}
-    onMouseOver={(e) => {
-      e.target.style.transform = "translateY(-50%) scale(1.1)";
-      e.target.style.boxShadow = "0 14px 40px rgba(0, 0, 0, 0.5)";
-    }}
-    onMouseOut={(e) => {
-      e.target.style.transform = "translateY(-50%) scale(1)";
-      e.target.style.boxShadow = "0 10px 35px rgba(0, 0, 0, 0.35)";
-    }}
-  />
-
-  {/* ✅ Heading */}
   <h2
     style={{
-      color: "#d00000",
+      color: "#d00000", // ✅ Red heading for warning
       marginBottom: "15px",
       fontSize: "2.2rem",
       fontWeight: "700",
@@ -996,7 +762,6 @@ const copyToClipboard = () => {
     🚫 Prohibited Items for Shipping
   </h2>
 
-  {/* ✅ Subheading */}
   <p
     style={{
       fontSize: "1rem",
@@ -1009,12 +774,12 @@ const copyToClipboard = () => {
     The following items cannot be shipped through our service:
   </p>
 
-  {/* ✅ Prohibited Lists */}
+  {/* Prohibited Lists */}
   <div
     className="prohibited-lists"
     style={{
       display: "grid",
-      gridTemplateColumns: "repeat(2, 1fr)",
+      gridTemplateColumns: "repeat(2, 1fr)", // ✅ Two-column layout
       gap: "20px 40px",
       width: "100%",
       maxWidth: "900px",
@@ -1034,7 +799,6 @@ const copyToClipboard = () => {
     </ul>
   </div>
 </section>
-
 
 {/* Highlights */}
 <section className="image-gallery fade-in">
@@ -1349,6 +1113,12 @@ const buttonStyle = {
   fontSize: "1.1rem",
   cursor: "pointer",
 };
+
+
+
+
+
+
 
 
 
