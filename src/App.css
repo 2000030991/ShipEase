@@ -865,8 +865,6 @@ body {
   .add-to-cart-btn {
     padding: 10px;
     font-size: 1.05rem;
-    pointer-events: auto;
-    z-index: 99999;
   }
 
   /* Ensure cards remain above any hidden forms or nav overlays */
@@ -1796,9 +1794,7 @@ section {
     display: block;
     right: -130px;  
     color: #0077ff;
-    position: relative;
-    z-index: 100000 !important; 
-  } 
+  }
 
   .logo {
     color: #0077ff;
@@ -2060,36 +2056,30 @@ section {
 }
 
 
-/* ✅ Disable navbar clicks ONLY on mobile when My Foods tab is active */
-/* ✅ Disable only e-commerce links when My Foods tab is active on mobile */
-@media (max-width: 768px) {
-  body.myfoods-active .navbar a.external-link {
-    pointer-events: none;
-  }
-}
 
-
+/* ✅ Keep My Foods buttons above everything */
 .my-foods-section {
   position: relative;
-  z-index: 999999 !important; /* ✅ Ensure top layer */
+  z-index: 99999 !important;
 }
 
 .my-foods-card {
   position: relative;
-  z-index: 999999 !important;
+  z-index: 99999 !important;
 }
 
 .add-to-cart-btn {
   position: relative;
-  z-index: 999999 !important;
-  pointer-events: auto;
+  z-index: 100000 !important;
+  pointer-events: auto; /* ✅ Always clickable */
 }
 
 
-
-
-
-
+@media (max-width: 768px) {
+  body.myfoods-active .navbar a {
+    pointer-events: none;
+  }
+}
 
 
 

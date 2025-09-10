@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css"; 
 
 import Image1 from "./assets/Image1.png";
-import Image2 from "./assets/Image2.png"; 
+import Image2 from "./assets/Image2.png";
 import Image3 from "./assets/Image3.png";
 
 import MailBoxTab1 from "./assets/Mail Box Tab1.png"; 
@@ -158,11 +158,10 @@ const addToCart = (event, item) => {
   const totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
 
 return (
-<section
+   <section
   className="my-foods-section"
   onClick={(e) => {
-    e.preventDefault();
-    e.stopPropagation(); // ✅ Always stop event bubbling
+    e.stopPropagation(); // ✅ Always stop bubbling in My Foods
   }}
 >
 
@@ -182,17 +181,19 @@ return (
               <h4>{item.name}</h4>
               <p>₹{item.price}</p>
             </div>
-          <button
+            <button
   type="button"
- className="add-to-cart-btn"
+  className="add-to-cart-btn"
   onClick={(e) => {
-    e.preventDefault();
-    e.stopPropagation();  // ✅ Prevents accidental nav link triggers
+    e.preventDefault();      // ✅ Prevents default anchor behavior
+    e.stopPropagation();     // ✅ Stops click bubbling
     addToCart(e, item);
   }}
+  onTouchStart={(e) => e.stopPropagation()} // ✅ Fix for mobile taps
 >
   Add to Cart
-</button> 
+</button>
+
           </div>
         ))}
       </div>
@@ -292,9 +293,8 @@ useEffect(() => {
 
   // ✅ Cleanup timer on unmount
   return () => clearTimeout(timer);
-}, [currentView]); // 🔹 Added dependency to track view changes
+}, [currentView]); // 🔹 Now depends on currentView
 
-// ✅ Keep this function unchanged
 const copyToClipboard = () => {
   navigator.clipboard.writeText(couponCode);
   alert("Coupon Code Copied!");
@@ -440,15 +440,16 @@ const copyToClipboard = () => {
             </li> 
 
             {/* ✅ E-commerce Links */}
-       <li><a className="external-link" href="https://www.amazon.in" target="_blank" rel="noreferrer">Amazon</a></li>
-<li><a className="external-link" href="https://www.flipkart.com" target="_blank" rel="noreferrer">Flipkart</a></li>
-<li><a className="external-link" href="https://www.myntra.com" target="_blank" rel="noreferrer">Myntra</a></li>
-<li><a className="external-link" href="https://www.meesho.com" target="_blank" rel="noreferrer">Meesho</a></li>
-<li><a className="external-link" href="https://www.nykaa.com" target="_blank" rel="noreferrer">Nykaa</a></li>
-<li><a className="external-link" href="https://www.ajio.com" target="_blank" rel="noreferrer">Ajio</a></li> 
+            <li><a href="https://www.amazon.in" target="_blank" rel="noreferrer">Amazon</a></li>
+            <li><a href="https://www.flipkart.com" target="_blank" rel="noreferrer">Flipkart</a></li>
+            <li><a href="https://www.myntra.com" target="_blank" rel="noreferrer">Myntra</a></li>
+            <li><a href="https://www.meesho.com" target="_blank" rel="noreferrer">Meesho</a></li>
+            <li><a href="https://www.nykaa.com" target="_blank" rel="noreferrer">Nykaa</a></li>
+            <li><a href="https://www.ajio.com" target="_blank" rel="noreferrer">Ajio</a></li>
           </ul>
         </nav>
       </header>
+
 
    {/* HOME */}
       {currentView === "home" && (
@@ -1115,14 +1116,13 @@ const inputStyle = {
 const buttonStyle = {
   width: "100%",
   padding: "10px",
-  backgroundColor: "#0077b6",    
+  backgroundColor: "#0077b6",
   color: "white",
   border: "none",
   borderRadius: "8px",
   fontSize: "1.1rem",
   cursor: "pointer",
 };
-
 
 
 
