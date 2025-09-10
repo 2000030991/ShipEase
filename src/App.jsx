@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css"; 
 
 import Image1 from "./assets/Image1.png";
-import Image2 from "./assets/Image2.png";
+import Image2 from "./assets/Image2.png"; 
 import Image3 from "./assets/Image3.png";
 
 import MailBoxTab1 from "./assets/Mail Box Tab1.png"; 
@@ -158,16 +158,13 @@ const addToCart = (event, item) => {
   const totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
 
 return (
-   <section
+<section
   className="my-foods-section"
   onClick={(e) => {
-    if (window.innerWidth <= 768) {
-      // Allow hamburger clicks on mobile
-      return;
-    }
-    e.stopPropagation();
+    e.stopPropagation(); // Always stop bubbling
   }}
->  
+>
+ 
 
       <h2 className="my-foods-section-title">My Foods</h2>
 
@@ -184,13 +181,18 @@ return (
               <h4>{item.name}</h4>
               <p>₹{item.price}</p>
             </div>
-            <button
-              type="button"
-              className="add-to-cart-btn"
-              onClick={(e) => addToCart(e, item)}
-            >
-              Add to Cart
-            </button>
+          <button
+  type="button"
+  className="add-to-cart-btn"
+  onClick={(e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    addToCart(e, item);
+  }}
+>
+  Add to Cart
+</button>
+
           </div>
         ))}
       </div>
@@ -1113,6 +1115,9 @@ const buttonStyle = {
   fontSize: "1.1rem",
   cursor: "pointer",
 };
+
+
+
 
 
 

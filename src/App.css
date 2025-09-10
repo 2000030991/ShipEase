@@ -865,6 +865,8 @@ body {
   .add-to-cart-btn {
     padding: 10px;
     font-size: 1.05rem;
+    pointer-events: auto;
+    z-index: 99999;
   }
 
   /* Ensure cards remain above any hidden forms or nav overlays */
