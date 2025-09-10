@@ -336,16 +336,21 @@ const copyToClipboard = () => {
         </div>
       )}
 
-  {/* ================= NAVBAR ================= */}
+  {/* ================= NAVBAR ================= */} 
       <header className="navbar">
         <div className="navbar-top">
           {/* Hamburger Menu for Mobile */}
-          <button
-            className="mobile-menu-toggle"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
-          </button>
+       <button
+  className="mobile-menu-toggle"
+  onClick={(e) => {
+    e.stopPropagation(); // ✅ Prevent My Foods click handling
+    setIsMobileMenuOpen((prev) => !prev);
+  }}
+  onTouchStart={(e) => e.stopPropagation()} // ✅ Important for mobile touch
+>
+  {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+</button>
+
 
           {/* Logo */}
           <h1 className="logo">ShipEase</h1>
@@ -429,7 +434,7 @@ const copyToClipboard = () => {
             <li>
               <a
                 href="#"
-                onClick={() => {
+                onClick={() => { 
                   setCurrentView("myFoods");
                   setIsMobileMenuOpen(false);
                 }}
@@ -440,12 +445,13 @@ const copyToClipboard = () => {
             </li> 
 
             {/* ✅ E-commerce Links */}
-            <li><a href="https://www.amazon.in" target="_blank" rel="noreferrer">Amazon</a></li>
-            <li><a href="https://www.flipkart.com" target="_blank" rel="noreferrer">Flipkart</a></li>
-            <li><a href="https://www.myntra.com" target="_blank" rel="noreferrer">Myntra</a></li>
-            <li><a href="https://www.meesho.com" target="_blank" rel="noreferrer">Meesho</a></li>
-            <li><a href="https://www.nykaa.com" target="_blank" rel="noreferrer">Nykaa</a></li>
-            <li><a href="https://www.ajio.com" target="_blank" rel="noreferrer">Ajio</a></li>
+<li><a className="external-link" href="https://www.amazon.in" target="_blank" rel="noreferrer">Amazon</a></li>
+<li><a className="external-link" href="https://www.flipkart.com" target="_blank" rel="noreferrer">Flipkart</a></li>
+<li><a className="external-link" href="https://www.myntra.com" target="_blank" rel="noreferrer">Myntra</a></li>
+<li><a className="external-link" href="https://www.meesho.com" target="_blank" rel="noreferrer">Meesho</a></li>
+<li><a className="external-link" href="https://www.nykaa.com" target="_blank" rel="noreferrer">Nykaa</a></li>
+<li><a className="external-link" href="https://www.ajio.com" target="_blank" rel="noreferrer">Ajio</a></li>
+
           </ul>
         </nav>
       </header>

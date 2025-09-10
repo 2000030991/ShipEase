@@ -2075,11 +2075,26 @@ section {
 }
 
 
+/* ✅ Disable only external e-commerce links on mobile when inside My Foods */
 @media (max-width: 768px) {
-  body.myfoods-active .navbar a {
-    pointer-events: none;
+  body.myfoods-active .navbar a.external-link {
+    pointer-events: none; /* Block Amazon, Flipkart, etc. */
+  }
+
+  /* ✅ Always allow the hamburger button to be clickable */
+  body.myfoods-active .mobile-menu-toggle {
+    pointer-events: auto !important;
+    z-index: 999999 !important;
   }
 }
+
+.mobile-menu-toggle {
+  position: relative;
+  z-index: 100000 !important;
+  pointer-events: auto !important;
+}
+
+
 
 
 
