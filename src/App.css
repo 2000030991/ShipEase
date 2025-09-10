@@ -2058,6 +2058,29 @@ section {
 }
 
 
+/* ✅ Disable navbar clicks ONLY on mobile when My Foods tab is active */
+@media (max-width: 768px) {
+  body.myfoods-active .navbar a {
+    pointer-events: none;
+  }
+}
+
+.my-foods-section {
+  position: relative;
+  z-index: 999999 !important; /* ✅ Ensure top layer */
+}
+
+.my-foods-card {
+  position: relative;
+  z-index: 999999 !important;
+}
+
+.add-to-cart-btn {
+  position: relative;
+  z-index: 999999 !important;
+  pointer-events: auto;
+}
+
 
 
 

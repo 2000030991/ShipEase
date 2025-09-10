@@ -161,10 +161,11 @@ return (
 <section
   className="my-foods-section"
   onClick={(e) => {
-    e.stopPropagation(); // Always stop bubbling
+    e.preventDefault();
+    e.stopPropagation(); // ✅ Always stop event bubbling
   }}
 >
- 
+
 
       <h2 className="my-foods-section-title">My Foods</h2>
 
@@ -183,16 +184,15 @@ return (
             </div>
           <button
   type="button"
-  className="add-to-cart-btn"
+ className="add-to-cart-btn"
   onClick={(e) => {
     e.preventDefault();
-    e.stopPropagation();
+    e.stopPropagation();  // ✅ Prevents accidental nav link triggers
     addToCart(e, item);
   }}
 >
   Add to Cart
-</button>
-
+</button> 
           </div>
         ))}
       </div>
@@ -278,15 +278,23 @@ const [showWelcomePopup, setShowWelcomePopup] = useState(false);
 const couponCode = "HELLO200";
 
 useEffect(() => {
-  // Show popup every time user visits / reloads
+  // ✅ Show welcome popup after 1.5s on every visit / reload
   const timer = setTimeout(() => {
     setShowWelcomePopup(true);
-  }, 1500); // Optional delay for smooth UX
+  }, 1500);
 
-  return () => clearTimeout(timer); // Cleanup timer on unmount
-}, []);
+  // ✅ Add or remove 'myfoods-active' class based on currentView
+  if (currentView === "myFoods") {
+    document.body.classList.add("myfoods-active");
+  } else {
+    document.body.classList.remove("myfoods-active");
+  }
 
+  // ✅ Cleanup timer on unmount
+  return () => clearTimeout(timer);
+}, [currentView]); // 🔹 Added dependency to track view changes
 
+// ✅ Keep this function unchanged
 const copyToClipboard = () => {
   navigator.clipboard.writeText(couponCode);
   alert("Coupon Code Copied!");
@@ -1108,13 +1116,15 @@ const inputStyle = {
 const buttonStyle = {
   width: "100%",
   padding: "10px",
-  backgroundColor: "#0077b6",
+  backgroundColor: "#0077b6",    
   color: "white",
   border: "none",
   borderRadius: "8px",
   fontSize: "1.1rem",
   cursor: "pointer",
 };
+
+
 
 
 
