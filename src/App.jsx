@@ -161,10 +161,13 @@ return (
    <section
   className="my-foods-section"
   onClick={(e) => {
-    e.stopPropagation(); // ✅ Always stop bubbling in My Foods
+    if (window.innerWidth <= 768) {
+      // Allow hamburger clicks on mobile
+      return;
+    }
+    e.stopPropagation();
   }}
->
-
+>  
 
       <h2 className="my-foods-section-title">My Foods</h2>
 
@@ -182,18 +185,12 @@ return (
               <p>₹{item.price}</p>
             </div>
             <button
-  type="button"
-  className="add-to-cart-btn"
-  onClick={(e) => {
-    e.preventDefault();      // ✅ Prevents default anchor behavior
-    e.stopPropagation();     // ✅ Stops click bubbling
-    addToCart(e, item);
-  }}
-  onTouchStart={(e) => e.stopPropagation()} // ✅ Fix for mobile taps
->
-  Add to Cart
-</button>
-
+              type="button"
+              className="add-to-cart-btn"
+              onClick={(e) => addToCart(e, item)}
+            >
+              Add to Cart
+            </button>
           </div>
         ))}
       </div>
@@ -279,21 +276,14 @@ const [showWelcomePopup, setShowWelcomePopup] = useState(false);
 const couponCode = "HELLO200";
 
 useEffect(() => {
-  // ✅ Show welcome popup after 1.5s on every visit / reload
+  // Show popup every time user visits / reloads
   const timer = setTimeout(() => {
     setShowWelcomePopup(true);
-  }, 1500);
+  }, 1500); // Optional delay for smooth UX
 
-  // ✅ Add or remove 'myfoods-active' class based on currentView
-  if (currentView === "myFoods") {
-    document.body.classList.add("myfoods-active");
-  } else {
-    document.body.classList.remove("myfoods-active");
-  }
+  return () => clearTimeout(timer); // Cleanup timer on unmount
+}, []);
 
-  // ✅ Cleanup timer on unmount
-  return () => clearTimeout(timer);
-}, [currentView]); // 🔹 Now depends on currentView
 
 const copyToClipboard = () => {
   navigator.clipboard.writeText(couponCode);
@@ -336,21 +326,16 @@ const copyToClipboard = () => {
         </div>
       )}
 
-  {/* ================= NAVBAR ================= */} 
+  {/* ================= NAVBAR ================= */}
       <header className="navbar">
         <div className="navbar-top">
           {/* Hamburger Menu for Mobile */}
-       <button
-  className="mobile-menu-toggle"
-  onClick={(e) => {
-    e.stopPropagation(); // ✅ Prevent My Foods click handling
-    setIsMobileMenuOpen((prev) => !prev);
-  }}
-  onTouchStart={(e) => e.stopPropagation()} // ✅ Important for mobile touch
->
-  {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
-</button>
-
+          <button
+            className="mobile-menu-toggle"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+          </button>
 
           {/* Logo */}
           <h1 className="logo">ShipEase</h1>
@@ -434,7 +419,7 @@ const copyToClipboard = () => {
             <li>
               <a
                 href="#"
-                onClick={() => { 
+                onClick={() => {
                   setCurrentView("myFoods");
                   setIsMobileMenuOpen(false);
                 }}
@@ -445,13 +430,12 @@ const copyToClipboard = () => {
             </li> 
 
             {/* ✅ E-commerce Links */}
-<li><a className="external-link" href="https://www.amazon.in" target="_blank" rel="noreferrer">Amazon</a></li>
-<li><a className="external-link" href="https://www.flipkart.com" target="_blank" rel="noreferrer">Flipkart</a></li>
-<li><a className="external-link" href="https://www.myntra.com" target="_blank" rel="noreferrer">Myntra</a></li>
-<li><a className="external-link" href="https://www.meesho.com" target="_blank" rel="noreferrer">Meesho</a></li>
-<li><a className="external-link" href="https://www.nykaa.com" target="_blank" rel="noreferrer">Nykaa</a></li>
-<li><a className="external-link" href="https://www.ajio.com" target="_blank" rel="noreferrer">Ajio</a></li>
-
+            <li><a href="https://www.amazon.in" target="_blank" rel="noreferrer">Amazon</a></li>
+            <li><a href="https://www.flipkart.com" target="_blank" rel="noreferrer">Flipkart</a></li>
+            <li><a href="https://www.myntra.com" target="_blank" rel="noreferrer">Myntra</a></li>
+            <li><a href="https://www.meesho.com" target="_blank" rel="noreferrer">Meesho</a></li>
+            <li><a href="https://www.nykaa.com" target="_blank" rel="noreferrer">Nykaa</a></li>
+            <li><a href="https://www.ajio.com" target="_blank" rel="noreferrer">Ajio</a></li>
           </ul>
         </nav>
       </header>
@@ -1129,11 +1113,6 @@ const buttonStyle = {
   fontSize: "1.1rem",
   cursor: "pointer",
 };
-
-
-
-
-
 
 
 
